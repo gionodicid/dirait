@@ -185,8 +185,8 @@
           {
             "@type": "ListItem",
             "position": 1,
-            "name": "Beranda",
-            "item": "https://dirait.id/id"
+            "name": "Home",
+            "item": "https://dirait.id/en"
           }
         ]
       }
@@ -223,15 +223,15 @@
             <span class="text-[9px] font-medium uppercase tracking-[.2em] text-gray-500">Est. 2023</span>
           </div>
         </a>
-        <nav class="hidden items-center gap-8 lg:flex" aria-label="Navigasi utama">
-          <a href="#services" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black" data-i18n="nav.services">Layanan</a>
-          <a href="#pricing" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black" data-i18n="nav.pricing">Harga</a>
-          <a href="#" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black" data-i18n="nav.about">Tentang</a>
-          <a href="#" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black" data-i18n="nav.blog">Blog</a>
+        <nav class="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
+          <a href="#services" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black">Services</a>
+          <a href="#pricing" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black">Pricing</a>
+          <a href="#" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black">About</a>
+          <a href="#" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black">Blog</a>
         </nav>
         <div class="flex items-center gap-4">
-          <a href="#cta" class="hidden border border-ikb bg-ikb px-5 py-2 text-xs font-medium uppercase tracking-wider text-white transition-colors hover:bg-ikb-dark lg:inline-flex" data-i18n="nav.cta">Get in Touch</a>
-          <button id="mobile-menu-btn" class="inline-flex h-8 w-8 items-center justify-center text-black lg:hidden" aria-label="Buka menu" aria-expanded="false">
+          <a href="#cta" class="hidden border border-ikb bg-ikb px-5 py-2 text-xs font-medium uppercase tracking-wider text-white transition-colors hover:bg-ikb-dark lg:inline-flex">Get in Touch</a>
+          <button id="mobile-menu-btn" class="inline-flex h-8 w-8 items-center justify-center text-black lg:hidden" aria-label="Open menu" aria-expanded="false">
             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="square" stroke-linejoin="miter" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -241,27 +241,27 @@
     </header>
 
     <!-- ========== MOBILE NAV ========== -->
-    <div id="mobile-nav" class="fixed inset-0 z-[60] lg:hidden" role="dialog" aria-modal="true" aria-label="Menu navigasi">
+    <div id="mobile-nav" class="fixed inset-0 z-[60] lg:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
       <div id="mobile-backdrop" class="mobile-backdrop absolute inset-0 bg-black/80"></div>
       <div id="mobile-panel" class="mobile-panel absolute right-0 top-0 flex h-full w-full max-w-xs flex-col bg-black">
         <div class="flex items-center justify-between border-b border-white/10 px-6 py-5">
           <span class="text-sm font-bold tracking-tight text-white">DIRAIT</span>
-          <button id="mobile-close-btn" class="inline-flex h-8 w-8 items-center justify-center text-white" aria-label="Tutup menu">
+          <button id="mobile-close-btn" class="inline-flex h-8 w-8 items-center justify-center text-white" aria-label="Close menu">
             <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="square" stroke-linejoin="miter" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-        <nav class="flex-1 px-6 py-8" aria-label="Navigasi mobile">
+        <nav class="flex-1 px-6 py-8" aria-label="Mobile navigation">
           <ul class="space-y-2">
-            <li><a href="#services" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60" data-i18n="nav.services">Layanan</a></li>
-            <li><a href="#pricing" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60" data-i18n="nav.pricing">Harga</a></li>
-            <li><a href="#" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60" data-i18n="nav.about">Tentang</a></li>
-            <li><a href="#" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="#services" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60">Services</a></li>
+            <li><a href="#pricing" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60">Pricing</a></li>
+            <li><a href="#" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60">About</a></li>
+            <li><a href="#" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60">Blog</a></li>
           </ul>
         </nav>
         <div class="border-t border-white/10 px-6 py-6 space-y-4">
-          <a href="#cta" class="mobile-link block w-full border border-ikb bg-ikb px-4 py-2.5 text-center text-xs font-medium uppercase tracking-wider text-white" data-i18n="nav.cta">Get in Touch</a>
+          <a href="#cta" class="mobile-link block w-full border border-ikb bg-ikb px-4 py-2.5 text-center text-xs font-medium uppercase tracking-wider text-white">Get in Touch</a>
         </div>
       </div>
     </div>
@@ -276,25 +276,25 @@
               <div class="ikb-line h-full w-1"></div>
             </div>
             <div class="lg:flex-1">
-              <p class="mb-6 text-xs font-medium uppercase tracking-[.25em] text-ikb" data-i18n="hero.label">
+              <p class="mb-6 text-xs font-medium uppercase tracking-[.25em] text-ikb">
                 Custom Software Agency · Jakarta
               </p>
-              <h1 class="text-5xl font-bold tracking-tight text-black sm:text-7xl lg:text-8xl leading-[1.05]" data-i18n="hero.heading">
+              <h1 class="text-5xl font-bold tracking-tight text-black sm:text-7xl lg:text-8xl leading-[1.05]">
                 Custom Software That Grows Your Business — Built by Experts, Delivered on Time
               </h1>
               <div class="mt-8 h-px w-16 bg-ikb"></div>
-              <p class="mt-8 max-w-xl text-base leading-relaxed text-gray-500" data-i18n="hero.subheading">
+              <p class="mt-8 max-w-xl text-base leading-relaxed text-gray-500">
                 From web and mobile apps to IoT platforms and AI integration — we design, build, and deploy production-ready software for startups and enterprises across Indonesia, Singapore, and Europe.
               </p>
               <div class="mt-10 flex flex-wrap items-center gap-4">
-                <a href="#cta" class="inline-flex h-12 items-center border border-ikb bg-ikb px-8 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-ikb-dark" data-i18n="hero.primaryCta">
+                <a href="#cta" class="inline-flex h-12 items-center border border-ikb bg-ikb px-8 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-ikb-dark">
                   Get Free Consultation
                 </a>
-                <a href="#services" class="inline-flex h-12 items-center border border-ikb px-8 text-xs font-medium uppercase tracking-widest text-ikb transition-colors hover:bg-ikb hover:text-white" data-i18n="hero.secondaryCta">
+                <a href="#services" class="inline-flex h-12 items-center border border-ikb px-8 text-xs font-medium uppercase tracking-widest text-ikb transition-colors hover:bg-ikb hover:text-white">
                   View Services
                 </a>
               </div>
-              <p class="mt-8 text-xs uppercase tracking-wider text-gray-400" data-i18n="hero.reach">
+              <p class="mt-8 text-xs uppercase tracking-wider text-gray-400">
                 Trusted by 30+ clients in Indonesia, Singapore, Netherlands & UK
               </p>
             </div>
@@ -307,10 +307,10 @@
         <div class="mx-auto max-w-7xl px-6 sm:px-8">
           <div class="border-x border-black px-8 py-16 sm:py-20 lg:py-24">
             <div class="mb-12 max-w-2xl">
-              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb" data-i18n="services.label">
-                Apa yang Kami Bangun
+              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb">
+                What We Build
               </p>
-              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl" data-i18n="services.heading">
+              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl">
                 End-to-End Software Development Services
               </h2>
             </div>
@@ -320,14 +320,14 @@
       </section>
 
       <!-- ========== 4. TESTIMONIALS ========== -->
-      <section class="border-b border-black bg-white" aria-label="Testimoni">
+      <section class="border-b border-black bg-white" aria-label="Testimonials">
         <div class="mx-auto max-w-7xl px-6 sm:px-8">
           <div class="border-x border-black px-8 py-16 sm:py-20 lg:py-24">
             <div class="mb-12 max-w-2xl">
-              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb" data-i18n="testimonials.label">
-                Kata Mereka
+              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb">
+                What Clients Say
               </p>
-              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl" data-i18n="testimonials.heading">
+              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl">
                 Real Feedback From Real Clients
               </h2>
             </div>
@@ -337,15 +337,15 @@
       </section>
 
       <!-- ========== 5. PRICING ========== -->
-      <section id="pricing" class="border-b border-black bg-white" aria-label="Harga">
+      <section id="pricing" class="border-b border-black bg-white" aria-label="Pricing">
         <div class="mx-auto max-w-7xl px-6 sm:px-8">
           <div class="border-x border-black px-8 py-16 sm:py-20 lg:py-24">
             <div class="mx-auto mb-12 max-w-2xl text-center">
-              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb" data-i18n="pricing.label">
-                Harga
+              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb">
+                Pricing
               </p>
-              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl" data-i18n="pricing.heading">
-                Transparan. Tanpa biaya tersembunyi.
+              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl">
+                Transparent. No hidden fees.
               </h2>
             </div>
             <div id="pricing-grid" class="swiss-grid border-t border-l border-black"></div>
@@ -358,11 +358,11 @@
         <div class="mx-auto max-w-7xl px-6 sm:px-8">
           <div class="border-x border-black px-8 py-16 sm:py-20 lg:py-24">
             <div class="mx-auto mb-12 max-w-3xl text-center">
-              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb" data-i18n="faq.label">
+              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb">
                 FAQ
               </p>
-              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl" data-i18n="faq.heading">
-                Pertanyaan umum, jawaban langsung.
+              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl">
+                Common questions, straight answers.
               </h2>
             </div>
             <div id="faq-list" class="mx-auto max-w-3xl divide-y divide-black"></div>
@@ -375,19 +375,19 @@
         <div class="relative mx-auto max-w-7xl px-6 sm:px-8">
           <div class="cta-grid-bg pointer-events-none absolute inset-0 border-x border-white/10" aria-hidden="true"></div>
           <div class="relative border-x border-white/10 px-8 py-20 text-center sm:py-24">
-            <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl" data-i18n="cta.heading">
+            <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
               Ready to Turn Your Idea Into Software?
             </h2>
             <div class="mx-auto mt-6 h-px w-16 bg-ikb"></div>
-            <p class="mx-auto mt-6 max-w-lg text-base leading-relaxed text-white/60" data-i18n="cta.subheading">
+            <p class="mx-auto mt-6 max-w-lg text-base leading-relaxed text-white/60">
               Tell us about your project. We'll share how we'd approach it, what it would take, and what you can expect — no pressure, no obligation.
             </p>
             <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a href="https://wa.me/6281384934615" target="_blank" rel="noopener noreferrer" class="inline-flex h-12 items-center gap-2 border border-ikb bg-ikb px-8 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-ikb-dark" data-i18n="cta.primaryCta">
+              <a href="https://wa.me/6281384934615" target="_blank" rel="noopener noreferrer" class="inline-flex h-12 items-center gap-2 border border-ikb bg-ikb px-8 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-ikb-dark">
                 Start on WhatsApp
               </a>
-              <a href="mailto:giofadhil.ahmad@gmail.com" class="inline-flex h-12 items-center gap-2 border border-white/30 px-8 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-black" data-i18n="cta.secondaryCta">
-                Kirim Email
+              <a href="mailto:giofadhil.ahmad@gmail.com" class="inline-flex h-12 items-center gap-2 border border-white/30 px-8 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-black">
+                Send an Email
               </a>
             </div>
           </div>
@@ -415,24 +415,24 @@
                 </svg>
                 <span class="text-sm font-bold tracking-tight text-black">DIRAIT</span>
               </a>
-              <p class="mt-4 max-w-xs text-sm leading-relaxed text-gray-500" data-i18n="footer.description">
+              <p class="mt-4 max-w-xs text-sm leading-relaxed text-gray-500">
                 Jakarta-based custom software agency. We build web apps, mobile apps, IoT systems, and AI-powered solutions that help businesses grow. React, React Native, Laravel, Next.js — 30+ projects delivered across 3+ countries.
               </p>
             </div>
             <div class="col-span-6 border-b border-black py-8 sm:border-b-0 sm:py-0 sm:pl-10 sm:pt-0 lg:col-span-2">
-              <h3 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500" data-i18n="footer.services">Layanan</h3>
+              <h3 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500">Services</h3>
               <ul id="footer-services" class="space-y-3"></ul>
             </div>
             <div class="col-span-6 border-b border-black py-8 sm:border-b-0 sm:pl-10 sm:pt-0 lg:col-span-3">
-              <h3 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500" data-i18n="footer.company">Perusahaan</h3>
+              <h3 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500">Company</h3>
               <ul class="space-y-3">
-                <li><a href="#" class="text-sm text-gray-500 transition-colors hover:text-black" data-i18n="footer.aboutLink">Tentang</a></li>
-                <li><a href="#" class="text-sm text-gray-500 transition-colors hover:text-black" data-i18n="nav.blog">Blog</a></li>
-                <li><a href="#" class="text-sm text-gray-500 transition-colors hover:text-black" data-i18n="footer.privacy">Kebijakan Privasi</a></li>
+                <li><a href="#" class="text-sm text-gray-500 transition-colors hover:text-black">About</a></li>
+                <li><a href="#" class="text-sm text-gray-500 transition-colors hover:text-black">Blog</a></li>
+                <li><a href="#" class="text-sm text-gray-500 transition-colors hover:text-black">Privacy Policy</a></li>
               </ul>
             </div>
             <div class="col-span-6 py-8 sm:pl-10 sm:pt-0 lg:col-span-3">
-              <h3 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500" data-i18n="footer.contact">Kontak</h3>
+              <h3 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500">Contact</h3>
               <address class="not-italic space-y-3">
                 <p class="text-sm text-gray-500">Cibubur, Jawa Barat — Indonesia</p>
                 <p><a href="mailto:giofadhil.ahmad@gmail.com" class="text-sm text-gray-500 transition-colors hover:text-black">giofadhil.ahmad@gmail.com</a></p>
@@ -442,337 +442,143 @@
           </div>
         </div>
         <div class="border-x border-black px-8 py-6">
-          <p class="text-xs text-gray-400" data-i18n="footer.rights">© 2025 DIRAIT. Hak cipta dilindungi.</p>
+          <p class="text-xs text-gray-400">© 2026 DIRAIT. All rights reserved.</p>
         </div>
       </div>
     </footer>
 
     <!-- ========== WHATSAPP FLOAT ========== -->
-    <a href="https://wa.me/6281384934615" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center border border-ikb bg-ikb text-white transition-colors hover:bg-ikb-dark" aria-label="Hubungi kami via WhatsApp">
+    <a href="https://wa.me/6281384934615" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center border border-ikb bg-ikb text-white transition-colors hover:bg-ikb-dark" aria-label="Contact us on WhatsApp">
       <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
       </svg>
     </a>
 
     <script>
-      const DICT = {
-        en: {
-          "nav.services": "Services",
-          "nav.pricing": "Pricing",
-          "nav.about": "About",
-          "nav.blog": "Blog",
-          "nav.cta": "Get in Touch",
-          "hero.label": "Custom Software Agency \u00b7 Jakarta",
-          "hero.heading": "Custom Software That Grows Your Business \u2014 Built by Experts, Delivered on Time",
-          "hero.subheading":
-            "From web and mobile apps to IoT platforms and AI integration \u2014 we design, build, and deploy production-ready software for startups and enterprises across Indonesia, Singapore, and Europe.",
-          "hero.primaryCta": "Get Free Consultation",
-          "hero.secondaryCta": "View Services",
-          "hero.reach":
-            "Trusted by 30+ clients in Indonesia, Singapore, Netherlands & UK",
-          "services.label": "What We Build",
-          "services.heading": "End-to-End Software Development Services",
-          "testimonials.label": "What Clients Say",
-          "testimonials.heading": "Real Feedback From Real Clients",
-          "pricing.label": "Pricing",
-          "pricing.heading": "Transparent. No hidden fees.",
-          "pricing.popular": "Popular",
-          "faq.label": "FAQ",
-          "faq.heading": "Common questions, straight answers.",
-          "cta.heading": "Ready to Turn Your Idea Into Software?",
-          "cta.subheading":
-            "Tell us about your project. We'll share how we'd approach it, what it would take, and what you can expect \u2014 no pressure, no obligation.",
-          "cta.primaryCta": "Start on WhatsApp",
-          "cta.secondaryCta": "Send an Email",
-          "footer.description":
-            "Jakarta-based custom software agency. We build web apps, mobile apps, IoT systems, and AI-powered solutions that help businesses grow. React, React Native, Laravel, Next.js \u2014 30+ projects delivered across 3+ countries.",
-          "footer.services": "Services",
-          "footer.company": "Company",
-          "footer.contact": "Contact",
-          "footer.rights": "\u00a9 2026 DIRAIT. All rights reserved.",
-          "footer.privacy": "Privacy Policy",
-          "footer.aboutLink": "About",
-          services: [
-            {
-              slug: "web-apps",
-              number: "01",
-              title: "Web Applications",
-              description:
-                "React, Next.js, Laravel \u2014 pixel-perfect UI from Figma, monorepo architecture, and production-ready deployments with Docker and Nginx.",
-              learnMore: "Learn more",
-            },
-            {
-              slug: "mobile",
-              number: "02",
-              title: "Mobile Apps",
-              description:
-                "React Native for iOS and Android \u2014 multiplatform codebases with consistent gestures, PWA capabilities, and BLE hardware integration.",
-              learnMore: "Learn more",
-            },
-            {
-              slug: "iot",
-              number: "03",
-              title: "IoT Platforms",
-              description:
-                "Real-time dashboards with MQTT (Mosquitto) and WebSocket. Custom widgets, tenant-based data, and hardware engineer collaboration.",
-              learnMore: "Learn more",
-            },
-            {
-              slug: "ai-api",
-              number: "04",
-              title: "AI & API Integration",
-              description:
-                "Third-party AI services, payment gateways (MidTrans, Duitku, Mollie), WhatsApp APIs, and GraphQL/RESTful integration across platforms.",
-              learnMore: "Learn more",
-            },
-            {
-              slug: "crm-erp",
-              number: "05",
-              title: "CRM & ERP Solutions",
-              description:
-                "Multi-tenant systems with RBAC, Kanban workflows, SSO, 2FA, and real-time notifications \u2014 built for complex sales and operational pipelines.",
-              learnMore: "Learn more",
-            },
-            {
-              slug: "devops",
-              number: "06",
-              title: "DevOps & Infrastructure",
-              description:
-                "Docker, Nginx, Cloudflare \u2014 automated deploys, cron jobs, uptime monitoring, Fail2ban security, and Telegram-based alerting.",
-              learnMore: "Learn more",
-            },
-          ],
-          testimonials: [
-            {
-              quote:
-                "Kerja cepat, fast respon, ramah, sesuai ekspektasi, ahli di bidangnya, recommended sekali, top freelancer.",
-              name: "nazz_com",
-              role: "Client, Freelance Platform",
-              initials: "N",
-            },
-            {
-              quote:
-                "Sangat menguasai bidangnya, hasil sesuai yang diharapkan, delivery sangat cepat. Revisi juga dikerjakan dengan cepat. Sangat saya rekomendasikan.",
-              name: "Anonymous Client",
-              role: "Client, Freelance Platform",
-              initials: "AC",
-            },
-            {
-              quote:
-                "Fast respon, pekerjaan rapi, code quality oke thank you mas next reorder lagi \ud83d\ude01",
-              name: "exzword",
-              role: "Client, Freelance Platform",
-              initials: "E",
-            },
-          ],
-          pricing: [
-            {
-              name: "Basic",
-              popular: false,
-              price: "Rp4M",
-              priceNote: "per project",
-              features: [
-                "CDN worldwide support",
-                "SSL encryption",
-                "Free server & domain for a year",
-                "3 months support",
-                "Up to 20 product uploads",
-                "Multi-pages",
-                "Web-based application",
-                "SEO/Google Search",
-              ],
-              cta: "Get Started",
-            },
-            {
-              name: "Small Business",
-              popular: true,
-              price: "Rp8M",
-              priceNote: "per project",
-              features: [
-                "Everything in Basic plus\u2026",
-                "6 months support",
-                "Unlimited product uploads",
-              ],
-              cta: "Get Started",
-            },
-            {
-              name: "Business",
-              popular: false,
-              price: "Contact for",
-              priceNote: "info",
-              features: [
-                "Everything in Small Business plus\u2026",
-                "Free server & domain for 3 years",
-                "Lifetime support",
-                "Multi-platform application",
-                "Enhanced SEO/Google Search",
-              ],
-              cta: "Contact Us",
-            },
-          ],
-          faq: [
-            {
-              id: "tech-stack",
-              question: "What technologies do you use?",
-              answer:
-                "We select the stack per project. Common choices include React (Vite), Next.js, Laravel, SvelteKit for web; React Native for mobile; PostgreSQL, MySQL, MongoDB for data; and Docker, Nginx, Cloudflare for deployment. We also integrate real-time systems via WebSocket and MQTT.",
-            },
-            {
-              id: "timeline",
-              question: "How long does a typical project take?",
-              answer:
-                "A company profile website with CMS takes 2\u20134 weeks. Custom web or mobile applications typically take 8\u201316 weeks depending on scope. IoT and AI-integrated projects vary based on hardware and third-party complexity \u2014 we'll provide a detailed timeline after discovery.",
-            },
-            {
-              id: "maintenance",
-              question: "Do you provide maintenance after launch?",
-              answer:
-                "Every project includes post-launch support \u2014 3 months for Basic, 6 months for Small Business, and 12 months for Business plans. Extended maintenance is available for updates, bug fixes, security patches, and feature additions.",
-            },
-            {
-              id: "integrations",
-              question: "Can you integrate with our existing systems?",
-              answer:
-                "Yes. We've integrated payment gateways (MidTrans, Duitku, Mollie), WhatsApp APIs, AI services, accounting software, and ERPs. Small Business includes one external system integration; Business includes unlimited.",
-            },
-            {
-              id: "multi-platform",
-              question: "Do you support web, mobile, and PWA?",
-              answer:
-                "Yes. We build React Native apps for iOS and Android alongside web platforms, and can add PWA capabilities for near-native mobile experiences with push notifications, offline support, and hardware access on Android (BLE, GPS).",
-            },
-            {
-              id: "security",
-              question: "How do you handle security and access control?",
-              answer:
-                "We implement modular role-based access control (RBAC), two-factor authentication (2FA), custom SSO integration, and security hardening with Fail2ban, Cloudflare, and Telegram-based alerting for production environments.",
-            },
-          ],
-          meta: {
-            title: "Custom Software Development Agency Jakarta | Web & Mobile Apps | DIRAIT",
-            description:
-              "DIRAIT builds custom web, mobile, and IoT software for businesses in Indonesia, Singapore, and Europe. React, React Native, Laravel, Next.js \u2014 30+ projects delivered. Free consultation.",
-          },
-        },
-      };
+      const SERVICES = [
+        { slug: "web-apps", number: "01", title: "Web Applications", description: "React, Next.js, Laravel \u2014 pixel-perfect UI from Figma, monorepo architecture, and production-ready deployments with Docker and Nginx." },
+        { slug: "mobile", number: "02", title: "Mobile Apps", description: "React Native for iOS and Android \u2014 multiplatform codebases with consistent gestures, PWA capabilities, and BLE hardware integration." },
+        { slug: "iot", number: "03", title: "IoT Platforms", description: "Real-time dashboards with MQTT (Mosquitto) and WebSocket. Custom widgets, tenant-based data, and hardware engineer collaboration." },
+        { slug: "ai-api", number: "04", title: "AI & API Integration", description: "Third-party AI services, payment gateways (MidTrans, Duitku, Mollie), WhatsApp APIs, and GraphQL/RESTful integration across platforms." },
+        { slug: "crm-erp", number: "05", title: "CRM & ERP Solutions", description: "Multi-tenant systems with RBAC, Kanban workflows, SSO, 2FA, and real-time notifications \u2014 built for complex sales and operational pipelines." },
+        { slug: "devops", number: "06", title: "DevOps & Infrastructure", description: "Docker, Nginx, Cloudflare \u2014 automated deploys, cron jobs, uptime monitoring, Fail2ban security, and Telegram-based alerting." },
+      ];
 
-      let currentLocale = "en",
-        openFaqId = null,
-        mobileNavOpen = false;
+      const TESTIMONIALS = [
+        { quote: "Fast work, quick response, friendly, met expectations, expert in their field, highly recommended, top freelancer.", name: "nazz_com", role: "Client, Freelance Platform", initials: "N" },
+        { quote: "Mastered their field, results met expectations, very fast delivery. Revisions were also done quickly. Highly recommended.", name: "Anonymous Client", role: "Client, Freelance Platform", initials: "AC" },
+        { quote: "Fast response, neat work, good code quality. Thank you, will reorder!", name: "exzword", role: "Client, Freelance Platform", initials: "E" },
+      ];
+
+      const PRICING = [
+        { name: "Basic", popular: false, price: "Rp4M", priceNote: "per project", features: ["CDN worldwide support", "SSL encryption", "Free server & domain for a year", "3 months support", "Up to 20 product uploads", "Multi-pages", "Web-based application", "SEO/Google Search"], cta: "Get Started" },
+        { name: "Small Business", popular: true, price: "Rp8M", priceNote: "per project", features: ["Everything in Basic plus\u2026", "6 months support", "Unlimited product uploads"], cta: "Get Started" },
+        { name: "Business", popular: false, price: "Contact for", priceNote: "info", features: ["Everything in Small Business plus\u2026", "Free server & domain for 3 years", "Lifetime support", "Multi-platform application", "Enhanced SEO/Google Search"], cta: "Contact Us" },
+      ];
+
+      const FAQ = [
+        { id: "tech-stack", question: "What technologies do you use?", answer: "We select the stack per project. Common choices include React (Vite), Next.js, Laravel, SvelteKit for web; React Native for mobile; PostgreSQL, MySQL, MongoDB for data; and Docker, Nginx, Cloudflare for deployment. We also integrate real-time systems via WebSocket and MQTT." },
+        { id: "timeline", question: "How long does a typical project take?", answer: "A company profile website with CMS takes 2\u20134 weeks. Custom web or mobile applications typically take 8\u201316 weeks depending on scope. IoT and AI-integrated projects vary based on hardware and third-party complexity \u2014 we'll provide a detailed timeline after discovery." },
+        { id: "maintenance", question: "Do you provide maintenance after launch?", answer: "Every project includes post-launch support \u2014 3 months for Basic, 6 months for Small Business, and 12 months for Business plans. Extended maintenance is available for updates, bug fixes, security patches, and feature additions." },
+        { id: "integrations", question: "Can you integrate with our existing systems?", answer: "Yes. We've integrated payment gateways (MidTrans, Duitku, Mollie), WhatsApp APIs, AI services, accounting software, and ERPs. Small Business includes one external system integration; Business includes unlimited." },
+        { id: "multi-platform", question: "Do you support web, mobile, and PWA?", answer: "Yes. We build React Native apps for iOS and Android alongside web platforms, and can add PWA capabilities for near-native mobile experiences with push notifications, offline support, and hardware access on Android (BLE, GPS)." },
+        { id: "security", question: "How do you handle security and access control?", answer: "We implement modular role-based access control (RBAC), two-factor authentication (2FA), custom SSO integration, and security hardening with Fail2ban, Cloudflare, and Telegram-based alerting for production environments." },
+      ];
+
+      let openFaqId = null, mobileNavOpen = false;
+
       const ICONS = {
-        arrowUpRight:
-          '<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="square" stroke-linejoin="miter" d="M7 17L17 7M17 7H7M17 7v10"/></svg>',
-        check:
-          '<svg class="h-4 w-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="square" stroke-linejoin="miter" d="M5 13l4 4L19 7"/></svg>',
+        arrowUpRight: '<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="square" stroke-linejoin="miter" d="M7 17L17 7M17 7H7M17 7v10"/></svg>',
+        check: '<svg class="h-4 w-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="square" stroke-linejoin="miter" d="M5 13l4 4L19 7"/></svg>',
         plus: '<svg class="h-5 w-5 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="square" stroke-linejoin="miter" d="M12 4v16m8-8H4"/></svg>',
       };
 
       function renderServices() {
-        const d = DICT[currentLocale],
-          g = document.getElementById("services-grid");
-        g.innerHTML = d.services
-          .map(
-            (s, i) => `
-        <div class="col-span-12 sm:col-span-6 lg:col-span-4 border-r border-b border-black p-8 sm:p-10 flex flex-col">
-          <span class="mb-4 text-5xl font-bold text-ikb sm:text-6xl">${s.number}</span>
-          <h3 class="mb-3 text-lg font-bold tracking-tight text-black">${s.title}</h3>
-          <p class="mb-6 flex-1 text-sm leading-relaxed text-gray-500">${s.description}</p>
-          <span class="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-ikb">${s.learnMore} ${ICONS.arrowUpRight}</span>
-        </div>`,
-          )
-          .join("");
+        const g = document.getElementById("services-grid");
+        g.innerHTML = SERVICES.map((s) => `
+          <a href="services-swiss/${s.slug}.html" class="col-span-12 sm:col-span-6 lg:col-span-4 border-r border-b border-black p-8 sm:p-10 flex flex-col hover:bg-gray-50 transition-colors group">
+            <span class="mb-4 text-5xl font-bold text-ikb sm:text-6xl">${s.number}</span>
+            <h3 class="mb-3 text-lg font-bold tracking-tight text-black">${s.title}</h3>
+            <p class="mb-6 flex-1 text-sm leading-relaxed text-gray-500">${s.description}</p>
+            <span class="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-ikb group-hover:underline">Learn more ${ICONS.arrowUpRight}</span>
+          </a>
+        `).join("");
       }
 
       function renderTestimonials() {
-        const d = DICT[currentLocale],
-          g = document.getElementById("testimonials-grid");
-        g.innerHTML = d.testimonials
-          .map(
-            (t, i) => `
-        <figure class="col-span-12 sm:col-span-6 lg:col-span-4 border-r border-b border-black p-8 sm:p-10 flex flex-col">
-          <blockquote class="mb-8 flex-1">
-            <p class="text-sm leading-relaxed text-black sm:text-base">\u201c${t.quote}\u201d</p>
-          </blockquote>
-          <figcaption class="border-t border-black pt-5 flex items-center gap-3">
-            <div class="w-10 h-10 border border-black flex items-center justify-center shrink-0">
-              <span class="text-sm font-bold text-ikb">${t.initials}</span>
-            </div>
-            <div>
-              <p class="text-sm font-bold text-black">${t.name}</p>
-              <p class="text-xs uppercase tracking-wider text-gray-500">${t.role}</p>
-            </div>
-          </figcaption>
-        </figure>`,
-          )
-          .join("");
+        const g = document.getElementById("testimonials-grid");
+        g.innerHTML = TESTIMONIALS.map((t) => `
+          <figure class="col-span-12 sm:col-span-6 lg:col-span-4 border-r border-b border-black p-8 sm:p-10 flex flex-col">
+            <blockquote class="mb-8 flex-1">
+              <p class="text-sm leading-relaxed text-black sm:text-base">\u201c${t.quote}\u201d</p>
+            </blockquote>
+            <figcaption class="border-t border-black pt-5 flex items-center gap-3">
+              <div class="w-10 h-10 border border-black flex items-center justify-center shrink-0">
+                <span class="text-sm font-bold text-ikb">${t.initials}</span>
+              </div>
+              <div>
+                <p class="text-sm font-bold text-black">${t.name}</p>
+                <p class="text-xs uppercase tracking-wider text-gray-500">${t.role}</p>
+              </div>
+            </figcaption>
+          </figure>
+        `).join("");
       }
 
       function renderPricing() {
-        const d = DICT[currentLocale],
-          g = document.getElementById("pricing-grid");
-        g.innerHTML = d.pricing
-          .map(
-            (tier, i) => `
-        <div class="col-span-12 sm:col-span-6 lg:col-span-4 border-r border-b border-black p-8 sm:p-10 flex flex-col relative ${tier.popular ? "border-l-4 border-l-ikb" : ""}">
-          ${tier.popular ? `<span class="mb-4 inline-block border border-ikb bg-ikb px-3 py-1 text-xs font-medium uppercase tracking-wider text-white self-start">${d["pricing.popular"]}</span>` : `<span class="mb-4 inline-block text-xs font-medium uppercase tracking-wider text-gray-400">${tier.name}</span>`}
-          <h3 class="mb-2 text-2xl font-bold tracking-tight text-black">${tier.name}</h3>
-          <div class="mb-6">
-            <span class="text-4xl font-bold tracking-tight text-black">${tier.price}</span>
-            <span class="text-sm text-gray-500 ml-1">${tier.priceNote}</span>
+        const g = document.getElementById("pricing-grid");
+        g.innerHTML = PRICING.map((tier) => `
+          <div class="col-span-12 sm:col-span-6 lg:col-span-4 border-r border-b border-black p-8 sm:p-10 flex flex-col relative ${tier.popular ? "border-l-4 border-l-ikb" : ""}">
+            ${tier.popular ? '<span class="mb-4 inline-block border border-ikb bg-ikb px-3 py-1 text-xs font-medium uppercase tracking-wider text-white self-start">Popular</span>' : '<span class="mb-4 inline-block text-xs font-medium uppercase tracking-wider text-gray-400">' + tier.name + '</span>'}
+            <h3 class="mb-2 text-2xl font-bold tracking-tight text-black">${tier.name}</h3>
+            <div class="mb-6">
+              <span class="text-4xl font-bold tracking-tight text-black">${tier.price}</span>
+              <span class="text-sm text-gray-500 ml-1">${tier.priceNote}</span>
+            </div>
+            <ul class="mb-8 flex-1 space-y-3">
+              ${tier.features.map((f) => '<li class="flex items-start gap-3"><span class="text-ikb shrink-0 mt-0.5">' + ICONS.check + '</span><span class="text-sm text-black">' + f + '</span></li>').join("")}
+            </ul>
+            <a href="#cta" class="block w-full border text-center text-xs font-medium uppercase tracking-widest transition-colors duration-200 ${tier.popular ? 'border-ikb bg-ikb text-white hover:bg-ikb-dark' : 'border-ikb text-ikb hover:bg-ikb hover:text-white'} px-4 py-3">${tier.cta}</a>
           </div>
-          <ul class="mb-8 flex-1 space-y-3">
-            ${tier.features.map((f) => `<li class="flex items-start gap-3"><span class="text-ikb shrink-0 mt-0.5">${ICONS.check}</span><span class="text-sm text-black">${f}</span></li>`).join("")}
-          </ul>
-          <a href="#cta" class="block w-full border text-center text-xs font-medium uppercase tracking-widest transition-colors duration-200 ${tier.popular ? "border-ikb bg-ikb text-white hover:bg-ikb-dark" : "border-ikb text-ikb hover:bg-ikb hover:text-white"} px-4 py-3">${tier.cta}</a>
-        </div>`,
-          )
-          .join("");
+        `).join("");
       }
 
       function renderFaq() {
-        const d = DICT[currentLocale],
-          list = document.getElementById("faq-list");
+        const list = document.getElementById("faq-list");
         openFaqId = null;
-        list.innerHTML = d.faq
-          .map(
-            (item) => `
-        <div>
-          <h3><button id="faq-trigger-${item.id}" aria-expanded="false" aria-controls="faq-panel-${item.id}" data-faq-id="${item.id}" class="faq-trigger flex w-full items-center justify-between gap-4 py-5 text-left text-base font-bold text-black transition-colors hover:text-ikb">
-            <span>${item.question}</span>
-            <span class="faq-icon text-gray-400">${ICONS.plus}</span>
-          </button></h3>
-          <div id="faq-panel-${item.id}" role="region" aria-labelledby="faq-trigger-${item.id}" class="faq-panel"><div><p class="pb-5 text-sm leading-relaxed text-gray-500">${item.answer}</p></div></div>
-        </div>`,
-          )
-          .join("");
+        list.innerHTML = FAQ.map((item) => `
+          <div>
+            <h3><button id="faq-trigger-${item.id}" aria-expanded="false" aria-controls="faq-panel-${item.id}" data-faq-id="${item.id}" class="faq-trigger flex w-full items-center justify-between gap-4 py-5 text-left text-base font-bold text-black transition-colors hover:text-ikb">
+              <span>${item.question}</span>
+              <span class="faq-icon text-gray-400">${ICONS.plus}</span>
+            </button></h3>
+            <div id="faq-panel-${item.id}" role="region" aria-labelledby="faq-trigger-${item.id}" class="faq-panel"><div><p class="pb-5 text-sm leading-relaxed text-gray-500">${item.answer}</p></div></div>
+          </div>
+        `).join("");
         document.getElementById("faq-jsonld").textContent = JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: d.faq.map((i) => ({
+          mainEntity: FAQ.map((i) => ({
             "@type": "Question",
             name: i.question,
             acceptedAnswer: { "@type": "Answer", text: i.answer },
           })),
         });
-        list
-          .querySelectorAll(".faq-trigger")
-          .forEach((b) =>
-            b.addEventListener("click", () => toggleFaq(b.dataset.faqId)),
-          );
+        list.querySelectorAll(".faq-trigger").forEach((b) =>
+          b.addEventListener("click", () => toggleFaq(b.dataset.faqId)),
+        );
       }
 
       function toggleFaq(id) {
         const wasOpen = openFaqId === id;
-        document
-          .querySelectorAll(".faq-panel")
-          .forEach((p) => p.classList.remove("open"));
+        document.querySelectorAll(".faq-panel").forEach((p) => p.classList.remove("open"));
         document.querySelectorAll(".faq-trigger").forEach((t) => {
           t.setAttribute("aria-expanded", "false");
           t.querySelector(".faq-icon").style.transform = "";
         });
         if (!wasOpen) {
-          const p = document.getElementById(`faq-panel-${id}`),
-            t = document.getElementById(`faq-trigger-${id}`);
+          const p = document.getElementById("faq-panel-" + id),
+            t = document.getElementById("faq-trigger-" + id);
           if (p && t) {
             p.classList.add("open");
             t.setAttribute("aria-expanded", "true");
@@ -785,55 +591,13 @@
       }
 
       function renderFooterServices() {
-        const d = DICT[currentLocale],
-          ul = document.getElementById("footer-services");
-        ul.innerHTML = d.services
-          .map(
-            (s) =>
-              `<li><a href="#services" class="text-sm text-gray-500 transition-colors hover:text-black">${s.title}</a></li>`,
-          )
-          .join("");
-      }
-
-      function updateStaticText() {
-        const d = DICT[currentLocale];
-        document.querySelectorAll("[data-i18n]").forEach((el) => {
-          const k = el.getAttribute("data-i18n");
-          if (d[k] !== undefined) el.textContent = d[k];
-        });
-        document.title = d.meta.title;
-        document
-          .querySelector('meta[name="description"]')
-          .setAttribute("content", d.meta.description);
-        document.documentElement.lang = currentLocale;
-        [
-          ['meta[property="og:title"]', d.meta.title],
-          ['meta[property="og:description"]', d.meta.description],
-          ['meta[property="og:url"]', `https://dirait.id/${currentLocale}`],
-          [
-            'meta[property="og:image"]',
-            `https://dirait.id/images/og-home-${currentLocale}.jpg`,
-          ],
-          [
-            'meta[property="og:locale"]',
-            "en_US",
-          ],
-          ['meta[name="twitter:title"]', d.meta.title],
-          ['meta[name="twitter:description"]', d.meta.description],
-          [
-            'meta[name="twitter:image"]',
-            `https://dirait.id/images/og-home-${currentLocale}.jpg`,
-          ],
-        ].forEach(([s, v]) => {
-          const e = document.querySelector(s);
-          if (e) e.setAttribute("content", v);
-        });
-        const c = document.querySelector('link[rel="canonical"]');
-        if (c) c.setAttribute("href", `https://dirait.id/${currentLocale}`);
+        const ul = document.getElementById("footer-services");
+        ul.innerHTML = SERVICES.map((s) =>
+          '<li><a href="services-swiss/' + s.slug + '.html" class="text-sm text-gray-500 transition-colors hover:text-black">' + s.title + '</a></li>',
+        ).join("");
       }
 
       function render() {
-        updateStaticText();
         renderServices();
         renderTestimonials();
         renderPricing();
@@ -844,9 +608,7 @@
       function openMobileNav() {
         mobileNavOpen = true;
         document.getElementById("mobile-nav").style.display = "block";
-        document
-          .getElementById("mobile-menu-btn")
-          .setAttribute("aria-expanded", "true");
+        document.getElementById("mobile-menu-btn").setAttribute("aria-expanded", "true");
         requestAnimationFrame(() => {
           document.getElementById("mobile-backdrop").classList.add("open");
           document.getElementById("mobile-panel").classList.add("open");
@@ -857,29 +619,18 @@
         mobileNavOpen = false;
         document.getElementById("mobile-backdrop").classList.remove("open");
         document.getElementById("mobile-panel").classList.remove("open");
-        document
-          .getElementById("mobile-menu-btn")
-          .setAttribute("aria-expanded", "false");
+        document.getElementById("mobile-menu-btn").setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
         setTimeout(() => {
-          if (!mobileNavOpen)
-            document.getElementById("mobile-nav").style.display = "none";
+          if (!mobileNavOpen) document.getElementById("mobile-nav").style.display = "none";
         }, 300);
       }
 
       function bindEvents() {
-        document
-          .getElementById("mobile-menu-btn")
-          .addEventListener("click", openMobileNav);
-        document
-          .getElementById("mobile-close-btn")
-          .addEventListener("click", closeMobileNav);
-        document
-          .getElementById("mobile-backdrop")
-          .addEventListener("click", closeMobileNav);
-        document
-          .querySelectorAll(".mobile-link")
-          .forEach((l) => l.addEventListener("click", closeMobileNav));
+        document.getElementById("mobile-menu-btn").addEventListener("click", openMobileNav);
+        document.getElementById("mobile-close-btn").addEventListener("click", closeMobileNav);
+        document.getElementById("mobile-backdrop").addEventListener("click", closeMobileNav);
+        document.querySelectorAll(".mobile-link").forEach((l) => l.addEventListener("click", closeMobileNav));
         document.addEventListener("keydown", (e) => {
           if (e.key === "Escape" && mobileNavOpen) closeMobileNav();
         });
@@ -890,8 +641,7 @@
         render();
         bindEvents();
       }
-      if (document.readyState === "loading")
-        document.addEventListener("DOMContentLoaded", init);
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
       else init();
     </script>
   </body>

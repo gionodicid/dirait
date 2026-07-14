@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platform IoT Kustom — DIRAIT</title>
+    <meta name="description" content="Dashboard IoT yang mengubah data sensor menjadi keputusan operasional. Integrasi MQTT, WebSocket, multi-tenant, dan widget kustom untuk monitoring real-time." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://dirait.id/services/iot" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0C1B2E",
+              brand: "#2D6BFF",
+              "brand-hover": "#1B5AE0",
+              "brand-soft": "#E8F0FF",
+              background: "#F6F8FB",
+              surface: "#FFFFFF",
+              muted: "#5A6B80",
+              "muted-fg": "#7B8CA0",
+              border: "#DCE3EB",
+              foreground: "#0C1B2E",
+              "brand-fg": "#FFFFFF",
+            },
+            fontFamily: {
+              heading: ['"Space Grotesk"', "system-ui", "sans-serif"],
+              body: ['"DM Sans"', "system-ui", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      .network-grid { background-image: radial-gradient(circle, rgba(45,107,255,0.22) 1.2px, transparent 1.2px), linear-gradient(to right, rgba(45,107,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(45,107,255,0.05) 1px, transparent 1px); background-size: 48px 48px, 48px 48px, 48px 48px; }
+      .network-grid-light { background-image: radial-gradient(circle, rgba(45,107,255,0.1) 1px, transparent 1px); background-size: 32px 32px; }
+      .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+      .mobile-backdrop { opacity: 0; transition: opacity 0.25s ease; pointer-events: none; }
+      .mobile-backdrop.open { opacity: 1; pointer-events: auto; }
+      .mobile-panel { transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.22,1,0.36,1); }
+      .mobile-panel.open { transform: translateX(0); }
+      *:focus-visible { outline: 2px solid #2d6bff; outline-offset: 2px; }
+      @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .mobile-panel, .mobile-backdrop { transition: none; } html { scroll-behavior: auto; } }
+      @keyframes wa-pulse { 0%,100% { box-shadow: 0 4px 14px rgba(37,211,102,0.4); } 50% { box-shadow: 0 4px 24px rgba(37,211,102,0.6); } }
+      .wa-float { animation: wa-pulse 2.5s ease-in-out infinite; }
+      .wa-float:hover { animation: none; }
+      .brand-line { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #2d6bff; }
+    </style>
+  </head>
+  <body class="font-body bg-background text-foreground antialiased">
+    <header class="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
+      <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <a href="./../index.html" class="flex items-center gap-2.5">
+          <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <circle cx="16" cy="6" r="2.5" fill="#2D6BFF" /><circle cx="6" cy="16" r="2" fill="#2D6BFF" opacity=".6" /><circle cx="26" cy="16" r="2" fill="#2D6BFF" opacity=".6" /><circle cx="10" cy="26" r="1.8" fill="#2D6BFF" opacity=".4" /><circle cx="22" cy="26" r="1.8" fill="#2D6BFF" opacity=".4" /><circle cx="16" cy="16" r="2.5" fill="#2D6BFF" opacity=".8" />
+            <line x1="16" y1="6" x2="6" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" /><line x1="16" y1="6" x2="26" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" /><line x1="6" y1="16" x2="10" y2="26" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="26" y1="16" x2="22" y2="26" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="10" y1="26" x2="22" y2="26" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="16" y1="6" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".5" /><line x1="6" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="26" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="16" y1="16" x2="10" y2="26" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="16" y1="16" x2="22" y2="26" stroke="#2D6BFF" stroke-width=".8" opacity=".3" />
+          </svg>
+          <div class="flex flex-col leading-none">
+            <span class="font-heading text-lg font-bold tracking-tight text-primary">DIRAIT</span>
+            <span class="font-body text-[9px] font-medium uppercase tracking-[.2em] text-muted">Est. 2023</span>
+          </div>
+        </a>
+        <nav class="hidden items-center gap-8 lg:flex" aria-label="Navigasi utama">
+          <a href="./../index.html#services" class="font-body text-sm font-medium text-muted-fg transition-colors hover:text-brand">Layanan</a>
+          <a href="./../index.html#pricing" class="font-body text-sm font-medium text-muted-fg transition-colors hover:text-brand">Harga</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="./../index.html#cta" class="hidden rounded-md bg-brand px-4 py-2 font-body text-sm font-semibold text-brand-fg transition-colors hover:bg-brand-hover lg:inline-flex">Hubungi Kami</a>
+          <button id="mobile-menu-btn" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground lg:hidden" aria-label="Buka menu" aria-expanded="false">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div id="mobile-nav" class="fixed inset-0 z-[60] lg:hidden" role="dialog" aria-modal="true" aria-label="Menu navigasi">
+      <div id="mobile-backdrop" class="mobile-backdrop absolute inset-0 bg-primary/30 backdrop-blur-sm"></div>
+      <div id="mobile-panel" class="mobile-panel absolute right-0 top-0 flex h-full w-full max-w-sm flex-col border-l border-border bg-background">
+        <div class="flex items-center justify-between border-b border-border px-4 py-4">
+          <div class="flex items-center gap-2">
+            <svg class="h-7 w-7" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <circle cx="16" cy="6" r="2.5" fill="#2D6BFF" /><circle cx="6" cy="16" r="2" fill="#2D6BFF" opacity=".6" /><circle cx="26" cy="16" r="2" fill="#2D6BFF" opacity=".6" /><circle cx="16" cy="16" r="2.5" fill="#2D6BFF" opacity=".8" />
+              <line x1="16" y1="6" x2="6" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" /><line x1="16" y1="6" x2="26" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" /><line x1="6" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="26" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" />
+            </svg>
+            <span class="font-heading text-lg font-bold text-primary">DIRAIT</span>
+          </div>
+          <button id="mobile-close-btn" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border" aria-label="Tutup menu">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <nav class="flex-1 px-4 py-6" aria-label="Navigasi mobile">
+          <ul class="space-y-1">
+            <li><a href="./../index.html#services" class="mobile-link block rounded-md px-3 py-3 font-body text-base font-medium text-foreground transition-colors hover:bg-brand-soft">Layanan</a></li>
+            <li><a href="./../index.html#pricing" class="mobile-link block rounded-md px-3 py-3 font-body text-base font-medium text-foreground transition-colors hover:bg-brand-soft">Harga</a></li>
+          </ul>
+        </nav>
+        <div class="border-t border-border px-4 py-4 space-y-3">
+          <a href="./../index.html#cta" class="mobile-link block rounded-md bg-brand px-3 py-2.5 text-center font-body text-sm font-semibold text-brand-fg">Hubungi Kami</a>
+        </div>
+      </div>
+    </div>
+
+    <main id="main-content">
+      <!-- ========== HERO ========== -->
+      <section class="relative overflow-hidden border-b border-border" aria-label="Hero">
+        <div class="pointer-events-none absolute inset-0 network-grid" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-brand/[.06] blur-3xl" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-brand/[.03] blur-3xl" aria-hidden="true"></div>
+        <div class="brand-line hidden sm:block" aria-hidden="true" style="left: max(1rem, calc((100vw - 80rem) / 2 + 1rem))"></div>
+        <div class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
+          <div class="max-w-3xl sm:pl-8">
+            <p class="mb-4 font-body text-sm font-medium uppercase tracking-widest text-brand">Platform IoT</p>
+            <h1 class="font-heading text-4xl font-bold tracking-tight text-balance text-primary sm:text-5xl lg:text-6xl">
+              Dashboard IoT yang Mengubah Data Sensor Menjadi Keputusan
+            </h1>
+            <p class="mt-6 max-w-xl font-body text-lg leading-relaxed text-muted-fg">
+              Platform monitoring real-time dengan integrasi MQTT, WebSocket, dan arsitektur multi-tenant — menghubungkan hardware dan software dalam satu ekosistem yang andal.
+            </p>
+            <div class="mt-10 flex flex-wrap items-center gap-4">
+              <a href="./../index.html#cta" class="inline-flex h-12 items-center rounded-md bg-brand px-8 text-base font-semibold text-brand-fg transition-colors hover:bg-brand-hover shadow-sm shadow-brand/20">Diskusikan Proyek IoT</a>
+              <a href="#features" class="inline-flex h-12 items-center rounded-md border border-primary/15 bg-transparent px-8 text-base font-medium text-primary transition-colors hover:bg-brand-soft hover:border-brand/30">Lihat Fitur</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== FEATURES / WHAT WE BUILD ========== -->
+      <section id="features" class="relative border-b border-border py-20 sm:py-24">
+        <div class="pointer-events-none absolute inset-0 network-grid-light opacity-60" aria-hidden="true"></div>
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="reveal mb-12 max-w-2xl">
+            <p class="mb-3 font-body text-sm font-medium uppercase tracking-widest text-brand">Apa yang Kami Bangun</p>
+            <h2 class="font-heading text-3xl font-semibold tracking-tight text-primary sm:text-4xl">Fitur Unggulan Platform IoT</h2>
+            <p class="mt-3 font-body text-base leading-relaxed text-muted-fg">Dashboard, integrasi protokol, dan sistem alert yang dirancang untuk kebutuhan monitoring dan kontrol perangkat IoT Anda.</p>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
+            <div class="reveal group flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8">
+              <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              </div>
+              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">Dashboard Real-Time</h3>
+              <p class="flex-1 font-body text-sm leading-relaxed text-muted-fg">Visualisasi data sensor secara langsung dengan grafik dan widget yang dapat dikustomisasi. Pantau suhu, kelembaban, tekanan, dan metrik lainnya dalam hitungan detik.</p>
+            </div>
+            <div class="reveal group flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8" style="transition-delay:60ms">
+              <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </div>
+              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">Integrasi MQTT</h3>
+              <p class="flex-1 font-body text-sm leading-relaxed text-muted-fg">Koneksi broker-based menggunakan Mosquitto untuk komunikasi device-to-cloud yang ringan dan andal. Mendukung publish/subscribe pattern dengan QoS bertingkat.</p>
+            </div>
+            <div class="reveal group flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8" style="transition-delay:120ms">
+              <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">WebSocket Events</h3>
+              <p class="flex-1 font-body text-sm leading-relaxed text-muted-fg">Pengiriman event secara real-time ke browser dan aplikasi client melalui Laravel Echo Server. Data sensor dan notifikasi langsung sampai tanpa perlu polling.</p>
+            </div>
+            <div class="reveal group flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8" style="transition-delay:180ms">
+              <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              </div>
+              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">Multi-Tenant</h3>
+              <p class="flex-1 font-body text-sm leading-relaxed text-muted-fg">Struktur data berbasis tenant yang memungkinkan satu instance melayani banyak klien dengan isolasi data penuh. Setiap tenant memiliki device, user, dan konfigurasi sendiri.</p>
+            </div>
+            <div class="reveal group flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8" style="transition-delay:240ms">
+              <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+              </div>
+              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">Alert & Monitoring</h3>
+              <p class="flex-1 font-body text-sm leading-relaxed text-muted-fg">Notifikasi berbasis threshold yang dapat dikonfigurasi. Kirim alert otomatis melalui Telegram, email, atau WebSocket ketika nilai sensor melebihi batas yang ditentukan.</p>
+            </div>
+            <div class="reveal group flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8" style="transition-delay:300ms">
+              <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+              </div>
+              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">Widget Kustom</h3>
+              <p class="flex-1 font-body text-sm leading-relaxed text-muted-fg">Drag-and-resize widget yang memungkinkan pengguna menyusun dashboard sesuai preferensi. Tampilan fleksibel dengan chart, gauge, indikator, dan tabel yang bisa diatur ulang.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CASE STUDIES ========== -->
+      <section id="case-studies" class="border-t border-border bg-surface py-20 sm:py-24" aria-label="Studi Kasus">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="reveal mb-12 max-w-2xl">
+            <p class="mb-3 font-body text-sm font-medium uppercase tracking-widest text-brand">Studi Kasus</p>
+            <h2 class="font-heading text-3xl font-semibold tracking-tight text-primary sm:text-4xl">Proyek IoT yang Telah Kami Selesaikan</h2>
+            <p class="mt-3 font-body text-base leading-relaxed text-muted-fg">Dua implementasi nyata yang menunjukkan kemampuan tim dalam menghubungkan hardware dan software.</p>
+          </div>
+          <div class="grid gap-6 sm:gap-8 lg:grid-cols-2">
+            <article class="reveal flex flex-col border border-border bg-background p-6 transition-all duration-200 hover:border-brand/30 sm:p-8">
+              <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg>
+              </div>
+              <h3 class="mb-3 font-heading text-xl font-semibold text-primary">IoT Data Observer Dashboard</h3>
+              <p class="mb-4 font-body text-sm leading-relaxed text-muted-fg">Dashboard IoT dinamis dengan widget yang dapat dikustomisasi oleh pengguna. Menggabungkan protokol MQTT untuk pengiriman data sensor dan WebSocket untuk update real-time ke browser. Dilengkapi RBAC (Role-Based Access Control) dan autentikasi dua faktor (2FA).</p>
+              <ul class="mb-6 space-y-2">
+                <li class="flex items-start gap-2.5">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span class="font-body text-sm text-foreground">Kolaborasi erat dengan hardware engineer untuk integrasi sensor</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span class="font-body text-sm text-foreground">Tumpukan teknologi: React, PostgreSQL, MQTT, WebSocket</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span class="font-body text-sm text-foreground">Widget drag-and-resize untuk tampilan dashboard yang fleksibel</span>
+                </li>
+              </ul>
+              <div class="mt-auto flex flex-wrap gap-2">
+                <span class="rounded-md bg-brand-soft px-2.5 py-1 font-body text-xs font-medium text-brand">React</span>
+                <span class="rounded-md bg-brand-soft px-2.5 py-1 font-body text-xs font-medium text-brand">PostgreSQL</span>
+                <span class="rounded-md bg-brand-soft px-2.5 py-1 font-body text-xs font-medium text-brand">MQTT</span>
+                <span class="rounded-md bg-brand-soft px-2.5 py-1 font-body text-xs font-medium text-brand">WebSocket</span>
+              </div>
+            </article>
+            <article class="reveal flex flex-col border border-border bg-background p-6 transition-all duration-200 hover:border-brand/30 sm:p-8" style="transition-delay:80ms">
+              <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-soft text-brand">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <h3 class="mb-3 font-heading text-xl font-semibold text-primary">Uptime Monitoring & Alert System</h3>
+              <p class="mb-4 font-body text-sm leading-relaxed text-muted-fg">Sistem monitoring uptime terjadwal yang secara otomatis memeriksa ketersediaan layanan dan perangkat. Mengirimkan notifikasi langsung ke Telegram ketika terjadi downtime atau anomali, dengan otomatisasi berbasis cron.</p>
+              <ul class="mb-6 space-y-2">
+                <li class="flex items-start gap-2.5">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span class="font-body text-sm text-foreground">Pengecekan uptime otomatis dengan jadwal cron yang fleksibel</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span class="font-body text-sm text-foreground">Notifikasi real-time via Telegram Bot untuk respons cepat</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  <span class="font-body text-sm text-foreground">Dibangun dengan shell scripting dan Playwright untuk pengujian</span>
+                </li>
+              </ul>
+              <div class="mt-auto flex flex-wrap gap-2">
+                <span class="rounded-md bg-brand-soft px-2.5 py-1 font-body text-xs font-medium text-brand">Shell Scripting</span>
+                <span class="rounded-md bg-brand-soft px-2.5 py-1 font-body text-xs font-medium text-brand">Playwright</span>
+                <span class="rounded-md bg-brand-soft px-2.5 py-1 font-body text-xs font-medium text-brand">Telegram Bot API</span>
+                <span class="rounded-md bg-brand-soft px-2.5 py-1 font-body text-xs font-medium text-brand">Cron</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== APPROACH ========== -->
+      <section class="relative border-y border-border py-20 sm:py-24" aria-label="Pendekatan">
+        <div class="pointer-events-none absolute inset-0 network-grid-light opacity-60" aria-hidden="true"></div>
+        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="reveal mx-auto mb-14 max-w-2xl text-center">
+            <p class="mb-3 font-body text-sm font-medium uppercase tracking-widest text-brand">Pendekatan Kami</p>
+            <h2 class="font-heading text-3xl font-semibold tracking-tight text-primary sm:text-4xl">Tiga Langkah Menuju Platform IoT</h2>
+          </div>
+          <div class="grid gap-5 sm:grid-cols-3 sm:gap-6">
+            <div class="reveal flex flex-col items-center text-center">
+              <div class="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-brand text-white shadow-lg shadow-brand/20">
+                <span class="font-heading text-2xl font-bold">1</span>
+              </div>
+              <h3 class="mb-2 font-heading text-lg font-semibold text-primary">Discovery & Arsitektur</h3>
+              <p class="font-body text-sm leading-relaxed text-muted-fg">Kami mempelajari kebutuhan sensor dan perangkat Anda, lalu merancang arsitektur sistem — mulai dari protokol komunikasi hingga struktur database tenant.</p>
+            </div>
+            <div class="reveal flex flex-col items-center text-center" style="transition-delay:80ms">
+              <div class="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-brand text-white shadow-lg shadow-brand/20">
+                <span class="font-heading text-2xl font-bold">2</span>
+              </div>
+              <h3 class="mb-2 font-heading text-lg font-semibold text-primary">Integrasi & Dashboard</h3>
+              <p class="font-body text-sm leading-relaxed text-muted-fg">Koneksikan hardware dengan platform melalui MQTT, bangun dashboard real-time, dan konfigurasikan sistem alert sesuai threshold operasional Anda.</p>
+            </div>
+            <div class="reveal flex flex-col items-center text-center" style="transition-delay:160ms">
+              <div class="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-brand text-white shadow-lg shadow-brand/20">
+                <span class="font-heading text-2xl font-bold">3</span>
+              </div>
+              <h3 class="mb-2 font-heading text-lg font-semibold text-primary">Deploy & Monitoring</h3>
+              <p class="font-body text-sm leading-relaxed text-muted-fg">Deploy ke production, konfigurasi monitoring uptime, dan pastikan sistem berjalan dengan dokumentasi lengkap serta pelatihan tim operasional Anda.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CTA ========== -->
+      <section class="relative overflow-hidden border-t border-border bg-primary py-20 sm:py-24" aria-label="CTA">
+        <div class="pointer-events-none absolute inset-0" style="background-image: radial-gradient(circle, rgba(45,107,255,0.12) 1px, transparent 1px); background-size: 40px 40px;" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/10 blur-3xl" aria-hidden="true"></div>
+        <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 class="font-heading text-3xl font-bold tracking-tight text-brand-fg sm:text-4xl">Siap Membangun Platform IoT?</h2>
+          <p class="mx-auto mt-4 max-w-lg font-body text-base leading-relaxed text-brand-fg/60">
+            Ceritakan kebutuhan hardware dan data yang ingin Anda monitor. Kami akan rancang solusi yang tepat — tanpa kewajiban.
+          </p>
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="inline-flex h-12 items-center gap-2 rounded-md bg-brand px-8 text-base font-semibold text-brand-fg transition-colors hover:bg-brand-hover shadow-lg shadow-brand/20">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              Mulai di WhatsApp
+            </a>
+            <a href="mailto:hello@dirait.id" class="inline-flex h-12 items-center gap-2 rounded-md border border-brand-fg/15 px-8 text-base font-medium text-brand-fg transition-colors hover:bg-brand-fg/10">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              Kirim Email
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-border bg-surface" role="contentinfo">
+      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          <div class="sm:col-span-2 lg:col-span-1">
+            <a href="./../index.html" class="flex items-center gap-2">
+              <svg class="h-7 w-7" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <circle cx="16" cy="6" r="2.5" fill="#2D6BFF" /><circle cx="6" cy="16" r="2" fill="#2D6BFF" opacity=".6" /><circle cx="26" cy="16" r="2" fill="#2D6BFF" opacity=".6" /><circle cx="16" cy="16" r="2.5" fill="#2D6BFF" opacity=".8" />
+                <line x1="16" y1="6" x2="6" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" /><line x1="16" y1="6" x2="26" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" /><line x1="6" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="26" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" />
+              </svg>
+              <div class="flex flex-col leading-none">
+                <span class="font-heading text-lg font-bold tracking-tight text-primary">DIRAIT</span>
+                <span class="font-body text-[8px] font-medium uppercase tracking-[.18em] text-muted">Est. 2023</span>
+              </div>
+            </a>
+            <p class="mt-3 max-w-xs font-body text-sm leading-relaxed text-muted-fg">
+              Software house berbasis Jakarta yang membangun platform bisnis kustom untuk perusahaan di Asia Tenggara dan Eropa.
+            </p>
+          </div>
+          <div>
+            <h3 class="mb-4 font-heading text-sm font-semibold uppercase tracking-wider text-muted">Layanan</h3>
+            <ul class="space-y-2.5">
+              <li><a href="company-profile.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">Company Profile</a></li>
+              <li><a href="crm.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">CRM</a></li>
+              <li><a href="hris.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">HRIS</a></li>
+              <li><a href="pos.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">POS</a></li>
+              <li><a href="wms.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">WMS</a></li>
+              <li><a href="iot.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">Platform IoT</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-4 font-heading text-sm font-semibold uppercase tracking-wider text-muted">Perusahaan</h3>
+            <ul class="space-y-2.5">
+              <li><a href="./../index.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">Beranda</a></li>
+              <li><a href="#" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">Blog</a></li>
+              <li><a href="#" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">Kebijakan Privasi</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-4 font-heading text-sm font-semibold uppercase tracking-wider text-muted">Kontak</h3>
+            <address class="not-italic space-y-2.5">
+              <p class="font-body text-sm text-foreground/70">Jl. Sudirman No. 53, Senayan, Jakarta Selatan 12190</p>
+              <p><a href="mailto:hello@dirait.id" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">hello@dirait.id</a></p>
+              <p><a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">+62 812-3456-7890</a></p>
+            </address>
+          </div>
+        </div>
+        <div class="mt-12 border-t border-border pt-6">
+          <p class="font-body text-xs text-muted-fg">&copy; 2025 DIRAIT. Hak cipta dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="wa-float fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-transform hover:scale-110" aria-label="Hubungi kami via WhatsApp">
+      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+
+    <script>
+      let mobileNavOpen = false;
+
+      function openMobileNav() {
+        mobileNavOpen = true;
+        document.getElementById("mobile-nav").style.display = "block";
+        document.getElementById("mobile-menu-btn").setAttribute("aria-expanded", "true");
+        requestAnimationFrame(() => {
+          document.getElementById("mobile-backdrop").classList.add("open");
+          document.getElementById("mobile-panel").classList.add("open");
+        });
+        document.body.style.overflow = "hidden";
+      }
+      function closeMobileNav() {
+        mobileNavOpen = false;
+        document.getElementById("mobile-backdrop").classList.remove("open");
+        document.getElementById("mobile-panel").classList.remove("open");
+        document.getElementById("mobile-menu-btn").setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+        setTimeout(() => {
+          if (!mobileNavOpen) document.getElementById("mobile-nav").style.display = "none";
+        }, 300);
+      }
+
+      let revealObserver = null;
+      function observeRevealElements() {
+        if (revealObserver) revealObserver.disconnect();
+        revealObserver = new IntersectionObserver(
+          (e) => {
+            e.forEach((en) => {
+              if (en.isIntersecting) {
+                en.target.classList.add("visible");
+                revealObserver.unobserve(en.target);
+              }
+            });
+          },
+          { threshold: 0.08, rootMargin: "0px 0px -30px 0px" }
+        );
+        document.querySelectorAll(".reveal:not(.visible)").forEach((el) => revealObserver.observe(el));
+      }
+
+      function bindEvents() {
+        document.getElementById("mobile-menu-btn").addEventListener("click", openMobileNav);
+        document.getElementById("mobile-close-btn").addEventListener("click", closeMobileNav);
+        document.getElementById("mobile-backdrop").addEventListener("click", closeMobileNav);
+        document.querySelectorAll(".mobile-link").forEach((l) => l.addEventListener("click", closeMobileNav));
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && mobileNavOpen) closeMobileNav();
+        });
+      }
+
+      function init() {
+        document.getElementById("mobile-nav").style.display = "none";
+        observeRevealElements();
+        bindEvents();
+      }
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+      else init();
+    </script>
+  </body>
+</html>
