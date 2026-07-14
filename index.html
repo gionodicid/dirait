@@ -3,478 +3,613 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DIRAIT — Custom Software Development in Jakarta</title>
-    <meta name="description" content="DIRAIT builds custom POS, HRIS, CRM, WMS, and IoT platforms for businesses in Indonesia, Malaysia, Singapore, and Europe. ISO 27001 certified." />
+    <title>Custom Software Development Agency Jakarta | Web &amp; Mobile Apps | DIRAIT</title>
+    <meta
+      name="description"
+      content="DIRAIT builds custom web, mobile, and IoT software for businesses in Indonesia, Singapore, and Europe. React, React Native, Laravel, Next.js — 30+ projects delivered. Free consultation."
+    />
     <meta name="robots" content="index, follow" />
+    <meta
+      name="keywords"
+      content="custom software development, web development agency Jakarta, mobile app development, React developer, React Native agency, Laravel development, Next.js development, IoT platform development, AI integration, software agency Indonesia"
+    />
     <link rel="canonical" href="https://dirait.id/en" />
     <link rel="alternate" hreflang="en" href="https://dirait.id/en" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="DIRAIT" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="DIRAIT — Custom Software Development in Jakarta" />
-    <meta property="og:description" content="DIRAIT builds custom POS, HRIS, CRM, WMS, and IoT platforms for businesses in Indonesia, Malaysia, Singapore, and Europe." />
+    <meta
+      property="og:title"
+      content="Custom Software Development Agency Jakarta | Web &amp; Mobile Apps | DIRAIT"
+    />
+    <meta
+      property="og:description"
+      content="DIRAIT builds custom web, mobile, and IoT software for businesses in Indonesia, Singapore, and Europe. React, React Native, Laravel, Next.js — 30+ projects delivered. Free consultation."
+    />
     <meta property="og:url" content="https://dirait.id/en" />
-    <meta property="og:image" content="https://dirait.id/images/og-home-en.jpg" />
+    <meta
+      property="og:image"
+      content="https://dirait.id/images/og-home-en.jpg"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="DIRAIT — Custom Software Development in Jakarta" />
-    <meta name="twitter:description" content="DIRAIT builds custom POS, HRIS, CRM, WMS, and IoT platforms for businesses in Indonesia, Malaysia, Singapore, and Europe." />
-    <meta name="twitter:image" content="https://dirait.id/images/og-home-en.jpg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <meta
+      name="twitter:title"
+      content="Custom Software Development Agency Jakarta | Web &amp; Mobile Apps | DIRAIT"
+    />
+    <meta
+      name="twitter:description"
+      content="DIRAIT builds custom web, mobile, and IoT software for businesses in Indonesia, Singapore, and Europe. React, React Native, Laravel, Next.js — 30+ projects delivered. Free consultation."
+    />
+    <meta
+      name="twitter:image"
+      content="https://dirait.id/images/og-home-en.jpg"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              primary: "#0C1B2E", brand: "#2D6BFF", "brand-hover": "#1B5AE0", "brand-soft": "#E8F0FF",
-              background: "#F6F8FB", surface: "#FFFFFF", muted: "#5A6B80", "muted-fg": "#7B8CA0",
-              border: "#DCE3EB", foreground: "#0C1B2E", "brand-fg": "#FFFFFF",
+              ikb: "#002FA7",
+              "ikb-dark": "#002080",
             },
             fontFamily: {
-              heading: ['"Space Grotesk"', "system-ui", "sans-serif"],
-              body: ['"DM Sans"', "system-ui", "sans-serif"],
+              sans: ['"Helvetica Neue"', "Helvetica", "Arial", "sans-serif"],
             },
           },
         },
       };
     </script>
     <style>
-      html { scroll-behavior: smooth; }
-      body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-      .network-grid { background-image: radial-gradient(circle, rgba(45,107,255,0.22) 1.2px, transparent 1.2px), linear-gradient(to right, rgba(45,107,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(45,107,255,0.05) 1px, transparent 1px); background-size: 48px 48px, 48px 48px, 48px 48px; }
-      .network-grid-light { background-image: radial-gradient(circle, rgba(45,107,255,0.1) 1px, transparent 1px); background-size: 32px 32px; }
-      .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
-      .reveal.visible { opacity: 1; transform: translateY(0); }
-      .faq-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.25s ease-out; }
+      html { scroll-behavior: auto; }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .reveal { opacity: 1; transform: none; }
+
+      .faq-panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.2s ease;
+      }
       .faq-panel.open { grid-template-rows: 1fr; }
       .faq-panel > div { overflow: hidden; }
-      .mobile-backdrop { opacity: 0; transition: opacity 0.25s ease; pointer-events: none; }
+
+      .mobile-backdrop {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s ease;
+      }
       .mobile-backdrop.open { opacity: 1; pointer-events: auto; }
-      .mobile-panel { transform: translateX(100%); transition: transform 0.3s cubic-bezier(0.22,1,0.36,1); }
+
+      .mobile-panel {
+        transform: translateX(100%);
+        transition: transform 0.2s ease;
+      }
       .mobile-panel.open { transform: translateX(0); }
+
       .text-balance { text-wrap: balance; }
-      *:focus-visible { outline: 2px solid #2d6bff; outline-offset: 2px; }
-      @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .faq-panel, .mobile-panel, .mobile-backdrop { transition: none; } html { scroll-behavior: auto; } .node-float { animation: none !important; } }
-      @keyframes wa-pulse { 0%,100% { box-shadow: 0 4px 14px rgba(37,211,102,0.4); } 50% { box-shadow: 0 4px 24px rgba(37,211,102,0.6); } }
-      .wa-float { animation: wa-pulse 2.5s ease-in-out infinite; }
-      .wa-float:hover { animation: none; }
-      .brand-line { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #2d6bff; }
-      .node-float { border-radius: 50%; position: absolute; pointer-events: none; }
-      .n1 { width: 6px; height: 6px; background: rgba(45,107,255,0.4); top: 18%; right: 20%; animation: nd1 18s ease-in-out infinite; }
-      .n2 { width: 4px; height: 4px; background: rgba(45,107,255,0.3); top: 35%; right: 35%; animation: nd2 22s ease-in-out infinite; }
-      .n3 { width: 8px; height: 8px; background: rgba(45,107,255,0.2); top: 55%; right: 15%; animation: nd3 20s ease-in-out infinite; }
-      .n4 { width: 5px; height: 5px; background: rgba(45,107,255,0.35); top: 70%; right: 40%; animation: nd1 24s ease-in-out infinite reverse; }
-      .n5 { width: 3px; height: 3px; background: rgba(45,107,255,0.5); top: 25%; right: 50%; animation: ndp 4s ease-in-out infinite; }
-      .n6 { width: 5px; height: 5px; background: rgba(45,107,255,0.25); top: 80%; right: 25%; animation: nd2 16s ease-in-out infinite reverse; }
-      .hero-lines { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-      .hero-lines line { stroke: rgba(45,107,255,0.08); stroke-width: 1; }
-      .logo-item { display: flex; align-items: center; justify-content: center; opacity: 0.4; transition: opacity 0.2s ease; filter: grayscale(100%); }
-      .logo-item:hover { opacity: 0.7; filter: grayscale(50%); }
-      @keyframes client-marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-      .client-marquee { position: relative; overflow: hidden; min-width: 0; flex: 1; }
-      .client-marquee-track { display: flex; align-items: center; width: max-content; animation: client-marquee-scroll 24s linear infinite; will-change: transform; }
-      .client-marquee:hover .client-marquee-track { animation-play-state: paused; }
-      .client-marquee-group { display: flex; align-items: center; gap: 3.5rem; flex: 0 0 auto; padding-right: 3.5rem; white-space: nowrap; }
-      .client-marquee .logo-item { flex: 0 0 auto; }
-      @keyframes nd1 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(12px,-8px); } 50% { transform: translate(-6px,-14px); } 75% { transform: translate(-10px,4px); } }
-      @keyframes nd2 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(-10px,6px); } 50% { transform: translate(8px,12px); } 75% { transform: translate(14px,-6px); } }
-      @keyframes nd3 { 0%,100% { transform: translate(0,0); } 33% { transform: translate(8px,10px); } 66% { transform: translate(-12px,-4px); } }
-      @keyframes ndp { 0%,100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 1; transform: scale(1.15); } }
+
+      *:focus-visible {
+        outline: 2px solid #002FA7;
+        outline-offset: 2px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .faq-panel, .mobile-panel, .mobile-backdrop { transition: none; }
+        html { scroll-behavior: auto; }
+      }
+
+      .swiss-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0;
+      }
+
+      .grid-cell {
+        border: 1px solid #E5E5E5;
+      }
+
+      .grid-cell-b {
+        border: 1px solid #000;
+      }
+
+      .swiss-line {
+        height: 1px;
+        background: #000;
+        width: 100%;
+      }
+
+      .ikb-line {
+        height: 4px;
+        background: #002FA7;
+        width: 3rem;
+      }
+
+      .cta-grid-bg {
+        background-image:
+          linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+        background-size: 48px 48px;
+      }
     </style>
+
     <script type="application/ld+json">
-      [{ "@context": "https://schema.org", "@type": "Organization", "@id": "https://dirait.id/#organization", "name": "DIRAIT", "url": "https://dirait.id", "logo": "https://dirait.id/images/logo.svg", "description": "Jakarta-based software house building custom POS, HRIS, CRM, WMS, and IoT platforms.", "foundingDate": "2023", "address": { "@type": "PostalAddress", "addressLocality": "Jakarta", "addressCountry": "ID" }, "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "availableLanguage": ["English", "Indonesian"] } },
-      { "@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://dirait.id/#localbusiness", "name": "DIRAIT", "image": "https://dirait.id/images/og-home-en.jpg", "address": { "@type": "PostalAddress", "addressLocality": "Jakarta", "addressRegion": "DKI Jakarta", "addressCountry": "ID" }, "url": "https://dirait.id/en", "priceRange": "$$" },
-      { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dirait.id/en" }] }
-    ]</script>
-    <script id="faq-jsonld" type="application/ld+json">{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [] }</script>
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://dirait.id/#organization",
+        "name": "DIRAIT",
+        "url": "https://dirait.id",
+        "logo": "https://dirait.id/images/logo.svg",
+        "description": "Jakarta-based software house building custom POS, HRIS, CRM, WMS, and IoT platforms.",
+        "foundingDate": "2023",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Jakarta",
+          "addressCountry": "ID"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "availableLanguage": ["English", "Indonesian"]
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://dirait.id/#localbusiness",
+        "name": "DIRAIT",
+        "image": "https://dirait.id/images/og-home-id.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Jakarta",
+          "addressRegion": "DKI Jakarta",
+          "addressCountry": "ID"
+        },
+        "url": "https://dirait.id/id",
+        "priceRange": "$$"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dirait.id/en"
+          }
+        ]
+      }
+    </script>
+    <script id="faq-jsonld" type="application/ld+json">
+      { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [] }
+    </script>
   </head>
-  <body class="font-body bg-background text-foreground antialiased">
-    <header class="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
-      <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#" class="flex items-center gap-2.5">
-          <svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <circle cx="16" cy="6" r="2.5" fill="#2D6BFF" /><circle cx="6" cy="16" r="2" fill="#2D6BFF" opacity=".6" /><circle cx="26" cy="16" r="2" fill="#2D6BFF" opacity=".6" />
-            <circle cx="10" cy="26" r="1.8" fill="#2D6BFF" opacity=".4" /><circle cx="22" cy="26" r="1.8" fill="#2D6BFF" opacity=".4" /><circle cx="16" cy="16" r="2.5" fill="#2D6BFF" opacity=".8" />
-            <line x1="16" y1="6" x2="6" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" /><line x1="16" y1="6" x2="26" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" />
-            <line x1="6" y1="16" x2="10" y2="26" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="26" y1="16" x2="22" y2="26" stroke="#2D6BFF" stroke-width=".8" opacity=".3" />
-            <line x1="10" y1="26" x2="22" y2="26" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="16" y1="6" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".5" />
-            <line x1="6" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="26" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" />
-            <line x1="16" y1="16" x2="10" y2="26" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="16" y1="16" x2="22" y2="26" stroke="#2D6BFF" stroke-width=".8" opacity=".3" />
+
+  <body class="font-sans antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header class="border-b border-black bg-white">
+      <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8">
+        <a href="#" class="flex items-center gap-3">
+          <svg class="h-7 w-7" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <circle cx="16" cy="6" r="2.5" fill="#000" />
+            <circle cx="6" cy="16" r="2" fill="#002FA7" />
+            <circle cx="26" cy="16" r="2" fill="#002FA7" />
+            <circle cx="10" cy="26" r="1.8" fill="#000" opacity=".4" />
+            <circle cx="22" cy="26" r="1.8" fill="#000" opacity=".4" />
+            <circle cx="16" cy="16" r="2.5" fill="#000" />
+            <line x1="16" y1="6" x2="6" y2="16" stroke="#000" stroke-width=".6" opacity=".3" />
+            <line x1="16" y1="6" x2="26" y2="16" stroke="#000" stroke-width=".6" opacity=".3" />
+            <line x1="6" y1="16" x2="10" y2="26" stroke="#000" stroke-width=".6" opacity=".25" />
+            <line x1="26" y1="16" x2="22" y2="26" stroke="#000" stroke-width=".6" opacity=".25" />
+            <line x1="10" y1="26" x2="22" y2="26" stroke="#000" stroke-width=".6" opacity=".25" />
+            <line x1="16" y1="6" x2="16" y2="16" stroke="#000" stroke-width=".6" opacity=".4" />
+            <line x1="6" y1="16" x2="16" y2="16" stroke="#000" stroke-width=".6" opacity=".25" />
+            <line x1="26" y1="16" x2="16" y2="16" stroke="#000" stroke-width=".6" opacity=".25" />
           </svg>
           <div class="flex flex-col leading-none">
-            <span class="font-heading text-lg font-bold tracking-tight text-primary">DIRAIT</span>
-            <span class="font-body text-[9px] font-medium uppercase tracking-[.2em] text-muted">Est. 2023</span>
+            <span class="text-sm font-bold tracking-tight text-black">DIRAIT</span>
+            <span class="text-[9px] font-medium uppercase tracking-[.2em] text-gray-500">Est. 2023</span>
           </div>
         </a>
         <nav class="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
-          <a href="#services" class="font-body text-sm font-medium text-muted-fg transition-colors hover:text-brand">Services</a>
-          <a href="#pricing" class="font-body text-sm font-medium text-muted-fg transition-colors hover:text-brand">Pricing</a>
+          <a href="#services" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black">Services</a>
+          <a href="#pricing" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black">Pricing</a>
+          <a href="#" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black">About</a>
+          <a href="#" class="text-xs font-medium uppercase tracking-widest text-gray-600 transition-colors hover:text-black">Blog</a>
         </nav>
-        <div class="flex items-center gap-3">
-          <a href="#cta" class="hidden rounded-md bg-brand px-4 py-2 font-body text-sm font-semibold text-brand-fg transition-colors hover:bg-brand-hover lg:inline-flex">Get in Touch</a>
-          <button id="mobile-menu-btn" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground lg:hidden" aria-label="Open menu" aria-expanded="false">
-            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <div class="flex items-center gap-4">
+          <a href="#cta" class="hidden border border-ikb bg-ikb px-5 py-2 text-xs font-medium uppercase tracking-wider text-white transition-colors hover:bg-ikb-dark lg:inline-flex">Get in Touch</a>
+          <button id="mobile-menu-btn" class="inline-flex h-8 w-8 items-center justify-center text-black lg:hidden" aria-label="Open menu" aria-expanded="false">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="square" stroke-linejoin="miter" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
           </button>
         </div>
       </div>
     </header>
 
+    <!-- ========== MOBILE NAV ========== -->
     <div id="mobile-nav" class="fixed inset-0 z-[60] lg:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
-      <div id="mobile-backdrop" class="mobile-backdrop absolute inset-0 bg-primary/30 backdrop-blur-sm"></div>
-      <div id="mobile-panel" class="mobile-panel absolute right-0 top-0 flex h-full w-full max-w-sm flex-col border-l border-border bg-background">
-        <div class="flex items-center justify-between border-b border-border px-4 py-4">
-          <div class="flex items-center gap-2">
-            <svg class="h-7 w-7" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle cx="16" cy="6" r="2.5" fill="#2D6BFF" /><circle cx="6" cy="16" r="2" fill="#2D6BFF" opacity=".6" /><circle cx="26" cy="16" r="2" fill="#2D6BFF" opacity=".6" /><circle cx="16" cy="16" r="2.5" fill="#2D6BFF" opacity=".8" />
-              <line x1="16" y1="6" x2="6" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" /><line x1="16" y1="6" x2="26" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" />
-              <line x1="6" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="26" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" />
+      <div id="mobile-backdrop" class="mobile-backdrop absolute inset-0 bg-black/80"></div>
+      <div id="mobile-panel" class="mobile-panel absolute right-0 top-0 flex h-full w-full max-w-xs flex-col bg-black">
+        <div class="flex items-center justify-between border-b border-white/10 px-6 py-5">
+          <span class="text-sm font-bold tracking-tight text-white">DIRAIT</span>
+          <button id="mobile-close-btn" class="inline-flex h-8 w-8 items-center justify-center text-white" aria-label="Close menu">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="square" stroke-linejoin="miter" d="M6 18L18 6M6 6l12 12" />
             </svg>
-            <span class="font-heading text-lg font-bold text-primary">DIRAIT</span>
-          </div>
-          <button id="mobile-close-btn" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border" aria-label="Close menu">
-            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
         </div>
-        <nav class="flex-1 px-4 py-6" aria-label="Mobile navigation">
-          <ul class="space-y-1">
-            <li><a href="#services" class="mobile-link block rounded-md px-3 py-3 font-body text-base font-medium text-foreground transition-colors hover:bg-brand-soft">Services</a></li>
-            <li><a href="#pricing" class="mobile-link block rounded-md px-3 py-3 font-body text-base font-medium text-foreground transition-colors hover:bg-brand-soft">Pricing</a></li>
+        <nav class="flex-1 px-6 py-8" aria-label="Mobile navigation">
+          <ul class="space-y-2">
+            <li><a href="#services" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60">Services</a></li>
+            <li><a href="#pricing" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60">Pricing</a></li>
+            <li><a href="#" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60">About</a></li>
+            <li><a href="#" class="mobile-link block py-3 text-base font-medium uppercase tracking-wider text-white transition-opacity hover:opacity-60">Blog</a></li>
           </ul>
         </nav>
-        <div class="border-t border-border px-4 py-4">
-          <a href="#cta" class="mobile-link block rounded-md bg-brand px-3 py-2.5 text-center font-body text-sm font-semibold text-brand-fg">Get in Touch</a>
+        <div class="border-t border-white/10 px-6 py-6 space-y-4">
+          <a href="#cta" class="mobile-link block w-full border border-ikb bg-ikb px-4 py-2.5 text-center text-xs font-medium uppercase tracking-wider text-white">Get in Touch</a>
         </div>
       </div>
     </div>
 
     <main id="main-content">
-      <section class="relative overflow-hidden border-b border-border" aria-label="Hero">
-        <div class="pointer-events-none absolute inset-0 network-grid" aria-hidden="true"></div>
-        <div class="node-float n1" aria-hidden="true"></div>
-        <div class="node-float n2" aria-hidden="true"></div>
-        <div class="node-float n3" aria-hidden="true"></div>
-        <div class="node-float n4" aria-hidden="true"></div>
-        <div class="node-float n5" aria-hidden="true"></div>
-        <div class="node-float n6" aria-hidden="true"></div>
-        <svg class="hero-lines" aria-hidden="true" preserveAspectRatio="none">
-          <line x1="75%" y1="15%" x2="85%" y2="35%" /><line x1="85%" y1="35%" x2="65%" y2="55%" /><line x1="65%" y1="55%" x2="80%" y2="72%" />
-          <line x1="80%" y1="72%" x2="60%" y2="82%" /><line x1="50%" y1="20%" x2="75%" y2="15%" /><line x1="40%" y1="60%" x2="65%" y2="55%" />
-        </svg>
-        <div class="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-brand/[.06] blur-3xl" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-brand/[.03] blur-3xl" aria-hidden="true"></div>
-        <div class="brand-line hidden sm:block" aria-hidden="true" style="left: max(1rem, calc((100vw - 80rem) / 2 + 1rem))"></div>
-        <div class="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
-          <div class="max-w-3xl sm:pl-8">
-            <p class="mb-4 font-body text-sm font-medium uppercase tracking-widest text-brand">Software House &middot; Jakarta</p>
-            <h1 class="font-heading text-4xl font-bold tracking-tight text-balance text-primary sm:text-5xl lg:text-6xl">We Build Software That Runs Your Business</h1>
-            <p class="mt-6 max-w-xl font-body text-lg leading-relaxed text-muted-fg">Custom POS, HRIS, CRM, WMS, and IoT platforms &mdash; designed in Jakarta, deployed across Southeast Asia and Europe.</p>
-            <div class="mt-10 flex flex-wrap items-center gap-4">
-              <a href="#cta" class="inline-flex h-12 items-center rounded-md bg-brand px-8 text-base font-semibold text-brand-fg transition-colors hover:bg-brand-hover shadow-sm shadow-brand/20">Discuss Your Project</a>
-              <a href="#services" class="inline-flex h-12 items-center rounded-md border border-primary/15 bg-transparent px-8 text-base font-medium text-primary transition-colors hover:bg-brand-soft hover:border-brand/30">View Services</a>
+
+      <!-- ========== 1. HERO ========== -->
+      <section class="relative border-b border-black bg-white" aria-label="Hero">
+        <div class="mx-auto max-w-7xl px-6 py-24 sm:px-8 sm:py-32 lg:py-40">
+          <div class="flex flex-col lg:flex-row lg:items-start lg:gap-16">
+            <div class="hidden lg:block lg:w-1">
+              <div class="ikb-line h-full w-1"></div>
             </div>
-            <p class="mt-8 font-body text-sm text-muted">Serving clients in Indonesia, Malaysia, Singapore &amp; Europe</p>
-          </div>
-        </div>
-      </section>
-      <section class="border-b border-border bg-surface py-7" aria-label="Clients">
-        <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 sm:px-6 lg:px-8 lg:flex-row lg:items-center lg:gap-8">
-          <p class="font-body text-sm font-medium text-muted shrink-0">Trusted by teams at</p>
-          <div class="client-marquee" aria-label="Client logos">
-            <div class="client-marquee-track">
-              <div class="client-marquee-group">
-                <div class="logo-item h-7" aria-label="Brink's"><img src="images/clients/brinks.svg" alt="Brink's" class="h-4 w-auto" /></div>
-                <div class="logo-item h-7" aria-label="Winner Research"><img src="images/clients/winner-research.png" alt="Winner Research" class="h-7 w-auto" /></div>
-                <div class="logo-item h-7" aria-label="Go Lumi Marketing"><img src="images/clients/go-lumi-marketing.png" alt="Go Lumi Marketing" class="h-7 w-auto" /></div>
-                <div class="logo-item h-7" aria-label="Logeren bij de Molen"><img src="images/clients/logeren-bij-de-molen.png" alt="Logeren bij de Molen" class="h-7 w-auto" /></div>
+            <div class="lg:flex-1">
+              <p class="mb-6 text-xs font-medium uppercase tracking-[.25em] text-ikb">
+                Custom Software Agency · Jakarta
+              </p>
+              <h1 class="text-5xl font-bold tracking-tight text-black sm:text-7xl lg:text-8xl leading-[1.05]">
+                Custom Software That Grows Your Business — Built by Experts, Delivered on Time
+              </h1>
+              <div class="mt-8 h-px w-16 bg-ikb"></div>
+              <p class="mt-8 max-w-xl text-base leading-relaxed text-gray-500">
+                From web and mobile apps to IoT platforms and AI integration — we design, build, and deploy production-ready software for startups and enterprises across Indonesia, Singapore, and Europe.
+              </p>
+              <div class="mt-10 flex flex-wrap items-center gap-4">
+                <a href="#cta" class="inline-flex h-12 items-center border border-ikb bg-ikb px-8 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-ikb-dark">
+                  Get Free Consultation
+                </a>
+                <a href="#services" class="inline-flex h-12 items-center border border-ikb px-8 text-xs font-medium uppercase tracking-widest text-ikb transition-colors hover:bg-ikb hover:text-white">
+                  View Services
+                </a>
               </div>
-              <div class="client-marquee-group" aria-hidden="true">
-                <div class="logo-item h-7"><img src="images/clients/brinks.svg" alt="" class="h-4 w-auto" /></div>
-                <div class="logo-item h-7"><img src="images/clients/winner-research.png" alt="" class="h-7 w-auto" /></div>
-                <div class="logo-item h-7"><img src="images/clients/go-lumi-marketing.png" alt="" class="h-7 w-auto" /></div>
-                <div class="logo-item h-7"><img src="images/clients/logeren-bij-de-molen.png" alt="" class="h-7 w-auto" /></div>
-              </div>
+              <p class="mt-8 text-xs uppercase tracking-wider text-gray-400">
+                Trusted by 30+ clients in Indonesia, Singapore, Netherlands & UK
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="services" class="relative border-b border-border py-20 sm:py-24">
-        <div class="pointer-events-none absolute inset-0 network-grid-light opacity-60" aria-hidden="true"></div>
-        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="reveal mb-12 max-w-2xl">
-            <p class="mb-3 font-body text-sm font-medium uppercase tracking-widest text-brand">What We Build</p>
-            <h2 class="font-heading text-3xl font-semibold tracking-tight text-primary sm:text-4xl">Six platforms. One team.</h2>
-          </div>
-          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
-            <a href="services/company-profile.html" class="reveal group relative flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8">
-              <span class="mb-4 font-heading text-sm font-medium text-brand/60">01</span>
-              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">Company Profile</h3>
-              <p class="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-fg">Professional websites that establish credibility and convert visitors into leads &mdash; not another template.</p>
-              <span class="inline-flex items-center gap-1 font-body text-sm font-medium text-brand transition-transform group-hover:translate-x-0.5">Learn more <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-            </a>
-            <a href="services/crm.html" class="reveal group relative flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8">
-              <span class="mb-4 font-heading text-sm font-medium text-brand/60">02</span>
-              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">CRM</h3>
-              <p class="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-fg">Customer relationship systems tailored to your sales pipeline, not a generic contact database.</p>
-              <span class="inline-flex items-center gap-1 font-body text-sm font-medium text-brand transition-transform group-hover:translate-x-0.5">Learn more <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-            </a>
-            <a href="services/hris.html" class="reveal group relative flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8">
-              <span class="mb-4 font-heading text-sm font-medium text-brand/60">03</span>
-              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">HRIS</h3>
-              <p class="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-fg">End-to-end HR platforms &mdash; payroll, attendance, leave, performance &mdash; built around your policies.</p>
-              <span class="inline-flex items-center gap-1 font-body text-sm font-medium text-brand transition-transform group-hover:translate-x-0.5">Learn more <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-            </a>
-            <a href="services/pos.html" class="reveal group relative flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8">
-              <span class="mb-4 font-heading text-sm font-medium text-brand/60">04</span>
-              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">POS</h3>
-              <p class="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-fg">Point-of-sale systems that handle transactions, inventory, and multi-store operations in one place.</p>
-              <span class="inline-flex items-center gap-1 font-body text-sm font-medium text-brand transition-transform group-hover:translate-x-0.5">Learn more <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-            </a>
-            <a href="services/wms.html" class="reveal group relative flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8">
-              <span class="mb-4 font-heading text-sm font-medium text-brand/60">05</span>
-              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">WMS</h3>
-              <p class="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-fg">Warehouse management that tracks stock in real time across locations, zones, and channels.</p>
-              <span class="inline-flex items-center gap-1 font-body text-sm font-medium text-brand transition-transform group-hover:translate-x-0.5">Learn more <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-            </a>
-            <a href="services/iot.html" class="reveal group relative flex flex-col border border-border bg-surface p-6 transition-all duration-200 hover:border-brand/40 hover:bg-brand-soft/50 hover:shadow-sm hover:shadow-brand/5 sm:p-8">
-              <span class="mb-4 font-heading text-sm font-medium text-brand/60">06</span>
-              <h3 class="mb-2 font-heading text-xl font-semibold tracking-tight text-primary">IoT Platforms</h3>
-              <p class="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-fg">Dashboards and control systems that turn sensor data into actionable operational intelligence.</p>
-              <span class="inline-flex items-center gap-1 font-body text-sm font-medium text-brand transition-transform group-hover:translate-x-0.5">Learn more <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-            </a>
+      <!-- ========== 2. SERVICES ========== -->
+      <section id="services" class="border-b border-black bg-white">
+        <div class="mx-auto max-w-7xl px-6 sm:px-8">
+          <div class="border-x border-black px-8 py-16 sm:py-20 lg:py-24">
+            <div class="mb-12 max-w-2xl">
+              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb">
+                What We Build
+              </p>
+              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl">
+                End-to-End Software Development Services
+              </h2>
+            </div>
+            <div id="services-grid" class="swiss-grid border-t border-l border-black"></div>
           </div>
         </div>
       </section>
 
-      <section class="border-t border-border bg-surface py-20 sm:py-24" aria-label="Testimonials">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="reveal mb-12 max-w-2xl">
-            <p class="mb-3 font-body text-sm font-medium uppercase tracking-widest text-brand">What Clients Say</p>
-            <h2 class="font-heading text-3xl font-semibold tracking-tight text-primary sm:text-4xl">From the people who use what we build.</h2>
-          </div>
-          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
-            <figure class="reveal flex h-full flex-col border border-border bg-background p-6 sm:p-8">
-              <blockquote class="mb-6 flex-1">
-                <p class="font-body text-sm leading-relaxed text-primary sm:text-base">&ldquo;After migrating to DIRAIT&#39;s POS system, our end-of-day closing dropped from 45 minutes to just 12 minutes per store. Our team can finally focus on serving customers instead of fighting a slow system.&rdquo;</p>
-              </blockquote>
-              <figcaption class="border-t border-border pt-4">
-                <p class="font-heading text-sm font-semibold text-primary">Rina Wijaya</p>
-                <p class="mt-0.5 font-body text-sm text-muted-fg">Operations Director, MartKu Group</p>
-              </figcaption>
-            </figure>
-            <figure class="reveal flex h-full flex-col border border-border bg-background p-6 sm:p-8">
-              <blockquote class="mb-6 flex-1">
-                <p class="font-body text-sm leading-relaxed text-primary sm:text-base">&ldquo;The HRIS DIRAIT built was designed around our needs &mdash; not a generic tool forced to fit. Integration with bank payroll systems and minimum wage regulations across three countries runs automatically with zero manual intervention.&rdquo;</p>
-              </blockquote>
-              <figcaption class="border-t border-border pt-4">
-                <p class="font-heading text-sm font-semibold text-primary">Ahmad Fauzan</p>
-                <p class="mt-0.5 font-body text-sm text-muted-fg">VP of People Operations, Nusantara FMCG</p>
-              </figcaption>
-            </figure>
-            <figure class="reveal flex h-full flex-col border border-border bg-background p-6 sm:p-8">
-              <blockquote class="mb-6 flex-1">
-                <p class="font-body text-sm leading-relaxed text-primary sm:text-base">&ldquo;Their IoT dashboard gave us real-time visibility we never had before. Every time cold chain temperature deviates, our ground team gets an alert before any damage occurs.&rdquo;</p>
-              </blockquote>
-              <figcaption class="border-t border-border pt-4">
-                <p class="font-heading text-sm font-semibold text-primary">Sarah Lim</p>
-                <p class="mt-0.5 font-body text-sm text-muted-fg">Logistics Manager, FastMove Singapore</p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-      <section id="pricing" class="relative border-t border-border py-20 sm:py-24" aria-label="Pricing">
-        <div class="pointer-events-none absolute inset-0 network-grid-light opacity-60" aria-hidden="true"></div>
-        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="reveal mx-auto mb-12 max-w-2xl text-center">
-            <p class="mb-3 font-body text-sm font-medium uppercase tracking-widest text-brand">Pricing</p>
-            <h2 class="font-heading text-3xl font-semibold tracking-tight text-primary sm:text-4xl">Transparent. No hidden fees.</h2>
-          </div>
-          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
-            <div class="reveal relative flex flex-col border border-border bg-surface p-6 sm:p-8">
-              <h3 class="mb-6 font-heading text-xl font-semibold text-primary">Basic</h3>
-              <ul class="mb-8 flex-1 space-y-3">
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Company profile website</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Up to 5 pages</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Responsive design</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Basic SEO setup</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">30-day post-launch support</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Source code ownership</span></li>
-              </ul>
-              <a href="#cta" class="block w-full rounded-md border border-primary/15 bg-transparent px-4 py-3 text-center font-body text-sm font-semibold text-primary transition-all duration-200 hover:bg-brand-soft hover:border-brand/30">Get Started</a>
+      <!-- ========== 4. TESTIMONIALS ========== -->
+      <section class="border-b border-black bg-white" aria-label="Testimonials">
+        <div class="mx-auto max-w-7xl px-6 sm:px-8">
+          <div class="border-x border-black px-8 py-16 sm:py-20 lg:py-24">
+            <div class="mb-12 max-w-2xl">
+              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb">
+                What Clients Say
+              </p>
+              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl">
+                Real Feedback From Real Clients
+              </h2>
             </div>
-            <div class="reveal relative flex flex-col border border-brand bg-surface p-6 sm:p-8 ring-1 ring-brand/20 shadow-sm shadow-brand/10">
-              <span class="absolute -top-3 left-6 rounded-md bg-brand px-3 py-1 font-body text-xs font-semibold text-brand-fg shadow-sm shadow-brand/20">Popular</span>
-              <h3 class="mb-6 font-heading text-xl font-semibold text-primary">Small Business</h3>
-              <ul class="mb-8 flex-1 space-y-3">
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Choose one: CRM, HRIS, POS, or WMS</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Core module + 2 feature add-ons</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">User &amp; role management</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">API integration (1 external system)</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Responsive web + mobile-friendly</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">90-day post-launch support</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Source code ownership</span></li>
-              </ul>
-              <a href="#cta" class="block w-full rounded-md bg-brand px-4 py-3 text-center font-body text-sm font-semibold text-brand-fg transition-all duration-200 hover:bg-brand-hover shadow-sm shadow-brand/20">Get Started</a>
-            </div>
-            <div class="reveal relative flex flex-col border border-border bg-surface p-6 sm:p-8">
-              <h3 class="mb-6 font-heading text-xl font-semibold text-primary">Business</h3>
-              <ul class="mb-8 flex-1 space-y-3">
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Multi-platform integration</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Custom IoT dashboards</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Dedicated project manager</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Unlimited external API integrations</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">12-month support &amp; SLA</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Priority feature development</span></li>
-                <li class="flex items-start gap-3"><svg class="h-4 w-4 shrink-0 mt-0.5 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span class="font-body text-sm text-primary">Source code ownership</span></li>
-              </ul>
-              <a href="#cta" class="block w-full rounded-md border border-primary/15 bg-transparent px-4 py-3 text-center font-body text-sm font-semibold text-primary transition-all duration-200 hover:bg-brand-soft hover:border-brand/30">Contact Us</a>
-            </div>
+            <div id="testimonials-grid" class="swiss-grid border-t border-l border-black"></div>
           </div>
-        </div>
-      </section>
-      <section id="faq" class="border-t border-border bg-surface py-20 sm:py-24" aria-label="FAQ">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="reveal mx-auto mb-12 max-w-3xl text-center">
-            <p class="mb-3 font-body text-sm font-medium uppercase tracking-widest text-brand">FAQ</p>
-            <h2 class="font-heading text-3xl font-semibold tracking-tight text-primary sm:text-4xl">Common questions, straight answers.</h2>
-          </div>
-          <div id="faq-list" class="mx-auto max-w-3xl divide-y divide-border"></div>
         </div>
       </section>
 
-      <section id="cta" class="relative overflow-hidden border-t border-border bg-primary py-20 sm:py-24" aria-label="CTA">
-        <div class="pointer-events-none absolute inset-0" style="background-image: radial-gradient(circle, rgba(45,107,255,0.12) 1px, transparent 1px); background-size: 40px 40px;" aria-hidden="true"></div>
-        <div class="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand/10 blur-3xl" aria-hidden="true"></div>
-        <div class="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 class="font-heading text-3xl font-bold tracking-tight text-brand-fg sm:text-4xl">Ready to build?</h2>
-          <p class="mx-auto mt-4 max-w-lg font-body text-base leading-relaxed text-brand-fg/60">Tell us what you need. We&#39;ll tell you how we&#39;d approach it &mdash; no sales pitch, no obligation.</p>
-          <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="inline-flex h-12 items-center gap-2 rounded-md bg-brand px-8 text-base font-semibold text-brand-fg transition-colors hover:bg-brand-hover shadow-lg shadow-brand/20">
-              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-              Start on WhatsApp
-            </a>
-            <a href="mailto:hello@dirait.id" class="inline-flex h-12 items-center gap-2 rounded-md border border-brand-fg/15 px-8 text-base font-medium text-brand-fg transition-colors hover:bg-brand-fg/10">
-              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              Send an Email
-            </a>
+      <!-- ========== 5. PRICING ========== -->
+      <section id="pricing" class="border-b border-black bg-white" aria-label="Pricing">
+        <div class="mx-auto max-w-7xl px-6 sm:px-8">
+          <div class="border-x border-black px-8 py-16 sm:py-20 lg:py-24">
+            <div class="mx-auto mb-12 max-w-2xl text-center">
+              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb">
+                Pricing
+              </p>
+              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl">
+                Transparent. No hidden fees.
+              </h2>
+            </div>
+            <div id="pricing-grid" class="swiss-grid border-t border-l border-black"></div>
           </div>
         </div>
       </section>
+
+      <!-- ========== 6. FAQ ========== -->
+      <section id="faq" class="border-b border-black bg-white" aria-label="FAQ">
+        <div class="mx-auto max-w-7xl px-6 sm:px-8">
+          <div class="border-x border-black px-8 py-16 sm:py-20 lg:py-24">
+            <div class="mx-auto mb-12 max-w-3xl text-center">
+              <p class="mb-4 text-xs font-medium uppercase tracking-[.25em] text-ikb">
+                FAQ
+              </p>
+              <h2 class="text-4xl font-bold tracking-tight text-black sm:text-5xl">
+                Common questions, straight answers.
+              </h2>
+            </div>
+            <div id="faq-list" class="mx-auto max-w-3xl divide-y divide-black"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== 7. CTA ========== -->
+      <section id="cta" class="border-b border-black bg-blue-950" aria-label="CTA">
+        <div class="relative mx-auto max-w-7xl px-6 sm:px-8">
+          <div class="cta-grid-bg pointer-events-none absolute inset-0 border-x border-white/10" aria-hidden="true"></div>
+          <div class="relative border-x border-white/10 px-8 py-20 text-center sm:py-24">
+            <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              Ready to Turn Your Idea Into Software?
+            </h2>
+            <div class="mx-auto mt-6 h-px w-16 bg-ikb"></div>
+            <p class="mx-auto mt-6 max-w-lg text-base leading-relaxed text-white/60">
+              Tell us about your project. We'll share how we'd approach it, what it would take, and what you can expect — no pressure, no obligation.
+            </p>
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <a href="https://wa.me/6281384934615" target="_blank" rel="noopener noreferrer" class="inline-flex h-12 items-center gap-2 border border-ikb bg-ikb px-8 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-ikb-dark">
+                Start on WhatsApp
+              </a>
+              <a href="mailto:giofadhil.ahmad@gmail.com" class="inline-flex h-12 items-center gap-2 border border-white/30 px-8 text-xs font-medium uppercase tracking-widest text-white transition-colors hover:bg-white hover:text-black">
+                Send an Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <footer class="border-t border-border bg-surface" role="contentinfo">
-      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          <div class="sm:col-span-2 lg:col-span-1">
-            <a href="#" class="flex items-center gap-2">
-              <svg class="h-7 w-7" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                <circle cx="16" cy="6" r="2.5" fill="#2D6BFF" /><circle cx="6" cy="16" r="2" fill="#2D6BFF" opacity=".6" /><circle cx="26" cy="16" r="2" fill="#2D6BFF" opacity=".6" /><circle cx="16" cy="16" r="2.5" fill="#2D6BFF" opacity=".8" />
-                <line x1="16" y1="6" x2="6" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" /><line x1="16" y1="6" x2="26" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".4" />
-                <line x1="6" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" /><line x1="26" y1="16" x2="16" y2="16" stroke="#2D6BFF" stroke-width=".8" opacity=".3" />
-              </svg>
-              <div class="flex flex-col leading-none">
-                <span class="font-heading text-lg font-bold tracking-tight text-primary">DIRAIT</span>
-                <span class="font-body text-[8px] font-medium uppercase tracking-[.18em] text-muted">Est. 2023</span>
-              </div>
-            </a>
-            <p class="mt-3 max-w-xs font-body text-sm leading-relaxed text-muted-fg">Jakarta-based software house building custom business platforms for companies across Southeast Asia and Europe.</p>
-          </div>
-          <div>
-            <h3 class="mb-4 font-heading text-sm font-semibold uppercase tracking-wider text-muted">Services</h3>
-            <ul id="footer-services" class="space-y-2.5">
-              <li><a href="services/company-profile.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">Company Profile</a></li>
-              <li><a href="services/crm.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">CRM</a></li>
-              <li><a href="services/hris.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">HRIS</a></li>
-              <li><a href="services/pos.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">POS</a></li>
-              <li><a href="services/wms.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">WMS</a></li>
-              <li><a href="services/iot.html" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">IoT Platforms</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="mb-4 font-heading text-sm font-semibold uppercase tracking-wider text-muted">Company</h3>
-            <ul class="space-y-2.5">
-              <li><a href="#" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">About</a></li>
-              <li><a href="#" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">Blog</a></li>
-              <li><a href="#" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">Privacy Policy</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="mb-4 font-heading text-sm font-semibold uppercase tracking-wider text-muted">Contact</h3>
-            <address class="not-italic space-y-2.5">
-              <p class="font-body text-sm text-foreground/70">hello@dirait.id</p>
-              <p><a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="font-body text-sm text-foreground/70 transition-colors hover:text-brand">+62 812-3456-7890</a></p>
-            </address>
+    <!-- ========== FOOTER ========== -->
+    <footer class="border-b border-black bg-white" role="contentinfo">
+      <div class="mx-auto max-w-7xl px-6 sm:px-8">
+        <div class="border-x border-black px-8 py-16 sm:py-20">
+          <div class="swiss-grid">
+            <div class="col-span-12 border-b border-black pb-10 sm:col-span-6 sm:border-b-0 sm:border-r sm:pr-10 lg:col-span-4">
+              <a href="#" class="flex items-center gap-3">
+                <svg class="h-6 w-6" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                  <circle cx="16" cy="6" r="2.5" fill="#000" />
+                  <circle cx="6" cy="16" r="2" fill="#002FA7" />
+                  <circle cx="26" cy="16" r="2" fill="#002FA7" />
+                  <circle cx="16" cy="16" r="2.5" fill="#000" />
+                  <line x1="16" y1="6" x2="6" y2="16" stroke="#000" stroke-width=".6" opacity=".3" />
+                  <line x1="16" y1="6" x2="26" y2="16" stroke="#000" stroke-width=".6" opacity=".3" />
+                  <line x1="6" y1="16" x2="16" y2="16" stroke="#000" stroke-width=".6" opacity=".25" />
+                  <line x1="26" y1="16" x2="16" y2="16" stroke="#000" stroke-width=".6" opacity=".25" />
+                </svg>
+                <span class="text-sm font-bold tracking-tight text-black">DIRAIT</span>
+              </a>
+              <p class="mt-4 max-w-xs text-sm leading-relaxed text-gray-500">
+                Jakarta-based custom software agency. We build web apps, mobile apps, IoT systems, and AI-powered solutions that help businesses grow. React, React Native, Laravel, Next.js — 30+ projects delivered across 3+ countries.
+              </p>
+            </div>
+            <div class="col-span-6 border-b border-black py-8 sm:border-b-0 sm:py-0 sm:pl-10 sm:pt-0 lg:col-span-2">
+              <h3 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500">Services</h3>
+              <ul id="footer-services" class="space-y-3"></ul>
+            </div>
+            <div class="col-span-6 border-b border-black py-8 sm:border-b-0 sm:pl-10 sm:pt-0 lg:col-span-3">
+              <h3 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500">Company</h3>
+              <ul class="space-y-3">
+                <li><a href="#" class="text-sm text-gray-500 transition-colors hover:text-black">About</a></li>
+                <li><a href="#" class="text-sm text-gray-500 transition-colors hover:text-black">Blog</a></li>
+                <li><a href="#" class="text-sm text-gray-500 transition-colors hover:text-black">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="col-span-6 py-8 sm:pl-10 sm:pt-0 lg:col-span-3">
+              <h3 class="mb-6 text-xs font-semibold uppercase tracking-widest text-gray-500">Contact</h3>
+              <address class="not-italic space-y-3">
+                <p class="text-sm text-gray-500">Cibubur, Jawa Barat — Indonesia</p>
+                <p><a href="mailto:giofadhil.ahmad@gmail.com" class="text-sm text-gray-500 transition-colors hover:text-black">giofadhil.ahmad@gmail.com</a></p>
+                <p><a href="https://wa.me/6281384934615" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-500 transition-colors hover:text-black">+62 813-8493-4615</a></p>
+              </address>
+            </div>
           </div>
         </div>
-        <div class="mt-12 border-t border-border pt-6">
-          <p class="font-body text-xs text-muted-fg">&copy; 2025 DIRAIT. All rights reserved.</p>
+        <div class="border-x border-black px-8 py-6">
+          <p class="text-xs text-gray-400">© 2026 DIRAIT. All rights reserved.</p>
         </div>
       </div>
     </footer>
 
-    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" class="wa-float fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white transition-transform hover:scale-110" aria-label="Contact us via WhatsApp">
-      <svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <!-- ========== WHATSAPP FLOAT ========== -->
+    <a href="https://wa.me/6281384934615" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center border border-ikb bg-ikb text-white transition-colors hover:bg-ikb-dark" aria-label="Contact us on WhatsApp">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+      </svg>
     </a>
 
     <script>
+      const SERVICES = [
+        { slug: "web-apps", number: "01", title: "Web Applications", description: "React, Next.js, Laravel \u2014 pixel-perfect UI from Figma, monorepo architecture, and production-ready deployments with Docker and Nginx." },
+        { slug: "mobile", number: "02", title: "Mobile Apps", description: "React Native for iOS and Android \u2014 multiplatform codebases with consistent gestures, PWA capabilities, and BLE hardware integration." },
+        { slug: "iot", number: "03", title: "IoT Platforms", description: "Real-time dashboards with MQTT (Mosquitto) and WebSocket. Custom widgets, tenant-based data, and hardware engineer collaboration." },
+        { slug: "ai-api", number: "04", title: "AI & API Integration", description: "Third-party AI services, payment gateways (MidTrans, Duitku, Mollie), WhatsApp APIs, and GraphQL/RESTful integration across platforms." },
+        { slug: "crm-erp", number: "05", title: "CRM & ERP Solutions", description: "Multi-tenant systems with RBAC, Kanban workflows, SSO, 2FA, and real-time notifications \u2014 built for complex sales and operational pipelines." },
+        { slug: "devops", number: "06", title: "DevOps & Infrastructure", description: "Docker, Nginx, Cloudflare \u2014 automated deploys, cron jobs, uptime monitoring, Fail2ban security, and Telegram-based alerting." },
+      ];
+
+      const TESTIMONIALS = [
+        { quote: "Fast work, quick response, friendly, met expectations, expert in their field, highly recommended, top freelancer.", name: "nazz_com", role: "Client, Freelance Platform", initials: "N" },
+        { quote: "Mastered their field, results met expectations, very fast delivery. Revisions were also done quickly. Highly recommended.", name: "Anonymous Client", role: "Client, Freelance Platform", initials: "AC" },
+        { quote: "Fast response, neat work, good code quality. Thank you, will reorder!", name: "exzword", role: "Client, Freelance Platform", initials: "E" },
+      ];
+
+      const PRICING = [
+        { name: "Basic", popular: false, price: "Rp4M", priceNote: "per project", features: ["CDN worldwide support", "SSL encryption", "Free server & domain for a year", "3 months support", "Up to 20 product uploads", "Multi-pages", "Web-based application", "SEO/Google Search"], cta: "Get Started" },
+        { name: "Small Business", popular: true, price: "Rp8M", priceNote: "per project", features: ["Everything in Basic plus\u2026", "6 months support", "Unlimited product uploads"], cta: "Get Started" },
+        { name: "Business", popular: false, price: "Contact for", priceNote: "info", features: ["Everything in Small Business plus\u2026", "Free server & domain for 3 years", "Lifetime support", "Multi-platform application", "Enhanced SEO/Google Search"], cta: "Contact Us" },
+      ];
+
       const FAQ = [
-        { id: "industries", q: "What industries do you work with?", a: "We serve retail, F&B, logistics, manufacturing, and professional services across Indonesia, Malaysia, Singapore, and Europe. Our platforms are custom-built, so they adapt to industry-specific workflows rather than forcing you into a generic mold." },
-        { id: "timeline", q: "How long does a typical project take?", a: "A company profile website takes 2&ndash;4 weeks. Custom platforms (CRM, HRIS, POS, WMS) typically take 8&ndash;16 weeks depending on scope and integration requirements. IoT projects vary based on hardware complexity &mdash; we&rsquo;ll give you a detailed timeline after the discovery phase." },
-        { id: "maintenance", q: "Do you provide maintenance after launch?", a: "Every project includes a post-launch support period &mdash; 30 days for Basic, 90 days for Small Business, and 12 months for Business plans. Extended maintenance contracts are available for ongoing updates, bug fixes, and feature additions." },
-        { id: "integrations", q: "Can you integrate with our existing systems?", a: "Yes. We build APIs and connectors for accounting software, payment gateways, ERPs, e-commerce platforms, and other third-party services. Integration scope depends on the plan &mdash; Small Business includes one external system, Business includes unlimited." },
-        { id: "tech-stack", q: "What technologies do you use?", a: "We select the stack based on your project&rsquo;s requirements rather than pushing a single technology. Common choices include React, Next.js, Node.js, and PostgreSQL for web platforms, with appropriate technologies for IoT hardware integration." },
-        { id: "multilingual", q: "Do you support bilingual or multi-currency systems?", a: "Yes. Most of our clients operate across multiple markets, so multi-language and multi-currency support is a standard capability we build into CRM, POS, and WMS platforms from the start." }
+        { id: "tech-stack", question: "What technologies do you use?", answer: "We select the stack per project. Common choices include React (Vite), Next.js, Laravel, SvelteKit for web; React Native for mobile; PostgreSQL, MySQL, MongoDB for data; and Docker, Nginx, Cloudflare for deployment. We also integrate real-time systems via WebSocket and MQTT." },
+        { id: "timeline", question: "How long does a typical project take?", answer: "A company profile website with CMS takes 2\u20134 weeks. Custom web or mobile applications typically take 8\u201316 weeks depending on scope. IoT and AI-integrated projects vary based on hardware and third-party complexity \u2014 we'll provide a detailed timeline after discovery." },
+        { id: "maintenance", question: "Do you provide maintenance after launch?", answer: "Every project includes post-launch support \u2014 3 months for Basic, 6 months for Small Business, and 12 months for Business plans. Extended maintenance is available for updates, bug fixes, security patches, and feature additions." },
+        { id: "integrations", question: "Can you integrate with our existing systems?", answer: "Yes. We've integrated payment gateways (MidTrans, Duitku, Mollie), WhatsApp APIs, AI services, accounting software, and ERPs. Small Business includes one external system integration; Business includes unlimited." },
+        { id: "multi-platform", question: "Do you support web, mobile, and PWA?", answer: "Yes. We build React Native apps for iOS and Android alongside web platforms, and can add PWA capabilities for near-native mobile experiences with push notifications, offline support, and hardware access on Android (BLE, GPS)." },
+        { id: "security", question: "How do you handle security and access control?", answer: "We implement modular role-based access control (RBAC), two-factor authentication (2FA), custom SSO integration, and security hardening with Fail2ban, Cloudflare, and Telegram-based alerting for production environments." },
       ];
 
       let openFaqId = null, mobileNavOpen = false;
 
+      const ICONS = {
+        arrowUpRight: '<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="square" stroke-linejoin="miter" d="M7 17L17 7M17 7H7M17 7v10"/></svg>',
+        check: '<svg class="h-4 w-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="square" stroke-linejoin="miter" d="M5 13l4 4L19 7"/></svg>',
+        plus: '<svg class="h-5 w-5 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="square" stroke-linejoin="miter" d="M12 4v16m8-8H4"/></svg>',
+      };
+
+      function renderServices() {
+        const g = document.getElementById("services-grid");
+        g.innerHTML = SERVICES.map((s) => `
+          <a href="services-swiss/${s.slug}.html" class="col-span-12 sm:col-span-6 lg:col-span-4 border-r border-b border-black p-8 sm:p-10 flex flex-col hover:bg-gray-50 transition-colors group">
+            <span class="mb-4 text-5xl font-bold text-ikb sm:text-6xl">${s.number}</span>
+            <h3 class="mb-3 text-lg font-bold tracking-tight text-black">${s.title}</h3>
+            <p class="mb-6 flex-1 text-sm leading-relaxed text-gray-500">${s.description}</p>
+            <span class="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-ikb group-hover:underline">Learn more ${ICONS.arrowUpRight}</span>
+          </a>
+        `).join("");
+      }
+
+      function renderTestimonials() {
+        const g = document.getElementById("testimonials-grid");
+        g.innerHTML = TESTIMONIALS.map((t) => `
+          <figure class="col-span-12 sm:col-span-6 lg:col-span-4 border-r border-b border-black p-8 sm:p-10 flex flex-col">
+            <blockquote class="mb-8 flex-1">
+              <p class="text-sm leading-relaxed text-black sm:text-base">\u201c${t.quote}\u201d</p>
+            </blockquote>
+            <figcaption class="border-t border-black pt-5 flex items-center gap-3">
+              <div class="w-10 h-10 border border-black flex items-center justify-center shrink-0">
+                <span class="text-sm font-bold text-ikb">${t.initials}</span>
+              </div>
+              <div>
+                <p class="text-sm font-bold text-black">${t.name}</p>
+                <p class="text-xs uppercase tracking-wider text-gray-500">${t.role}</p>
+              </div>
+            </figcaption>
+          </figure>
+        `).join("");
+      }
+
+      function renderPricing() {
+        const g = document.getElementById("pricing-grid");
+        g.innerHTML = PRICING.map((tier) => `
+          <div class="col-span-12 sm:col-span-6 lg:col-span-4 border-r border-b border-black p-8 sm:p-10 flex flex-col relative ${tier.popular ? "border-l-4 border-l-ikb" : ""}">
+            ${tier.popular ? '<span class="mb-4 inline-block border border-ikb bg-ikb px-3 py-1 text-xs font-medium uppercase tracking-wider text-white self-start">Popular</span>' : '<span class="mb-4 inline-block text-xs font-medium uppercase tracking-wider text-gray-400">' + tier.name + '</span>'}
+            <h3 class="mb-2 text-2xl font-bold tracking-tight text-black">${tier.name}</h3>
+            <div class="mb-6">
+              <span class="text-4xl font-bold tracking-tight text-black">${tier.price}</span>
+              <span class="text-sm text-gray-500 ml-1">${tier.priceNote}</span>
+            </div>
+            <ul class="mb-8 flex-1 space-y-3">
+              ${tier.features.map((f) => '<li class="flex items-start gap-3"><span class="text-ikb shrink-0 mt-0.5">' + ICONS.check + '</span><span class="text-sm text-black">' + f + '</span></li>').join("")}
+            </ul>
+            <a href="#cta" class="block w-full border text-center text-xs font-medium uppercase tracking-widest transition-colors duration-200 ${tier.popular ? 'border-ikb bg-ikb text-white hover:bg-ikb-dark' : 'border-ikb text-ikb hover:bg-ikb hover:text-white'} px-4 py-3">${tier.cta}</a>
+          </div>
+        `).join("");
+      }
+
       function renderFaq() {
         const list = document.getElementById("faq-list");
-        list.innerHTML = FAQ.map(function(i) {
-          return '<div><h3><button id="faq-trigger-' + i.id + '" aria-expanded="false" aria-controls="faq-panel-' + i.id + '" data-faq-id="' + i.id + '" class="faq-trigger flex w-full items-center justify-between gap-4 py-5 text-left font-heading text-base font-medium text-primary transition-colors hover:text-brand sm:text-lg"><span>' + i.q + '</span><span class="faq-icon text-muted"><svg class="h-5 w-5 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg></span></button></h3><div id="faq-panel-' + i.id + '" role="region" aria-labelledby="faq-trigger-' + i.id + '" class="faq-panel"><div><p class="pb-5 font-body text-sm leading-relaxed text-muted-fg sm:text-base">' + i.a + '</p></div></div></div>';
-        }).join("");
+        openFaqId = null;
+        list.innerHTML = FAQ.map((item) => `
+          <div>
+            <h3><button id="faq-trigger-${item.id}" aria-expanded="false" aria-controls="faq-panel-${item.id}" data-faq-id="${item.id}" class="faq-trigger flex w-full items-center justify-between gap-4 py-5 text-left text-base font-bold text-black transition-colors hover:text-ikb">
+              <span>${item.question}</span>
+              <span class="faq-icon text-gray-400">${ICONS.plus}</span>
+            </button></h3>
+            <div id="faq-panel-${item.id}" role="region" aria-labelledby="faq-trigger-${item.id}" class="faq-panel"><div><p class="pb-5 text-sm leading-relaxed text-gray-500">${item.answer}</p></div></div>
+          </div>
+        `).join("");
         document.getElementById("faq-jsonld").textContent = JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: FAQ.map(function(i) { return { "@type": "Question", name: i.q, acceptedAnswer: { "@type": "Answer", text: i.a } } })
+          mainEntity: FAQ.map((i) => ({
+            "@type": "Question",
+            name: i.question,
+            acceptedAnswer: { "@type": "Answer", text: i.answer },
+          })),
         });
-        list.querySelectorAll(".faq-trigger").forEach(function(b) { b.addEventListener("click", function() { toggleFaq(b.dataset.faqId); }); });
+        list.querySelectorAll(".faq-trigger").forEach((b) =>
+          b.addEventListener("click", () => toggleFaq(b.dataset.faqId)),
+        );
       }
 
       function toggleFaq(id) {
-        var wasOpen = openFaqId === id;
-        document.querySelectorAll(".faq-panel").forEach(function(p) { p.classList.remove("open"); });
-        document.querySelectorAll(".faq-trigger").forEach(function(t) {
+        const wasOpen = openFaqId === id;
+        document.querySelectorAll(".faq-panel").forEach((p) => p.classList.remove("open"));
+        document.querySelectorAll(".faq-trigger").forEach((t) => {
           t.setAttribute("aria-expanded", "false");
-          var icon = t.querySelector(".faq-icon svg");
-          if (icon) icon.style.transform = "";
-          t.querySelector(".faq-icon").classList.remove("text-brand");
-          t.querySelector(".faq-icon").classList.add("text-muted");
+          t.querySelector(".faq-icon").style.transform = "";
         });
         if (!wasOpen) {
-          var p = document.getElementById("faq-panel-" + id), t = document.getElementById("faq-trigger-" + id);
+          const p = document.getElementById("faq-panel-" + id),
+            t = document.getElementById("faq-trigger-" + id);
           if (p && t) {
             p.classList.add("open");
             t.setAttribute("aria-expanded", "true");
-            var icon = t.querySelector(".faq-icon svg");
-            if (icon) icon.style.transform = "rotate(45deg)";
-            t.querySelector(".faq-icon").classList.remove("text-muted");
-            t.querySelector(".faq-icon").classList.add("text-brand");
+            t.querySelector(".faq-icon").style.transform = "rotate(45deg)";
             openFaqId = id;
           }
-        } else openFaqId = null;
+        } else {
+          openFaqId = null;
+        }
+      }
+
+      function renderFooterServices() {
+        const ul = document.getElementById("footer-services");
+        ul.innerHTML = SERVICES.map((s) =>
+          '<li><a href="services-swiss/' + s.slug + '.html" class="text-sm text-gray-500 transition-colors hover:text-black">' + s.title + '</a></li>',
+        ).join("");
+      }
+
+      function render() {
+        renderServices();
+        renderTestimonials();
+        renderPricing();
+        renderFaq();
+        renderFooterServices();
       }
 
       function openMobileNav() {
         mobileNavOpen = true;
         document.getElementById("mobile-nav").style.display = "block";
         document.getElementById("mobile-menu-btn").setAttribute("aria-expanded", "true");
-        requestAnimationFrame(function() {
+        requestAnimationFrame(() => {
           document.getElementById("mobile-backdrop").classList.add("open");
           document.getElementById("mobile-panel").classList.add("open");
         });
@@ -486,28 +621,24 @@
         document.getElementById("mobile-panel").classList.remove("open");
         document.getElementById("mobile-menu-btn").setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
-        setTimeout(function() { if (!mobileNavOpen) document.getElementById("mobile-nav").style.display = "none"; }, 300);
-      }
-
-      var revealObserver = null;
-      function observeRevealElements() {
-        if (revealObserver) revealObserver.disconnect();
-        revealObserver = new IntersectionObserver(function(e) { e.forEach(function(en) { if (en.isIntersecting) { en.target.classList.add("visible"); revealObserver.unobserve(en.target); } }); }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
-        document.querySelectorAll(".reveal:not(.visible)").forEach(function(el) { revealObserver.observe(el); });
+        setTimeout(() => {
+          if (!mobileNavOpen) document.getElementById("mobile-nav").style.display = "none";
+        }, 300);
       }
 
       function bindEvents() {
         document.getElementById("mobile-menu-btn").addEventListener("click", openMobileNav);
         document.getElementById("mobile-close-btn").addEventListener("click", closeMobileNav);
         document.getElementById("mobile-backdrop").addEventListener("click", closeMobileNav);
-        document.querySelectorAll(".mobile-link").forEach(function(l) { l.addEventListener("click", closeMobileNav); });
-        document.addEventListener("keydown", function(e) { if (e.key === "Escape" && mobileNavOpen) closeMobileNav(); });
+        document.querySelectorAll(".mobile-link").forEach((l) => l.addEventListener("click", closeMobileNav));
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && mobileNavOpen) closeMobileNav();
+        });
       }
 
       function init() {
         document.getElementById("mobile-nav").style.display = "none";
-        renderFaq();
-        observeRevealElements();
+        render();
         bindEvents();
       }
       if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
