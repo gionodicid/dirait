@@ -1,0 +1,1044 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="meta-title">DIRAIT — Jasa Pembuatan Software Kustom di Jakarta</title>
+<meta name="description" id="meta-desc" content="POS, HRIS, CRM, WMS, dan IoT kustom untuk perusahaan di Indonesia, Malaysia, Singapura, dan Eropa. ISO 27001. 12 min closing." />
+<link rel="canonical" id="meta-canonical" href="https://dirait.id/id" />
+<link rel="alternate" hreflang="id" href="https://dirait.id/id" />
+<link rel="alternate" hreflang="en" href="https://dirait.id/en" />
+<link rel="alternate" hreflang="x-default" href="https://dirait.id/id" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0C1B2E;
+    --blue:#2D6BFF;
+    --lime:#D8FF3E;
+    --bg:#F6F3EA;
+    --card:#FFFFFF;
+    --muted:#3C4B5E;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    font-family:'DM Sans', system-ui, sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; height:auto; display:block;}
+
+  .wrap{
+    max-width:1200px; margin:0 auto;
+    padding:80px 32px;
+  }
+  .section-label{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em;
+    background:var(--lime); color:var(--ink);
+    border:2.5px solid var(--ink);
+    padding:6px 14px; margin-bottom:20px;
+  }
+  .section-title{
+    font-family:'Archivo Black', sans-serif;
+    font-size:44px; line-height:1.05; letter-spacing:-0.01em;
+    margin-bottom:16px;
+  }
+  .section-sub{
+    font-size:17px; line-height:1.65; color:var(--muted);
+    max-width:48ch;
+  }
+  .center{text-align:center;}
+  .center .section-sub{margin:0 auto;}
+  .border-b{border-bottom:3px solid var(--ink);}
+  .border-t{border-top:3px solid var(--ink);}
+
+  .network-dots{
+    position:absolute; inset:0; pointer-events:none; overflow:hidden;
+    background-image:radial-gradient(var(--ink) 1.5px, transparent 1.5px);
+    background-size:28px 28px; opacity:0.08;
+  }
+
+  .reveal{
+    opacity:0; transform:translateY(30px);
+    transition:opacity 0.55s ease, transform 0.55s ease;
+  }
+  .reveal.visible{opacity:1; transform:translateY(0);}
+
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:var(--card);
+    border-bottom:3px solid var(--ink);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    max-width:1200px; margin:0 auto; padding:0 32px;
+    height:68px;
+  }
+  .nav-logo{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Archivo Black', sans-serif; font-size:22px; letter-spacing:-0.02em;
+  }
+  .nav-logo .est{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em;
+    background:var(--lime); padding:3px 8px;
+    border:2px solid var(--ink);
+    transform:rotate(-3deg);
+  }
+  .nav-links{display:flex; align-items:center; gap:6px;}
+  .nav-links a{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:14px; font-weight:600;
+    padding:8px 16px; border-radius:0;
+    transition:background 0.15s;
+  }
+  .nav-links a:hover{background:var(--lime);}
+  .nav-right{display:flex; align-items:center; gap:12px;}
+  .locale-btn{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:13px; font-weight:700;
+    background:var(--card); color:var(--ink);
+    border:2.5px solid var(--ink);
+    padding:6px 14px; cursor:pointer;
+    transition:transform 0.12s, box-shadow 0.12s;
+    box-shadow:3px 3px 0 var(--ink);
+  }
+  .locale-btn:hover{transform:translate(1px,1px); box-shadow:1px 1px 0 var(--ink);}
+  .nav-cta{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:13px; font-weight:600; height:42px; padding:0 20px;
+    display:inline-flex; align-items:center;
+    border:2.5px solid var(--ink);
+    box-shadow:4px 4px 0 var(--ink);
+    background:var(--blue); color:#fff;
+    transition:transform 0.12s, box-shadow 0.12s;
+  }
+  .nav-cta:hover{transform:translate(2px,2px); box-shadow:2px 2px 0 var(--ink);}
+  .hamburger{
+    display:none; width:42px; height:42px;
+    background:none; border:2.5px solid var(--ink);
+    cursor:pointer; padding:0; align-items:center; justify-content:center;
+    box-shadow:3px 3px 0 var(--ink);
+  }
+  .hamburger span{display:block; width:20px; height:2.5px; background:var(--ink); position:relative;}
+  .hamburger span::before,.hamburger span::after{
+    content:''; display:block; width:20px; height:2.5px; background:var(--ink);
+    position:absolute; left:0;
+  }
+  .hamburger span::before{top:-7px;}
+  .hamburger span::after{top:7px;}
+
+  .mobile-backdrop{
+    position:fixed; inset:0; background:rgba(12,27,46,0.4); z-index:60;
+    opacity:0; pointer-events:none; transition:opacity 0.3s;
+  }
+  .mobile-backdrop.open{opacity:1; pointer-events:auto;}
+  .mobile-panel{
+    position:fixed; top:0; right:0; bottom:0;
+    width:100%; max-width:380px;
+    background:var(--card); z-index:70;
+    border-left:3px solid var(--ink);
+    box-shadow:-8px 0 0 var(--ink);
+    transform:translateX(100%); transition:transform 0.3s ease;
+    display:flex; flex-direction:column; padding:24px;
+  }
+  .mobile-panel.open{transform:translateX(0);}
+  .mobile-panel .close-btn{
+    align-self:flex-end; width:40px; height:40px;
+    background:none; border:2.5px solid var(--ink);
+    font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk', sans-serif; font-weight:700;
+    box-shadow:3px 3px 0 var(--ink);
+  }
+  .mobile-nav-links{margin-top:32px; display:flex; flex-direction:column; gap:4px; flex:1;}
+  .mobile-nav-links a{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:18px; font-weight:600;
+    padding:14px 12px;
+    border:2.5px solid transparent;
+    transition:all 0.15s;
+  }
+  .mobile-nav-links a:hover{border-color:var(--ink); background:var(--lime);}
+  .mobile-bottom{margin-top:auto; display:flex; flex-direction:column; gap:12px; padding-top:24px; border-top:2.5px solid var(--ink);}
+  .mobile-bottom .locale-btn{width:100%; text-align:center;}
+  .mobile-bottom .nav-cta{width:100%; justify-content:center; height:48px;}
+
+  .hero{
+    position:relative; overflow:hidden;
+    border-bottom:3px solid var(--ink);
+  }
+  .hero .wrap{
+    padding-top:100px; padding-bottom:104px;
+    display:grid; grid-template-columns:1fr 0.9fr;
+    gap:48px; align-items:center;
+    position:relative; z-index:1;
+  }
+  .hero-float{
+    position:absolute; border-radius:50%; pointer-events:none;
+    background:var(--blue); opacity:0.15;
+    animation:heroFloat 6s ease-in-out infinite alternate;
+  }
+  .hero-float:nth-child(2){width:100px; height:100px; top:15%; right:12%; background:var(--lime); opacity:0.12; animation-duration:8s;}
+  .hero-float:nth-child(3){width:60px; height:60px; bottom:20%; left:8%; background:var(--ink); opacity:0.06; animation-duration:5s;}
+  @keyframes heroFloat{
+    0%{transform:translate(0,0) scale(1);}
+    100%{transform:translate(20px,-20px) scale(1.1);}
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em;
+    background:var(--lime); color:var(--ink);
+    border:2.5px solid var(--ink);
+    padding:6px 14px; margin-bottom:24px;
+    transform:rotate(-2deg);
+  }
+  h1{
+    font-family:'Archivo Black', sans-serif;
+    font-size:56px; line-height:1.02; letter-spacing:-0.01em;
+    max-width:10.5ch;
+  }
+  h1 mark{
+    background:var(--blue); color:#fff; padding:0 8px;
+    box-decoration-break:clone; -webkit-box-decoration-break:clone;
+  }
+  .hero-sub{
+    margin-top:20px; font-size:17px; line-height:1.65; color:var(--muted); max-width:42ch;
+  }
+  .hero-ctas{margin-top:28px; display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:15px; font-weight:600; height:52px; padding:0 28px;
+    display:inline-flex; align-items:center; text-decoration:none;
+    border:2.5px solid var(--ink);
+    transition:transform 0.12s ease, box-shadow 0.12s ease;
+    cursor:pointer;
+  }
+  .btn-primary{background:var(--blue); color:#fff; box-shadow:6px 6px 0 var(--ink);}
+  .btn-secondary{background:var(--card); color:var(--ink); box-shadow:6px 6px 0 var(--ink);}
+  .btn-lime{background:var(--lime); color:var(--ink); box-shadow:6px 6px 0 var(--ink);}
+  .btn:hover{transform:translate(3px,3px); box-shadow:3px 3px 0 var(--ink);}
+  .hero-reach{
+    margin-top:24px; font-family:'Space Grotesk', sans-serif;
+    font-size:13px; font-weight:600; color:var(--muted);
+  }
+  .panel{position:relative;}
+  .card-neu{
+    background:var(--card); border:3px solid var(--ink);
+    box-shadow:10px 10px 0 var(--ink);
+    padding:26px; transform:rotate(2deg);
+  }
+  .card-neu .chrome{display:flex; gap:6px; margin-bottom:16px;}
+  .card-neu .chrome span{width:12px; height:12px; border:2px solid var(--ink); border-radius:50%;}
+  .card-neu .row-label{font-family:'Space Grotesk', sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; color:var(--muted);}
+  .card-neu .row-value{font-family:'Archivo Black', sans-serif; font-size:34px; margin-top:6px;}
+  .card-neu .bars{display:flex; align-items:flex-end; gap:8px; height:64px; margin-top:20px;}
+  .card-neu .bars div{flex:1; background:#EFEBDD; border:2px solid var(--ink);}
+  .card-neu .bars div.on{background:var(--lime);}
+  .sticker{
+    position:absolute; background:var(--card); border:2.5px solid var(--ink);
+    box-shadow:5px 5px 0 var(--ink);
+    font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:13px;
+    padding:8px 14px; z-index:2;
+  }
+  .sticker-1{top:-18px; right:10px; transform:rotate(6deg); background:var(--blue); color:#fff;}
+  .sticker-2{bottom:-18px; left:-16px; transform:rotate(-5deg);}
+
+
+
+  .services{position:relative; border-bottom:3px solid var(--ink);}
+  .services .wrap{position:relative; z-index:1;}
+  .services-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    margin-top:40px;
+  }
+  .service-card{
+    background:var(--card); border:2.5px solid var(--ink);
+    box-shadow:8px 8px 0 var(--ink);
+    padding:28px; transition:transform 0.2s, box-shadow 0.2s;
+  }
+  .service-card:hover{transform:translate(-3px,-3px); box-shadow:11px 11px 0 var(--ink);}
+  .service-num{
+    font-family:'Archivo Black', sans-serif;
+    font-size:36px; line-height:1; color:var(--blue); margin-bottom:8px;
+  }
+  .service-card h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:18px; font-weight:700; margin-bottom:10px;
+  }
+  .service-card p{
+    font-size:14px; line-height:1.6; color:var(--muted);
+  }
+  .service-link{
+    display:inline-flex; align-items:center; gap:4px;
+    margin-top:14px; font-family:'Space Grotesk', sans-serif;
+    font-size:13px; font-weight:600;
+    border-bottom:2px solid var(--blue); color:var(--blue);
+    transition:gap 0.2s;
+  }
+  .service-link:hover{gap:8px;}
+  .service-link svg{width:14px; height:14px;}
+
+  .testimonials{background:var(--card); border-top:3px solid var(--ink); border-bottom:3px solid var(--ink);}
+  .testimonials-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    margin-top:40px;
+  }
+  .testi-card{
+    background:var(--bg); border-left:5px solid var(--lime);
+    padding:24px; border:2.5px solid var(--ink);
+    box-shadow:6px 6px 0 var(--ink);
+  }
+
+  .testi-quote{
+    font-size:15px; line-height:1.7; color:var(--ink); font-style:italic;
+    margin-bottom:20px;
+  }
+  .testi-author{
+    border-top:2.5px solid var(--ink); padding-top:14px;
+  }
+  .testi-name{font-family:'Space Grotesk', sans-serif; font-size:15px; font-weight:700;}
+  .testi-role{font-size:13px; color:var(--muted); margin-top:2px;}
+
+  .pricing{position:relative; border-top:3px solid var(--ink); border-bottom:3px solid var(--ink);}
+  .pricing .wrap{position:relative; z-index:1;}
+  .pricing-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+    margin-top:40px; align-items:start;
+  }
+  .pricing-card{
+    background:var(--card); border:2.5px solid var(--ink);
+    box-shadow:8px 8px 0 var(--ink);
+    padding:32px 28px; position:relative;
+  }
+  .pricing-card.popular{
+    box-shadow:8px 8px 0 var(--blue);
+    border-color:var(--blue);
+    transform:scale(1.03);
+  }
+  .popular-badge{
+    position:absolute; top:-14px; right:-8px;
+    background:var(--blue); color:#fff;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;
+    padding:5px 14px; border:2.5px solid var(--ink);
+    box-shadow:4px 4px 0 var(--ink);
+    transform:rotate(4deg);
+  }
+  .pricing-name{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:20px; font-weight:700; margin-bottom:6px;
+  }
+  .pricing-start{
+    font-size:14px; color:var(--muted); margin-bottom:20px;
+  }
+  .pricing-features{list-style:none; margin-bottom:24px;}
+  .pricing-features li{
+    display:flex; align-items:flex-start; gap:10px;
+    padding:8px 0; font-size:14px; line-height:1.5;
+    border-bottom:1px solid #EFEBDD;
+  }
+  .pricing-features li:last-child{border-bottom:none;}
+  .pricing-features li svg{width:18px; height:18px; flex-shrink:0; margin-top:1px;}
+  .pricing-card .btn{width:100%; justify-content:center;}
+
+  .faq-section{background:var(--card); border-top:3px solid var(--ink);}
+  .faq-list{max-width:740px; margin:40px auto 0;}
+  .faq-item{border:2.5px solid var(--ink); margin-bottom:12px; box-shadow:4px 4px 0 var(--ink);}
+  .faq-question{
+    width:100%; display:flex; align-items:center; justify-content:space-between;
+    background:var(--card); border:none; padding:18px 20px; cursor:pointer;
+    font-family:'Space Grotesk', sans-serif;
+    font-size:16px; font-weight:600; text-align:left; color:var(--ink);
+  }
+  .faq-question .faq-icon{
+    width:22px; height:22px; flex-shrink:0; transition:transform 0.3s;
+    margin-left:16px;
+  }
+  .faq-item.open .faq-icon{transform:rotate(45deg);}
+  .faq-answer{
+    display:grid; grid-template-rows:0fr;
+    transition:grid-template-rows 0.3s ease;
+  }
+  .faq-item.open .faq-answer{grid-template-rows:1fr;}
+  .faq-answer > div{overflow:hidden;}
+  .faq-answer-inner{
+    padding:0 20px 18px;
+    font-size:15px; line-height:1.7; color:var(--muted);
+  }
+
+  .cta-section{
+    background:var(--ink); color:#fff;
+    border-top:3px solid var(--ink);
+    position:relative; overflow:hidden;
+  }
+  .cta-section .wrap{position:relative; z-index:1; text-align:center;}
+  .cta-section .section-title{color:#fff;}
+  .cta-section .section-sub{color:rgba(255,255,255,0.65); margin:0 auto;}
+  .cta-buttons{display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:36px;}
+  .cta-section .btn-primary{background:var(--lime); color:var(--ink);}
+  .cta-section .btn-secondary{background:transparent; color:#fff; border-color:#fff; box-shadow:6px 6px 0 rgba(255,255,255,0.3);}
+  .cta-section .btn-secondary:hover{box-shadow:3px 3px 0 rgba(255,255,255,0.3);}
+
+  .footer{background:var(--card); border-top:3px solid var(--ink);}
+  .footer-grid{
+    display:grid; grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+  }
+  .footer-brand .nav-logo{margin-bottom:14px;}
+  .footer-brand p{font-size:14px; line-height:1.7; color:var(--muted); max-width:36ch;}
+  .footer-col h4{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;
+    margin-bottom:16px;
+  }
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:8px;}
+  .footer-col a{
+    font-size:14px; color:var(--muted);
+    border-bottom:1.5px solid transparent;
+    transition:border-color 0.15s;
+  }
+  .footer-col a:hover{border-color:var(--ink); color:var(--ink);}
+  .footer-contact p{font-size:14px; color:var(--muted); margin-bottom:6px;}
+  .copyright{
+    border-top:2.5px solid var(--ink);
+    padding:20px 32px; margin-top:48px;
+    font-size:13px; color:var(--muted); text-align:center;
+  }
+
+  .wa-float{
+    position:fixed; bottom:24px; right:24px; z-index:40;
+    width:56px; height:56px; border-radius:50%;
+    background:#25D366; border:2.5px solid var(--ink);
+    box-shadow:4px 4px 0 var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    animation:waPulse 2s ease-in-out infinite;
+    transition:transform 0.2s;
+  }
+  .wa-float:hover{animation:none; transform:scale(1.1);}
+  .wa-float svg{width:28px; height:28px; fill:#fff;}
+  @keyframes waPulse{
+    0%,100%{box-shadow:4px 4px 0 var(--ink), 0 0 0 0 rgba(37,211,102,0.3);}
+    50%{box-shadow:4px 4px 0 var(--ink), 0 0 0 12px rgba(37,211,102,0);}
+  }
+
+  @media (max-width: 1024px){
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .pricing-grid{grid-template-columns:1fr; max-width:460px; margin:40px auto 0;}
+    .pricing-card.popular{transform:none;}
+    .footer-grid{grid-template-columns:1fr 1fr; gap:32px;}
+  }
+  @media (max-width: 900px){
+    .hero .wrap{grid-template-columns:1fr; padding:56px 24px;}
+    h1{font-size:36px; max-width:none;}
+    .card-neu{transform:rotate(0); margin-top:36px;}
+    .section-title{font-size:32px;}
+    .wrap{padding:56px 24px;}
+    .nav-links{display:none;}
+    .nav-cta{display:none;}
+    .hamburger{display:flex;}
+    .nav-inner{padding:0 20px;}
+    .footer-grid{grid-template-columns:1fr; gap:28px;}
+  }
+  @media (max-width: 640px){
+    .services-grid{grid-template-columns:1fr;}
+    .hero .wrap{padding:40px 20px;}
+    h1{font-size:28px;}
+    .wrap{padding:40px 20px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:0.01ms!important; animation-iteration-count:1!important; transition-duration:0.01ms!important;}
+  }
+</style>
+</head>
+<body>
+
+  <header class="nav" role="banner">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        DIRAIT
+        <span class="est">Est. 2023</span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#services" data-i18n="nav.services">Layanan</a>
+        <a href="#pricing" data-i18n="nav.pricing">Harga</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#cta" data-i18n="nav.contact">Kontak</a>
+      </nav>
+      <div class="nav-right">
+        <button class="locale-btn" id="locale-toggle" aria-label="Switch language">EN</button>
+        <a href="#cta" class="nav-cta" data-i18n="nav.cta">Hubungi Kami</a>
+        <button class="hamburger" id="menu-btn" aria-label="Buka menu">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-backdrop" id="mobile-backdrop"></div>
+  <div class="mobile-panel" id="mobile-panel" role="dialog" aria-label="Menu navigasi">
+    <button class="close-btn" id="mobile-close" aria-label="Tutup menu">✕</button>
+    <nav class="mobile-nav-links">
+      <a href="#services" data-i18n="nav.services">Layanan</a>
+      <a href="#pricing" data-i18n="nav.pricing">Harga</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#cta" data-i18n="nav.contact">Kontak</a>
+    </nav>
+    <div class="mobile-bottom">
+      <button class="locale-btn" id="locale-toggle-mobile">EN</button>
+      <a href="#cta" class="nav-cta" data-i18n="nav.cta">Hubungi Kami</a>
+    </div>
+  </div>
+
+  <section class="hero" id="hero">
+    <div class="network-dots"></div>
+    <div class="hero-float" style="width:180px;height:180px;top:5%;left:-4%;"></div>
+    <div class="hero-float"></div>
+    <div class="hero-float"></div>
+    <div class="wrap">
+      <div>
+        <span class="eyebrow" data-i18n="hero.eyebrow">Software house, Jakarta</span>
+        <h1 data-i18n="hero.h1">Software yang <mark>menjalankan</mark> bisnis Anda</h1>
+        <p class="hero-sub" data-i18n="hero.sub">Platform POS, HRIS, CRM, WMS, dan IoT kustom — dirancang di Jakarta, digunakan di seluruh Asia Tenggara dan Eropa.</p>
+        <div class="hero-ctas">
+          <a href="#cta" class="btn btn-primary" data-i18n="hero.cta1">Diskusikan Proyek Anda</a>
+          <a href="#services" class="btn btn-secondary" data-i18n="hero.cta2">Lihat Layanan</a>
+        </div>
+        <p class="hero-reach" data-i18n="hero.reach">→ Melayani Indonesia, Malaysia, Singapura & Eropa</p>
+      </div>
+      <div class="panel">
+        <div class="sticker sticker-1">ISO 27001</div>
+        <div class="card-neu">
+          <div class="chrome"><span></span><span></span><span></span></div>
+          <div class="row-label">Toko Makmur — Kemang</div>
+          <div class="row-value">Rp 8,240,000</div>
+          <div class="bars">
+            <div style="height:35%"></div>
+            <div style="height:55%"></div>
+            <div class="on" style="height:85%"></div>
+            <div style="height:60%"></div>
+            <div style="height:70%"></div>
+            <div class="on" style="height:45%"></div>
+          </div>
+        </div>
+        <div class="sticker sticker-2">closing: 12 min</div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="services" id="services">
+    <div class="network-dots"></div>
+    <div class="wrap reveal">
+      <span class="section-label" data-i18n="services.label">Apa yang Kami Bangun</span>
+      <h2 class="section-title" data-i18n="services.title">Enam platform. Satu tim.</h2>
+      <div class="services-grid" id="services-grid"></div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="wrap reveal">
+      <span class="section-label" data-i18n="testimonials.label">Kata Mereka</span>
+      <h2 class="section-title" data-i18n="testimonials.title">Kata mereka yang memakai.</h2>
+      <div class="testimonials-grid" id="testimonials-grid"></div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="network-dots"></div>
+    <div class="wrap reveal center">
+      <span class="section-label" data-i18n="pricing.label">Harga</span>
+      <h2 class="section-title" data-i18n="pricing.title">Transparan. Tanpa biaya tersembunyi.</h2>
+      <div class="pricing-grid" id="pricing-grid"></div>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="wrap reveal center">
+      <span class="section-label" data-i18n="faq.label">FAQ</span>
+      <h2 class="section-title" data-i18n="faq.title">Pertanyaan umum, jawaban langsung.</h2>
+      <div class="faq-list" id="faq-list"></div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="cta">
+    <div class="network-dots" style="opacity:0.05; background-image:radial-gradient(rgba(255,255,255,0.3) 1.5px, transparent 1.5px);"></div>
+    <div class="wrap reveal center">
+      <h2 class="section-title" data-i18n="cta.title">Siap membangun?</h2>
+      <p class="section-sub" data-i18n="cta.sub">Ceritakan kebutuhan Anda. Kami akan jelaskan pendekatan kami — tanpa sales pitch, tanpa kewajiban.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="cta.btn1">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="margin-right:8px;"><path d="M12 2C6.477 2 2 6.477 2 12c0 2.036.587 3.93 1.6 5.548L2 22l4.548-1.6A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.642 0-3.178-.46-4.497-1.258l-.322-.194-2.7.95.95-2.7-.194-.322A7.958 7.958 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z" fill="currentColor"/><path d="M16.5 13.5c-.3-.15-1.8-.9-2.1-1-.3-.1-.5-.15-.7.15s-.9 1-1.1 1.2c-.2.2-.4.2-.7.1-.3-.15-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7s.3-.3.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.7-1-2.3-.3-.6-.6-.5-.8-.5h-.7c-.2 0-.5.2-.6.5-.2.3-.7 1-.7 2.4s.7 2.8 1 3c.1.2 1.6 2.5 4 3.4.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3z" fill="currentColor"/></svg>
+          Mulai di WhatsApp
+        </a>
+        <a href="mailto:hello@dirait.id" class="btn btn-secondary" data-i18n="cta.btn2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="margin-right:8px;"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/></svg>
+          Kirim Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            DIRAIT
+            <span class="est">Est. 2023</span>
+          </div>
+          <p data-i18n="footer.desc">Software house berbasis Jakarta yang membangun platform bisnis kustom untuk perusahaan di Asia Tenggara dan Eropa.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.services_title">Layanan</h4>
+          <ul id="footer-services"></ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.company_title">Perusahaan</h4>
+          <ul>
+            <li><a href="#" data-i18n="footer.about">Tentang</a></li>
+            <li><a href="#" data-i18n="footer.blog">Blog</a></li>
+            <li><a href="#" data-i18n="footer.privacy">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-contact">
+          <h4 data-i18n="footer.contact_title">Kontak</h4>
+          <p data-i18n="footer.address">Jl. Sudirman No. 53, Senayan, Jakarta Selatan 12190</p>
+          <p>hello@dirait.id</p>
+          <p>+62 812-3456-7890</p>
+        </div>
+      </div>
+    </div>
+    <div class="copyright" data-i18n="footer.copyright">© 2025 DIRAIT. Hak cipta dilindungi.</div>
+  </footer>
+
+  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="wa-float" aria-label="Hubungi kami via WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 2.036.587 3.93 1.6 5.548L2 22l4.548-1.6A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.642 0-3.178-.46-4.497-1.258l-.322-.194-2.7.95.95-2.7-.194-.322A7.958 7.958 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/><path d="M16.5 13.5c-.3-.15-1.8-.9-2.1-1-.3-.1-.5-.15-.7.15s-.9 1-1.1 1.2c-.2.2-.4.2-.7.1-.3-.15-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7s.3-.3.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.7-1-2.3-.3-.6-.6-.5-.8-.5h-.7c-.2 0-.5.2-.6.5-.2.3-.7 1-.7 2.4s.7 2.8 1 3c.1.2 1.6 2.5 4 3.4.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3z"/></svg>
+  </a>
+
+  <script>
+  const DICT = {
+    id: {
+      nav: {
+        services: 'Layanan',
+        pricing: 'Harga',
+        faq: 'FAQ',
+        contact: 'Kontak',
+        cta: 'Hubungi Kami'
+      },
+      hero: {
+        eyebrow: 'Software House · Jakarta',
+        h1: 'Software yang <mark>menjalankan</mark> bisnis Anda',
+        sub: 'Platform POS, HRIS, CRM, WMS, dan IoT kustom — dirancang di Jakarta, digunakan di seluruh Asia Tenggara dan Eropa.',
+        cta1: 'Diskusikan Proyek Anda',
+        cta2: 'Lihat Layanan',
+        reach: '→ Melayani Indonesia, Malaysia, Singapura & Eropa'
+      },
+      services: {
+        label: 'Apa yang Kami Bangun',
+        title: 'Enam platform. Satu tim.',
+        list: [
+          { num: '01', title: 'Company Profile', desc: 'Website profesional untuk memperkuat identitas dan kredibilitas bisnis Anda — bukan template biasa.' },
+          { num: '02', title: 'CRM', desc: 'Platform CRM yang tailored dengan sales pipeline, manajemen kontak, dan pelacakan leads secara real-time.' },
+          { num: '03', title: 'HRIS', desc: 'Pengelolaan payroll, absensi, cuti, dan performa karyawan dalam satu sistem terintegrasi.' },
+          { num: '04', title: 'POS', desc: 'Transaksi cepat, manajemen inventaris, dan laporan multi-cabang untuk ritel dan F&B.' },
+          { num: '05', title: 'WMS', desc: 'Lacak stok secara real-time di seluruh gudang dan lokasi dengan sistem manajemen warehouse.' },
+          { num: '06', title: 'Platform IoT', desc: 'Ubah data sensor menjadi intelijen operasional — monitoring suhu, getaran, dan perangkat terhubung.' }
+        ]
+      },
+      testimonials: {
+        label: 'Kata Mereka',
+        title: 'Kata mereka yang memakai.',
+        list: [
+          { quote: 'Migrasi POS yang awalnya kami khawatirkan ternyata selesai dalam 2 minggu. Closing toko dari 45 menit jadi 12 menit.', name: 'Rina Wijaya', role: 'Operations Director, MartKu Group' },
+          { quote: 'Kami butuh HRIS yang sesuai dengan alur kerja kami, bukan sebaliknya. Tim DIRAIT benar-benar mendengarkan.', name: 'Ahmad Fauzan', role: 'VP of People Operations, Nusantara FMCG' },
+          { quote: 'Dashboard IoT mereka memberi kami peringatan dini untuk cold chain — masalah langsung ketahuan sebelum barang rusak.', name: 'Sarah Lim', role: 'Logistics Manager, FastMove Singapore' }
+        ]
+      },
+      pricing: {
+        label: 'Harga',
+        title: 'Transparan. Tanpa biaya tersembunyi.',
+        list: [
+          {
+            name: 'Basic',
+            popular: false,
+            features: [
+              'Website company profile',
+              'Hingga 5 halaman',
+              'Desain responsif',
+              'SEO dasar',
+              'Dukungan 30 hari',
+              'Source code milik Anda'
+            ],
+            cta: 'Mulai Sekarang'
+          },
+          {
+            name: 'Small Business',
+            popular: true,
+            features: [
+              'Pilih 1 platform (CRM/HRIS/POS/WMS)',
+              'Fitur inti + 2 add-on',
+              'Manajemen pengguna & peran',
+              '1 integrasi API',
+              'Responsif + mobile-friendly',
+              'Dukungan 90 hari',
+              'Source code milik Anda'
+            ],
+            cta: 'Mulai Sekarang'
+          },
+          {
+            name: 'Business',
+            popular: false,
+            features: [
+              'Multi-platform integration',
+              'Custom IoT dashboards',
+              'Dedicated project manager',
+              'Integrasi API tak terbatas',
+              '12 bulan dukungan & SLA',
+              'Prioritas pengembangan fitur',
+              'Source code milik Anda'
+            ],
+            cta: 'Hubungi Kami'
+          }
+        ]
+      },
+      faq: {
+        label: 'FAQ',
+        title: 'Pertanyaan umum, jawaban langsung.',
+        list: [
+          { q: 'Industri apa saja yang Anda layani?', a: 'Kami melayani berbagai industri: ritel, F&B, logistik, manufaktur, dan jasa profesional. Klien kami tersebar di Indonesia, Malaysia, Singapura, dan Eropa.' },
+          { q: 'Berapa lama waktu pengerjaan proyek?', a: 'Tergantung kompleksitas. Website company profile 2–4 minggu, platform bisnis (CRM/HRIS/POS/WMS) 8–16 minggu, proyek IoT bervariasi sesuai kebutuhan.' },
+          { q: 'Apakah ada dukungan setelah launch?', a: 'Setiap paket mencakup dukungan pasca-launch: 30 hari (Basic), 90 hari (Small Business), atau 12 bulan (Business). Perpanjangan dukungan tersedia.' },
+          { q: 'Bisakah terintegrasi dengan sistem yang sudah ada?', a: 'Ya. API kami mendukung integrasi dengan sistem akuntansi, payment gateway, ERP, dan e-commerce yang sudah Anda gunakan. Scope tergantung paket.' },
+          { q: 'Teknologi apa yang digunakan?', a: 'Kami memilih stack yang tepat per proyek. Umumnya React, Next.js, Node.js, dan PostgreSQL. Untuk IoT menggunakan MQTT, InfluxDB, dan Grafana.' },
+          { q: 'Apakah mendukung sistem multi-bahasa atau multi-mata-uang?', a: 'Ya. CRM, POS, dan WMS kami mendukung multi-bahasa dan multi-mata-uang secara bawaan — cocok untuk operasi lintas negara.' }
+        ]
+      },
+      cta: {
+        title: 'Siap membangun?',
+        sub: 'Ceritakan kebutuhan Anda. Kami akan jelaskan pendekatan kami — tanpa sales pitch, tanpa kewajiban.',
+        btn1: 'Mulai di WhatsApp',
+        btn2: 'Kirim Email'
+      },
+      footer: {
+        desc: 'Software house berbasis Jakarta yang membangun platform bisnis kustom untuk perusahaan di Asia Tenggara dan Eropa.',
+        services_title: 'Layanan',
+        company_title: 'Perusahaan',
+        contact_title: 'Kontak',
+        about: 'Tentang',
+        blog: 'Blog',
+        privacy: 'Kebijakan Privasi',
+        address: 'Jl. Sudirman No. 53, Senayan, Jakarta Selatan 12190',
+        copyright: '© 2025 DIRAIT. Hak cipta dilindungi.'
+      },
+      meta: { title: 'DIRAIT — Jasa Pembuatan Software Kustom di Jakarta', desc: 'POS, HRIS, CRM, WMS, dan IoT kustom untuk perusahaan di Indonesia, Malaysia, Singapura, dan Eropa. ISO 27001. 12 min closing.' }
+    },
+    en: {
+      nav: {
+        services: 'Services',
+        pricing: 'Pricing',
+        faq: 'FAQ',
+        contact: 'Contact',
+        cta: 'Contact Us'
+      },
+      hero: {
+        eyebrow: 'Software House · Jakarta',
+        h1: 'Software that <mark>actually runs</mark> your business',
+        sub: 'Custom POS, HRIS, CRM, WMS, and IoT platforms — designed in Jakarta, deployed across Southeast Asia and Europe.',
+        cta1: 'Discuss Your Project',
+        cta2: 'View Services',
+        reach: '→ Serving Indonesia, Malaysia, Singapore & Europe'
+      },
+      services: {
+        label: 'What We Build',
+        title: 'Six platforms. One team.',
+        list: [
+          { num: '01', title: 'Company Profile', desc: 'A professional website to strengthen your business identity and credibility — not a template.' },
+          { num: '02', title: 'CRM', desc: 'CRM platform tailored to your sales pipeline, contact management, and real-time lead tracking.' },
+          { num: '03', title: 'HRIS', desc: 'Manage payroll, attendance, leave, and performance reviews in one integrated system.' },
+          { num: '04', title: 'POS', desc: 'Fast transactions, inventory management, and multi-branch reporting for retail and F&B.' },
+          { num: '05', title: 'WMS', desc: 'Track stock in real-time across warehouses and locations with a warehouse management system.' },
+          { num: '06', title: 'IoT Platform', desc: 'Turn sensor data into operational intelligence — temperature, vibration, and device monitoring.' }
+        ]
+      },
+      testimonials: {
+        label: 'Testimonials',
+        title: 'From those who use it.',
+        list: [
+          { quote: 'The POS migration we worried about finished in 2 weeks. Store closing went from 45 minutes to 12 minutes.', name: 'Rina Wijaya', role: 'Operations Director, MartKu Group' },
+          { quote: 'We needed an HRIS that fit our workflow, not the other way around. The DIRAIT team really listened.', name: 'Ahmad Fauzan', role: 'VP of People Operations, Nusantara FMCG' },
+          { quote: 'Their IoT dashboard gave us early warnings for cold chain — issues caught before goods were damaged.', name: 'Sarah Lim', role: 'Logistics Manager, FastMove Singapore' }
+        ]
+      },
+      pricing: {
+        label: 'Pricing',
+        title: 'Transparent. No hidden fees.',
+        list: [
+          {
+            name: 'Basic',
+            popular: false,
+            features: [
+              'Company profile website',
+              'Up to 5 pages',
+              'Responsive design',
+              'Basic SEO',
+              '30-day support',
+              'Own the source code'
+            ],
+            cta: 'Start Now'
+          },
+          {
+            name: 'Small Business',
+            popular: true,
+            features: [
+              'Pick 1 platform (CRM/HRIS/POS/WMS)',
+              'Core features + 2 add-ons',
+              'User & role management',
+              '1 API integration',
+              'Responsive + mobile-friendly',
+              '90-day support',
+              'Own the source code'
+            ],
+            cta: 'Start Now'
+          },
+          {
+            name: 'Business',
+            popular: false,
+            features: [
+              'Multi-platform integration',
+              'Custom IoT dashboards',
+              'Dedicated project manager',
+              'Unlimited API integrations',
+              '12-month support & SLA',
+              'Priority feature development',
+              'Own the source code'
+            ],
+            cta: 'Contact Us'
+          }
+        ]
+      },
+      faq: {
+        label: 'FAQ',
+        title: 'Common questions, straight answers.',
+        list: [
+          { q: 'What industries do you serve?', a: 'We serve retail, F&B, logistics, manufacturing, and professional services across Indonesia, Malaysia, Singapore, and Europe.' },
+          { q: 'How long does a project take?', a: 'Company website 2–4 weeks, business platform (CRM/HRIS/POS/WMS) 8–16 weeks. IoT projects vary by scope.' },
+          { q: 'Is post-launch support available?', a: 'Every plan includes post-launch support: 30 days (Basic), 90 days (Small Business), or 12 months (Business). Extensions available.' },
+          { q: 'Can you integrate with existing systems?', a: 'Yes. Our APIs integrate with accounting, payment gateways, ERP, and e-commerce systems. Scope depends on the plan.' },
+          { q: 'What technology do you use?', a: 'We choose per project. Typically React, Next.js, Node.js, PostgreSQL. For IoT: MQTT, InfluxDB, and Grafana.' },
+          { q: 'Do you support multi-language or multi-currency?', a: 'Yes. Our CRM, POS, and WMS support multi-language and multi-currency out of the box — ideal for cross-border operations.' }
+        ]
+      },
+      cta: {
+        title: 'Ready to build?',
+        sub: 'Tell us your needs. We\'ll explain our approach — no sales pitch, no obligation.',
+        btn1: 'Start on WhatsApp',
+        btn2: 'Send Email'
+      },
+      footer: {
+        desc: 'Jakarta-based software house building custom business platforms for companies across Southeast Asia and Europe.',
+        services_title: 'Services',
+        company_title: 'Company',
+        contact_title: 'Contact',
+        about: 'About',
+        blog: 'Blog',
+        privacy: 'Privacy Policy',
+        address: 'Jl. Sudirman No. 53, Senayan, South Jakarta 12190',
+        copyright: '© 2025 DIRAIT. All rights reserved.'
+      },
+      meta: { title: 'DIRAIT — Custom Software Development Jakarta', desc: 'Custom POS, HRIS, CRM, WMS, and IoT platforms for companies in Indonesia, Malaysia, Singapore, and Europe. ISO 27001. 12 min closing.' }
+    }
+  };
+
+  const ICONS = {
+    arrowUpRight: '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15L15 5M7 5h8v8"/></svg>',
+    check: '<svg viewBox="0 0 20 20" fill="none"><path d="M4 10l4 4 8-8" stroke="#2D6BFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>'
+  };
+
+  let currentLocale = 'id';
+
+  function t(key) {
+    const parts = key.split('.');
+    let obj = DICT[currentLocale];
+    for (const p of parts) if (obj) obj = obj[p];
+    return obj || key;
+  }
+
+  function renderServices() {
+    const grid = document.getElementById('services-grid');
+    const items = DICT[currentLocale].services.list;
+    grid.innerHTML = items.map(s => `
+      <div class="service-card">
+        <div class="service-num">${s.num}</div>
+        <h3>${s.title}</h3>
+        <p>${s.desc}</p>
+        <span class="service-link">
+          ${t('nav.cta')} ${ICONS.arrowUpRight}
+        </span>
+      </div>
+    `).join('');
+  }
+
+  function renderTestimonials() {
+    const grid = document.getElementById('testimonials-grid');
+    const items = DICT[currentLocale].testimonials.list;
+    grid.innerHTML = items.map(tc => `
+      <div class="testi-card">
+        <p class="testi-quote">"${tc.quote}"</p>
+        <div class="testi-author">
+          <div class="testi-name">${tc.name}</div>
+          <div class="testi-role">${tc.role}</div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderPricing() {
+    const grid = document.getElementById('pricing-grid');
+    const items = DICT[currentLocale].pricing.list;
+    grid.innerHTML = items.map(p => `
+      <div class="pricing-card${p.popular ? ' popular' : ''}">
+        ${p.popular ? '<div class="popular-badge">Populer</div>' : ''}
+        <div class="pricing-name">${p.name}</div>
+        <p class="pricing-start">Mulai dari</p>
+        <ul class="pricing-features">
+          ${p.features.map(f => `<li>${ICONS.check} ${f}</li>`).join('')}
+        </ul>
+        <a href="#cta" class="btn ${p.popular ? 'btn-primary' : 'btn-secondary'}">${p.cta}</a>
+      </div>
+    `).join('');
+  }
+
+  function renderFaq() {
+    const list = document.getElementById('faq-list');
+    const items = DICT[currentLocale].faq.list;
+    list.innerHTML = items.map((f, i) => `
+      <div class="faq-item" data-faq="${i}">
+        <button class="faq-question" data-faq-btn="${i}">
+          ${f.q}
+          <span class="faq-icon">${ICONS.plus}</span>
+        </button>
+        <div class="faq-answer">
+          <div>
+            <div class="faq-answer-inner">${f.a}</div>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderFooterServices() {
+    const ul = document.getElementById('footer-services');
+    const items = DICT[currentLocale].services.list;
+    ul.innerHTML = items.map(s => `<li><a href="#services">${s.title}</a></li>`).join('');
+  }
+
+  function updateStaticText() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (key === 'hero.h1') {
+        el.innerHTML = t(key);
+      } else {
+        el.textContent = t(key);
+      }
+    });
+    document.getElementById('meta-title').textContent = DICT[currentLocale].meta.title;
+    document.getElementById('meta-desc').setAttribute('content', DICT[currentLocale].meta.desc);
+    document.getElementById('locale-toggle').textContent = currentLocale === 'id' ? 'EN' : 'ID';
+    document.getElementById('locale-toggle-mobile').textContent = currentLocale === 'id' ? 'EN' : 'ID';
+  }
+
+  function render() {
+    renderServices();
+    renderTestimonials();
+    renderPricing();
+    renderFaq();
+    renderFooterServices();
+    updateStaticText();
+    observeRevealElements();
+  }
+
+  function switchLocale(locale) {
+    currentLocale = locale;
+    render();
+  }
+
+  let openFaqIndex = -1;
+  function toggleFaq(index) {
+    const items = document.querySelectorAll('.faq-item');
+    if (openFaqIndex === index) {
+      items[index].classList.remove('open');
+      openFaqIndex = -1;
+      return;
+    }
+    items.forEach(el => el.classList.remove('open'));
+    items[index].classList.add('open');
+    openFaqIndex = index;
+  }
+
+  function openMobileNav() {
+    document.getElementById('mobile-backdrop').classList.add('open');
+    document.getElementById('mobile-panel').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMobileNav() {
+    document.getElementById('mobile-backdrop').classList.remove('open');
+    document.getElementById('mobile-panel').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function observeRevealElements() {
+    const els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      els.forEach(el => obs.observe(el));
+    } else {
+      els.forEach(el => el.classList.add('visible'));
+    }
+  }
+
+  function bindEvents() {
+    document.getElementById('locale-toggle').addEventListener('click', () => {
+      switchLocale(currentLocale === 'id' ? 'en' : 'id');
+    });
+    document.getElementById('locale-toggle-mobile').addEventListener('click', () => {
+      switchLocale(currentLocale === 'id' ? 'en' : 'id');
+      closeMobileNav();
+    });
+    document.getElementById('menu-btn').addEventListener('click', openMobileNav);
+    document.getElementById('mobile-close').addEventListener('click', closeMobileNav);
+    document.getElementById('mobile-backdrop').addEventListener('click', closeMobileNav);
+    document.querySelectorAll('.mobile-nav-links a').forEach(a => {
+      a.addEventListener('click', closeMobileNav);
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMobileNav();
+    });
+    document.getElementById('faq-list').addEventListener('click', e => {
+      const btn = e.target.closest('[data-faq-btn]');
+      if (btn) toggleFaq(parseInt(btn.getAttribute('data-faq-btn')));
+    });
+
+
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    render();
+    bindEvents();
+  });
+  </script>
+</body>
+</html>
