@@ -1,0 +1,17 @@
+{
+  "name": "dirait",
+  "scripts": {
+    "build:css": "tailwindcss -i assets/src/homepage.css -o assets/css/homepage.css --minify",
+    "watch:css": "tailwindcss -i assets/src/homepage.css -o assets/css/homepage.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-gionodicid:gionodicid/dirait.git"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "4.1.14",
+    "tailwindcss": "4.1.14"
+  },
+  "private": true
+}

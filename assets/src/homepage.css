@@ -1,0 +1,95 @@
+@import "tailwindcss" source(none);
+@source "../../pages/home.html";
+
+/* Semantic design tokens. Utilities read these names (bg-canvas, text-muted, border-line, bg-brand ...). */
+@theme {
+  --color-canvas: #f6f7fb;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f4f5f9;
+  --color-ink: #071530;
+  --color-ink-hover: #0f2350;
+  --color-muted: #646b80;
+  --color-subtle: #9aa0b4;
+  --color-line: #e5e7ef;
+  --color-line-strong: #c9d3f0;
+  --color-brand: #002fa7;
+  --color-brand-hover: #00227a;
+  --color-brand-accent: #3d6bff;
+  --color-brand-soft: #e8eeff;
+  --color-success: #22c55e;
+  --color-code: #c7d2fe;
+  --color-code-accent: #67e8f9;
+  --color-code-ok: #86efac;
+
+  --font-sans: "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --spacing-gutter: clamp(16px, 3vw, 40px);
+  --spacing-section: clamp(90px, 11vw, 140px);
+
+  --breakpoint-desk: 56.25rem;
+
+  --icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.5l2 2 5-5' fill='none' stroke='%23002fa7' stroke-width='2'/%3E%3C/svg%3E");
+  --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%23071530' stroke-width='1.6'/%3E%3C/svg%3E");
+
+  --animate-packet: packet 2.4s linear infinite;
+  @keyframes packet {
+    to { stroke-dashoffset: -126; }
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-canvas font-sans text-[15.5px]/[1.6] text-ink antialiased; }
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-[10px] px-[18px] py-[11px] text-sm font-medium transition-colors;
+}
+
+/* Repeated patterns get one semantic name each instead of copies of the same utilities. */
+@layer components {
+  .btn-primary { @apply btn bg-ink text-white shadow-[inset_0_1px_0_rgb(255_255_255/.18),0_1px_2px_rgb(0_0_0/.2)] hover:bg-ink-hover; }
+  .btn-brand { @apply btn bg-brand text-white shadow-[inset_0_1px_0_rgb(255_255_255/.18),0_1px_2px_rgb(0_0_0/.2)] hover:bg-brand-hover; }
+  .btn-secondary { @apply btn border border-line bg-surface text-ink shadow-xs hover:bg-canvas; }
+
+  .eyebrow { @apply font-mono text-xs text-brand; }
+  .heading-section { @apply mt-2 text-[clamp(32px,4vw,52px)] leading-[1.05] font-semibold tracking-[-.04em]; }
+  .text-gradient { @apply bg-linear-to-r from-brand to-brand-accent bg-clip-text text-transparent; }
+
+  .avatar { @apply -ml-2 size-[26px] rounded-full border-2 border-canvas first:ml-0; }
+  .avatar-1 { @apply bg-linear-135 from-[#a5b4fc] to-[#67e8f9]; }
+  .avatar-2 { @apply bg-linear-135 from-[#fda4af] to-[#fcd34d]; }
+  .avatar-3 { @apply bg-linear-135 from-[#86efac] to-[#67e8f9]; }
+
+  .card-bento { @apply relative flex flex-col overflow-hidden rounded-[18px] border border-line bg-surface p-6; }
+  .card-bento-title { @apply text-[17px] font-semibold; }
+  .card-bento-text { @apply mt-1 max-w-[42ch] text-[14.5px] text-muted; }
+
+  .iot-device {
+    @apply absolute rounded-lg border border-line bg-surface px-2 py-[5px] text-[11px] leading-[1.25] whitespace-nowrap shadow-[0_2px_6px_rgb(7_21_48/.06)];
+    @apply after:absolute after:top-1.5 after:right-1.5 after:size-1.5 after:rounded-full after:bg-success;
+  }
+
+  .plan-feature {
+    @apply flex gap-2 py-1 text-[14.5px];
+    @apply before:mt-1 before:size-4 before:flex-none before:rounded-full before:bg-brand-soft before:bg-center before:bg-no-repeat;
+    &::before { background-image: var(--icon-check); }
+  }
+
+  .faq-item {
+    @apply rounded-2xl border border-line bg-surface transition-[box-shadow,border-color] duration-200 hover:border-line-strong;
+    @apply open:border-brand open:shadow-[0_0_0_4px_var(--color-brand-soft),0_18px_40px_-20px_rgb(0_47_167/.35)];
+  }
+  .faq-question {
+    @apply flex cursor-pointer list-none items-center gap-3.5 px-5 py-[18px] text-base font-semibold [&::-webkit-details-marker]:hidden;
+    @apply after:ml-auto after:size-7 after:flex-none after:rounded-full after:border after:border-line after:bg-center after:bg-no-repeat after:bg-size-[14px] after:transition-transform after:duration-200;
+    &::after { background-image: var(--icon-chevron); }
+    @apply in-open:after:rotate-180 in-open:after:border-transparent in-open:after:bg-brand-soft;
+  }
+  .faq-icon { @apply grid size-[34px] flex-none place-items-center rounded-[10px] bg-brand-soft text-base text-brand in-open:bg-brand in-open:text-white; }
+  .faq-answer { @apply pr-5 pb-5 pl-[68px] text-muted; }
+  .tag { @apply rounded-md border border-line bg-canvas px-2 py-[3px] font-mono text-xs font-medium text-ink; }
+
+  .lucide { @apply inline-block size-[1em] flex-none align-[-.14em] [stroke-width:1.9]; }
+}

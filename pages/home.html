@@ -8,216 +8,95 @@
 <link rel="canonical" href="https://dirait.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#f6f7fb;--card:#fff;--ink:#071530;--mid:#646b80;--line:#e5e7ef;--brand:#002fa7;--brand2:#3d6bff;--soft:#e8eeff;
-  --f:"Geist",system-ui,sans-serif;--mono:"Geist Mono",monospace;--m:clamp(16px,3vw,40px)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.6 var(--f);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}h1,h2,h3,p,ul,figure{margin:0;padding:0}ul{list-style:none}
-.wrap{max-width:1180px;margin-left:auto;margin-right:auto;padding-left:var(--m);padding-right:var(--m)}
-.mono{font-family:var(--mono);font-size:12px}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;padding:11px 18px;border-radius:10px;font-weight:500;font-size:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 1px 2px rgba(0,0,0,.2)}
-.btn:hover{background:#0f2350}.btn.l{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:0 1px 2px rgba(0,0,0,.05)}.btn.l:hover{background:var(--bg)}
-.btn.b{background:var(--brand)}.btn.b:hover{background:#00227a}
-/* nav */
-.nav{position:sticky;top:12px;z-index:10;margin:12px auto 0;max-width:1100px;display:flex;align-items:center;justify-content:space-between;padding:8px 8px 8px 18px;background:rgba(255,255,255,.8);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:14px}
-.logo{display:flex;gap:8px;align-items:center;font-weight:700;font-size:17px}.logo i{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,var(--brand),var(--brand2))}
-.nav nav{display:flex;gap:4px;font-size:14px}.nav nav a{padding:6px 12px;border-radius:8px;color:var(--mid)}.nav nav a:hover{background:var(--bg);color:var(--ink)}
-/* hero */
-.hero{text-align:center;padding-top:clamp(60px,8vw,110px);position:relative}
-.hero::before{content:"";position:absolute;inset:0 0 auto;height:600px;z-index:-1;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(60% 60% at 50% 30%,#000,transparent)}
-.ann{display:inline-flex;gap:10px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:99px;padding:4px 12px 4px 4px;font-size:13px}
-.ann b{background:var(--soft);color:var(--brand);border-radius:99px;padding:2px 10px;font-weight:600}
-h1{font-weight:600;font-size:clamp(42px,6.2vw,82px);line-height:1;letter-spacing:-.045em;max-width:15ch;margin:22px auto 0}
-h1 span{background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero>p{color:var(--mid);font-size:clamp(16px,1.3vw,19px);max-width:52ch;margin:20px auto 0}
-.acts{display:flex;gap:10px;justify-content:center;margin-top:28px;flex-wrap:wrap}
-.proof{display:flex;gap:10px;justify-content:center;align-items:center;margin-top:22px;color:var(--mid);font-size:13px}
-.av{display:flex}.av i{width:26px;height:26px;border-radius:50%;border:2px solid var(--bg);margin-left:-8px;background:linear-gradient(135deg,#a5b4fc,#67e8f9)}.av i:first-child{margin:0}
-.av i:nth-child(2){background:linear-gradient(135deg,#fda4af,#fcd34d)}.av i:nth-child(3){background:linear-gradient(135deg,#86efac,#67e8f9)}
-/* app mock */
-.shot{margin:56px auto 0;max-width:1100px;padding:10px;border-radius:20px;background:linear-gradient(180deg,rgba(0,47,167,.15),rgba(61,107,255,.05));border:1px solid var(--line)}
-.appw{background:#fff;border-radius:12px;border:1px solid var(--line);overflow:hidden;display:grid;grid-template-columns:210px 1fr;text-align:left;box-shadow:0 40px 80px -30px rgba(40,40,120,.35)}
-.sb{border-right:1px solid var(--line);padding:16px 12px;background:#fbfbfd;font-size:13px}
-.sb .ws{display:flex;gap:8px;align-items:center;font-weight:600;margin-bottom:18px}.sb .ws i{width:20px;height:20px;border-radius:6px;background:#f97316}
-.sb a{display:flex;justify-content:space-between;padding:6px 10px;border-radius:7px;color:var(--mid)}.sb a.on{background:var(--soft);color:var(--brand);font-weight:500}
-.sb small{display:block;margin:16px 10px 6px;color:#9aa0b4;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
-.mn{padding:20px}.mn .hd{display:flex;justify-content:space-between;align-items:center}.mn h3{font-size:18px;font-weight:600}
-.mn .tools{display:flex;gap:8px;align-items:center}.mn .tools .av{margin-right:4px}
-.tabs{display:flex;gap:18px;font-size:13px;color:var(--mid);border-bottom:1px solid var(--line);margin-top:14px}.tabs span{padding-bottom:9px}.tabs .on{color:var(--ink);font-weight:500;box-shadow:inset 0 -2px 0 var(--brand)}
-.board{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
-.lane{background:#f4f5f9;border-radius:10px;padding:8px}
-.lane h5{margin:2px 4px 8px;font-size:12px;font-weight:600;color:var(--mid);display:flex;justify-content:space-between;text-transform:uppercase;letter-spacing:.04em}.lane h5 span{font-family:var(--mono);font-weight:400}
-.tk{background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px;margin-bottom:8px;font-size:12.5px;box-shadow:0 1px 2px rgba(7,21,48,.04)}
-.tk b{display:block;font-weight:500;line-height:1.35}
-.tk .ft{display:flex;justify-content:space-between;align-items:center;margin-top:9px;font-family:var(--mono);font-size:11px;color:var(--mid)}
-.lb{display:inline-block;font:500 10.5px var(--f);border-radius:5px;padding:1px 7px;margin-bottom:6px;background:var(--soft);color:var(--brand)}
-.lb.m{background:#fef3c7;color:#92400e}.lb.i{background:#dcfce7;color:#166534}.lb.a{background:#fce7f3;color:#9d174d}.lb.d{background:#e0f2fe;color:#075985}
-.tk .bar{height:4px;border-radius:9px;background:var(--line);margin-top:8px}.tk .bar i{display:block;height:100%;border-radius:9px;background:var(--brand)}
-.tk.drag{transform:rotate(-2.5deg);box-shadow:0 14px 30px -8px rgba(7,21,48,.3);border-color:var(--brand)}
-.tk.done b{color:var(--mid);text-decoration:line-through}
-.who{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#a5b4fc,#67e8f9);display:inline-block}.who.b{background:linear-gradient(135deg,#fda4af,#fcd34d)}.who.c{background:linear-gradient(135deg,#86efac,#67e8f9)}
-.log li{display:flex;gap:8px;align-items:center;font-size:12.5px;padding:7px 0;border-bottom:1px dashed var(--line)}
-.log i{width:7px;height:7px;border-radius:50%;background:#22c55e}.log i.w{background:#f59e0b}.log span{margin-left:auto;color:var(--mid);font-family:var(--mono);font-size:11px}
-/* logos */
-.logos{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(24px,5vw,60px);padding-top:60px;color:#8b91a5;font-weight:600;font-size:17px}
-/* bento */
-section{padding-top:clamp(90px,11vw,140px)}
-.sh{max-width:640px;margin-bottom:40px}.sh .mono{color:var(--brand)}
-h2{font-weight:600;font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-.04em;margin-top:8px}
-.sh p{color:var(--mid);margin-top:12px}
-.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
-.bx{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;overflow:hidden;position:relative;display:flex;flex-direction:column}
-.bx h3{font-size:17px;font-weight:600}.bx p{color:var(--mid);font-size:14.5px;margin-top:4px;max-width:42ch}
-.s3{grid-column:span 3}.s2{grid-column:span 2}.s4{grid-column:span 4}
-.vz{margin-top:22px;flex:1;display:flex;align-items:flex-end}
-.code{background:var(--ink);color:#c7d2fe;border-radius:10px;padding:14px;font:12px/1.7 var(--mono);width:100%}.code b{color:#67e8f9;font-weight:400}.code em{color:#86efac;font-style:normal}
-.phone{width:150px;height:200px;margin:0 auto -60px;border:6px solid var(--ink);border-radius:26px;background:linear-gradient(180deg,var(--soft),#fff);padding:14px 10px;display:flex;flex-direction:column;gap:6px}
-.phone i{height:24px;border-radius:7px;background:#fff;border:1px solid var(--line)}.phone i:first-child{height:60px;background:linear-gradient(135deg,var(--brand),var(--brand2));border:0}
-.nodes{display:flex;flex-wrap:wrap;gap:8px}.nodes span{border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:13px;background:#fbfbfd}
-.nodes span.on{border-color:var(--brand);color:var(--brand);background:var(--soft)}
-.iot{position:relative;width:100%;height:150px}
-.iot svg{position:absolute;inset:0;width:100%;height:100%}
-.iot .ln{stroke:var(--line);stroke-width:1.5;fill:none}.iot .pk{stroke:var(--brand);stroke-width:2.5;fill:none;stroke-dasharray:6 120;animation:pk 2.4s linear infinite}
-.iot .pk:nth-of-type(2n){animation-delay:-.8s}.iot .pk:nth-of-type(3n){animation-delay:-1.6s}@keyframes pk{to{stroke-dashoffset:-126}}
-.hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--ink);color:#fff;border-radius:10px;padding:6px 10px;font:500 11px var(--mono);box-shadow:0 0 0 6px var(--soft)}
-.dev{position:absolute;background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 8px;font-size:11px;line-height:1.25;box-shadow:0 2px 6px rgba(7,21,48,.06);white-space:nowrap}
-.dev b{display:block;font:600 12px var(--mono);color:var(--ink)}.dev small{color:var(--mid)}
-.dev::before{content:"";position:absolute;right:6px;top:6px;width:6px;height:6px;border-radius:50%;background:#22c55e}
-.d1{left:0;top:0}.d2{right:0;top:0}.d3{left:0;bottom:0}.d4{right:0;bottom:0}
-.integ{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;width:100%}
-.integ span{display:flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:9px;padding:6px 8px;font-size:12.5px;font-weight:500;background:#fff;position:relative}
-.integ span i{width:20px;height:20px;border-radius:6px;display:grid;place-items:center;color:#fff;font:700 10px var(--f);font-style:normal;flex:none}
-.integ span::after{content:"";position:absolute;top:-3px;right:-3px;width:9px;height:9px;border-radius:50%;background:#22c55e;border:2px solid #fff}
-.chat{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;font-size:12.5px}
-.chat p{margin:0!important;max-width:85%!important;padding:7px 10px;border-radius:12px;line-height:1.35;color:var(--ink)!important;font-size:12.5px!important}
-.chat .u{background:#dcf8c6;align-self:flex-end;border-bottom-right-radius:4px}
-.chat .b{background:var(--soft);border-bottom-left-radius:4px}.chat .b small{display:block;font:500 10px var(--mono);color:var(--brand);margin-bottom:2px}
-.up{width:100%}.up .bx2{display:flex;gap:3px;height:30px;margin-top:14px}.up .bx2 i{flex:1;border-radius:3px;background:#22c55e}.up .bx2 i.w{background:#fbbf24;height:70%;align-self:flex-end}
-.up .lg{display:flex;justify-content:space-between;font:11px var(--mono);color:var(--mid);margin-top:6px}
-.up .rt{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.up .rt div{background:#f6f7fb;border-radius:8px;padding:8px 10px;font-size:12px;color:var(--mid)}.up .rt b{display:block;color:var(--ink);font-size:16px}
-.pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;margin-bottom:12px}
-.pipe div{background:#f6f7fb;border-radius:9px;padding:9px 10px;font-size:11.5px;color:var(--mid)}
-.pipe b{display:block;color:var(--ink);font-size:18px;letter-spacing:-.02em}.pipe .bar{height:4px;border-radius:9px;background:var(--line);margin-top:6px}.pipe .bar i{display:block;height:100%;border-radius:9px;background:var(--brand)}
-.pipe div.w{background:var(--soft)}.pipe div.w b{color:var(--brand)}
-.notif{display:flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:9px;padding:8px 10px;font-size:12.5px;margin-bottom:12px}.notif>i,.notif>svg{width:22px;padding:4px;height:22px;border-radius:6px;background:var(--brand);color:#fff;display:grid;place-items:center;font-style:normal;font-size:11px}.notif span{margin-left:auto;font:11px var(--mono);color:var(--mid)}
-.vzc{flex-direction:column;align-items:stretch;justify-content:flex-end}
-.vzi{margin:18px -10px -10px;display:block;flex:1}.vzi img{display:block;width:100%;height:auto}
-.dots{display:grid;grid-template-columns:repeat(16,1fr);gap:5px;width:100%}.dots i{aspect-ratio:1;border-radius:3px;background:#dcfce7}.dots i.x{background:#22c55e}
-.bx .stat{max-width:none;margin:0;font-size:clamp(40px,5vw,64px);font-weight:600;letter-spacing:-.05em;line-height:1}
-.stat span{background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
-/* testimonial */
-.tq{background:var(--ink);color:#fff;border-radius:24px;padding:clamp(32px,5vw,64px);display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:end}
-.tq q{font-size:clamp(22px,2.4vw,32px);line-height:1.3;letter-spacing:-.02em}
-.tq .m{display:grid;grid-template-columns:1fr 1fr;gap:20px}.tq .m b{display:block;font-size:36px;letter-spacing:-.04em}.tq .m span{color:#9aa0b4;font-size:13px}
-/* pricing */
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.plan{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px}
-.plan.f{border-color:var(--brand);box-shadow:0 0 0 4px var(--soft)}
-.plan .amt{font-size:40px;font-weight:600;letter-spacing:-.04em}.plan .amt small{font-size:14px;color:var(--mid);font-weight:400}
-.plan li{font-size:14.5px;padding:4px 0;display:flex;gap:8px}.plan li::before{content:"";width:16px;height:16px;flex:none;margin-top:4px;border-radius:50%;background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.5l2 2 5-5' fill='none' stroke='%23002fa7' stroke-width='2'/%3E%3C/svg%3E")}
-.plan .btn{margin-top:auto;justify-content:center}
-.faq{display:grid}
-.shot-img{padding:0;background:none;border:0;margin-left:-30px!important;margin-right:-30px!important;max-width:none}.shot-img img{display:block;width:100%;height:auto}
-.faq{grid-template-columns:1fr 1.5fr;gap:clamp(28px,5vw,64px);align-items:start}
-.faq .sh{position:sticky;top:96px;margin:0}
-.ask{margin-top:28px;background:var(--ink);color:#fff;border-radius:18px;padding:22px;position:relative;overflow:hidden}
-.ask::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;background:radial-gradient(closest-side,rgba(61,107,255,.6),transparent)}
-.ask .av{margin-bottom:12px}.ask .av i{border-color:var(--ink);width:34px;height:34px}
-.ask h3{font-size:18px;font-weight:600}.ask p{color:#aab3cc!important;font-size:14px;margin:4px 0 16px}
-.ask .btn{background:#fff;color:var(--ink);position:relative;z-index:1}
-.qa{display:flex;flex-direction:column;gap:10px}
-.qa details{background:#fff;border:1px solid var(--line);border-radius:16px;transition:box-shadow .2s,border-color .2s}
-.qa details:hover{border-color:#c9d3f0}
-.qa details[open]{border-color:var(--brand);box-shadow:0 0 0 4px var(--soft),0 18px 40px -20px rgba(0,47,167,.35)}
-.qa summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:18px 20px;font-weight:600;font-size:16px}
-.qa summary::-webkit-details-marker{display:none}
-.qa .n{width:34px;height:34px;flex:none;border-radius:10px;background:var(--soft);display:grid;place-items:center;font-size:16px}
-.qa .n{color:var(--brand)}.qa details[open] .n{background:var(--brand);color:#fff}
-.qa summary::after{content:"";margin-left:auto;width:28px;height:28px;flex:none;border-radius:50%;border:1px solid var(--line);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%23071530' stroke-width='1.6'/%3E%3C/svg%3E") center/14px no-repeat;transition:transform .25s}
-.qa details[open] summary::after{transform:rotate(180deg);background-color:var(--soft);border-color:transparent}
-.qa .a{padding:0 20px 20px 68px;color:var(--mid)}
-.qa .a .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.qa .a .tags span{font:500 12px var(--mono);background:#f6f7fb;border:1px solid var(--line);border-radius:6px;padding:3px 8px;color:var(--ink)}
-.cta{margin-top:clamp(90px,11vw,140px);text-align:center;background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(48px,7vw,90px) 24px;position:relative;overflow:hidden}
-.cta::before{content:"";position:absolute;left:50%;top:-120px;width:600px;height:300px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(0,47,167,.25),transparent)}
-.cta h2{position:relative;max-width:16ch;margin:0 auto}.cta p{color:var(--mid);margin-top:12px;position:relative}.cta .acts{position:relative}
-footer{display:flex;justify-content:space-between;color:var(--mid);font-size:13px;padding:40px 0}
-@media (max-width:900px){
-  .nav nav{display:none}.appw{grid-template-columns:1fr}.sb{display:none}.board{grid-template-columns:1fr 1fr}
-  .s2,.s3,.s4{grid-column:span 6}.tq,.plans,.faq{grid-template-columns:1fr}.faq .sh{position:static}.shot-img{margin-left:-14px!important;margin-right:-14px!important}
-}
-.lucide{width:1em;height:1em;stroke-width:1.9;vertical-align:-.14em;flex:none}
-</style>
+<link rel="stylesheet" href="{{BASE}}/assets/css/homepage.css?v={{CSS_VERSION}}">
 </head>
 <body>
-<header class="nav"><a class="logo" href="#"><i></i>dirait</a>
-  <nav><a href="#platform">Platform</a><a href="#customers">Customers</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
-  <div style="display:flex;gap:8px"><a class="btn l" href="#contact">Sign in</a><a class="btn" href="#contact">Start a project</a></div></header>
+<header class="sticky top-3 z-10 mx-auto mt-3 flex max-w-[1100px] items-center justify-between rounded-[14px] border border-line bg-surface/80 py-2 pr-2 pl-[18px] backdrop-blur-md">
+  <a class="flex items-center gap-2 text-[17px] font-bold" href="#"><i class="size-[22px] rounded-[7px] bg-linear-135 from-brand to-brand-accent"></i>dirait</a>
+  <nav class="hidden gap-1 text-sm desk:flex">
+    <a class="rounded-lg px-3 py-1.5 text-muted hover:bg-canvas hover:text-ink" href="#platform">Platform</a>
+    <a class="rounded-lg px-3 py-1.5 text-muted hover:bg-canvas hover:text-ink" href="#customers">Customers</a>
+    <a class="rounded-lg px-3 py-1.5 text-muted hover:bg-canvas hover:text-ink" href="#pricing">Pricing</a>
+    <a class="rounded-lg px-3 py-1.5 text-muted hover:bg-canvas hover:text-ink" href="#faq">FAQ</a>
+  </nav>
+  <div class="flex gap-2"><a class="btn-secondary" href="#contact">Sign in</a><a class="btn-primary" href="#contact">Start a project</a></div>
+</header>
 
-<main class="wrap">
-  <div class="hero">
-    <a class="ann" href="#platform"><b>New</b>AI &amp; WhatsApp automations are live →</a>
-    <h1>The software team your operations <span>run on.</span></h1>
-    <p>Custom web, mobile, IoT and AI systems — designed, built, deployed and monitored by one team. From Jakarta to Europe.</p>
-    <div class="acts"><a class="btn b" href="#contact">Book a free call</a><a class="btn l" href="#platform">Explore the platform</a></div>
-    <div class="proof"><span class="av"><i></i><i></i><i></i></span>30+ systems shipped since 2023</div>
-    <div class="shot shot-img"><img src="{{BASE}}/images/redesign/kanban-board.png" width="1160" height="500" alt="Dirait project board showing a sprint for a retail POS system: tasks for an AI WhatsApp bot, offline cashier app, stock dashboard, QRIS checkout, deploy pipeline and 2FA login"></div>
+<main class="mx-auto max-w-[1180px] px-gutter">
+  <div class="relative pt-[clamp(60px,8vw,110px)] text-center before:absolute before:inset-x-0 before:top-0 before:-z-10 before:h-[600px] before:bg-[linear-gradient(var(--color-line)_1px,transparent_1px),linear-gradient(90deg,var(--color-line)_1px,transparent_1px)] before:bg-size-[48px_48px] before:mask-[radial-gradient(60%_60%_at_50%_30%,#000,transparent)]">
+    <a class="inline-flex items-center gap-2.5 rounded-full border border-line bg-surface py-1 pr-3 pl-1 text-[13px]" href="#platform"><b class="rounded-full bg-brand-soft px-2.5 py-0.5 font-semibold text-brand">New</b>AI &amp; WhatsApp automations are live →</a>
+    <h1 class="mx-auto mt-[22px] max-w-[15ch] text-[clamp(42px,6.2vw,82px)] leading-none font-semibold tracking-[-.045em]">The software team your operations <span class="text-gradient">run on.</span></h1>
+    <p class="mx-auto mt-5 max-w-[52ch] text-[clamp(16px,1.3vw,19px)] text-muted">Custom web, mobile, IoT and AI systems — designed, built, deployed and monitored by one team. From Jakarta to Europe.</p>
+    <div class="mt-7 flex flex-wrap justify-center gap-2.5"><a class="btn-brand" href="#contact">Book a free call</a><a class="btn-secondary" href="#platform">Explore the platform</a></div>
+    <div class="mt-[22px] flex items-center justify-center gap-2.5 text-[13px] text-muted"><span class="flex"><i class="avatar avatar-1"></i><i class="avatar avatar-2"></i><i class="avatar avatar-3"></i></span>30+ systems shipped since 2023</div>
+    <div class="-mx-3.5 mt-14 desk:-mx-[30px]"><img class="block h-auto w-full" src="{{BASE}}/images/redesign/kanban-board.png" width="1160" height="500" alt="Dirait project board showing a sprint for a retail POS system: tasks for an AI WhatsApp bot, offline cashier app, stock dashboard, QRIS checkout, deploy pipeline and 2FA login"></div>
   </div>
 
-  <section id="platform">
-    <div class="sh"><span class="mono">PLATFORM</span><h2>Every system your business needs, built to work together.</h2><p>Pick the pieces you need. We wire them up, ship them and keep them running.</p></div>
-    <div class="bento">
-      <div class="bx s4"><h3>Web applications</h3><p>React, Next.js and Laravel — pixel-perfect from Figma, in a monorepo you own.</p>
-        <div class="vz"><div class="code"><b>$</b> git push origin main<br><em>✓</em> build passed · 42s<br><em>✓</em> tests passed · 128/128<br><em>✓</em> deployed → <b>app.yourcompany.id</b></div></div></div>
-      <div class="bx s2"><h3>Mobile apps</h3><p>React Native for iOS and Android.</p><div class="vz"><div class="phone"><i></i><i></i><i></i><i></i></div></div></div>
-      <div class="bx s2"><h3>IoT platforms</h3><p>Devices streaming over MQTT &amp; WebSocket.</p><div class="vz"><div class="iot">
-          <svg viewBox="0 0 300 150" preserveAspectRatio="none"><path class="ln" d="M60 22 L150 75 M240 22 L150 75 M60 128 L150 75 M240 128 L150 75"/>
-            <path class="pk" d="M60 22 L150 75"/><path class="pk" d="M240 22 L150 75"/><path class="pk" d="M60 128 L150 75"/><path class="pk" d="M240 128 L150 75"/></svg>
-          <span class="hub">MQTT broker</span>
-          <span class="dev d1"><small>Cold room</small><b>4.2°C</b></span>
-          <span class="dev d2"><small>Truck 07</small><b>62 km/h</b></span>
-          <span class="dev d3"><small>Power meter</small><b>3.8 kW</b></span>
-          <span class="dev d4"><small>Door sensor</small><b>closed</b></span>
+  <section id="platform" class="pt-section">
+    <div class="mb-10 max-w-[640px]"><span class="eyebrow">PLATFORM</span><h2 class="heading-section">Every system your business needs, built to work together.</h2><p class="mt-3 text-muted">Pick the pieces you need. We wire them up, ship them and keep them running.</p></div>
+    <div class="grid grid-cols-6 gap-3.5">
+      <div class="card-bento col-span-6 desk:col-span-4"><h3 class="card-bento-title">Web applications</h3><p class="card-bento-text">React, Next.js and Laravel — pixel-perfect from Figma, in a monorepo you own.</p>
+        <div class="mt-[22px] flex flex-1 items-end"><div class="w-full rounded-[10px] bg-ink p-3.5 font-mono text-xs/[1.7] text-code"><b class="font-normal text-code-accent">$</b> git push origin main<br><em class="text-code-ok not-italic">✓</em> build passed · 42s<br><em class="text-code-ok not-italic">✓</em> tests passed · 128/128<br><em class="text-code-ok not-italic">✓</em> deployed → <b class="font-normal text-code-accent">app.yourcompany.id</b></div></div></div>
+      <div class="card-bento col-span-6 desk:col-span-2"><h3 class="card-bento-title">Mobile apps</h3><p class="card-bento-text">React Native for iOS and Android.</p>
+        <div class="mt-[22px] flex flex-1 items-end"><div class="mx-auto -mb-[60px] flex h-[200px] w-[150px] flex-col gap-1.5 rounded-[26px] border-6 border-ink bg-linear-to-b from-brand-soft to-surface px-2.5 py-3.5"><i class="h-[60px] rounded-[7px] bg-linear-135 from-brand to-brand-accent"></i><i class="h-6 rounded-[7px] border border-line bg-surface"></i><i class="h-6 rounded-[7px] border border-line bg-surface"></i><i class="h-6 rounded-[7px] border border-line bg-surface"></i></div></div></div>
+      <div class="card-bento col-span-6 desk:col-span-2"><h3 class="card-bento-title">IoT platforms</h3><p class="card-bento-text">Devices streaming over MQTT &amp; WebSocket.</p>
+        <div class="mt-[22px] flex flex-1 items-end"><div class="relative h-[150px] w-full">
+          <svg class="absolute inset-0 size-full fill-none" viewBox="0 0 300 150" preserveAspectRatio="none"><path class="stroke-line stroke-[1.5]" d="M60 22 L150 75 M240 22 L150 75 M60 128 L150 75 M240 128 L150 75"/>
+            <path class="animate-packet stroke-brand stroke-[2.5] [stroke-dasharray:6_120]" d="M60 22 L150 75"/><path class="animate-packet stroke-brand stroke-[2.5] [animation-delay:-.8s] [stroke-dasharray:6_120]" d="M240 22 L150 75"/><path class="animate-packet stroke-brand stroke-[2.5] [animation-delay:-1.6s] [stroke-dasharray:6_120]" d="M60 128 L150 75"/><path class="animate-packet stroke-brand stroke-[2.5] [animation-delay:-.8s] [stroke-dasharray:6_120]" d="M240 128 L150 75"/></svg>
+          <span class="absolute top-1/2 left-1/2 -translate-1/2 rounded-[10px] bg-ink px-2.5 py-1.5 font-mono text-[11px] font-medium text-white shadow-[0_0_0_6px_var(--color-brand-soft)]">MQTT broker</span>
+          <span class="iot-device top-0 left-0"><small class="text-muted">Cold room</small><b class="block font-mono text-xs font-semibold">4.2°C</b></span>
+          <span class="iot-device top-0 right-0"><small class="text-muted">Truck 07</small><b class="block font-mono text-xs font-semibold">62 km/h</b></span>
+          <span class="iot-device bottom-0 left-0"><small class="text-muted">Power meter</small><b class="block font-mono text-xs font-semibold">3.8 kW</b></span>
+          <span class="iot-device right-0 bottom-0"><small class="text-muted">Door sensor</small><b class="block font-mono text-xs font-semibold">closed</b></span>
         </div></div></div>
-      <div class="bx s2"><h3>AI &amp; API integration</h3><p>Plug in the services you already pay for.</p><div class="vz vzi"><img src="{{BASE}}/images/redesign/bento-ai.png" width="640" height="460" alt="A WhatsApp chat answered by an AI agent connected to MidTrans, OpenAI, Duitku and GraphQL" loading="lazy"></div></div>
-      <div class="bx s2"><h3>Uptime</h3><p>Monitored around the clock.</p><div class="vz vzi"><img src="{{BASE}}/images/redesign/bento-uptime.png" width="640" height="460" alt="Uptime monitor showing 99.98% over 30 days, 182 ms average response, 0 incidents and regions ID, SG, EU" loading="lazy"></div></div>
-      <div class="bx s3"><h3>CRM, ERP &amp; HRIS</h3><p>Multi-tenant, RBAC, Kanban workflows, SSO, 2FA and real-time notifications.</p>
-        <div class="vz vzi"><img src="{{BASE}}/images/redesign/bento-crm.png" width="640" height="460" alt="Sales pipeline board with deals in each stage, an HRIS attendance card and role-based access chips" loading="lazy"></div></div>
-      <div class="bx s3"><h3>DevOps &amp; infrastructure</h3><p>Docker, Nginx, Cloudflare, cron jobs, uptime monitoring, Fail2ban.</p>
-        <div class="vz vzi"><img src="{{BASE}}/images/redesign/bento-devops.png" width="640" height="460" alt="Deploy terminal, five healthy containers, server resource usage and Fail2ban blocking 128 IPs" loading="lazy"></div></div>
+      <div class="card-bento col-span-6 desk:col-span-2"><h3 class="card-bento-title">AI &amp; API integration</h3><p class="card-bento-text">Plug in the services you already pay for.</p><div class="-mx-2.5 mt-[18px] -mb-2.5 flex-1"><img class="block h-auto w-full" src="{{BASE}}/images/redesign/bento-ai.png" width="640" height="460" alt="A WhatsApp chat answered by an AI agent connected to MidTrans, OpenAI, Duitku and GraphQL" loading="lazy"></div></div>
+      <div class="card-bento col-span-6 desk:col-span-2"><h3 class="card-bento-title">Uptime</h3><p class="card-bento-text">Monitored around the clock.</p><div class="-mx-2.5 mt-[18px] -mb-2.5 flex-1"><img class="block h-auto w-full" src="{{BASE}}/images/redesign/bento-uptime.png" width="640" height="460" alt="Uptime monitor showing 99.98% over 30 days, 182 ms average response, 0 incidents and regions ID, SG, EU" loading="lazy"></div></div>
+      <div class="card-bento col-span-6 desk:col-span-3"><h3 class="card-bento-title">CRM, ERP &amp; HRIS</h3><p class="card-bento-text">Multi-tenant, RBAC, Kanban workflows, SSO, 2FA and real-time notifications.</p>
+        <div class="-mx-2.5 mt-[18px] -mb-2.5 flex-1"><img class="block h-auto w-full" src="{{BASE}}/images/redesign/bento-crm.png" width="640" height="460" alt="Sales pipeline board with deals in each stage, an HRIS attendance card and role-based access chips" loading="lazy"></div></div>
+      <div class="card-bento col-span-6 desk:col-span-3"><h3 class="card-bento-title">DevOps &amp; infrastructure</h3><p class="card-bento-text">Docker, Nginx, Cloudflare, cron jobs, uptime monitoring, Fail2ban.</p>
+        <div class="-mx-2.5 mt-[18px] -mb-2.5 flex-1"><img class="block h-auto w-full" src="{{BASE}}/images/redesign/bento-devops.png" width="640" height="460" alt="Deploy terminal, five healthy containers, server resource usage and Fail2ban blocking 128 IPs" loading="lazy"></div></div>
     </div>
   </section>
 
-  <section id="customers">
-    <div class="tq"><q>Mastered their field, results met expectations, very fast delivery. Revisions were also done quickly. Highly recommended.</q>
-      <div class="m"><div><b>30+</b><span>systems shipped</span></div><div><b>3</b><span>regions served</span></div><div><b>240</b><span>devices online</span></div><div><b>0</b><span>failures, last 24h</span></div></div></div>
+  <section id="customers" class="pt-section">
+    <div class="grid items-end gap-10 rounded-3xl bg-ink p-[clamp(32px,5vw,64px)] text-white desk:grid-cols-[1.6fr_1fr]"><q class="text-[clamp(22px,2.4vw,32px)] leading-[1.3] tracking-[-.02em]">Mastered their field, results met expectations, very fast delivery. Revisions were also done quickly. Highly recommended.</q>
+      <div class="grid grid-cols-2 gap-5">
+        <div><b class="block text-4xl tracking-[-.04em]">30+</b><span class="text-[13px] text-subtle">systems shipped</span></div>
+        <div><b class="block text-4xl tracking-[-.04em]">3</b><span class="text-[13px] text-subtle">regions served</span></div>
+        <div><b class="block text-4xl tracking-[-.04em]">240</b><span class="text-[13px] text-subtle">devices online</span></div>
+        <div><b class="block text-4xl tracking-[-.04em]">0</b><span class="text-[13px] text-subtle">failures, last 24h</span></div>
+      </div></div>
   </section>
 
-  <section id="pricing">
-    <div class="sh"><span class="mono">PRICING</span><h2>Fixed scope. Fixed price.</h2></div>
-    <div class="plans">
-      <div class="plan"><h3>Basic</h3><p class="amt">Rp4M <small>/ project</small></p><ul><li>CDN worldwide</li><li>SSL encryption</li><li>Free server &amp; domain, 1 year</li><li>3 months support</li></ul><a class="btn l" href="#contact">Get started</a></div>
-      <div class="plan f"><h3>Small Business <span class="mono" style="color:var(--brand)">· popular</span></h3><p class="amt">Rp8M <small>/ project</small></p><ul><li>Everything in Basic</li><li>6 months support</li><li>Unlimited product uploads</li></ul><a class="btn b" href="#contact">Get started</a></div>
-      <div class="plan"><h3>Business</h3><p class="amt">Custom</p><ul><li>Everything in Small Business</li><li>Free server &amp; domain, 3 years</li><li>Lifetime support</li></ul><a class="btn l" href="#contact">Talk to us</a></div>
+  <section id="pricing" class="pt-section">
+    <div class="mb-10 max-w-[640px]"><span class="eyebrow">PRICING</span><h2 class="heading-section">Fixed scope. Fixed price.</h2></div>
+    <div class="grid gap-3.5 desk:grid-cols-3">
+      <div class="flex flex-col gap-3.5 rounded-[18px] border border-line bg-surface p-[26px]"><h3 class="font-semibold">Basic</h3><p class="text-[40px] font-semibold tracking-[-.04em]">Rp4M <small class="text-sm font-normal text-muted">/ project</small></p><ul><li class="plan-feature">CDN worldwide</li><li class="plan-feature">SSL encryption</li><li class="plan-feature">Free server &amp; domain, 1 year</li><li class="plan-feature">3 months support</li></ul><a class="btn-secondary mt-auto" href="#contact">Get started</a></div>
+      <div class="flex flex-col gap-3.5 rounded-[18px] border border-brand bg-surface p-[26px] shadow-[0_0_0_4px_var(--color-brand-soft)]"><h3 class="font-semibold">Small Business <span class="eyebrow">· popular</span></h3><p class="text-[40px] font-semibold tracking-[-.04em]">Rp8M <small class="text-sm font-normal text-muted">/ project</small></p><ul><li class="plan-feature">Everything in Basic</li><li class="plan-feature">6 months support</li><li class="plan-feature">Unlimited product uploads</li></ul><a class="btn-brand mt-auto" href="#contact">Get started</a></div>
+      <div class="flex flex-col gap-3.5 rounded-[18px] border border-line bg-surface p-[26px]"><h3 class="font-semibold">Business</h3><p class="text-[40px] font-semibold tracking-[-.04em]">Custom</p><ul><li class="plan-feature">Everything in Small Business</li><li class="plan-feature">Free server &amp; domain, 3 years</li><li class="plan-feature">Lifetime support</li></ul><a class="btn-secondary mt-auto" href="#contact">Talk to us</a></div>
     </div>
   </section>
 
-  <section id="faq" class="faq">
-    <div class="sh"><span class="mono">FAQ</span><h2>Before the first call.</h2><p>Straight answers to what clients ask us most.</p>
-      <div class="ask"><span class="av"><i></i><i></i><i></i></span><h3>Still have questions?</h3><p>Talk to the engineers who will build it — usually within a day.</p><a class="btn" href="https://wa.me/6281384934615">Chat on WhatsApp →</a></div></div>
-    <div class="qa">
-      <details open><summary><span class="n"><i data-lucide="wrench"></i></span>What technologies do you use?</summary><div class="a">We pick the stack per project.<div class="tags"><span>React</span><span>Next.js</span><span>Laravel</span><span>SvelteKit</span><span>React Native</span><span>MQTT</span><span>WebSocket</span></div></div></details>
-      <details><summary><span class="n"><i data-lucide="timer"></i></span>How long does a project take?</summary><div class="a">A company profile with CMS takes 2–4 weeks. Custom web or mobile apps typically take 2–4 months.</div></details>
-      <details><summary><span class="n"><i data-lucide="life-buoy"></i></span>Do you provide maintenance after launch?</summary><div class="a">Every plan includes support — 3 months for Basic, 6 months for Small Business, lifetime for Business.</div></details>
-      <details><summary><span class="n"><i data-lucide="plug"></i></span>Can you integrate with our existing systems?</summary><div class="a">Yes — payment gateways, WhatsApp APIs, AI services and any REST or GraphQL backend.<div class="tags"><span>MidTrans</span><span>Duitku</span><span>Mollie</span><span>WhatsApp</span><span>OpenAI</span></div></div></details>
-      <details><summary><span class="n"><i data-lucide="smartphone"></i></span>Do you support web, mobile and PWA?</summary><div class="a">Yes. React Native apps for iOS and Android alongside the web platform, with PWA where it fits.</div></details>
-      <details><summary><span class="n"><i data-lucide="shield-check"></i></span>How do you handle security and access?</summary><div class="a">Role-based access control, 2FA, SSO, audit logs and hardened servers with Fail2ban.</div></details>
+  <section id="faq" class="grid items-start gap-[clamp(28px,5vw,64px)] pt-section desk:grid-cols-[1fr_1.5fr]">
+    <div class="desk:sticky desk:top-24"><span class="eyebrow">FAQ</span><h2 class="heading-section">Before the first call.</h2><p class="mt-3 text-muted">Straight answers to what clients ask us most.</p>
+      <div class="relative mt-7 overflow-hidden rounded-[18px] bg-ink p-[22px] text-white after:absolute after:-top-[60px] after:-right-[60px] after:size-[200px] after:bg-[radial-gradient(closest-side,rgb(61_107_255/.6),transparent)]">
+        <span class="mb-3 flex"><i class="avatar avatar-1 size-[34px] border-ink"></i><i class="avatar avatar-2 size-[34px] border-ink"></i><i class="avatar avatar-3 size-[34px] border-ink"></i></span>
+        <h3 class="text-lg font-semibold">Still have questions?</h3><p class="mt-1 mb-4 text-sm text-[#aab3cc]">Talk to the engineers who will build it — usually within a day.</p>
+        <a class="btn relative z-1 bg-surface text-ink" href="https://wa.me/6281384934615">Chat on WhatsApp →</a></div></div>
+    <div class="flex flex-col gap-2.5">
+      <details class="faq-item" open><summary class="faq-question"><span class="faq-icon"><i data-lucide="wrench"></i></span>What technologies do you use?</summary><div class="faq-answer">We pick the stack per project.<div class="mt-2.5 flex flex-wrap gap-1.5"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Laravel</span><span class="tag">SvelteKit</span><span class="tag">React Native</span><span class="tag">MQTT</span><span class="tag">WebSocket</span></div></div></details>
+      <details class="faq-item"><summary class="faq-question"><span class="faq-icon"><i data-lucide="timer"></i></span>How long does a project take?</summary><div class="faq-answer">A company profile with CMS takes 2–4 weeks. Custom web or mobile apps typically take 2–4 months.</div></details>
+      <details class="faq-item"><summary class="faq-question"><span class="faq-icon"><i data-lucide="life-buoy"></i></span>Do you provide maintenance after launch?</summary><div class="faq-answer">Every plan includes support — 3 months for Basic, 6 months for Small Business, lifetime for Business.</div></details>
+      <details class="faq-item"><summary class="faq-question"><span class="faq-icon"><i data-lucide="plug"></i></span>Can you integrate with our existing systems?</summary><div class="faq-answer">Yes — payment gateways, WhatsApp APIs, AI services and any REST or GraphQL backend.<div class="mt-2.5 flex flex-wrap gap-1.5"><span class="tag">MidTrans</span><span class="tag">Duitku</span><span class="tag">Mollie</span><span class="tag">WhatsApp</span><span class="tag">OpenAI</span></div></div></details>
+      <details class="faq-item"><summary class="faq-question"><span class="faq-icon"><i data-lucide="smartphone"></i></span>Do you support web, mobile and PWA?</summary><div class="faq-answer">Yes. React Native apps for iOS and Android alongside the web platform, with PWA where it fits.</div></details>
+      <details class="faq-item"><summary class="faq-question"><span class="faq-icon"><i data-lucide="shield-check"></i></span>How do you handle security and access?</summary><div class="faq-answer">Role-based access control, 2FA, SSO, audit logs and hardened servers with Fail2ban.</div></details>
     </div>
   </section>
 
-  <div id="contact" class="cta"><h2>Tell us what has to work.</h2><p>Free consultation — we reply within one business day.</p>
-    <div class="acts"><a class="btn b" href="mailto:hello@dirait.id">Book a call</a><a class="btn l" href="https://wa.me/6281384934615">WhatsApp</a></div></div>
-  <footer><span>© 2026 Dirait</span><span>Cibubur, Jawa Barat — Indonesia</span></footer>
+  <div id="contact" class="relative mt-section overflow-hidden rounded-3xl border border-line bg-surface px-6 py-[clamp(48px,7vw,90px)] text-center before:absolute before:-top-[120px] before:left-1/2 before:h-[300px] before:w-[600px] before:-translate-x-1/2 before:bg-[radial-gradient(closest-side,rgb(0_47_167/.25),transparent)]">
+    <h2 class="heading-section relative mx-auto mt-0 max-w-[16ch]">Tell us what has to work.</h2><p class="relative mt-3 text-muted">Free consultation — we reply within one business day.</p>
+    <div class="relative mt-7 flex flex-wrap justify-center gap-2.5"><a class="btn-brand" href="mailto:hello@dirait.id">Book a call</a><a class="btn-secondary" href="https://wa.me/6281384934615">WhatsApp</a></div></div>
+  <footer class="flex justify-between py-10 text-[13px] text-muted"><span>© 2026 Dirait</span><span>Cibubur, Jawa Barat — Indonesia</span></footer>
 </main>
 <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script><script>lucide.createIcons()</script>
 </body>
