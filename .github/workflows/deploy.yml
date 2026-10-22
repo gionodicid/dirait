@@ -13,7 +13,19 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Pull latest code on server
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Build CSS
+        run: |
+          npm ci
+          npm run build:css
+
+      - name: Deploy code and CSS to server
         env:
           SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
           SSH_HOST: ${{ secrets.DEPLOY_HOST }}
@@ -24,9 +36,9 @@ jobs:
           printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
           printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-          # The server's authorized_keys forces the deploy command for this key,
-          # so nothing else can run with it.
-          ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes "$SSH_USER@$SSH_HOST" deploy
+          # The server's authorized_keys forces /usr/local/bin/dirait-deploy for this key:
+          # it runs git pull, then installs the CSS sent on stdin. Nothing else can run with it.
+          ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes "$SSH_USER@$SSH_HOST" deploy < assets/css/homepage.css
 
       - name: Check site is up
         run: |
