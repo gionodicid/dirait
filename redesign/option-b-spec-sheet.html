@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DIRAIT — Option B · Spec Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8e8e3;--card:#f4f4f0;--ink:#111;--muted:#6b6b66;--line:#111;--hair:#bdbdb6;--hot:#ff4f00;
+  --sans:"Space Grotesk",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;--m:clamp(16px,3vw,40px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--sans);-webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(var(--hair) 1px,transparent 1px),linear-gradient(90deg,var(--hair) 1px,transparent 1px);background-size:40px 40px;background-attachment:fixed}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
+h1,h2,h3,p,ul,ol,figure{margin:0;padding:0}ul,ol{list-style:none}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+.sheet{margin:var(--m);border:2px solid var(--line);background:var(--card)}
+.row{border-bottom:2px solid var(--line)}
+.cell{padding:clamp(16px,2.4vw,28px)}
+/* top bar */
+.bar{display:grid;grid-template-columns:auto 1fr auto auto}
+.bar>*{padding:14px 18px;border-right:2px solid var(--line);display:flex;align-items:center;gap:10px}.bar>*:last-child{border:0}
+.logo{font-weight:700;font-size:20px;letter-spacing:-.02em}
+.logo i{width:14px;height:14px;background:var(--hot);display:inline-block}
+.bar nav{gap:24px}.bar nav a:hover{color:var(--hot)}
+.go{background:var(--ink);color:var(--card)}.go:hover{background:var(--hot)}
+.dot{width:8px;height:8px;border-radius:50%;background:#1fbf5f;animation:b 1.6s infinite}@keyframes b{50%{opacity:.25}}
+/* hero */
+.hero{display:grid;grid-template-columns:1.3fr 1fr}
+.hero-l{border-right:2px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+h1{font-weight:700;font-size:clamp(48px,8vw,128px);line-height:.88;letter-spacing:-.05em;text-transform:uppercase}
+h1 span{background:var(--hot);color:var(--card);padding:0 .08em}
+.hero-l p{font-size:clamp(17px,1.4vw,20px);max-width:44ch}
+.hero-r{display:grid;grid-template-rows:1fr auto}
+.photo{position:relative;overflow:hidden;border-bottom:2px solid var(--line);min-height:320px;filter:grayscale(1) contrast(1.1)}
+.photo .tag{position:absolute;top:12px;left:12px;background:var(--card);border:2px solid var(--line);padding:4px 8px}
+.photo::after{content:"";position:absolute;inset:0;background:var(--hot);mix-blend-mode:multiply;opacity:.35}
+.cross{position:absolute;width:40px;height:40px;border:2px solid #fff;z-index:2}.cross.a{top:30%;left:58%}.cross.b{top:62%;left:24%;border-radius:50%}
+.btns{display:grid;grid-template-columns:1fr 1fr}
+.btns a{padding:22px;display:flex;justify-content:space-between;font-weight:500}.btns a:first-child{background:var(--hot);color:#fff;border-right:2px solid var(--line)}
+.btns a:hover{background:var(--ink);color:#fff}
+/* readout */
+.readout{display:grid;grid-template-columns:repeat(4,1fr)}
+.readout li{border-right:2px solid var(--line)}.readout li:last-child{border:0}
+.readout b{display:block;font-size:clamp(40px,5vw,72px);line-height:1;letter-spacing:-.04em;margin-top:10px}
+/* section heads */
+.shead{display:grid;grid-template-columns:200px 1fr auto;align-items:end}
+.shead>*{padding:clamp(16px,2.4vw,28px)}.shead>.mono{border-right:2px solid var(--line);align-self:stretch;display:flex;align-items:flex-end}
+h2{font-weight:700;font-size:clamp(34px,4.6vw,68px);line-height:.95;letter-spacing:-.04em;text-transform:uppercase;max-width:18ch}
+/* modules */
+.mods{display:grid;grid-template-columns:repeat(3,1fr)}
+.mod{border-right:2px solid var(--line);border-bottom:2px solid var(--line);display:flex;flex-direction:column;gap:14px;min-height:280px;transition:background .2s}
+.mod:nth-child(3n){border-right:0}.mod:nth-last-child(-n+3){border-bottom:0}
+.mod:hover{background:var(--ink);color:var(--card)}.mod:hover .mono{color:var(--hot)}
+.mod .top{display:flex;justify-content:space-between}
+.mod h3{font-size:28px;letter-spacing:-.03em;line-height:1;margin-top:auto}
+.mod p{font-size:15px;opacity:.75}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{border:1.5px solid currentColor;padding:3px 7px;font-family:var(--mono);font-size:11px}
+/* work table */
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:16px clamp(16px,2.4vw,28px);border-bottom:1px solid var(--hair)}
+th{font-family:var(--mono);font-weight:400;font-size:12px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--line)}
+td:first-child{font-weight:700;font-size:20px;letter-spacing:-.02em}
+tr:hover td{background:#fff}
+.ok{color:#14903f;font-family:var(--mono);font-size:12px}
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr)}
+.plan{border-right:2px solid var(--line);display:flex;flex-direction:column;gap:18px}.plan:last-child{border:0}
+.plan.f{background:var(--hot);color:#fff}
+.plan .price{font-size:clamp(44px,5vw,72px);font-weight:700;letter-spacing:-.05em;line-height:1}
+.plan li{font-family:var(--mono);font-size:13px;padding:8px 0;border-top:1px dashed currentColor}
+.plan li::before{content:"[+] "}
+.plan a{margin-top:auto;border:2px solid currentColor;padding:14px;text-align:center;font-weight:500}.plan a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* faq */
+.faq details{border-bottom:2px solid var(--line)}.faq details:last-child{border:0}
+.faq summary{cursor:pointer;list-style:none;display:grid;grid-template-columns:80px 1fr 30px;gap:12px;padding:20px clamp(16px,2.4vw,28px);font-weight:500;font-size:20px}
+.faq summary::after{content:"+";font-family:var(--mono)}.faq details[open] summary::after{content:"−"}.faq details[open] summary{background:var(--ink);color:var(--card)}
+.faq p{padding:20px clamp(16px,2.4vw,28px) 24px calc(80px + 12px + clamp(16px,2.4vw,28px));max-width:80ch}
+/* cta */
+.cta{background:var(--ink);color:var(--card);display:grid;grid-template-columns:1.4fr 1fr}
+.cta h2{font-size:clamp(48px,7.4vw,120px)}
+.cta .r{border-left:2px solid #333;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.cta .r a{display:flex;justify-content:space-between;border-bottom:1px solid #333;padding:12px 0;font-size:18px}.cta .r a:hover{color:var(--hot)}
+.foot{display:flex;justify-content:space-between;padding:14px 18px}
+@media (max-width:900px){
+  .bar{grid-template-columns:1fr auto}.bar nav,.bar .status{display:none}
+  .hero,.cta{grid-template-columns:1fr}.hero-l{border-right:0;border-bottom:2px solid var(--line)}.cta .r{border-left:0;border-top:2px solid #333}
+  .readout{grid-template-columns:1fr 1fr}.readout li:nth-child(2){border-right:0}.readout li:nth-child(-n+2){border-bottom:2px solid var(--line)}
+  .shead{grid-template-columns:1fr}.shead>.mono{border-right:0;border-bottom:2px solid var(--line)}.shead>:last-child{display:none}
+  .mods,.plans{grid-template-columns:1fr}.mod{border-right:0!important;border-bottom:2px solid var(--line)!important;min-height:0}.plan{border-right:0;border-bottom:2px solid var(--line)}
+  td:nth-child(3),th:nth-child(3){display:none}
+  .faq summary{grid-template-columns:44px 1fr 20px;font-size:17px}.faq p{padding-left:clamp(16px,2.4vw,28px)}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="row bar">
+    <a class="logo" href="#"><i></i>DIRAIT</a>
+    <nav><a href="#services">Modules</a><a href="#work">Deployments</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+    <span class="status mono"><span class="dot"></span>All systems live</span>
+    <a class="go" href="#contact">Start a project ↗</a>
+  </header>
+
+  <div class="row hero">
+    <div class="hero-l cell">
+      <p class="mono">DOC-001 / Software studio / Rev. 2026</p>
+      <h1>Software for work that <span>can’t stop.</span></h1>
+      <p>Custom web, mobile, IoT and AI systems. One team from first screen to field — then on call while it runs. Jakarta, Singapore, Europe.</p>
+    </div>
+    <div class="hero-r">
+      <figure class="photo"><img src="../images/home/jakarta-skyline-2.jpg" alt="Jakarta skyline"><span class="tag mono">FIG.1 — Jakarta, ID</span><i class="cross a"></i><i class="cross b"></i></figure>
+      <div class="btns"><a href="#contact">Start a project <span>→</span></a><a href="#work">See the work <span>↓</span></a></div>
+    </div>
+  </div>
+
+  <ul class="row readout">
+    <li class="cell"><span class="mono">Systems shipped</span><b>30+</b></li>
+    <li class="cell"><span class="mono">Devices on MQTT</span><b>240</b></li>
+    <li class="cell"><span class="mono">Regions</span><b>ID·SG·EU</b></li>
+    <li class="cell"><span class="mono">Failures / 24h</span><b>000</b></li>
+  </ul>
+
+  <section id="services">
+    <div class="row shead"><p class="mono">§1 Modules</p><h2>Six systems. One team.</h2><p class="mono">06 items</p></div>
+    <div class="row mods">
+      <a class="mod cell" href="#"><div class="top mono"><span>M-01</span><span>↗</span></div><h3>Web Applications</h3><p>Pixel-perfect UI from Figma, monorepo architecture, production-ready deploys.</p><div class="chips"><span>REACT</span><span>NEXT.JS</span><span>LARAVEL</span></div></a>
+      <a class="mod cell" href="#"><div class="top mono"><span>M-02</span><span>↗</span></div><h3>Mobile Apps</h3><p>One codebase for iOS and Android, consistent gestures, PWA where it fits.</p><div class="chips"><span>REACT NATIVE</span><span>PWA</span></div></a>
+      <a class="mod cell" href="#"><div class="top mono"><span>M-03</span><span>↗</span></div><h3>IoT Platforms</h3><p>Real-time dashboards, tenant data, custom widgets, hardware in the loop.</p><div class="chips"><span>MQTT</span><span>WEBSOCKET</span></div></a>
+      <a class="mod cell" href="#"><div class="top mono"><span>M-04</span><span>↗</span></div><h3>AI & API Integration</h3><p>AI services, payment gateways, WhatsApp, GraphQL and REST.</p><div class="chips"><span>MIDTRANS</span><span>MOLLIE</span><span>GRAPHQL</span></div></a>
+      <a class="mod cell" href="#"><div class="top mono"><span>M-05</span><span>↗</span></div><h3>CRM & ERP</h3><p>Multi-tenant with RBAC, Kanban workflows, SSO, 2FA, live notifications.</p><div class="chips"><span>RBAC</span><span>SSO</span><span>2FA</span></div></a>
+      <a class="mod cell" href="#"><div class="top mono"><span>M-06</span><span>↗</span></div><h3>DevOps</h3><p>Automated deploys, cron, uptime monitoring, Fail2ban hardening.</p><div class="chips"><span>DOCKER</span><span>NGINX</span><span>CLOUDFLARE</span></div></a>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="row shead"><p class="mono">§2 Deployments</p><h2>Running in production.</h2><p class="mono">Live log</p></div>
+    <div class="row">
+      <table>
+        <thead><tr><th>Client</th><th>System</th><th>Region</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Logistics company</td><td>Logistics platform</td><td class="mono">ID</td><td class="ok">● LIVE</td></tr>
+          <tr><td>Retail chain</td><td>Retail POS & inventory</td><td class="mono">ID</td><td class="ok">● LIVE</td></tr>
+          <tr><td>Marketing agency</td><td>CRM & reporting</td><td class="mono">SG</td><td class="ok">● LIVE</td></tr>
+          <tr><td>Holiday rental</td><td>Booking site</td><td class="mono">EU</td><td class="ok">● LIVE</td></tr>
+          <tr><td>Restaurant group</td><td>POS & reservations</td><td class="mono">EU</td><td class="ok">● LIVE</td></tr>
+          <tr><td>Research firm</td><td>Survey platform</td><td class="mono">ID</td><td class="ok">● LIVE</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="row shead"><p class="mono">§3 Pricing</p><h2>Fixed scope. Fixed price.</h2><p class="mono">IDR</p></div>
+    <div class="row plans">
+      <div class="plan cell"><p class="mono">P-01 Basic</p><p class="price">Rp4M</p><ul><li>CDN worldwide</li><li>SSL encryption</li><li>Server & domain, 1 yr</li><li>3 months support</li></ul><a href="#contact">Select</a></div>
+      <div class="plan cell f"><p class="mono">P-02 Small Business ★</p><p class="price">Rp8M</p><ul><li>Everything in P-01</li><li>6 months support</li><li>Unlimited uploads</li></ul><a href="#contact">Select</a></div>
+      <div class="plan cell"><p class="mono">P-03 Business</p><p class="price">Custom</p><ul><li>Everything in P-02</li><li>Server & domain, 3 yrs</li><li>Lifetime support</li></ul><a href="#contact">Contact</a></div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="row shead"><p class="mono">§4 Q&A</p><h2>Before the first call.</h2><p class="mono">04</p></div>
+    <div class="row">
+      <details open><summary><span class="mono">Q-01</span>What technologies do you use?</summary><p>Stack per project: React (Vite), Next.js, Laravel, SvelteKit for web; React Native for mobile; MQTT and WebSocket for IoT.</p></details>
+      <details><summary><span class="mono">Q-02</span>How long does a project take?</summary><p>Company profile with CMS: 2–4 weeks. Custom web or mobile applications: typically 2–4 months.</p></details>
+      <details><summary><span class="mono">Q-03</span>Maintenance after launch?</summary><p>3 months for Basic, 6 months for Small Business, lifetime for Business.</p></details>
+      <details><summary><span class="mono">Q-04</span>Integrate with existing systems?</summary><p>Yes — payment gateways, WhatsApp APIs, AI services, any REST or GraphQL backend.</p></details>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="row cta">
+      <div class="cell"><p class="mono" style="color:var(--hot)">§5 Contact</p><h2>Tell us what has to work.</h2></div>
+      <div class="cell r">
+        <p>Reply within one business day. Free consultation.</p>
+        <div><a href="mailto:hello@dirait.id">hello@dirait.id <span>↗</span></a><a href="https://wa.me/6281384934615">WhatsApp <span>↗</span></a><a href="tel:+6281384934615">+62 813-8493-4615 <span>↗</span></a></div>
+      </div>
+    </div>
+    <div class="foot mono"><span>© 2026 DIRAIT</span><span>Cibubur, Jawa Barat — ID</span></div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+.term{left:24px;top:24px;width:350px;height:250px;background:var(--ink);border-color:#0f2350;color:#c7d2fe;font:12.5px/1.75 var(--mono);padding:0;overflow:hidden}
+.term .bar{display:flex;gap:6px;align-items:center;padding:10px 14px;border-bottom:1px solid #16264d;color:#8b97b8;font-size:11.5px}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.term .bar i:nth-child(2){background:#febc2e}.term .bar i:nth-child(3){background:#28c840;margin-right:8px}
+.term pre{margin:0;padding:12px 16px;font:inherit;white-space:pre}
+.c{color:#67e8f9}.g{color:#86efac}.d{color:#6b7aa6}.y{color:#fcd34d}
+.stack{left:392px;top:24px;width:224px;padding:14px}
+.stack h5{margin:0 0 10px;font-size:12px;color:var(--mid);font-weight:500;display:flex;justify-content:space-between}
+.svc{display:flex;align-items:center;gap:9px;padding:8px 0;border-top:1px solid var(--line);font-size:13px;font-weight:500}
+.svc b{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;color:#fff;flex:none}.svc b .lucide{width:14px;height:14px}
+.svc span{margin-left:auto;font:500 11px var(--mono);color:#16a34a;display:flex;align-items:center;gap:5px}.svc span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.res{left:24px;top:292px;width:350px;padding:14px 16px}
+.res h5,.f2b h5{margin:0;font-size:12px;color:var(--mid);font-weight:500;display:flex;justify-content:space-between;align-items:center}
+.meter{display:grid;grid-template-columns:52px 1fr 40px;gap:10px;align-items:center;font-size:12px;margin-top:11px}
+.meter .t{height:8px;border-radius:9px;background:#eef0f6;overflow:hidden}.meter .t i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--brand),var(--brand2))}
+.meter em{font:500 11.5px var(--mono);font-style:normal;text-align:right}
+.f2b{left:392px;top:296px;width:224px;padding:14px}
+.f2b .n{font-size:30px;font-weight:700;letter-spacing:-.04em;margin-top:6px;display:flex;align-items:baseline;gap:6px}.f2b .n small{font-size:12px;font-weight:400;color:var(--mid);letter-spacing:0}
+.ip{display:flex;justify-content:space-between;font:11.5px var(--mono);padding:5px 0;border-top:1px dashed var(--line);color:var(--mid)}.ip b{color:#dc2626;font-weight:500}
+.badge{font:500 10.5px var(--mono);padding:2px 7px;border-radius:99px;background:#fee2e2;color:#b91c1c}
+</style></head><body><div class="stage">
+<div class="glow" style="width:280px;height:180px;left:200px;top:180px;background:#8fb0ff"></div>
+<div class="card term"><div class="bar"><i></i><i></i><i></i>deploy@prod-sg-1</div>
+<pre><span class="c">$</span> docker compose up -d --build
+<span class="g">✓</span> app       <span class="d">built   18.2s</span>
+<span class="g">✓</span> worker    <span class="d">built    6.4s</span>
+<span class="g">✓</span> nginx     <span class="d">reloaded</span>
+<span class="c">$</span> ./healthcheck.sh
+<span class="g">✓</span> /api/health  <span class="d">200 · 12ms</span>
+<span class="g">✓</span> ssl expiry   <span class="d">87 days</span>
+<span class="y">→</span> <span class="g">zero-downtime deploy complete</span></pre></div>
+<div class="card stack"><h5>Containers <span class="mono">5/5</span></h5>
+  <div class="svc"><b style="background:#2496ed"><i data-lucide="container"></i></b>app<span>up</span></div>
+  <div class="svc"><b style="background:#009639"><i data-lucide="server"></i></b>nginx<span>up</span></div>
+  <div class="svc"><b style="background:#f38020"><i data-lucide="cloud"></i></b>cloudflare<span>94% hit</span></div>
+  <div class="svc"><b style="background:#336791"><i data-lucide="database"></i></b>postgres<span>up</span></div>
+  <div class="svc"><b style="background:#071530"><i data-lucide="clock"></i></b>cron<span>03:00</span></div></div>
+<div class="card res"><h5>prod-sg-1 · resources <span class="mono">4 vCPU · 8 GB</span></h5>
+  <div class="meter">CPU<div class="t"><i style="width:34%"></i></div><em>34%</em></div>
+  <div class="meter">Memory<div class="t"><i style="width:58%"></i></div><em>58%</em></div>
+  <div class="meter">Disk<div class="t"><i style="width:41%"></i></div><em>41%</em></div></div>
+<div class="card f2b"><h5><span style="display:flex;gap:6px;align-items:center"><i data-lucide="shield-check"></i>Fail2ban</span><span class="badge">24h</span></h5>
+  <div class="n">128<small>IPs blocked</small></div>
+  <div class="ip"><span>45.83.x.x</span><b>ssh · banned</b></div>
+  <div class="ip"><span>103.21.x.x</span><b>nginx · banned</b></div></div>
+</div>
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script><script>lucide.createIcons()</script></body></html>

@@ -1,0 +1,35 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+.chat{left:24px;top:40px;width:270px;padding:14px}
+.chat .hd{display:flex;align-items:center;gap:10px;padding-bottom:12px;border-bottom:1px solid var(--line);font-size:14px;font-weight:600}
+.chat .hd i{width:30px;height:30px;border-radius:50%;background:#25d366;display:grid;place-items:center;color:#fff}
+.chat .hd small{display:block;font-weight:400;color:var(--ok);font-size:11.5px}
+.msg{font-size:13px;line-height:1.4;padding:9px 12px;border-radius:14px;margin-top:10px;max-width:88%}
+.u{background:#dcf8c6;margin-left:auto;border-bottom-right-radius:4px}
+.b{background:var(--soft);border-bottom-left-radius:4px}.b small{display:block;font:500 10.5px var(--mono);color:var(--brand);margin-bottom:3px}
+.typing{display:flex;gap:4px;padding:10px 12px;background:var(--soft);border-radius:14px;width:54px;margin-top:10px}.typing i{width:6px;height:6px;border-radius:50%;background:#8fa3d6}
+.agent{position:absolute;left:330px;top:170px;width:120px;height:120px;border-radius:30px;background:linear-gradient(145deg,var(--brand2),var(--brand) 55%,var(--ink));display:grid;place-items:center;color:#fff;box-shadow:0 0 0 10px rgba(0,47,167,.08),0 0 0 22px rgba(0,47,167,.04),0 24px 50px -10px rgba(0,47,167,.55)}
+.agent .lucide{width:44px;height:44px;stroke-width:1.6}
+.agent span{position:absolute;bottom:-34px;left:50%;transform:translateX(-50%);white-space:nowrap;font:500 12px var(--mono);background:var(--ink);color:#fff;padding:4px 10px;border-radius:99px}
+svg.wires{position:absolute;inset:0}
+.tile{width:132px;padding:10px 12px;display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600}
+.tile b{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font-size:11px;flex:none}
+.tile small{display:block;font:400 11px var(--mono);color:var(--ok)}
+</style></head><body><div class="stage">
+<div class="glow" style="width:260px;height:200px;left:300px;top:140px;background:#8fb0ff"></div>
+<svg class="wires" viewBox="0 0 640 460"><g fill="none" stroke="#002fa7" stroke-width="1.6" stroke-dasharray="4 5" opacity=".55">
+<path d="M294 150 C320 150 320 230 330 230"/><path d="M450 230 C480 230 470 70 494 70"/><path d="M450 230 C480 230 480 160 494 160"/><path d="M450 230 C480 230 480 300 494 300"/><path d="M450 230 C480 230 470 390 494 390"/></g>
+<g fill="#002fa7"><circle cx="494" cy="70" r="3.5"/><circle cx="494" cy="160" r="3.5"/><circle cx="494" cy="300" r="3.5"/><circle cx="494" cy="390" r="3.5"/><circle cx="294" cy="150" r="3.5"/></g></svg>
+<div class="card chat">
+  <div class="hd"><i><i data-lucide="message-circle"></i></i><div>WhatsApp<small>● online</small></div></div>
+  <div class="msg u">Hi, is order #2041 ready?</div>
+  <div class="msg b"><small>AI AGENT</small>Yes! Paid via MidTrans, packed and shipping today.</div>
+  <div class="msg u">Can I get the invoice?</div>
+  <div class="typing"><i></i><i></i><i></i></div>
+</div>
+<div class="agent"><i data-lucide="sparkles"></i><span>AI agent</span></div>
+<div class="card tile" style="left:494px;top:46px"><b style="background:#002fa7">M</b><div>MidTrans<small>synced</small></div></div>
+<div class="card tile" style="left:494px;top:136px"><b style="background:#0f0f0f"><i data-lucide="bot" style="width:15px;height:15px"></i></b><div>OpenAI<small>synced</small></div></div>
+<div class="card tile" style="left:494px;top:276px"><b style="background:#2563eb">D</b><div>Duitku<small>synced</small></div></div>
+<div class="card tile" style="left:494px;top:366px"><b style="background:#e10098"><i data-lucide="share-2" style="width:15px;height:15px"></i></b><div>GraphQL<small>synced</small></div></div>
+</div>
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script><script>lucide.createIcons()</script></body></html>

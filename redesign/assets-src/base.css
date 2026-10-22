@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap");
+:root{--ink:#071530;--mid:#646b80;--line:#e5e7ef;--brand:#002fa7;--brand2:#3d6bff;--soft:#e8eeff;--ok:#22c55e;--f:"Geist",system-ui,sans-serif;--mono:"Geist Mono",monospace}
+*{box-sizing:border-box}
+html,body{margin:0;background:transparent;font-family:var(--f);color:var(--ink);-webkit-font-smoothing:antialiased}
+.stage{width:640px;height:460px;position:relative;overflow:hidden}
+.card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 1px 2px rgba(7,21,48,.04),0 18px 40px -16px rgba(7,21,48,.22)}
+.mono{font-family:var(--mono)}
+.glow{position:absolute;border-radius:50%;filter:blur(50px);opacity:.55}
+.lucide{width:16px;height:16px;stroke-width:2}

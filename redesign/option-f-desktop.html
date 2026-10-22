@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DIRAIT — Option F · Desktop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--desk:#9fb8a8;--win:#f7f5ef;--ink:#1a1a1a;--bar:#e9e4d6;--acc:#3a5bff;--hi:#ffe66d;
+  --s:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",monospace;--m:clamp(12px,2.4vw,32px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--desk);color:var(--ink);font:16px/1.5 var(--s);-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(0,0,0,.12) 1px,transparent 1px);background-size:6px 6px}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
+h1,h2,h3,p,ul,figure{margin:0;padding:0}ul{list-style:none}
+.mono{font-family:var(--mono);font-size:13px}
+/* menubar */
+.menu{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:22px;background:var(--win);border-bottom:2px solid var(--ink);padding:6px 16px;font-size:14px}
+.menu b{font-weight:700}.menu a:hover{background:var(--ink);color:var(--win)}.menu a{padding:2px 6px}
+.menu .r{margin-left:auto;display:flex;gap:16px;align-items:center}
+/* windows */
+.desk{padding:var(--m);display:grid;grid-template-columns:repeat(12,1fr);gap:var(--m)}
+.w{background:var(--win);border:2px solid var(--ink);border-radius:10px;box-shadow:6px 6px 0 rgba(0,0,0,.85);overflow:hidden;display:flex;flex-direction:column}
+.tb{display:flex;align-items:center;gap:10px;background:var(--bar);border-bottom:2px solid var(--ink);padding:7px 12px;font:500 13px var(--mono)}
+.tb i{width:12px;height:12px;border:2px solid var(--ink);border-radius:50%;display:inline-block}.tb i:first-child{background:#ff6b5b}
+.tb span{margin:0 auto}.tb::after{content:"";width:46px}
+.wb{padding:clamp(18px,2.4vw,32px);flex:1}
+.btn{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);border-radius:8px;padding:11px 18px;font-weight:500;background:var(--win);box-shadow:3px 3px 0 var(--ink)}
+.btn:hover{background:var(--hi)}.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn.p{background:var(--acc);color:#fff}.btn.p:hover{background:#2a45d8}
+/* placement */
+.hero{grid-column:1/9}.pic{grid-column:9/13}.stats{grid-column:1/5}.svc{grid-column:5/13}
+.work{grid-column:1/8}.note{grid-column:8/13}.price{grid-column:1/13}.faq{grid-column:1/7}.mail{grid-column:7/13}
+h1{font-weight:700;font-size:clamp(44px,6.4vw,104px);line-height:.92;letter-spacing:-.045em}
+h1 mark{background:var(--hi);padding:0 .08em}
+.hero p{font-size:clamp(17px,1.4vw,20px);max-width:46ch;margin-top:22px}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.pic .wb{padding:0}.pic figure{height:100%;min-height:320px}
+h2{font-weight:700;font-size:clamp(28px,3vw,44px);letter-spacing:-.035em;line-height:1}
+/* stats as system monitor */
+.meter{margin-top:14px}.meter div{display:flex;justify-content:space-between}.meter b{font-size:28px;letter-spacing:-.03em}
+.track{height:14px;border:2px solid var(--ink);border-radius:4px;margin-top:6px;background:repeating-linear-gradient(90deg,var(--acc) 0 8px,transparent 8px 10px)}
+/* services as icons */
+.icons{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.ic{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:14px;border:2px dashed transparent;border-radius:8px}
+.ic:hover{border-color:var(--ink);background:#fff}
+.ic .g{width:52px;height:44px;border:2px solid var(--ink);border-radius:6px;display:grid;place-items:center;font-size:22px;background:var(--hi);box-shadow:3px 3px 0 var(--ink)}
+.ic:nth-child(2n) .g{background:#ffb3c7}.ic:nth-child(3n) .g{background:#a8d8ff}
+.ic h3{font-size:17px}.ic p{font-size:14px;opacity:.75}
+/* work as file list */
+.files{width:100%;border-collapse:collapse;margin-top:18px;font-size:15px}
+.files th{text-align:left;font:500 12px var(--mono);border-bottom:2px solid var(--ink);padding:8px}
+.files td{padding:10px 8px;border-bottom:1px solid #d8d3c5}
+.files tr:hover td{background:var(--acc);color:#fff}
+
+.note .wb{background:#fff8c4;font-family:var(--mono);font-size:15px;line-height:1.6}
+.note q{display:block;font-size:17px;margin:12px 0}
+.note figure{margin-top:16px;aspect-ratio:16/9;border:2px solid var(--ink);overflow:hidden}
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.plan{border:2px solid var(--ink);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:12px;background:#fff}
+.plan.f{background:var(--acc);color:#fff}
+.plan .amt{font-size:46px;font-weight:700;letter-spacing:-.04em;line-height:1}
+.plan li{font-family:var(--mono);font-size:13px}.plan li::before{content:"☑ "}
+.plan .btn{margin-top:auto;justify-content:center;color:var(--ink)}
+/* faq */
+.faq details{border:2px solid var(--ink);border-radius:6px;margin-top:10px;background:#fff}
+.faq summary{list-style:none;cursor:pointer;padding:12px 14px;font-weight:500;display:flex;gap:10px}
+.faq summary::before{content:"▸";font-family:var(--mono)}.faq details[open] summary::before{content:"▾"}
+.faq p{padding:0 14px 14px 34px;font-size:15px}
+/* mail */
+.field{display:flex;border-bottom:1px solid #d8d3c5;padding:8px 0;font-size:15px}.field span{width:80px;font:500 13px var(--mono);opacity:.6}
+.mail .big{font-size:clamp(34px,4vw,60px);font-weight:700;letter-spacing:-.04em;line-height:1;margin:22px 0}
+.dock{display:flex;justify-content:center;gap:10px;padding:14px;margin:0 auto 24px;width:max-content;max-width:100%;background:rgba(247,245,239,.85);border:2px solid var(--ink);border-radius:16px;box-shadow:4px 4px 0 var(--ink)}
+.dock a{width:48px;height:48px;border:2px solid var(--ink);border-radius:12px;display:grid;place-items:center;font-size:22px;background:#fff;transition:transform .15s}
+.dock a:hover{transform:translateY(-8px) scale(1.1)}
+@media (max-width:900px){
+  .menu nav,.menu .r .mono{display:none}
+  .desk>*{grid-column:1/13!important}
+  .icons{grid-template-columns:1fr 1fr}.plans{grid-template-columns:1fr}
+}
+.lucide{width:1em;height:1em;stroke-width:1.9;vertical-align:-.14em;flex:none}
+</style>
+</head>
+<body>
+<div class="menu"><b>◆ dirait</b><nav style="display:flex;gap:6px"><a href="#services">Services</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#faq">Help</a></nav>
+  <div class="r"><span class="mono">● all systems live</span><span class="mono">Fri 09:43</span></div></div>
+
+<main class="desk">
+  <div class="w hero"><div class="tb"><i></i><i></i><span>welcome.txt</span></div><div class="wb">
+    <p class="mono" style="opacity:.6">~/dirait $ cat welcome.txt</p>
+    <h1 style="margin-top:14px">Software for work that <mark>can’t stop.</mark></h1>
+    <p>Custom web, mobile, IoT and AI systems. One team from first screen to field, then on call while it runs. Jakarta, Singapore, Europe.</p>
+    <div class="acts"><a class="btn p" href="#contact">Start a project →</a><a class="btn" href="#work">Open work folder</a></div>
+  </div></div>
+
+  <div class="w pic"><div class="tb"><i></i><i></i><span>jakarta.jpg</span></div><div class="wb"><figure><img src="../images/home/jakarta-skyline-2.jpg" alt="Jakarta skyline"></figure></div></div>
+
+  <div class="w stats"><div class="tb"><i></i><i></i><span>Activity Monitor</span></div><div class="wb">
+    <div class="meter"><div><span class="mono">systems shipped</span><b>30+</b></div><div class="track" style="width:90%"></div></div>
+    <div class="meter"><div><span class="mono">devices on MQTT</span><b>240</b></div><div class="track" style="width:70%"></div></div>
+    <div class="meter"><div><span class="mono">regions</span><b>3</b></div><div class="track" style="width:40%"></div></div>
+    <div class="meter"><div><span class="mono">failures / 24h</span><b>0</b></div><div class="track" style="width:2%"></div></div>
+  </div></div>
+
+  <div id="services" class="w svc"><div class="tb"><i></i><i></i><span>Services — 6 items</span></div><div class="wb">
+    <h2>Six systems, one team.</h2>
+    <div class="icons">
+      <a class="ic" href="#"><span class="g"><i data-lucide="monitor"></i></span><h3>Web Applications</h3><p>React, Next.js, Laravel.</p></a>
+      <a class="ic" href="#"><span class="g"><i data-lucide="smartphone"></i></span><h3>Mobile Apps</h3><p>React Native, iOS & Android.</p></a>
+      <a class="ic" href="#"><span class="g"><i data-lucide="radio-tower"></i></span><h3>IoT Platforms</h3><p>MQTT & WebSocket dashboards.</p></a>
+      <a class="ic" href="#"><span class="g"><i data-lucide="brain"></i></span><h3>AI & API</h3><p>AI, payments, WhatsApp.</p></a>
+      <a class="ic" href="#"><span class="g"><i data-lucide="folder-kanban"></i></span><h3>CRM & ERP</h3><p>RBAC, SSO, 2FA, Kanban.</p></a>
+      <a class="ic" href="#"><span class="g"><i data-lucide="settings"></i></span><h3>DevOps</h3><p>Docker, Nginx, Cloudflare.</p></a>
+    </div>
+  </div></div>
+
+  <div id="work" class="w work"><div class="tb"><i></i><i></i><span>~/work</span></div><div class="wb">
+    <h2>Shipped for teams that run daily.</h2>
+    <table class="files"><thead><tr><th>NAME</th><th>KIND</th><th>STATUS</th></tr></thead><tbody>
+      <tr><td>Logistics company</td><td>Logistics platform</td><td class="mono">live</td></tr>
+      <tr><td>Retail chain</td><td>Retail POS & inventory</td><td class="mono">live</td></tr>
+      <tr><td>Marketing agency</td><td>CRM & reporting</td><td class="mono">live</td></tr>
+      <tr><td>Holiday rental</td><td>Booking site</td><td class="mono">live</td></tr>
+      <tr><td>Restaurant group</td><td>POS & reservations</td><td class="mono">live</td></tr>
+      <tr><td>Research firm</td><td>Survey platform</td><td class="mono">live</td></tr>
+    </tbody></table>
+  </div></div>
+
+  <div class="w note"><div class="tb"><i></i><i></i><span>review.sticky</span></div><div class="wb">
+    <span>★★★★★</span>
+    <q>Fast work, quick response, friendly, expert in their field. Top freelancer.</q>
+    <span>— nazz_com</span>
+    <figure><img src="../images/home/city-activity-jakarta-unsplash.jpg" alt=""></figure>
+  </div></div>
+
+  <div id="pricing" class="w price"><div class="tb"><i></i><i></i><span>pricing.app</span></div><div class="wb">
+    <h2>Clear prices for a defined build.</h2>
+    <div class="plans">
+      <div class="plan"><span class="mono">Basic</span><p class="amt">Rp4M</p><ul><li>CDN worldwide</li><li>SSL encryption</li><li>Server & domain, 1 yr</li><li>3 months support</li></ul><a class="btn" href="#contact">Choose</a></div>
+      <div class="plan f"><span class="mono">Small Business ★ popular</span><p class="amt">Rp8M</p><ul><li>Everything in Basic</li><li>6 months support</li><li>Unlimited uploads</li></ul><a class="btn" href="#contact">Choose</a></div>
+      <div class="plan"><span class="mono">Business</span><p class="amt">Custom</p><ul><li>Everything in Small Business</li><li>Server & domain, 3 yrs</li><li>Lifetime support</li></ul><a class="btn" href="#contact">Contact</a></div>
+    </div>
+  </div></div>
+
+  <div id="faq" class="w faq"><div class="tb"><i></i><i></i><span>Help</span></div><div class="wb">
+    <h2>Before the first call.</h2>
+    <details open><summary>What technologies do you use?</summary><p>React (Vite), Next.js, Laravel, SvelteKit for web; React Native for mobile; MQTT and WebSocket for IoT.</p></details>
+    <details><summary>How long does a project take?</summary><p>Company profile with CMS: 2–4 weeks. Custom apps: typically 2–4 months.</p></details>
+    <details><summary>Maintenance after launch?</summary><p>3 months for Basic, 6 for Small Business, lifetime for Business.</p></details>
+    <details><summary>Integrate with existing systems?</summary><p>Yes — payment gateways, WhatsApp APIs, AI services, any REST or GraphQL backend.</p></details>
+  </div></div>
+
+  <div id="contact" class="w mail"><div class="tb"><i></i><i></i><span>New message</span></div><div class="wb">
+    <div class="field"><span>To:</span>hello@dirait.id</div>
+    <div class="field"><span>Subject:</span>New project</div>
+    <p class="big">Tell us what has to work.</p>
+    <div class="acts"><a class="btn p" href="mailto:hello@dirait.id">Send email <i data-lucide="mail"></i></a><a class="btn" href="https://wa.me/6281384934615">WhatsApp</a></div>
+  </div></div>
+</main>
+
+<nav class="dock" aria-label="Quick links"><a href="#" title="Home"><i data-lucide="house"></i></a><a href="#services" title="Services"><i data-lucide="wrench"></i></a><a href="#work" title="Work"><i data-lucide="folder"></i></a><a href="#pricing" title="Pricing"><i data-lucide="credit-card"></i></a><a href="#contact" title="Contact"><i data-lucide="mail"></i></a></nav>
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script><script>lucide.createIcons()</script>
+</body>
+</html>

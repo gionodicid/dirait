@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DIRAIT — Option H · SaaS Serif</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f4f0;--card:#fff;--ink:#071530;--mid:#6b6e76;--line:#e6e4dd;--g:#8fb0ff;--g2:#dce6ff;--blue:#002fa7;
+  --se:"Fraunces",Georgia,serif;--f:"Inter",system-ui,sans-serif;--m:clamp(16px,3vw,40px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--f);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}h1,h2,h3,p,ul,figure{margin:0;padding:0}ul{list-style:none}
+.wrap{max-width:1160px;margin-left:auto;margin-right:auto;padding-left:var(--m);padding-right:var(--m)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:10px 18px;border-radius:99px;font-weight:600;font-size:13px;letter-spacing:.02em}
+.btn.o{background:none;color:var(--ink);border:1.5px solid var(--ink)}.btn:hover{opacity:.85}
+h1,h2{font-family:var(--se);font-weight:400;letter-spacing:-.02em}
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;padding-top:20px;padding-bottom:20px}
+.logo{display:flex;gap:8px;align-items:center;font-weight:600;font-size:18px}.logo i{width:20px;height:20px;background:var(--ink);border-radius:5px;box-shadow:inset -6px -6px 0 var(--g)}
+.nav nav{display:flex;gap:26px;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.04em}.nav nav a{color:var(--mid)}.nav nav a:hover{color:var(--ink)}
+.nav .r{display:flex;gap:16px;align-items:center;font-size:13px;font-weight:500}
+/* hero */
+.hero{text-align:center;padding-top:clamp(50px,7vw,90px);position:relative}
+h1{font-size:clamp(40px,5.6vw,76px);line-height:1.08;max-width:18ch;margin:0 auto}
+.hero>p{color:var(--mid);max-width:50ch;margin:18px auto 0;font-size:16px}
+.capture{display:flex;max-width:420px;margin:28px auto 0;background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px;position:relative}
+.capture input{flex:1;border:0;outline:0;background:none;padding:0 16px;font:inherit}
+.scribble{position:absolute;left:-150px;top:-30px;font:500 20px/1.1 "Caveat",cursive;color:var(--mid);transform:rotate(-8deg);text-align:left}
+.scribble::after{content:"↘";display:block;margin-left:60px;font-size:28px}
+.stage{position:relative;margin-top:56px}
+.stage::before{content:"";position:absolute;inset:-40px 6% -60px;background:radial-gradient(50% 50% at 50% 50%,var(--g) 0,var(--g2) 40%,transparent 72%);filter:blur(40px);opacity:.75;z-index:0}
+/* browser mock */
+.browser{position:relative;z-index:1;max-width:940px;margin:0 auto;background:var(--card);border-radius:14px;border:1px solid var(--line);box-shadow:0 30px 80px rgba(7,21,48,.18);overflow:hidden;text-align:left}
+.chrome{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line);background:#fafaf8}
+.chrome i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.chrome i:nth-child(2){background:#febc2e}.chrome i:nth-child(3){background:#28c840}
+.url{margin:0 auto;background:#f0efea;border-radius:6px;padding:3px 60px;font-size:12px;color:var(--mid)}
+.app{display:grid;grid-template-columns:52px 1fr 240px;min-height:400px}
+.side{border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:18px;padding:16px 0}
+.side i{width:22px;height:22px;border-radius:6px;background:#eceae4}.side i:first-child{background:var(--blue)}
+.main{padding:18px 22px}.main .top{display:flex;justify-content:space-between;align-items:center}
+.main h3{font-size:20px;font-weight:600}
+.search{background:#f4f3ef;border-radius:8px;padding:6px 14px;font-size:12px;color:var(--mid);width:220px}
+.board{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:14px}
+.board .bh{display:flex;justify-content:space-between;font-weight:600;font-size:13px}.board .bh span{background:var(--ink);color:#fff;border-radius:99px;padding:2px 10px;font-size:11px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.col{background:#f8f7f3;border-radius:8px;padding:8px;min-height:150px;font-size:11.5px}
+.col b{display:block;color:var(--mid);font-weight:500;margin-bottom:6px}
+.tk{background:#fff;border:1px solid var(--line);border-radius:6px;padding:7px;margin-bottom:6px}
+.pill{display:inline-block;border-radius:99px;padding:1px 8px;font-size:10px;font-weight:600;margin-top:4px;background:#dcfce7;color:#15803d}.pill.b{background:#dbeafe;color:#1d4ed8}.pill.y{background:#fef9c3;color:#a16207}
+.files{border-left:1px solid var(--line);padding:18px 16px}.files h4{margin:0 0 12px;font-size:14px;display:flex;justify-content:space-between}.files h4 span{color:var(--mid);font-weight:400;font-size:12px}
+.fi{display:flex;gap:10px;align-items:center;background:#f8f7f3;border-radius:8px;padding:9px;margin-bottom:8px;font-size:12px}
+.fi i{width:26px;height:22px;border-radius:4px;background:#93c5fd}.fi:nth-child(3) i{background:#f9a8d4}.fi:nth-child(4) i{background:#bef264}
+.fi small{display:block;color:var(--mid)}.fi em{margin-left:auto;font-style:normal;color:var(--mid)}
+/* logos */
+.trusted{text-align:center;padding-top:80px;color:var(--mid)}
+.lrow{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(20px,4vw,48px);margin-top:22px;font-weight:600;color:#3b3e45;font-size:16px}
+/* intro */
+section{padding-top:clamp(90px,11vw,140px)}
+.intro{text-align:center}.intro h2{font-size:clamp(28px,3vw,40px)}
+.intro p{font-family:var(--se);font-size:clamp(20px,2vw,27px);line-height:1.4;max-width:34ch;margin:18px auto 0}
+/* why */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.why .h{grid-column:1/-1;display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:20px}
+.why h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1;max-width:16ch}.why .h p{color:var(--mid);max-width:36ch}
+.scene{border-radius:20px;overflow:hidden;min-height:340px;position:relative;background:linear-gradient(#bfe3ff,#e8f6ff 45%,#9bd17b 46%,#5fa64a);color:#fff;padding:20px}
+.scene .sun{position:absolute;right:30px;top:24px;width:46px;height:46px;border-radius:50%;background:#ffd23f;box-shadow:0 0 30px #ffd23f}
+.scene .timer{display:inline-flex;gap:10px;align-items:center;background:rgba(0,0,0,.35);border-radius:99px;padding:6px 14px;font-weight:600;margin-top:10px}
+.tree{position:absolute;bottom:0;width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:120px solid #2f7a3a}
+.scene .label{position:absolute;left:20px;bottom:20px;background:#fff;color:var(--ink);border-radius:12px;padding:10px 14px;font-size:13px;box-shadow:0 10px 24px rgba(0,0,0,.15)}
+.cards4{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.c4{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center}
+.c4 .ic{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;margin:0 auto 12px}
+.c4 h3{font-size:15px;font-weight:600}.c4 p{color:var(--mid);font-size:13.5px;margin-top:6px}
+/* zigzag */
+.zz-h{text-align:center;max-width:620px;margin:0 auto 50px}.zz-h h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1}.zz-h p{color:var(--mid);margin-top:12px}
+.zz{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center;margin-bottom:60px}
+.zz.rev .vis{order:2}
+.vis{background:#fafaf7;border:1px solid var(--line);border-radius:20px;padding:36px;position:relative;overflow:hidden}
+.vis::before{content:"";position:absolute;inset:20% 20%;background:var(--g);filter:blur(50px);opacity:.5}
+.panel{position:relative;background:#fff;border-radius:12px;box-shadow:0 16px 40px rgba(0,0,0,.08);padding:16px;font-size:13px;max-width:320px;margin:0 auto}
+.panel h4{margin:0 0 10px}.pr{display:flex;justify-content:space-between;align-items:center;background:#f7f6f2;border-radius:8px;padding:9px 12px;margin-bottom:6px}
+.prog{height:22px;border-radius:99px;background:#ede9fe;overflow:hidden;margin:8px 0}.prog i{display:block;height:100%;width:72%;background:#8b5cf6;border-radius:99px}
+.zz h3{font-size:22px;font-weight:600;letter-spacing:-.01em}.zz p{color:var(--mid);margin:10px 0 18px;max-width:40ch}
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.plan.f{border:2px solid var(--ink);box-shadow:0 20px 50px rgba(0,47,167,.35)}
+.plan .amt{font-family:var(--se);font-size:44px;line-height:1}
+.plan li{font-size:14px;color:var(--mid);padding:3px 0}.plan li::before{content:"✓  ";color:#16a34a}
+.plan .btn{margin-top:auto;justify-content:center}
+.faq{max-width:760px;margin:0 auto}.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
+.faq summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:600;display:flex;justify-content:space-between}.faq summary::after{content:"+"}.faq details[open] summary::after{content:"−"}
+.faq p{color:var(--mid);padding:0 20px 18px}
+.cta{text-align:center;padding:clamp(90px,11vw,140px) 0 50px;position:relative}
+.cta::before{content:"";position:absolute;left:20%;right:20%;top:40%;height:200px;background:var(--g);filter:blur(80px);opacity:.5;z-index:-1}
+.cta h2{font-size:clamp(36px,5vw,64px);line-height:1.08}.cta p{color:var(--mid);margin-top:12px}
+.cta .capture{margin-top:26px}
+footer{display:flex;justify-content:space-between;color:var(--mid);font-size:13px;padding:30px 0;border-top:1px solid var(--line)}
+@media (max-width:900px){
+  .nav nav{display:none}.scribble{display:none}
+  .app{grid-template-columns:1fr}.side,.files{display:none}.cols{grid-template-columns:1fr 1fr}.col:nth-child(3){display:none}
+  .why,.zz,.plans{grid-template-columns:1fr}.why .h{flex-direction:column;align-items:start}.zz.rev .vis{order:0}
+}
+.lucide{width:1em;height:1em;stroke-width:1.9;vertical-align:-.14em;flex:none}
+</style>
+</head>
+<body>
+<header class="nav wrap"><a class="logo" href="#"><i></i>dirait</a>
+  <nav><a href="#">Home</a><a href="#features">Products</a><a href="#why">Why us</a><a href="#pricing">Pricing</a></nav>
+  <div class="r"><a href="#contact">LOG IN</a><a class="btn" href="#contact">START A PROJECT</a></div></header>
+
+<main>
+  <div class="hero wrap">
+    <h1>Stay running, stay ahead. Software built around your operations.</h1>
+    <p>Custom web, mobile, IoT and AI systems — designed, shipped and monitored by one team in Jakarta.</p>
+    <form class="capture" onsubmit="return false"><span class="scribble">free 30-min<br>consultation</span><input placeholder="Enter your work email" aria-label="Work email"><button class="btn" style="border:0;cursor:pointer">GET STARTED →</button></form>
+    <div class="stage">
+      <div class="browser" aria-hidden="true">
+        <div class="chrome"><i></i><i></i><i></i><span class="url">app.dirait.id</span></div>
+        <div class="app">
+          <div class="side"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="main">
+            <div class="top"><h3>Good morning!</h3><span class="search">Search orders, tables…</span></div>
+            <div class="board"><div class="bh">Today’s operations <span>Live</span></div>
+              <div class="cols">
+                <div class="col"><b>Reservations · 18</b><div class="tk">Table 4 · 19:00<br><span class="pill">confirmed</span></div><div class="tk">Table 9 · 19:30<br><span class="pill y">pending</span></div></div>
+                <div class="col"><b>Kitchen · 7</b><div class="tk">Order #2041<br><span class="pill b">cooking</span></div><div class="tk">Order #2042<br><span class="pill b">cooking</span></div></div>
+                <div class="col"><b>Paid · 42</b><div class="tk">Rp 1.240.000<br><span class="pill">MidTrans</span></div><div class="tk">Rp 380.000<br><span class="pill">QRIS</span></div></div>
+              </div></div>
+          </div>
+          <div class="files"><h4>Reports <span>View all</span></h4>
+            <div class="fi"><i></i><div>Daily sales<small>PDF · today</small></div><em>2.1 MB</em></div>
+            <div class="fi"><i></i><div>Stock levels<small>XLSX</small></div><em>840 KB</em></div>
+            <div class="fi"><i></i><div>Staff shifts<small>HRIS</small></div><em>1.0 MB</em></div>
+            <div class="fi"><i></i><div>Device log<small>IoT</small></div><em>3.4 MB</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="intro wrap"><h2>Organize everything</h2>
+    <p>“One team for your web app, mobile app, devices and servers — so nothing falls between agencies, and someone is always on call.”</p></section>
+
+  <section id="why" class="wrap why">
+    <div class="h"><h2>Why choose Dirait for your next system.</h2><p>30+ systems shipped since 2023, with support included in every plan.</p></div>
+    <div class="scene" aria-hidden="true"><span>Uptime this month</span><br><span class="timer">● 99.98%</span><div class="sun"></div>
+      <div class="tree" style="left:40%"></div><div class="tree" style="left:58%;border-bottom-width:150px"></div><div class="tree" style="left:76%"></div>
+      <div class="label">0 failures in the last 24h</div></div>
+    <div class="cards4">
+      <div class="c4"><div class="ic"><i data-lucide="credit-card"></i></div><h3>Payments built in</h3><p>MidTrans, Duitku, Mollie and QRIS ready.</p></div>
+      <div class="c4"><div class="ic"><i data-lucide="shield"></i></div><h3>Strong security</h3><p>RBAC, 2FA, SSO and Fail2ban hardening.</p></div>
+      <div class="c4"><div class="ic"><i data-lucide="radio-tower"></i></div><h3>Real-time by default</h3><p>MQTT and WebSocket for live data.</p></div>
+      <div class="c4"><div class="ic"><i data-lucide="headset"></i></div><h3>On-call support</h3><p>Up to lifetime support after launch.</p></div>
+    </div>
+  </section>
+
+  <section id="features" class="wrap">
+    <div class="zz-h"><h2>Features that set us apart from others</h2><p>Every module is built for your workflow — then kept running.</p></div>
+    <div class="zz"><div class="vis"><div class="panel"><h4>In progress</h4><div class="pr"><span><i data-lucide="monitor"></i> Web app</span><b>2w left</b></div><div class="pr"><span><i data-lucide="smartphone"></i> Mobile app</span><b>4w left</b></div><div class="pr" style="opacity:.5"><span><i data-lucide="settings"></i> DevOps</span><b>queued</b></div></div></div>
+      <div><h3>Web &amp; mobile, one codebase</h3><p>React, Next.js and React Native — pixel-perfect from Figma, with PWA where it fits.</p><a class="btn o" href="#">LEARN MORE</a></div></div>
+    <div class="zz rev"><div class="vis"><div class="panel"><h4>Warehouse B · sensors</h4><div class="prog"><i></i></div><div class="pr"><span>Temperature</span><b>4.2°C</b></div><div class="pr"><span>Devices online</span><b>240</b></div></div></div>
+      <div><h3>IoT &amp; live dashboards</h3><p>Tenant-based data, custom widgets and alerts, streamed over MQTT and WebSocket.</p><a class="btn o" href="#">LEARN MORE</a></div></div>
+    <div class="zz"><div class="vis"><div class="panel"><h4>Pipeline</h4><div class="pr"><span>New leads</span><b>128</b></div><div class="pr"><span>Negotiation</span><b>23</b></div><div class="pr"><span>Won this month</span><b class="pill">Rp 820M</b></div></div></div>
+      <div><h3>CRM, ERP &amp; HRIS</h3><p>Multi-tenant systems with Kanban workflows, SSO, 2FA and real-time notifications.</p><a class="btn o" href="#">LEARN MORE</a></div></div>
+  </section>
+
+  <section id="pricing" class="wrap">
+    <div class="zz-h"><h2>Clear prices for a defined build</h2></div>
+    <div class="plans">
+      <div class="plan"><h3>Basic</h3><p class="amt">Rp4M</p><ul><li>CDN worldwide</li><li>SSL encryption</li><li>Server &amp; domain, 1 year</li><li>3 months support</li></ul><a class="btn o" href="#contact">CHOOSE</a></div>
+      <div class="plan f"><h3>Small Business</h3><p class="amt">Rp8M</p><ul><li>Everything in Basic</li><li>6 months support</li><li>Unlimited uploads</li></ul><a class="btn" href="#contact">CHOOSE</a></div>
+      <div class="plan"><h3>Business</h3><p class="amt">Custom</p><ul><li>Everything in Small Business</li><li>Server &amp; domain, 3 years</li><li>Lifetime support</li></ul><a class="btn o" href="#contact">CONTACT</a></div>
+    </div>
+  </section>
+
+  <section class="wrap"><div class="faq">
+    <details open><summary>What technologies do you use?</summary><p>React (Vite), Next.js, Laravel, SvelteKit for web; React Native for mobile; MQTT and WebSocket for IoT.</p></details>
+    <details><summary>How long does a project take?</summary><p>Company profile with CMS: 2–4 weeks. Custom apps: typically 2–4 months.</p></details>
+    <details><summary>Do you provide maintenance?</summary><p>3 months for Basic, 6 for Small Business, lifetime for Business.</p></details>
+  </div></section>
+
+  <div id="contact" class="cta wrap"><h2>Tell us what has to work.</h2><p>Free consultation — reply within one business day.</p>
+    <form class="capture" onsubmit="return false"><input placeholder="Enter your work email" aria-label="Work email"><button class="btn" style="border:0;cursor:pointer">GET STARTED →</button></form></div>
+</main>
+<footer class="wrap"><span>© 2026 Dirait</span><span>hello@dirait.id · Cibubur, Jawa Barat</span></footer>
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script><script>lucide.createIcons()</script>
+</body>
+</html>

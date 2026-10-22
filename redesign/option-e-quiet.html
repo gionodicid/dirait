@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DIRAIT — Option E · Quiet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Newsreader:ital,opsz,wght@1,6..72,300&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbfbf9;--ink:#141414;--mid:#8a8a85;--line:#e4e4df;--f:"Manrope",system-ui,sans-serif;--it:"Newsreader",Georgia,serif;--m:clamp(20px,5vw,80px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 16px/1.7 var(--f);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
+h1,h2,h3,p,ul,figure{margin:0;padding:0}ul{list-style:none}
+.wrap{padding:0 var(--m)}
+.sm{font-size:13px;color:var(--mid);font-weight:400}
+.lnk{border-bottom:1px solid var(--ink);padding-bottom:2px;font-weight:400}.lnk:hover{color:var(--mid);border-color:var(--mid)}
+/* nav: fixed side rail */
+.nav{position:fixed;inset:0 auto 0 0;width:var(--m);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:28px 0;z-index:5}
+.nav .logo{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:500;letter-spacing:.3em;font-size:13px}
+.nav nav{writing-mode:vertical-rl;transform:rotate(180deg);display:flex;gap:28px;font-size:13px;color:var(--mid)}.nav nav a:hover{color:var(--ink)}
+.top{display:flex;justify-content:space-between;padding-top:28px}
+/* hero */
+.hero{min-height:88vh;display:grid;grid-template-columns:repeat(12,1fr);gap:20px;align-items:end;padding-bottom:60px}
+h1{grid-column:1/9;font-weight:300;font-size:clamp(44px,6.6vw,108px);line-height:1.02;letter-spacing:-.045em}
+h1 em{font-family:var(--it);font-weight:300}
+.hero .side{grid-column:10/13;display:flex;flex-direction:column;gap:22px}
+.full{margin:0 var(--m);aspect-ratio:21/9;overflow:hidden}
+.full img{filter:saturate(.6)}
+.cap{display:flex;justify-content:space-between;margin:12px var(--m) 0}
+/* blocks */
+section{padding-top:clamp(100px,14vw,200px)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+h2{font-weight:300;font-size:clamp(30px,3.4vw,52px);line-height:1.1;letter-spacing:-.035em}
+h2 em{font-family:var(--it)}
+.lab{grid-column:1/4}.body{grid-column:4/13}
+.stmt{font-size:clamp(24px,2.6vw,40px);line-height:1.25;letter-spacing:-.025em;max-width:24ch}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:80px;border-top:1px solid var(--line)}
+.facts li{padding-top:18px}.facts b{display:block;font-weight:300;font-size:clamp(34px,3.4vw,54px);letter-spacing:-.04em;line-height:1.1}
+.svc li{display:grid;grid-template-columns:60px 1fr 1fr;gap:20px;padding:28px 0;border-top:1px solid var(--line)}
+.svc li:last-child{border-bottom:1px solid var(--line)}
+.svc h3{font-weight:400;font-size:22px;letter-spacing:-.02em}
+.svc p{color:var(--mid)}
+.pair{display:grid;grid-template-columns:5fr 7fr;gap:20px;align-items:end;margin-top:60px}
+.pair figure{aspect-ratio:3/4;overflow:hidden}.pair figure.w{aspect-ratio:4/3}
+.clients{columns:2;column-gap:20px}.clients li{padding:14px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;break-inside:avoid}
+.clients span{color:var(--mid)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.plan{border-top:1px solid var(--ink);padding-top:22px;display:flex;flex-direction:column;gap:14px}
+.plan .price{font-size:44px;letter-spacing:-.04em;line-height:1}
+.plan li{color:var(--mid);font-size:15px}
+.plan .lnk{align-self:flex-start;margin-top:14px}
+.faq details{border-top:1px solid var(--line)}.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;font-size:19px;font-weight:400}
+.faq summary::after{content:"+";color:var(--mid)}.faq details[open] summary::after{content:"−"}
+.faq p{padding-bottom:24px;color:var(--mid);max-width:60ch}
+.end{padding-top:clamp(120px,16vw,240px);padding-bottom:40px}
+.end h2{font-size:clamp(48px,8vw,140px);letter-spacing:-.05em;line-height:1}
+.end .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:60px;padding-top:20px;border-top:1px solid var(--line)}
+@media (max-width:860px){
+  .nav{display:none}
+  .hero,.grid,.pair{grid-template-columns:1fr}h1,.hero .side,.lab,.body{grid-column:auto}
+  .hero{min-height:auto;padding-top:80px}
+  .full{aspect-ratio:4/3}.facts{grid-template-columns:1fr 1fr;gap:24px}
+  .svc li{grid-template-columns:36px 1fr}.svc p{grid-column:2}
+  .clients{columns:1}.plans{grid-template-columns:1fr;gap:40px}
+}
+</style>
+</head>
+<body>
+<aside class="nav"><a class="logo" href="#">DIRAIT</a><nav><a href="#contact">Contact</a><a href="#pricing">Pricing</a><a href="#work">Work</a><a href="#services">Services</a></nav><span class="sm">©26</span></aside>
+
+<main>
+  <div class="top wrap sm"><span>Software studio — Jakarta</span><a class="lnk" href="#contact" style="color:var(--ink)">Start a project</a></div>
+  <div class="hero wrap">
+    <h1>Software for work that <em>can’t stop.</em></h1>
+    <div class="side">
+      <p>Custom web, mobile, IoT and AI systems. One team from first screen to field, then on call while it runs.</p>
+      <a class="lnk" href="#work" style="align-self:flex-start">See selected work ↓</a>
+    </div>
+  </div>
+  <figure class="full"><img src="../images/home/jakarta-s-skyline-from-pedestrian-crossing.jpg" alt="Jakarta skyline from a pedestrian crossing"></figure>
+  <div class="cap sm"><span>Jakarta, Indonesia</span><span>Singapore · Europe</span></div>
+
+  <section class="wrap grid">
+    <p class="lab sm">About</p>
+    <div class="body">
+      <p class="stmt">We build fewer things, carefully — and stay with them after they ship.</p>
+      <ul class="facts"><li><b>30+</b><span class="sm">systems since 2023</span></li><li><b>240</b><span class="sm">devices on MQTT</span></li><li><b>3</b><span class="sm">regions</span></li><li><b>0</b><span class="sm">failures, last 24h</span></li></ul>
+    </div>
+  </section>
+
+  <section id="services" class="wrap grid">
+    <p class="lab sm">Services</p>
+    <div class="body">
+      <h2 style="margin-bottom:40px">Six systems, <em>one team.</em></h2>
+      <ul class="svc">
+        <li><span class="sm">01</span><h3>Web Applications</h3><p>React, Next.js, Laravel — from Figma to production.</p></li>
+        <li><span class="sm">02</span><h3>Mobile Apps</h3><p>React Native for iOS and Android, PWA where it fits.</p></li>
+        <li><span class="sm">03</span><h3>IoT Platforms</h3><p>Real-time dashboards on MQTT and WebSocket.</p></li>
+        <li><span class="sm">04</span><h3>AI & API Integration</h3><p>AI services, payment gateways, WhatsApp, GraphQL.</p></li>
+        <li><span class="sm">05</span><h3>CRM & ERP</h3><p>Multi-tenant, RBAC, SSO, 2FA, live notifications.</p></li>
+        <li><span class="sm">06</span><h3>DevOps & Infrastructure</h3><p>Docker, Nginx, Cloudflare, monitoring and hardening.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="work" class="wrap">
+    <div class="grid"><p class="lab sm">Industries</p><div class="body">
+      <ul class="clients"><li>Logistics company<span>Logistics</span></li><li>Retail chain<span>Retail POS</span></li><li>Marketing agency<span>CRM</span></li><li>Holiday rental<span>Booking</span></li><li>Restaurant group<span>Reservations</span></li><li>Research firm<span>Surveys</span></li></ul>
+    </div></div>
+    <div class="pair">
+      <figure><img src="../images/home/dutch-colonial-buildings-on-jalan-kali-besar.jpg" alt=""></figure>
+      <div><figure class="w"><img src="../images/home/munster-hafen-am-mittelhafen-56-2026-0239.jpg" alt=""></figure><p class="sm" style="margin-top:12px">“Fast response, neat work, good code quality. Will reorder.” — exzword</p></div>
+    </div>
+  </section>
+
+  <section id="pricing" class="wrap grid">
+    <p class="lab sm">Pricing</p>
+    <div class="body plans">
+      <div class="plan"><p class="sm">Basic</p><p class="price">Rp4M</p><ul><li>CDN worldwide</li><li>SSL encryption</li><li>Server & domain, 1 year</li><li>3 months support</li></ul><a class="lnk" href="#contact">Enquire</a></div>
+      <div class="plan"><p class="sm">Small Business — most chosen</p><p class="price">Rp8M</p><ul><li>Everything in Basic</li><li>6 months support</li><li>Unlimited uploads</li></ul><a class="lnk" href="#contact">Enquire</a></div>
+      <div class="plan"><p class="sm">Business</p><p class="price">On request</p><ul><li>Everything in Small Business</li><li>Server & domain, 3 years</li><li>Lifetime support</li></ul><a class="lnk" href="#contact">Enquire</a></div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap grid faq">
+    <p class="lab sm">Questions</p>
+    <div class="body">
+      <details><summary>What technologies do you use?</summary><p>React (Vite), Next.js, Laravel, SvelteKit for web; React Native for mobile; MQTT and WebSocket for IoT.</p></details>
+      <details><summary>How long does a project take?</summary><p>Company profile with CMS: 2–4 weeks. Custom apps: typically 2–4 months.</p></details>
+      <details><summary>Maintenance after launch?</summary><p>3 months for Basic, 6 for Small Business, lifetime for Business.</p></details>
+      <details><summary>Can you integrate with existing systems?</summary><p>Yes — payment gateways, WhatsApp APIs, AI services, any REST or GraphQL backend.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="end wrap">
+  <h2>Tell us what<br>has to work.</h2>
+  <div class="row"><a class="lnk" href="mailto:hello@dirait.id">hello@dirait.id</a><a class="lnk" href="https://wa.me/6281384934615">WhatsApp</a><span class="sm">Cibubur, Jawa Barat — Indonesia</span></div>
+</footer>
+</body>
+</html>

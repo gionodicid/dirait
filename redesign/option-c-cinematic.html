@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DIRAIT — Option C · Cinematic Warm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--sand:#f6efe6;--clay:#d9532b;--clay-d:#b8401d;--moss:#2f3a2c;--ink:#241c17;--muted:#7a6a5d;--lime:#d8f26a;
+  --f:"Bricolage Grotesque",system-ui,sans-serif;--m:clamp(16px,3vw,40px);--r:28px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand);color:var(--ink);font:17px/1.55 var(--f);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
+h1,h2,h3,p,ul,figure{margin:0;padding:0}ul{list-style:none}
+.wrap{padding:0 var(--m)}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--sand);padding:8px 8px 8px 22px;border-radius:99px;font-weight:600}
+.btn i{width:38px;height:38px;border-radius:50%;background:var(--lime);color:var(--ink);display:grid;place-items:center;font-style:normal;transition:transform .3s}
+.btn:hover i{transform:rotate(-45deg)}
+.btn.light{background:var(--sand);color:var(--ink)}.btn.light i{background:var(--clay);color:#fff}
+/* hero */
+.hero{margin:var(--m);margin-bottom:0;border-radius:var(--r);overflow:hidden;position:relative;min-height:min(92vh,880px);color:#fff;display:flex;flex-direction:column}
+.hero>img{position:absolute;inset:0}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,28,23,.45) 0%,rgba(36,28,23,0) 30%,rgba(36,28,23,.15) 55%,rgba(36,28,23,.85) 100%)}
+.nav{position:relative;display:flex;justify-content:space-between;align-items:center;padding:20px 24px}
+.logo{font-weight:800;font-size:24px;letter-spacing:-.04em}
+.nav nav{display:flex;gap:4px;background:rgba(255,255,255,.14);backdrop-filter:blur(14px);padding:5px;border-radius:99px}
+.nav nav a{padding:9px 16px;border-radius:99px;font-size:15px}.nav nav a:hover{background:rgba(255,255,255,.2)}
+.hero-body{position:relative;margin-top:auto;padding:24px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:32px}
+h1{font-weight:800;font-size:clamp(54px,9.4vw,150px);line-height:.86;letter-spacing:-.055em;max-width:11ch}
+h1 span{color:var(--lime)}
+.hero-card{background:rgba(246,239,230,.95);color:var(--ink);border-radius:22px;padding:22px;max-width:340px;display:flex;flex-direction:column;gap:18px}
+.hero-card p{font-size:16px}
+.live{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}.live::before{content:"";width:8px;height:8px;border-radius:50%;background:#2fb36b}
+/* intro */
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);padding-top:clamp(64px,9vw,130px);padding-bottom:clamp(48px,6vw,80px)}
+.intro p.big{font-size:clamp(26px,3vw,44px);line-height:1.12;letter-spacing:-.025em;font-weight:600}
+.intro p.big em{font-style:normal;color:var(--clay)}
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:end}
+.nums li{background:#fff;border-radius:20px;padding:20px}
+.nums b{display:block;font-size:clamp(40px,4.4vw,64px);font-weight:800;letter-spacing:-.05em;line-height:1}
+.nums span{color:var(--muted);font-size:14px}
+/* services */
+h2{font-weight:800;font-size:clamp(40px,5.6vw,88px);line-height:.92;letter-spacing:-.05em}
+.svc{background:var(--clay);color:#fff;margin:0 var(--m);border-radius:var(--r);padding:clamp(28px,4vw,56px)}
+.svc-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.svc-head p{max-width:34ch;opacity:.85}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:12px;min-height:240px;transition:background .3s,transform .3s}
+.card:hover{background:var(--sand);color:var(--ink);transform:translateY(-4px)}
+.card .n{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;font-weight:600;font-size:14px}
+.card:hover .n{background:var(--clay);color:#fff}
+.card h3{font-size:28px;letter-spacing:-.035em;line-height:1;margin-top:auto}
+.card p{font-size:15px;opacity:.85}
+/* work gallery */
+.work{padding-top:clamp(72px,9vw,130px)}
+.work-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:220px;gap:14px}
+.g{border-radius:22px;overflow:hidden;position:relative}
+.g img{transition:transform .8s}.g:hover img{transform:scale(1.05)}
+.g .cap{position:absolute;left:14px;bottom:14px;background:var(--sand);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:600}
+.g .cap span{color:var(--muted);font-weight:400}
+.g1{grid-column:span 4;grid-row:span 2}.g2{grid-column:span 2;grid-row:span 1}.g3{grid-column:span 2;grid-row:span 1}
+.g4{grid-column:span 2}.g5{grid-column:span 2;background:var(--moss);color:var(--sand);padding:22px;display:flex;flex-direction:column;justify-content:space-between}
+.g6{grid-column:span 2}
+.g5 q{font-size:21px;line-height:1.25;letter-spacing:-.01em}.g5 small{opacity:.7}
+.clients{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.clients li{border:1.5px solid var(--ink);border-radius:99px;padding:9px 18px;font-weight:600}
+/* pricing */
+.pricing{padding-top:clamp(72px,9vw,130px)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px}
+.plan{background:#fff;border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:16px}
+.plan.f{background:var(--moss);color:var(--sand)}.plan.f .tag{background:var(--lime);color:var(--ink)}
+.tag{align-self:flex-start;background:var(--sand);border-radius:99px;padding:6px 12px;font-size:13px;font-weight:600}
+.plan .price{font-size:60px;font-weight:800;letter-spacing:-.05em;line-height:1}
+.plan li{padding:6px 0 6px 28px;position:relative;font-size:15px}
+.plan li::before{content:"✓";position:absolute;left:0;width:20px;height:20px;border-radius:50%;background:var(--sand);color:var(--clay);display:grid;place-items:center;font-size:11px;top:8px}
+.plan.f li::before{background:var(--lime);color:var(--ink)}
+.plan .btn{margin-top:auto;justify-content:space-between}
+/* faq */
+.faq{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(24px,5vw,80px);padding-top:clamp(72px,9vw,130px)}
+.faq details{background:#fff;border-radius:20px;margin-bottom:10px}
+.faq summary{list-style:none;cursor:pointer;padding:20px 22px;font-weight:600;font-size:19px;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";width:30px;height:30px;flex:none;border-radius:50%;background:var(--sand);display:grid;place-items:center;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg);background:var(--clay);color:#fff}
+.faq p{padding:0 22px 22px;color:var(--muted)}
+/* cta */
+.cta{margin:clamp(72px,9vw,130px) var(--m) var(--m);border-radius:var(--r);overflow:hidden;position:relative;color:#fff;padding:clamp(36px,6vw,90px)}
+.cta>img{position:absolute;inset:0}.cta::before{content:"";position:absolute;inset:0;background:rgba(47,58,44,.72)}
+.cta>*:not(img){position:relative}
+.cta h2{font-size:clamp(52px,9vw,150px);max-width:10ch}
+.cta-row{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-top:40px}
+.cta-row p{opacity:.85}.cta-row a.u{border-bottom:1px solid}
+@media (max-width:900px){
+  .nav nav{display:none}
+  .hero-body,.intro,.faq{grid-template-columns:1fr}
+  .cards,.plans{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:180px}.g1{grid-column:span 2}.g2,.g3,.g4,.g6{grid-column:span 1}.g5{grid-column:span 2;grid-row:span 2}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="../images/home/jakarta-skyline-part-2.jpg" alt="Jakarta skyline at dusk">
+  <div class="nav"><a class="logo" href="#">dirait.</a><nav><a href="#services">Services</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav><a class="btn light" href="#contact">Let’s talk <i>→</i></a></div>
+  <div class="hero-body">
+    <h1>Software for work that <span>can’t stop.</span></h1>
+    <div class="hero-card">
+      <span class="live">All systems live · last deploy 09:43</span>
+      <p>Custom web, mobile, IoT and AI systems — one team from first screen to field, then on call while it runs.</p>
+      <a class="btn" href="#contact">Start a project <i>→</i></a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="intro wrap">
+    <p class="big">We’re a small studio in Jakarta building the systems behind <em>checkouts, fleets, bookings and factories</em> — for teams in Indonesia, Singapore and Europe.</p>
+    <ul class="nums">
+      <li><b>30+</b><span>systems shipped since 2023</span></li>
+      <li><b>240</b><span>devices on MQTT today</span></li>
+      <li><b>3</b><span>regions — ID, SG, EU</span></li>
+      <li><b>0</b><span>failures in the last 24h</span></li>
+    </ul>
+  </div>
+
+  <section id="services" class="svc">
+    <div class="svc-head"><h2>Six systems,<br>one team.</h2><p>Design, build, deploy and run — without handing your product between agencies.</p></div>
+    <div class="cards">
+      <a class="card" href="#"><span class="n">01</span><h3>Web Applications</h3><p>React, Next.js, Laravel — pixel-perfect from Figma, production-ready.</p></a>
+      <a class="card" href="#"><span class="n">02</span><h3>Mobile Apps</h3><p>React Native for iOS and Android, one codebase, PWA where it fits.</p></a>
+      <a class="card" href="#"><span class="n">03</span><h3>IoT Platforms</h3><p>Real-time dashboards on MQTT and WebSocket, hardware in the loop.</p></a>
+      <a class="card" href="#"><span class="n">04</span><h3>AI & API</h3><p>AI services, MidTrans, Duitku, Mollie, WhatsApp, GraphQL.</p></a>
+      <a class="card" href="#"><span class="n">05</span><h3>CRM & ERP</h3><p>Multi-tenant, RBAC, Kanban, SSO, 2FA and live notifications.</p></a>
+      <a class="card" href="#"><span class="n">06</span><h3>DevOps</h3><p>Docker, Nginx, Cloudflare — automated deploys and monitoring.</p></a>
+    </div>
+  </section>
+
+  <section id="work" class="work wrap">
+    <div class="work-head"><h2>Built here,<br>running everywhere.</h2><a class="btn" href="#contact">Discuss your project <i>→</i></a></div>
+    <div class="gallery">
+      <figure class="g g1"><img src="../images/home/jakarta-s-skyline-from-pedestrian-crossing.jpg" alt=""><figcaption class="cap">Logistics company <span>· Logistics platform</span></figcaption></figure>
+      <figure class="g g2"><img src="../images/home/munster-hafen-am-mittelhafen-56-2026-0239.jpg" alt=""><figcaption class="cap">Holiday rental <span>· EU</span></figcaption></figure>
+      <figure class="g g3"><img src="../images/home/dutch-colonial-buildings-on-jalan-kali-besar.jpg" alt=""><figcaption class="cap">Retail chain <span>· POS</span></figcaption></figure>
+      <figure class="g g4"><img src="../images/home/city-activity-jakarta-unsplash.jpg" alt=""><figcaption class="cap">Restaurant group <span>· Reservations</span></figcaption></figure>
+      <div class="g g5"><q>Fast work, quick response, expert in their field. Highly recommended.</q><small>nazz_com — Client</small></div>
+      <figure class="g g6"><img src="../images/home/jakarta-skyline-2.jpg" alt=""><figcaption class="cap">Research firm <span>· Surveys</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing wrap">
+    <h2>Clear prices,<br>defined builds.</h2>
+    <div class="plans">
+      <div class="plan"><span class="tag">Basic</span><p class="price">Rp4M</p><ul><li>CDN worldwide support</li><li>SSL encryption</li><li>Free server & domain for a year</li><li>3 months support</li></ul><a class="btn" href="#contact">Choose Basic <i>→</i></a></div>
+      <div class="plan f"><span class="tag">Small Business · popular</span><p class="price">Rp8M</p><ul><li>Everything in Basic</li><li>6 months support</li><li>Unlimited product uploads</li></ul><a class="btn light" href="#contact">Choose this <i>→</i></a></div>
+      <div class="plan"><span class="tag">Business</span><p class="price">Custom</p><ul><li>Everything in Small Business</li><li>Free server & domain, 3 years</li><li>Lifetime support</li></ul><a class="btn" href="#contact">Contact us <i>→</i></a></div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq wrap">
+    <h2>Before the<br>first call.</h2>
+    <div>
+      <details open><summary>What technologies do you use?</summary><p>Stack per project: React (Vite), Next.js, Laravel, SvelteKit for web; React Native for mobile; MQTT and WebSocket for IoT.</p></details>
+      <details><summary>How long does a typical project take?</summary><p>A company profile with CMS takes 2–4 weeks. Custom web or mobile applications typically take 2–4 months.</p></details>
+      <details><summary>Do you provide maintenance after launch?</summary><p>3 months for Basic, 6 months for Small Business, lifetime for Business.</p></details>
+      <details><summary>Can you integrate with our existing systems?</summary><p>Yes — payment gateways, WhatsApp APIs, AI services, any REST or GraphQL backend.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="cta">
+  <img src="../images/home/jakarta-skyline-2.jpg" alt="">
+  <h2>Tell us what has to work.</h2>
+  <div class="cta-row">
+    <p>Free consultation · reply within one business day<br><a class="u" href="mailto:hello@dirait.id">hello@dirait.id</a></p>
+    <a class="btn light" href="https://wa.me/6281384934615">Chat on WhatsApp <i>→</i></a>
+  </div>
+</footer>
+</body>
+</html>

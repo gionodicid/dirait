@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DIRAIT — Option D · Pop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2340ff;--yellow:#ffd60a;--pink:#ff7ac6;--green:#19c37d;--paper:#fffaf0;--ink:#0d0d12;
+  --d:"Unbounded",system-ui,sans-serif;--s:"DM Sans",system-ui,sans-serif;--m:clamp(16px,3vw,40px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.5 var(--s);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}
+h1,h2,h3,p,ul,figure{margin:0;padding:0}ul{list-style:none}
+.wrap{padding:0 var(--m)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;font-weight:700;padding:16px 24px;border-radius:14px;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn.y{background:var(--yellow);color:var(--ink)}.btn.w{background:#fff;color:var(--ink)}
+/* nav */
+.nav{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px}
+.logo{font:900 24px var(--d);letter-spacing:-.03em;display:flex;align-items:center;gap:8px}
+.logo b{width:28px;height:28px;border-radius:50%;background:var(--blue);display:inline-block;box-shadow:inset -6px -6px 0 var(--pink)}
+.nav nav{display:flex;gap:6px;border:3px solid var(--ink);border-radius:99px;padding:4px;background:#fff}
+.nav nav a{padding:8px 16px;border-radius:99px;font-weight:500}.nav nav a:hover{background:var(--yellow)}
+/* hero */
+.hero{background:var(--blue);color:#fff;margin:0 var(--m);border-radius:36px;border:3px solid var(--ink);padding:clamp(28px,5vw,72px);position:relative;overflow:hidden}
+h1{font:900 clamp(48px,9vw,150px)/.9 var(--d);letter-spacing:-.04em;text-transform:uppercase;position:relative;z-index:2}
+h1 .hl{color:var(--yellow)}
+h1 .sticker{display:inline-block;background:var(--pink);color:var(--ink);font-size:.32em;padding:.3em .6em;border-radius:99px;border:3px solid var(--ink);transform:rotate(-6deg) translateY(-.6em);vertical-align:middle;letter-spacing:0}
+.hero-row{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;margin-top:40px;position:relative;z-index:2}
+.hero-row p{font-size:clamp(18px,1.5vw,22px);max-width:40ch}
+.acts{display:flex;gap:14px;flex-wrap:wrap}
+.blob{position:absolute;border:3px solid var(--ink);z-index:1}
+.b1{width:clamp(180px,22vw,320px);aspect-ratio:1;border-radius:50%;overflow:hidden;right:-40px;top:-40px;transform:rotate(8deg)}
+.b2{width:120px;height:120px;background:var(--yellow);border-radius:30px;right:24%;top:32%;transform:rotate(18deg);display:grid;place-items:center;font:900 30px var(--d);color:var(--ink)}
+.b3{width:70px;height:70px;background:var(--green);border-radius:50%;left:46%;bottom:-20px}
+/* marquee */
+.tape{background:var(--yellow);border-block:3px solid var(--ink);margin-top:40px;transform:rotate(-1.5deg);overflow:hidden;white-space:nowrap}
+.tape div{display:inline-block;padding:16px 0;font:800 24px var(--d);text-transform:uppercase;animation:m 22s linear infinite}
+.tape span{margin:0 22px}@keyframes m{to{transform:translateX(-50%)}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:60px}
+.stats li{border:3px solid var(--ink);border-radius:24px;padding:22px;box-shadow:5px 5px 0 var(--ink)}
+.stats li:nth-child(1){background:var(--pink)}.stats li:nth-child(2){background:#fff}.stats li:nth-child(3){background:var(--green)}.stats li:nth-child(4){background:var(--yellow)}
+.stats b{display:block;font:900 clamp(40px,4.5vw,68px)/1 var(--d);letter-spacing:-.04em}
+/* services */
+section{padding-top:clamp(72px,9vw,130px)}
+h2{font:900 clamp(38px,5.6vw,88px)/.95 var(--d);letter-spacing:-.04em;text-transform:uppercase;max-width:14ch}
+h2 u{text-decoration:none;background:var(--yellow);padding:0 .1em;border-radius:10px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.card{border:3px solid var(--ink);border-radius:28px;padding:26px;min-height:300px;display:flex;flex-direction:column;gap:14px;box-shadow:6px 6px 0 var(--ink);transition:transform .2s}
+.card:hover{transform:rotate(-1.5deg) translateY(-4px)}
+.card:nth-child(1){background:#fff}.card:nth-child(2){background:var(--pink)}.card:nth-child(3){background:var(--green)}
+.card:nth-child(4){background:var(--yellow)}.card:nth-child(5){background:var(--blue);color:#fff}.card:nth-child(6){background:#fff}
+.ico{width:56px;height:56px;border-radius:16px;border:3px solid var(--ink);background:var(--paper);display:grid;place-items:center;font-size:26px}
+.card h3{font:800 26px/1.05 var(--d);letter-spacing:-.03em;margin-top:auto}
+/* work */
+.work{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center}
+.polaroids{position:relative;height:520px}
+.pol{position:absolute;background:#fff;border:3px solid var(--ink);padding:12px 12px 44px;border-radius:8px;width:62%;box-shadow:6px 6px 0 var(--ink)}
+.pol figure{aspect-ratio:4/3;overflow:hidden;border:2px solid var(--ink)}
+.pol span{position:absolute;bottom:12px;left:14px;font-weight:700}
+.p1{left:0;top:0;transform:rotate(-6deg)}.p2{right:0;top:90px;transform:rotate(5deg)}.p3{left:16%;bottom:0;transform:rotate(-2deg)}
+.list li{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--ink);padding:16px 0;font:800 clamp(20px,2vw,28px) var(--d);letter-spacing:-.02em}
+.list li span{font:500 14px var(--s);background:#fff;border:2px solid var(--ink);border-radius:99px;padding:4px 12px}
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;align-items:start}
+.plan{border:3px solid var(--ink);border-radius:28px;padding:28px;background:#fff;box-shadow:6px 6px 0 var(--ink);display:flex;flex-direction:column;gap:16px}
+.plan.f{background:var(--blue);color:#fff;transform:translateY(-14px) rotate(1deg)}
+.plan .price{font:900 60px/1 var(--d);letter-spacing:-.04em}
+.plan li{padding:6px 0}.plan li::before{content:"★ ";color:var(--pink)}
+.plan .btn{justify-content:center}
+.badge{align-self:flex-start;background:var(--yellow);color:var(--ink);border:2px solid var(--ink);border-radius:99px;padding:4px 12px;font-weight:700;font-size:14px}
+/* faq */
+.faq details{border:3px solid var(--ink);border-radius:20px;margin-top:14px;background:#fff}
+.faq details[open]{background:var(--yellow)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 24px;font:800 clamp(17px,1.6vw,22px) var(--d);display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"↓"}.faq details[open] summary::after{content:"↑"}
+.faq p{padding:0 24px 22px;max-width:70ch}
+/* cta */
+.cta{margin:clamp(72px,9vw,130px) var(--m) var(--m);background:var(--pink);border:3px solid var(--ink);border-radius:36px;padding:clamp(32px,6vw,90px);text-align:center}
+.cta h2{margin:0 auto;font-size:clamp(46px,8vw,130px);max-width:12ch}
+.cta .acts{justify-content:center;margin-top:36px}
+.cta small{display:block;margin-top:28px;font-weight:500}
+@media (max-width:900px){
+  .nav nav{display:none}.hero-row,.work{grid-template-columns:1fr}.b2{display:none}
+  .stats{grid-template-columns:1fr 1fr}.cards,.plans{grid-template-columns:1fr}.plan.f{transform:none}
+  .polaroids{height:420px}
+}
+.lucide{width:1em;height:1em;stroke-width:1.9;vertical-align:-.14em;flex:none}
+</style>
+</head>
+<body>
+<header class="nav wrap"><a class="logo" href="#"><b></b>dirait</a><nav><a href="#services">Services</a><a href="#work">Work</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav><a class="btn y" href="#contact">Say hi</a></header>
+
+<main>
+  <div class="hero">
+    <figure class="blob b1"><img src="../images/home/jakarta-skyline-2.jpg" alt="Jakarta skyline"></figure>
+    <div class="blob b2">24/7</div><div class="blob b3"></div>
+    <h1>Software for work that <span class="hl">can’t stop</span> <span class="sticker">made in Jakarta</span></h1>
+    <div class="hero-row">
+      <p>Custom web, mobile, IoT and AI systems. One team from first screen to field — then on call while it runs.</p>
+      <div class="acts"><a class="btn y" href="#contact">Start a project →</a><a class="btn w" href="#work">See the work</a></div>
+    </div>
+  </div>
+
+  <div class="tape" aria-hidden="true"><div><span>Web apps ✦</span><span>Mobile ✦</span><span>IoT ✦</span><span>AI & API ✦</span><span>CRM & ERP ✦</span><span>DevOps ✦</span><span>Web apps ✦</span><span>Mobile ✦</span><span>IoT ✦</span><span>AI & API ✦</span><span>CRM & ERP ✦</span><span>DevOps ✦</span></div></div>
+
+  <ul class="stats wrap">
+    <li><b>30+</b>systems shipped</li><li><b>240</b>devices on MQTT</li><li><b>3</b>regions · ID SG EU</li><li><b>0</b>failures last 24h</li>
+  </ul>
+
+  <section id="services" class="wrap">
+    <h2>Six systems, <u>one</u> team.</h2>
+    <div class="cards">
+      <a class="card" href="#"><span class="ico"><i data-lucide="monitor"></i></span><h3>Web Applications</h3><p>React, Next.js, Laravel — pixel-perfect from Figma.</p></a>
+      <a class="card" href="#"><span class="ico"><i data-lucide="smartphone"></i></span><h3>Mobile Apps</h3><p>React Native for iOS and Android, PWA where it fits.</p></a>
+      <a class="card" href="#"><span class="ico"><i data-lucide="radio-tower"></i></span><h3>IoT Platforms</h3><p>Live dashboards on MQTT and WebSocket.</p></a>
+      <a class="card" href="#"><span class="ico"><i data-lucide="bot"></i></span><h3>AI & API</h3><p>AI services, MidTrans, Duitku, Mollie, WhatsApp.</p></a>
+      <a class="card" href="#"><span class="ico"><i data-lucide="folder-kanban"></i></span><h3>CRM & ERP</h3><p>Multi-tenant, RBAC, Kanban, SSO, 2FA.</p></a>
+      <a class="card" href="#"><span class="ico"><i data-lucide="rocket"></i></span><h3>DevOps</h3><p>Docker, Nginx, Cloudflare, monitoring.</p></a>
+    </div>
+  </section>
+
+  <section id="work" class="wrap work">
+    <div class="polaroids">
+      <div class="pol p1"><figure><img src="../images/home/dutch-colonial-buildings-on-jalan-kali-besar.jpg" alt=""></figure><span>Kali Besar, JKT</span></div>
+      <div class="pol p2"><figure><img src="../images/home/munster-hafen-am-mittelhafen-56-2026-0239.jpg" alt=""></figure><span>Münster, EU</span></div>
+      <div class="pol p3"><figure><img src="../images/home/city-activity-jakarta-unsplash.jpg" alt=""></figure><span>On the street</span></div>
+    </div>
+    <div>
+      <h2>Shipped for teams that <u>run daily</u>.</h2>
+      <ul class="list" style="margin-top:28px">
+        <li>Logistics company<span>Logistics</span></li><li>Retail chain<span>POS</span></li><li>Marketing agency<span>CRM</span></li>
+        <li>Holiday rental<span>Booking</span></li><li>Restaurant group<span>Reservations</span></li><li>Research firm<span>Surveys</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="pricing" class="wrap">
+    <h2>Prices with <u>no surprises</u>.</h2>
+    <div class="plans">
+      <div class="plan"><span class="badge">Basic</span><p class="price">Rp4M</p><ul><li>CDN worldwide</li><li>SSL encryption</li><li>Server & domain, 1 year</li><li>3 months support</li></ul><a class="btn w" href="#contact">Pick Basic</a></div>
+      <div class="plan f"><span class="badge"><i data-lucide="flame"></i> Small Business</span><p class="price">Rp8M</p><ul><li>Everything in Basic</li><li>6 months support</li><li>Unlimited uploads</li></ul><a class="btn y" href="#contact">Pick this one</a></div>
+      <div class="plan"><span class="badge">Business</span><p class="price">Let’s talk</p><ul><li>Everything in Small Business</li><li>Server & domain, 3 years</li><li>Lifetime support</li></ul><a class="btn w" href="#contact">Contact us</a></div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap faq">
+    <h2>Quick <u>answers</u>.</h2>
+    <details open><summary>What technologies do you use?</summary><p>React (Vite), Next.js, Laravel, SvelteKit for web; React Native for mobile; MQTT and WebSocket for IoT.</p></details>
+    <details><summary>How long does a project take?</summary><p>Company profile with CMS: 2–4 weeks. Custom apps: typically 2–4 months.</p></details>
+    <details><summary>Maintenance after launch?</summary><p>3 months for Basic, 6 for Small Business, lifetime for Business.</p></details>
+    <details><summary>Can you plug into our systems?</summary><p>Yes — payment gateways, WhatsApp APIs, AI services, any REST or GraphQL backend.</p></details>
+  </section>
+</main>
+
+<footer id="contact" class="cta">
+  <h2>Tell us what has to work.</h2>
+  <div class="acts"><a class="btn y" href="https://wa.me/6281384934615">WhatsApp us</a><a class="btn w" href="mailto:hello@dirait.id">hello@dirait.id</a></div>
+  <small>© 2026 Dirait · Cibubur, Jawa Barat</small>
+</footer>
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script><script>lucide.createIcons()</script>
+</body>
+</html>
