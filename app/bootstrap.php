@@ -44,5 +44,5 @@ function url(string $path = '/'): string
 
 function render_page(array $page, string $content): void
 {
-    require APP_ROOT . '/app/layout.php';
+    require APP_ROOT . '/app/service.php';
 }

@@ -1,21 +1,6 @@
 <?php
 
 return [
-    'contact' => [
-        'minimal' => [
-            'address' => 'Cibubur, Jawa Barat — Indonesia',
-            'email' => 'giofadhil.ahmad@gmail.com',
-            'phone' => '+62 813-8493-4615',
-            'whatsapp' => 'https://wa.me/6281384934615',
-        ],
-        'brand' => [
-            'address' => 'Jl. Sudirman No. 53, Senayan, Jakarta Selatan 12190',
-            'email' => 'hello@dirait.id',
-            'phone' => '+62 812-3456-7890',
-            'whatsapp' => 'https://wa.me/6281234567890',
-        ],
-    ],
-
     'services' => [
         ['slug' => 'web-apps', 'number' => '01', 'title' => 'Web Applications', 'description' => 'React, Next.js, Laravel — pixel-perfect UI from Figma, monorepo architecture, and production-ready deployments with Docker and Nginx.'],
         ['slug' => 'mobile', 'number' => '02', 'title' => 'Mobile Apps', 'description' => 'React Native for iOS and Android — multiplatform codebases with consistent gestures, PWA capabilities, and BLE hardware integration.'],

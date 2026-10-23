@@ -2,7 +2,7 @@
 // Social share and icon tags. The share image is images/og/<path with / as ->.png, rendered by og/render.sh.
 $metaPath = trim((string) parse_url($page['canonical'], PHP_URL_PATH), '/');
 $metaImage = 'https://dirait.com/images/og/' . ($metaPath === 'services-swiss/iot' ? 'services-iot-en' : str_replace(['services-swiss/', '/'], ['services-', '-'], $metaPath)) . '.png';
-$metaLocale = $variant['lang'] === 'id' ? 'id_ID' : 'en_US';
+$metaLocale = $page['lang'] === 'id' ? 'id_ID' : 'en_US';
 ?>
     <meta name="theme-color" content="#071530" />
     <link rel="icon" href="<?= e(url('/favicon.svg')) ?>" type="image/svg+xml" />

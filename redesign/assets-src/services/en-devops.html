@@ -1,0 +1,75 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+.main{background:var(--canvas)}
+.t{font-size:13px;font-weight:600;color:var(--ink)}
+.svc{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px;font-weight:500}.svc:first-of-type{border-top:0}
+.svc b{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;color:#fff;font:700 10.5px var(--mono);flex:none}
+.svc small{display:block;font:400 11px var(--mono);color:var(--sub)}
+.svc span{margin-left:auto;font:500 11px var(--mono);color:#16a34a;display:flex;align-items:center;gap:5px}.svc span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.term{background:var(--ink);border-color:#0f2350;color:#c7d2fe;font:12px/1.85 var(--mono);padding:0;overflow:hidden;display:flex;flex-direction:column}
+.term .bar{display:flex;gap:6px;align-items:center;padding:10px 14px;border-bottom:1px solid #16264d;color:#8b97b8;font-size:11.5px}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.term .bar i:nth-child(2){background:#febc2e}.term .bar i:nth-child(3){background:#28c840;margin-right:8px}
+.term pre{margin:0;padding:12px 16px;font:inherit;white-space:pre}
+.c{color:#67e8f9}.g{color:#86efac}.d{color:#6b7aa6}.y{color:#fcd34d}
+.ub{display:flex;gap:3px;margin-top:12px}.ub i{flex:1;height:30px;border-radius:3px;background:#86efac}.ub i.w{background:#fcd34d}
+.ip{display:flex;justify-content:space-between;font:11.5px var(--mono);padding:7px 0;border-top:1px dashed var(--line);color:var(--mid)}.ip b{color:#dc2626;font-weight:500}
+.badge{font:500 10.5px var(--mono);padding:2px 7px;border-radius:99px;background:#fee2e2;color:#b91c1c}
+.meter{display:grid;grid-template-columns:60px 1fr 40px;gap:10px;align-items:center;font-size:12px;margin-top:12px}
+.meter .tr{height:8px;border-radius:9px;background:#eef0f6;overflow:hidden}.meter .tr i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--brand),var(--brand2))}
+.meter em{font:500 11.5px var(--mono);font-style:normal;text-align:right}
+</style></head><body>
+<div class="app">
+  <aside class="side"><div class="logo"><i></i>Opsboard</div>
+    <div class="nav on"><i></i>Overview</div><div class="nav"><i></i>Servers</div><div class="nav"><i></i>Containers</div><div class="nav"><i></i>Deploys</div><div class="nav"><i></i>Uptime</div><div class="nav"><i></i>Security</div><div class="nav"><i></i>Cron jobs</div><div class="nav"><i></i>Alerts</div>
+    <div class="card" style="margin-top:auto;padding:12px"><div style="font-size:11px;color:var(--mid)">Alerts channel</div><div style="font-weight:600;margin-top:2px">Telegram · #ops</div><div class="mono" style="font-size:11px;color:#15803d;margin-top:6px">● 0 incidents · 30d</div></div></aside>
+  <main class="main">
+    <div class="top"><div><div class="mono" style="font-size:11px;color:var(--sub)">PRODUCTION · PROD-SG-1</div><h1>Infrastructure</h1></div>
+      <div class="row"><span class="pill ok">● All systems operational</span><span class="pill">Last 24h</span><div class="av"></div></div></div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="card"><h3>Uptime · 90 days</h3><div class="big">99.98%</div></div>
+      <div class="card"><h3>Avg. response</h3><div class="big">142<span style="font-size:15px;color:var(--sub)"> ms</span><span class="delta">−18ms</span></div></div>
+      <div class="card"><h3>Deploys this week</h3><div class="big">17</div></div>
+      <div class="card"><h3>SSL expires in</h3><div class="big">87<span style="font-size:15px;color:var(--sub)"> days</span></div></div>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 280px;flex:1;grid-template-rows:1fr auto">
+      <div class="card"><h3><span class="t">Response time · global checks</span><span class="mono">SG · FRA · LON · NYC</span></h3>
+        <svg width="100%" height="250" viewBox="0 0 640 190" preserveAspectRatio="none" style="margin-top:12px">
+          <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3d6bff" stop-opacity=".22"/><stop offset="1" stop-color="#3d6bff" stop-opacity="0"/></linearGradient></defs>
+          <g stroke="#eef0f6"><line x1="0" x2="640" y1="40" y2="40"/><line x1="0" x2="640" y1="95" y2="95"/><line x1="0" x2="640" y1="150" y2="150"/></g>
+          <path d="M0 120 L30 112 L60 118 L90 104 L120 110 L150 98 L180 106 L210 60 L240 100 L270 96 L300 104 L330 92 L360 98 L390 88 L420 94 L450 86 L480 92 L510 80 L540 88 L570 78 L600 84 L640 76 V190 H0Z" fill="url(#g)"/>
+          <path d="M0 120 L30 112 L60 118 L90 104 L120 110 L150 98 L180 106 L210 60 L240 100 L270 96 L300 104 L330 92 L360 98 L390 88 L420 94 L450 86 L480 92 L510 80 L540 88 L570 78 L600 84 L640 76" fill="none" stroke="#002fa7" stroke-width="2.5"/>
+          <line x1="210" x2="210" y1="20" y2="190" stroke="#f59e0b" stroke-dasharray="4 4"/><circle cx="210" cy="60" r="5" fill="#fff" stroke="#f59e0b" stroke-width="2.5"/></svg>
+        <div class="row" style="justify-content:space-between;font:11px var(--mono);color:var(--sub);margin-top:4px"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>now</span></div>
+        <div style="font-size:12px;color:var(--mid);margin-top:14px;display:flex;justify-content:space-between"><span>Uptime · last 30 days</span><span class="mono">1 slow check</span></div>
+        <div class="ub"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="w"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="card" style="grid-row:span 2"><h3><span class="t">Containers</span><span class="mono">6/6 up</span></h3>
+        <div style="margin-top:6px">
+          <div class="svc"><b style="background:#2496ed">APP</b><div>app<small>node:20 · 2 replicas</small></div><span>up</span></div>
+          <div class="svc"><b style="background:#009639">NGX</b><div>nginx<small>reverse proxy · ssl</small></div><span>up</span></div>
+          <div class="svc"><b style="background:#336791">PG</b><div>postgres<small>16 · 4.2 GB</small></div><span>up</span></div>
+          <div class="svc"><b style="background:#dc382d">RDS</b><div>redis<small>cache · 98% hit</small></div><span>up</span></div>
+          <div class="svc"><b style="background:#6366f1">WRK</b><div>worker<small>queue · 0 pending</small></div><span>up</span></div>
+          <div class="svc"><b style="background:#071530">CRN</b><div>cron<small>backup · 03:00</small></div><span>idle</span></div></div>
+        <div style="border-top:1px solid var(--line);margin-top:8px;padding-top:6px">
+          <div class="meter">CPU<div class="tr"><i style="width:34%"></i></div><em>34%</em></div>
+          <div class="meter">Memory<div class="tr"><i style="width:58%"></i></div><em>58%</em></div>
+          <div class="meter">Disk<div class="tr"><i style="width:41%"></i></div><em>41%</em></div>
+          <div class="meter">Network<div class="tr"><i style="width:22%"></i></div><em>22%</em></div>
+          <div class="mono" style="font-size:11px;color:var(--sub);margin-top:14px">4 vCPU · 8 GB · Ubuntu 24.04</div></div></div>
+      <div class="grid" style="grid-template-columns:1fr 250px">
+        <div class="card term"><div class="bar"><i></i><i></i><i></i>deploy@prod-sg-1 · main a3f9c21</div>
+<pre><span class="c">$</span> docker compose up -d --build
+<span class="g">✓</span> app      <span class="d">built 18.2s</span>    <span class="g">✓</span> worker  <span class="d">built 6.4s</span>
+<span class="g">✓</span> nginx    <span class="d">reloaded</span>       <span class="g">✓</span> /health <span class="d">200 · 12ms</span>
+<span class="y">→</span> <span class="g">zero-downtime deploy complete</span> <span class="d">· 41s</span></pre></div>
+        <div class="card"><h3><span class="t">Fail2ban</span><span class="badge">24h</span></h3>
+          <div style="font-size:26px;font-weight:700;letter-spacing:-.04em;margin-top:4px">128 <small style="font-size:12px;font-weight:400;color:var(--mid);letter-spacing:0">IPs blocked</small></div>
+          <div class="ip"><span>45.83.x.x</span><b>ssh · banned</b></div>
+          <div class="ip"><span>103.21.x.x</span><b>nginx · banned</b></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="float" style="right:330px;top:232px;width:330px;display:flex;gap:10px;align-items:center">
+  <div style="width:34px;height:34px;border-radius:50%;background:#229ed9;display:grid;place-items:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M21.5 3.5 2.8 10.7c-1 .4-1 1.2 0 1.5l4.7 1.5 1.8 5.6c.2.6.9.8 1.4.3l2.6-2.4 4.9 3.6c.6.4 1.3.1 1.5-.6l3.1-15.2c.2-.9-.4-1.4-1.3-1.5Z"/></svg></div>
+  <div><div style="font-weight:600;font-size:13px">Telegram · slow response</div><div class="mono" style="font-size:11px;color:var(--mid)">api.fra 1.2s → recovered 06:42</div></div></div>
+</body></html>

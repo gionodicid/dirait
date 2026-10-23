@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+.main{background:var(--canvas)}
+.kpi .big{font-size:26px}
+.spark{margin-top:10px;height:34px;width:100%}
+.chart{height:200px;width:100%;margin-top:10px}
+.lg{display:flex;gap:14px;font-size:11.5px;color:var(--mid)}.lg span{display:flex;align-items:center;gap:6px}.lg i{width:8px;height:8px;border-radius:2px;background:var(--brand)}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:12.5px}
+td,th{padding:9px 6px;border-top:1px solid var(--line);text-align:left}th{font-weight:500;color:var(--sub);font-size:11px;border-top:0;text-transform:uppercase;letter-spacing:.04em}
+td.m{font-family:var(--mono);font-size:12px}
+.st{font:500 11px var(--mono);padding:2px 8px;border-radius:99px}.st.p{background:#dcfce7;color:#15803d}.st.w{background:#fef3c7;color:#b45309}.st.s{background:var(--soft);color:var(--brand)}
+.dep{width:330px;right:28px;top:300px}
+.dep h5{font-size:13px;font-weight:600;display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.stp{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:12.5px}.stp b{width:18px;height:18px;border-radius:50%;background:var(--ok);display:grid;place-items:center;flex:none}
+.stp b svg{width:11px;height:11px}.stp em{margin-left:auto;font:11px var(--mono);color:var(--sub);font-style:normal}
+.stp.run b{background:var(--brand2);box-shadow:0 0 0 4px #dfe7ff}
+.bar2{height:6px;border-radius:9px;background:#eef0f6;margin-top:10px;overflow:hidden}.bar2 i{display:block;height:100%;width:82%;background:linear-gradient(90deg,var(--brand),var(--brand2))}
+.ft{display:flex;justify-content:space-between;font:11px var(--mono);color:var(--mid);margin-top:8px}
+.srch{width:240px;height:34px;border:1px solid var(--line);border-radius:9px;background:#fff;display:flex;align-items:center;padding:0 12px;color:var(--sub);font-size:12.5px;gap:8px}
+</style></head><body>
+<div class="app">
+  <aside class="side"><div class="logo"><i></i>Northwind</div>
+    <div class="nav on"><i></i>Dashboard</div><div class="nav"><i></i>Orders</div><div class="nav"><i></i>Products</div><div class="nav"><i></i>Bookings</div><div class="nav"><i></i>Customers</div><div class="nav"><i></i>Content</div><div class="nav"><i></i>Deployments</div><div class="nav"><i></i>Settings</div>
+    <div style="margin-top:auto" class="card"><div style="font-size:12px;font-weight:600">Pro workspace</div><div style="font-size:11.5px;color:var(--mid);margin-top:4px">12 of 20 seats used</div><div class="bar2"><i style="width:60%"></i></div></div></aside>
+  <main class="main">
+    <div class="top"><div><div class="mono" style="font-size:11px;color:var(--sub)">THURSDAY, 24 OCT</div><h1>Good morning, Sarah</h1></div>
+      <div class="row"><div class="srch">⌕ Search orders, customers…</div><span class="pill brand">Last 30 days</span><div class="av"></div></div></div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="card kpi"><h3>Revenue</h3><div class="big">$48,210<span class="delta">+12.4%</span></div><svg class="spark" viewBox="0 0 200 34" preserveAspectRatio="none"><path d="M0 28 L25 24 L50 26 L75 18 L100 20 L125 12 L150 14 L175 6 L200 8" fill="none" stroke="#3d6bff" stroke-width="2"/></svg></div>
+      <div class="card kpi"><h3>Orders</h3><div class="big">1,284<span class="delta">+8.1%</span></div><svg class="spark" viewBox="0 0 200 34" preserveAspectRatio="none"><path d="M0 22 L25 26 L50 18 L75 20 L100 14 L125 16 L150 10 L175 12 L200 6" fill="none" stroke="#3d6bff" stroke-width="2"/></svg></div>
+      <div class="card kpi"><h3>Bookings</h3><div class="big">342<span class="delta">+5.6%</span></div><svg class="spark" viewBox="0 0 200 34" preserveAspectRatio="none"><path d="M0 26 L25 20 L50 22 L75 16 L100 18 L125 20 L150 12 L175 10 L200 9" fill="none" stroke="#3d6bff" stroke-width="2"/></svg></div>
+      <div class="card kpi"><h3>Avg. load time</h3><div class="big">0.8s<span class="delta">−0.2s</span></div><svg class="spark" viewBox="0 0 200 34" preserveAspectRatio="none"><path d="M0 8 L25 10 L50 12 L75 14 L100 16 L125 20 L150 22 L175 24 L200 26" fill="none" stroke="#22c55e" stroke-width="2"/></svg></div>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 330px">
+      <div class="card"><h3><span style="color:var(--ink);font-weight:600;font-size:13px">Revenue overview</span><span class="lg"><span><i></i>2026</span><span><i style="background:#c7d4ff"></i>2025</span></span></h3>
+        <svg class="chart" viewBox="0 0 600 200" preserveAspectRatio="none">
+          <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3d6bff" stop-opacity=".25"/><stop offset="1" stop-color="#3d6bff" stop-opacity="0"/></linearGradient></defs>
+          <g stroke="#eef0f6"><line x1="0" x2="600" y1="40" y2="40"/><line x1="0" x2="600" y1="90" y2="90"/><line x1="0" x2="600" y1="140" y2="140"/><line x1="0" x2="600" y1="190" y2="190"/></g>
+          <path d="M0 150 C60 140 90 120 150 125 S240 100 300 95 S400 70 450 75 S540 40 600 35" fill="none" stroke="#c7d4ff" stroke-width="2" stroke-dasharray="4 4" transform="translate(0,25)"/>
+          <path d="M0 150 C60 140 90 120 150 125 S240 100 300 95 S400 70 450 75 S540 40 600 35 L600 200 L0 200Z" fill="url(#g)"/>
+          <path d="M0 150 C60 140 90 120 150 125 S240 100 300 95 S400 70 450 75 S540 40 600 35" fill="none" stroke="#002fa7" stroke-width="2.5"/>
+          <circle cx="450" cy="75" r="5" fill="#fff" stroke="#002fa7" stroke-width="2.5"/>
+        </svg>
+        <div class="ft"><span>Sep 24</span><span>Oct 01</span><span>Oct 08</span><span>Oct 15</span><span>Oct 24</span></div></div>
+      <div class="card"><h3><span style="color:var(--ink);font-weight:600;font-size:13px">Top products</span><span class="mono">units</span></h3>
+        
+        <div style="display:flex;flex-direction:column;gap:13px;margin-top:6px;font-size:12.5px">
+          <div><div style="display:flex;justify-content:space-between">Studio Desk Lamp<span class="mono">412</span></div><div class="bar2"><i style="width:88%"></i></div></div>
+          <div><div style="display:flex;justify-content:space-between">Linen Throw<span class="mono">306</span></div><div class="bar2"><i style="width:66%"></i></div></div>
+          <div><div style="display:flex;justify-content:space-between">Ceramic Mug Set<span class="mono">254</span></div><div class="bar2"><i style="width:54%"></i></div></div>
+          <div><div style="display:flex;justify-content:space-between">Oak Side Table<span class="mono">188</span></div><div class="bar2"><i style="width:40%"></i></div></div>
+          <div><div style="display:flex;justify-content:space-between">Wool Rug<span class="mono">142</span></div><div class="bar2"><i style="width:30%"></i></div></div>
+        </div></div>
+    </div>
+    <div class="card" style="margin-right:350px;flex:1"><h3><span style="color:var(--ink);font-weight:600;font-size:13px">Recent orders</span><span>View all →</span></h3>
+      <table><tr><th>Order</th><th>Customer</th><th>Date</th><th>Total</th><th>Status</th></tr>
+      <tr><td class="m">#10482</td><td><span class="row"><span class="av" style="width:20px;height:20px"></span>Emma Lewis</span></td><td>Oct 24</td><td class="m">$184.00</td><td><span class="st p">Paid</span></td></tr>
+      <tr><td class="m">#10481</td><td><span class="row"><span class="av b" style="width:20px;height:20px"></span>Daniel Tan</span></td><td>Oct 24</td><td class="m">$62.50</td><td><span class="st s">Shipped</span></td></tr>
+      <tr><td class="m">#10480</td><td><span class="row"><span class="av c" style="width:20px;height:20px"></span>Priya Nair</span></td><td>Oct 23</td><td class="m">$310.00</td><td><span class="st w">Pending</span></td></tr>
+      </table></div>
+  </main>
+</div>
+<div class="float dep" style="top:auto;bottom:14px;right:18px"><h5>Deploy · production<span class="pill ok">Live</span></h5>
+  <div class="mono" style="font-size:11px;color:var(--mid);margin-bottom:6px">main · a3f9c21 · “Add booking reminders”</div>
+  <div class="stp"><b><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-4.8" stroke="#fff" stroke-width="1.8" fill="none"/></svg></b>Build image<em>42s</em></div>
+  <div class="stp"><b><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-4.8" stroke="#fff" stroke-width="1.8" fill="none"/></svg></b>Run tests · 128 passed<em>31s</em></div>
+  <div class="stp"><b><svg viewBox="0 0 12 12"><path d="M2.5 6.2l2.3 2.3 4.7-4.8" stroke="#fff" stroke-width="1.8" fill="none"/></svg></b>Push to registry<em>9s</em></div>
+  <div class="stp run"><b></b>Reload Nginx · zero downtime<em>…</em></div>
+  <div class="bar2"><i></i></div><div class="ft"><span>docker · nginx</span><span>82%</span></div></div>
+</body></html>

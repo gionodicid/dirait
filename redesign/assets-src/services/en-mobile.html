@@ -1,0 +1,70 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+body{background:radial-gradient(900px 600px at 30% 20%,#e3eaff,transparent 60%),radial-gradient(800px 600px at 85% 90%,#dff6ff,transparent 60%),#f6f7fb}
+.ph{position:absolute;width:340px;height:700px;border-radius:52px;background:#071530;padding:12px;box-shadow:0 40px 80px -30px rgba(7,21,48,.45)}
+.scr{width:100%;height:100%;border-radius:41px;background:#fff;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.isl{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:96px;height:28px;border-radius:20px;background:#071530;z-index:2}
+.sb{display:flex;justify-content:space-between;padding:16px 28px 0;font-weight:600;font-size:13px}
+.pad{padding:18px 20px;display:flex;flex-direction:column;gap:14px}
+.hello{font-size:12px;color:var(--mid)}.h{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.srch{height:40px;border-radius:12px;background:var(--muted);display:flex;align-items:center;padding:0 14px;color:var(--sub);font-size:13px}
+.chips{display:flex;gap:8px}.chip{padding:6px 12px;border-radius:99px;background:var(--muted);font-size:12px;color:var(--mid)}.chip.on{background:var(--ink);color:#fff}
+.prods{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pr{border:1px solid var(--line);border-radius:16px;padding:10px}
+.pr .img{height:84px;border-radius:11px;display:grid;place-items:center}
+.pr b{display:block;font-size:12.5px;font-weight:600;margin-top:8px}.pr span{font:500 12px var(--mono);color:var(--brand)}
+.ord{border-radius:16px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;padding:14px}
+.ord small{font-size:11px;opacity:.8}.ord .tr{display:flex;gap:4px;margin-top:10px}.ord .tr i{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.3)}.ord .tr i.on{background:#fff}
+.tab{display:flex;justify-content:space-around;padding:12px 0 24px;border-top:1px solid var(--line)}.tab i{width:22px;height:22px;border-radius:7px;border:2px solid var(--sub)}.tab i.on{border-color:var(--brand);background:var(--soft)}
+.map{height:220px;position:relative;background:#eef3ff;overflow:hidden}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.s{border:1px solid var(--line);border-radius:14px;padding:10px 12px}.s small{font-size:11px;color:var(--mid)}.s div{font:600 20px var(--f);letter-spacing:-.02em;margin-top:2px}.s div em{font:400 11px var(--mono);color:var(--sub);font-style:normal;margin-left:3px}
+.btn{height:46px;border-radius:14px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:600;font-size:14px;margin-top:auto}
+.title{position:absolute;left:60px;top:60px;width:330px}
+</style></head><body>
+<div class="title"><span class="pill brand">iOS · Android · PWA</span>
+  <div style="font-size:40px;font-weight:600;letter-spacing:-.035em;line-height:1.08;margin-top:18px">One codebase.<br><span style="background:linear-gradient(90deg,#002fa7,#3d6bff);-webkit-background-clip:text;color:transparent">Every device.</span></div>
+  <div style="color:var(--mid);font-size:15px;line-height:1.5;margin-top:14px">React Native apps with payments, BLE hardware, GPS and offline sync.</div>
+  <div class="card" style="margin-top:26px;padding:14px">
+    <div class="row" style="justify-content:space-between"><span style="font-size:12px;color:var(--mid)">Release 2.4.0</span><span class="pill ok">Approved</span></div>
+    <div class="row" style="margin-top:12px;gap:18px">
+      <div><div class="mono" style="font-size:11px;color:var(--sub)">iOS</div><div style="font-weight:600;font-size:18px">4.8 ★</div></div>
+      <div><div class="mono" style="font-size:11px;color:var(--sub)">ANDROID</div><div style="font-weight:600;font-size:18px">4.7 ★</div></div>
+      <div><div class="mono" style="font-size:11px;color:var(--sub)">CRASH-FREE</div><div style="font-weight:600;font-size:18px">99.8%</div></div></div></div>
+  <div class="card" style="margin-top:12px;padding:14px;display:flex;gap:12px;align-items:center">
+    <div style="width:36px;height:36px;border-radius:10px;background:var(--soft);display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#002fa7" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></div>
+    <div><div style="font-weight:600;font-size:13px">Push sent to 2,418 devices</div><div style="font-size:12px;color:var(--mid)">“Your order is on the way”</div></div></div>
+  <div class="card" style="margin-top:12px;padding:14px;width:250px"><div class="row" style="justify-content:space-between"><span style="font-size:12px;color:var(--mid)">Offline queue</span><span class="mono" style="font-size:11px;color:var(--sub)">auto-sync</span></div><div style="height:6px;border-radius:9px;background:#eef0f6;margin-top:10px;overflow:hidden"><i style="display:block;height:100%;width:72%;background:linear-gradient(90deg,#002fa7,#3d6bff)"></i></div><div class="mono" style="font-size:11px;color:var(--mid);margin-top:8px">36 / 50 records synced</div></div>
+</div>
+<div class="ph" style="left:450px;top:50px"><div class="scr"><div class="isl"></div>
+  <div class="sb"><span>9:41</span><span class="mono" style="font-size:11px">5G ▮▮▮</span></div>
+  <div class="pad">
+    <div><div class="hello">Good morning, Anna</div><div class="h">Pharmacy & supplies</div></div>
+    <div class="srch">⌕ Search medicines, devices…</div>
+    <div class="chips"><span class="chip on">All</span><span class="chip">Vitamins</span><span class="chip">First aid</span><span class="chip">Devices</span></div>
+    <div class="prods">
+      <div class="pr"><div class="img" style="background:#e8eeff"><svg width="46" height="46" viewBox="0 0 48 48"><rect x="14" y="8" width="20" height="8" rx="2" fill="#002fa7"/><rect x="11" y="15" width="26" height="27" rx="6" fill="#3d6bff"/><rect x="16" y="23" width="16" height="10" rx="2" fill="#fff"/></svg></div><b>Vitamin D3</b><span>Rp 85.000</span></div>
+      <div class="pr"><div class="img" style="background:#dcfce7"><svg width="46" height="46" viewBox="0 0 48 48"><rect x="8" y="12" width="32" height="26" rx="5" fill="#22c55e"/><rect x="21" y="17" width="6" height="16" rx="1" fill="#fff"/><rect x="16" y="22" width="16" height="6" rx="1" fill="#fff"/></svg></div><b>First Aid Kit</b><span>Rp 149.000</span></div>
+    </div>
+    <div class="ord"><div class="row" style="justify-content:space-between"><small>ORDER #HX-2081</small><small class="mono">ETA 25 min</small></div><div style="font-weight:600;font-size:15px;margin-top:4px">Out for delivery</div><div class="tr"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div><div class="row" style="justify-content:space-between;margin-top:8px"><small>Paid via MidTrans</small><small class="mono">Rp 234.000</small></div></div>
+  </div>
+  <div style="padding:0 20px 14px;margin-top:auto"><div class="row" style="justify-content:space-between;border:1px solid var(--line);border-radius:14px;padding:10px 12px"><span class="row"><span style="width:34px;height:34px;border-radius:9px;background:#fef3c7"></span><span><b style="font-size:12.5px;display:block">Digital Thermometer</b><span style="font-size:11px;color:var(--mid)">Reorder · last bought Oct 2</span></span></span><span class="mono" style="font-size:12px;color:var(--brand)">+ Add</span></div></div>
+  <div class="tab"><i class="on"></i><i></i><i></i><i></i></div></div></div>
+<div class="ph" style="left:830px;top:50px"><div class="scr"><div class="isl"></div>
+  <div class="sb"><span>9:41</span><span class="mono" style="font-size:11px">LTE ▮▮▯</span></div>
+  <div class="pad" style="padding-bottom:14px;flex:none"><div><div class="hello">Field report · Block C-12</div><div class="h">Spraying session</div></div></div>
+  <div class="map"><svg width="316" height="220" viewBox="0 0 316 220">
+    <g stroke="#d6e0ff" stroke-width="1"><path d="M0 40h316M0 90h316M0 140h316M0 190h316M50 0v220M120 0v220M190 0v220M260 0v220"/></g>
+    <path d="M30 180 L30 40 L70 40 L70 180 L110 180 L110 40 L150 40 L150 180 L190 180 L190 90" fill="none" stroke="#3d6bff" stroke-width="10" stroke-opacity=".18" stroke-linejoin="round"/>
+    <path d="M30 180 L30 40 L70 40 L70 180 L110 180 L110 40 L150 40 L150 180 L190 180 L190 90" fill="none" stroke="#002fa7" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M190 90 L190 40 L230 40 L230 180 L270 180 L270 40" fill="none" stroke="#9aa0b4" stroke-width="2" stroke-dasharray="5 5"/>
+    <circle cx="190" cy="90" r="14" fill="#3d6bff" fill-opacity=".2"/><circle cx="190" cy="90" r="7" fill="#002fa7" stroke="#fff" stroke-width="3"/></svg>
+    <span class="pill" style="position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:11px">GPS ±2 m</span>
+    <span class="pill ok" style="position:absolute;right:12px;top:12px">BLE connected</span></div>
+  <div class="pad" style="flex:1">
+    <div class="stat"><div class="s"><small>Area covered</small><div>3.6<em>ha</em></div></div><div class="s"><small>Flow rate</small><div>1.8<em>L/min</em></div></div><div class="s"><small>Tank level</small><div>62<em>%</em></div></div><div class="s"><small>Pending sync</small><div>14<em>rec</em></div></div></div>
+    <div class="s"><div class="row" style="justify-content:space-between"><small>Nozzle pressure</small><small class="mono">2.4 bar</small></div><svg width="100%" height="40" viewBox="0 0 270 40" preserveAspectRatio="none" style="margin-top:6px"><path d="M0 26 L20 22 L40 24 L60 18 L80 20 L100 14 L120 18 L140 16 L160 20 L180 12 L200 16 L220 14 L240 18 L270 15" fill="none" stroke="#3d6bff" stroke-width="2"/></svg></div>
+    <div class="btn">End session</div></div></div></div>
+<div class="float" style="left:250px;top:610px;width:230px;display:flex;gap:10px;align-items:center">
+  <div style="width:34px;height:34px;border-radius:10px;background:#071530;display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="m7 7 10 10-5 5V2l5 5L7 17"/></svg></div>
+  <div><div style="font-weight:600;font-size:13px">Sprayer SP-04</div><div class="mono" style="font-size:11px;color:#15803d">● streaming · 12 Hz</div></div></div>
+</body></html>

@@ -1,0 +1,70 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+.main{background:var(--canvas)}
+.kpi .big{font-size:24px}.kpi small{display:block;color:var(--sub);font-size:11px;margin-top:4px}
+.board{align-items:stretch;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;flex:1;min-height:0}
+.col{background:#eef0f6;border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:8px}
+.col h5{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mid);display:flex;justify-content:space-between;padding:2px 4px 4px}
+.col h5 span{font:500 11px var(--mono)}
+.deal{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px;box-shadow:0 1px 2px rgba(7,21,48,.04)}
+.deal b{font-size:13px;font-weight:600;display:block}.deal small{color:var(--mid);font-size:11.5px}
+.deal .v{display:flex;justify-content:space-between;align-items:center;margin-top:9px;font:500 12px var(--mono)}
+.deal .av{width:20px;height:20px}
+.tag{font-size:10.5px;padding:2px 7px;border-radius:99px;background:var(--soft);color:var(--brand);font-weight:500}
+.tag.g{background:#dcfce7;color:#15803d}.tag.y{background:#fef3c7;color:#b45309}
+.drag{transform:rotate(-2.5deg);border-color:var(--brand2);box-shadow:0 16px 30px -10px rgba(7,21,48,.35)}
+.won{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border:0}.won small,.won .v{color:#fff}
+.side .nav b{margin-left:auto;font:500 11px var(--mono);background:var(--soft);color:var(--brand);border-radius:6px;padding:1px 6px}
+.wa{right:28px;bottom:26px;width:330px;padding:0;overflow:hidden}
+.wa .h{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.wa .h .av{width:30px;height:30px}.wa .h b{font-size:13px}.wa .h small{display:block;font-size:11px;color:#15803d}
+.wa .msgs{padding:12px 14px;display:flex;flex-direction:column;gap:8px;background:#f8faf9}
+.b1{align-self:flex-start;background:#fff;border:1px solid var(--line);border-radius:10px 10px 10px 3px;padding:8px 10px;max-width:78%;font-size:12px}
+.b2{align-self:flex-end;background:#d9fdd3;border-radius:10px 10px 3px 10px;padding:8px 10px;max-width:80%;font-size:12px}
+.b2 i{display:block;font-style:normal;font:500 10px var(--mono);color:#15803d;margin-top:3px;text-align:right}
+.auto{left:250px;bottom:30px;width:300px;display:flex;gap:12px;align-items:center}
+.auto .ic{width:34px;height:34px;border-radius:10px;background:var(--soft);display:grid;place-items:center;flex:none}
+.auto b{font-size:13px}.auto small{display:block;color:var(--mid);font-size:11.5px}
+</style></head><body>
+<div class="app">
+  <aside class="side"><div class="logo"><i></i>Nusantara CRM</div>
+    <div class="nav"><i></i>Dashboard</div><div class="nav on"><i></i>Pipeline</div><div class="nav"><i></i>Kontak <b>1.284</b></div><div class="nav"><i></i>WhatsApp <b>12</b></div><div class="nav"><i></i>Laporan</div><div class="nav"><i></i>Otomatisasi</div><div class="nav"><i></i>Pengaturan</div>
+    <div class="card" style="margin-top:auto;margin-bottom:8px"><h3>Target Oktober</h3><div class="mono" style="font-size:18px;font-weight:600;margin-top:6px">Rp 820 jt <span style="color:var(--sub);font-size:13px">/ 1 M</span></div><div style="height:6px;border-radius:9px;background:#eef0f6;margin-top:10px"><div style="width:82%;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--brand),var(--brand2))"></div></div></div>
+    <div class="card"><div class="row"><div class="av b"></div><div><b style="font-size:12.5px">Dewi Lestari</b><div style="font-size:11px;color:var(--mid)">Sales Manager</div></div></div></div>
+  </aside>
+  <main class="main">
+    <div class="top"><h1>Pipeline Penjualan</h1><div class="row"><span class="pill">Tim Jakarta</span><span class="pill brand">Oktober 2026</span></div></div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="card kpi"><h3>Nilai pipeline</h3><div class="big mono">Rp 2,41 M<span class="delta">+18%</span></div></div>
+      <div class="card kpi"><h3>Deal menang</h3><div class="big mono">Rp 820 jt</div></div>
+      <div class="card kpi"><h3>Win rate</h3><div class="big mono">38%<span class="delta">+4,2</span></div></div>
+      <div class="card kpi"><h3>Rata-rata closing</h3><div class="big mono">21 hari</div></div>
+    </div>
+    <div class="board">
+      <div class="col"><h5>Lead <span>128</span></h5>
+        <div class="deal"><b>PT Sinar Logistik</b><small>Surabaya · via WhatsApp</small><div class="v">Rp 45 jt<div class="av"></div></div></div>
+        <div class="deal"><b>Klinik Sehat Medika</b><small>Bandung · Form web</small><div class="v">Rp 60 jt<div class="av b"></div></div></div>
+        <div class="deal"><b>Hotel Puri Bali</b><small>Denpasar · Referral</small><div class="v">Rp 30 jt<div class="av c"></div></div></div>
+        <div class="deal"><b>Apotek Sentosa</b><small>Malang · Iklan</small><div class="v">Rp 22 jt<div class="av"></div></div></div>
+      </div>
+      <div class="col"><h5>Kualifikasi <span>46</span></h5>
+        <div class="deal drag"><b>Kopi Kenangan Senja</b><small>Jakarta · 14 outlet</small><div class="v">Rp 120 jt<div class="av"></div></div></div>
+        <div class="deal"><b>CV Maju Bersama</b><small>Semarang</small><div class="v">Rp 38 jt<span class="tag y">Follow-up</span></div></div>
+        <div class="deal"><b>Toko Bangunan Jaya</b><small>Makassar · Telepon</small><div class="v">Rp 52 jt<div class="av c"></div></div></div>
+        <div class="deal"><b>PT Kurir Cepat</b><small>Tangerang · via WhatsApp</small><div class="v">Rp 74 jt<div class="av b"></div></div></div>
+      </div>
+      <div class="col"><h5>Proposal <span>23</span></h5>
+        <div class="deal"><b>PT Agro Nusantara</b><small>Medan · Demo terjadwal</small><div class="v">Rp 210 jt<div class="av b"></div></div></div>
+        <div class="deal"><b>Yayasan Pendidikan Insan</b><small>Yogyakarta</small><div class="v">Rp 95 jt<span class="tag">Negosiasi</span></div></div>
+        <div class="deal"><b>RS Mitra Keluarga</b><small>Bekasi · Proposal v2</small><div class="v">Rp 180 jt<div class="av"></div></div></div>
+      </div>
+      <div class="col"><h5>Menang <span>9</span></h5>
+        <div class="deal won"><b>Resto Padang Sederhana</b><small>Jakarta · Kontrak ditandatangani</small><div class="v">Rp 85 jt<div class="av c"></div></div></div>
+        <div class="deal"><b>Batik Danar Hadi</b><small>Solo</small><div class="v">Rp 64 jt<span class="tag g">Lunas</span></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="float auto"><div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#002fa7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><b>Follow-up otomatis terkirim</b><small>Template "Penawaran H+2" · 18 kontak</small></div></div>
+<div class="float wa"><div class="h"><div class="av"></div><div><b>Budi Santoso · Kopi Kenangan Senja</b><small>● online · WhatsApp</small></div></div>
+  <div class="msgs"><div class="b1">Pak, untuk 14 outlet bisa dikirim penawarannya hari ini?</div><div class="b2">Siap Pak Budi, proposal sudah kami kirim via email. Jadwal demo Kamis 10.00 ya.<i>09:42 ✓✓</i></div></div></div>
+</body></html>

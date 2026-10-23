@@ -1,0 +1,75 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+.main{background:var(--canvas)}
+.big{font-size:24px}.card small{display:block;color:var(--sub);font-size:11px;margin-top:4px}
+.ring{display:flex;align-items:center;gap:14px;margin-top:6px}
+.lay{display:grid;grid-template-columns:1.45fr 1fr;gap:14px;flex:1;min-height:0}
+.chart{display:flex;flex-direction:column}
+.bars{flex:1;display:flex;align-items:flex-end;justify-content:space-around;gap:9px;background:repeating-linear-gradient(to top,transparent 0 59px,#eef0f6 59px 60px);padding-top:14px;border-bottom:1px solid var(--line)}
+.bars div{flex:none;width:24px;height:100%;display:flex;flex-direction:column-reverse;gap:2px}
+.bars i{display:block;border-radius:5px}
+.lbl{display:flex;justify-content:space-around;gap:9px;margin-top:6px}.lbl span{width:24px;text-align:center;font:400 10.5px var(--mono);color:var(--sub)}
+.lg{display:flex;gap:14px;font-size:11.5px;color:var(--mid)}.lg span{display:flex;align-items:center;gap:5px}.lg span:before{content:"";width:8px;height:8px;border-radius:3px;background:var(--c)}
+.lv{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.lv:last-child{border:0}.lv .av{width:30px;height:30px}
+.lv b{font-size:13px;font-weight:600}.lv small{margin:0;color:var(--mid);font-size:11.5px}
+.lv .act{margin-left:auto;display:flex;gap:6px}
+.lv .act span{font-size:11.5px;font-weight:500;padding:5px 10px;border-radius:8px;border:1px solid var(--line);color:var(--mid)}
+.lv .act span.ok{background:var(--brand);color:#fff;border-color:var(--brand)}
+.st{font-size:11px;padding:3px 8px;border-radius:99px;font-weight:500}
+.pay{left:236px;bottom:24px;width:420px}
+.pay .r{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mid);padding:5px 0}.pay .r .mono{color:var(--ink)}
+.pay .t{border-top:1px dashed var(--line);margin-top:4px;padding-top:9px;font-weight:600;color:var(--ink);font-size:14px}
+.ph{right:30px;bottom:24px;width:210px;padding:12px;border-radius:26px;background:var(--ink);color:#fff}
+.ph .scr{background:#fff;color:var(--ink);border-radius:18px;padding:14px;text-align:center}
+.ph .clk{font:600 30px var(--mono);letter-spacing:-.02em;margin:6px 0 2px}
+.ph .btn{margin-top:12px;border-radius:12px;padding:11px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font-weight:600;font-size:13px}
+.ph .loc{font-size:11px;color:#15803d;background:#dcfce7;border-radius:8px;padding:5px;margin-top:10px}
+</style></head><body>
+<div class="app">
+  <aside class="side"><div class="logo"><i></i>Karya HR</div>
+    <div class="nav on"><i></i>Dashboard</div><div class="nav"><i></i>Karyawan</div><div class="nav"><i></i>Absensi</div><div class="nav"><i></i>Cuti &amp; Izin</div><div class="nav"><i></i>Payroll</div><div class="nav"><i></i>Kinerja</div><div class="nav"><i></i>Laporan</div><div class="nav"><i></i>Pengaturan</div>
+    <div class="card" style="margin-top:auto"><h3>Divisi hadir</h3><div style="display:flex;justify-content:space-between;font-size:12px;margin-top:9px"><span>Operasional</span><span class="mono">96/102</span></div><div style="height:5px;background:#eef0f6;border-radius:9px;margin-top:4px"><div style="width:94%;height:100%;border-radius:9px;background:var(--brand)"></div></div><div style="display:flex;justify-content:space-between;font-size:12px;margin-top:9px"><span>Gudang</span><span class="mono">58/64</span></div><div style="height:5px;background:#eef0f6;border-radius:9px;margin-top:4px"><div style="width:90%;height:100%;border-radius:9px;background:var(--brand)"></div></div><div style="display:flex;justify-content:space-between;font-size:12px;margin-top:9px"><span>Sales</span><span class="mono">41/45</span></div><div style="height:5px;background:#eef0f6;border-radius:9px;margin-top:4px"><div style="width:91%;height:100%;border-radius:9px;background:var(--brand)"></div></div><div style="display:flex;justify-content:space-between;font-size:12px;margin-top:9px"><span>Keuangan</span><span class="mono">23/25</span></div><div style="height:5px;background:#eef0f6;border-radius:9px;margin-top:4px"><div style="width:92%;height:100%;border-radius:9px;background:var(--brand)"></div></div></div>
+  </aside>
+  <main class="main">
+    <div class="top"><div><h1>Selamat pagi, Ratna</h1><div style="color:var(--mid);font-size:12px;margin-top:3px">Kamis, 22 Oktober 2026 · PT Sentosa Abadi</div></div><div class="row"><span class="pill">Semua divisi</span><span class="pill brand">Periode Oktober</span></div></div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="card"><h3>Hadir hari ini</h3><div class="big mono">218<span style="font-size:14px;color:var(--sub)">/236</span><span class="delta">92%</span></div></div>
+      <div class="card"><h3>Terlambat</h3><div class="big mono">7</div><small>toleransi 15 menit</small></div>
+      <div class="card"><h3>Cuti &amp; izin</h3><div class="big mono">11</div><small>4 menunggu approval</small></div>
+      <div class="card"><h3>Payroll Oktober</h3><div class="big mono">Rp 1,82 M</div><small>cut-off 25 Okt</small></div>
+    </div>
+    <div class="lay">
+      <div class="card chart"><h3>Kehadiran 2 minggu terakhir · rata-rata 91%<div class="lg"><span style="--c:var(--brand)">Hadir</span><span style="--c:#9db4ff">Terlambat</span><span style="--c:#fcd34d">Cuti</span></div></h3>
+        <div class="bars">
+          <div><i style="height:75%;background:var(--brand)"></i><i style="height:4.4%;background:#9db4ff"></i><i style="height:5.5%;background:#fcd34d"></i></div>
+          <div><i style="height:78%;background:var(--brand)"></i><i style="height:2.8%;background:#9db4ff"></i><i style="height:4.4%;background:#fcd34d"></i></div>
+          <div><i style="height:73%;background:var(--brand)"></i><i style="height:6.6%;background:#9db4ff"></i><i style="height:5.0%;background:#fcd34d"></i></div>
+          <div><i style="height:80%;background:var(--brand)"></i><i style="height:2.2%;background:#9db4ff"></i><i style="height:3.3%;background:#fcd34d"></i></div>
+          <div><i style="height:70%;background:var(--brand)"></i><i style="height:5.0%;background:#9db4ff"></i><i style="height:9.9%;background:#fcd34d"></i></div>
+          <div><i style="height:76%;background:var(--brand)"></i><i style="height:3.9%;background:#9db4ff"></i><i style="height:5.5%;background:#fcd34d"></i></div>
+          <div><i style="height:79%;background:var(--brand)"></i><i style="height:3.3%;background:#9db4ff"></i><i style="height:3.9%;background:#fcd34d"></i></div>
+          <div><i style="height:74%;background:var(--brand)"></i><i style="height:5.5%;background:#9db4ff"></i><i style="height:6.1%;background:#fcd34d"></i></div>
+          <div><i style="height:77%;background:var(--brand)"></i><i style="height:2.8%;background:#9db4ff"></i><i style="height:5.0%;background:#fcd34d"></i></div>
+          <div><i style="height:81%;background:linear-gradient(var(--brand2),var(--brand))"></i><i style="height:3.9%;background:#9db4ff"></i><i style="height:6.1%;background:#fcd34d"></i></div>
+        </div>
+        <div class="lbl"><span>9</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>19</span><span>20</span><span>21</span><span>22</span></div>
+      </div>
+      <div class="card"><h3>Pengajuan cuti<span class="pill brand" style="padding:2px 8px">4 baru</span></h3>
+        <div class="lv"><div class="av"></div><div><b>Andi Wijaya</b><br><small>Cuti tahunan · 27–29 Okt · sisa 6 hari</small></div><div class="act"><span>Tolak</span><span class="ok">Setujui</span></div></div>
+        <div class="lv"><div class="av b"></div><div><b>Siti Nurhaliza</b><br><small>Izin sakit · 23 Okt · surat dokter</small></div><div class="act"><span>Tolak</span><span class="ok">Setujui</span></div></div>
+        <div class="lv"><div class="av c"></div><div><b>Fajar Ramadhan</b><br><small>Cuti menikah · 2–4 Nov</small></div><span class="st" style="margin-left:auto;background:#fef3c7;color:#b45309">Level 2</span></div>
+        <div class="lv"><div class="av"></div><div><b>Maya Putri</b><br><small>Cuti tahunan · 30 Okt</small></div><span class="st" style="margin-left:auto;background:#dcfce7;color:#15803d">Disetujui</span></div>
+        <div class="lv"><div class="av b"></div><div><b>Dimas Saputra</b><br><small>Izin keluarga · 26 Okt</small></div><span class="st" style="margin-left:auto;background:#dcfce7;color:#15803d">Disetujui</span></div>
+        <div class="lv"><div class="av c"></div><div><b>Rina Kusuma</b><br><small>Cuti tahunan · 3 Nov</small></div><span class="st" style="margin-left:auto;background:var(--soft);color:var(--brand)">Level 1</span></div>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="float pay"><h3 style="font-size:12px;font-weight:500;color:var(--mid);display:flex;justify-content:space-between">Slip gaji · Andi Wijaya<span class="pill ok" style="padding:2px 8px">Siap transfer</span></h3>
+  <div class="r" style="margin-top:6px">Gaji pokok<span class="mono">Rp 8.500.000</span></div>
+  <div class="r">Tunjangan transport &amp; makan<span class="mono">Rp 1.200.000</span></div>
+  <div class="r">Lembur 6 jam<span class="mono">Rp 295.000</span></div>
+  <div class="r">BPJS &amp; PPh 21<span class="mono" style="color:#b91c1c">−Rp 812.000</span></div>
+  <div class="r t">Take home pay<span class="mono">Rp 9.183.000</span></div></div>
+<div class="float ph"><div class="scr"><div style="font-size:11px;color:var(--mid)">Absen masuk</div><div class="clk">07:56</div><div style="font-size:11.5px;color:var(--mid)">Kamis, 22 Okt</div><div class="loc">● Kantor Pusat · 12 m</div><div class="btn">Check-in</div></div></div>
+</body></html>

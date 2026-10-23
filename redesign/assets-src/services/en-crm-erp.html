@@ -1,0 +1,86 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+.main{background:var(--canvas)}
+.t{font-size:13px;font-weight:600;color:var(--ink)}
+.kb{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;flex:1;margin-right:330px}
+.col{background:#eef0f6;border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:9px}
+.col h4{font-size:12px;font-weight:600;display:flex;justify-content:space-between;align-items:center;padding:2px 4px}
+.col h4 span{font:500 11px var(--mono);color:var(--sub)}
+.dl{background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px 11px;box-shadow:0 1px 2px rgba(7,21,48,.04)}
+.dl b{font-size:12.5px;font-weight:600;display:block}.dl small{font-size:11px;color:var(--mid)}
+.dl .f{display:flex;justify-content:space-between;align-items:center;margin-top:9px}.dl .f em{white-space:nowrap;font:500 11.5px var(--mono);font-style:normal}
+.tg{white-space:nowrap;font:500 10.5px var(--mono);padding:2px 7px;border-radius:6px;background:var(--soft);color:var(--brand)}.tg.g{background:#dcfce7;color:#15803d}.tg.y{background:#fef3c7;color:#b45309}
+.dl.drag{transform:rotate(-2.5deg);box-shadow:0 18px 36px -14px rgba(7,21,48,.35);border-color:#c7d4ff}
+.rb{position:absolute;right:26px;top:70px;width:310px;bottom:22px}
+.role{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:12.5px}.role:first-of-type{border-top:0}
+.role span.n{margin-left:auto;font:11px var(--mono);color:var(--sub)}
+.perm{display:grid;grid-template-columns:1fr repeat(3,42px);gap:0;font-size:12px;margin-top:6px}
+.perm div{padding:7px 0;border-top:1px solid var(--line)}.perm .h{font:500 10.5px var(--mono);color:var(--sub);border-top:0;text-align:center}.perm .h:first-child{text-align:left}
+.ck{display:grid;place-items:center}.ck i{width:16px;height:16px;border-radius:5px;background:var(--brand2);display:grid;place-items:center}.ck i::after{content:"";width:7px;height:4px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.ck i.no{background:#eef0f6}.ck i.no::after{display:none}
+.tsel{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:10px;padding:6px 10px;font-size:12.5px;font-weight:500}
+.tsel i{width:18px;height:18px;border-radius:5px;background:linear-gradient(135deg,#f59e0b,#ef4444)}
+.sec{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+</style></head><body>
+<div class="app">
+  <aside class="side"><div class="logo"><i></i>Ledgerly ERP</div>
+    <div class="nav"><i></i>Dashboard</div><div class="nav on"><i></i>Sales pipeline</div><div class="nav"><i></i>Contacts</div><div class="nav"><i></i>Loans</div><div class="nav"><i></i>Savings</div><div class="nav"><i></i>Reports</div><div class="nav"><i></i>Roles & access</div>
+    <div class="card" style="margin-top:auto;padding:12px"><div style="font-size:11px;color:var(--mid)">Signed in with SSO</div><div class="row" style="margin-top:6px"><div class="av"></div><div><div style="font-weight:600;font-size:12.5px">Rina Hartono</div><div class="mono" style="font-size:10.5px;color:#15803d">2FA verified</div></div></div></div></aside>
+  <main class="main">
+    <div class="top"><div class="row" style="gap:14px"><h1>Sales pipeline</h1><div class="tsel"><i></i>Tenant · Jakarta Branch ▾</div></div>
+      <div class="row"><span class="pill">Q4 2026</span><span class="pill brand">+ New deal</span></div></div>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-right:330px">
+      <div class="card"><h3>Pipeline value</h3><div class="big" style="font-size:24px">Rp 4.2B<span class="delta">+9%</span></div></div>
+      <div class="card"><h3>Open deals</h3><div class="big" style="font-size:24px">58</div></div>
+      <div class="card"><h3>Win rate</h3><div class="big" style="font-size:24px">36%</div></div>
+    </div>
+    <div class="kb">
+      <div class="col"><h4>Lead<span>14</span></h4>
+        <div class="dl"><b>PT Sinar Logistik</b><small>Fleet tracking module</small><div class="f"><span class="tg">WhatsApp</span><em>Rp 180M</em></div></div>
+        <div class="dl"><b>Koperasi Maju</b><small>Member loan portal</small><div class="f"><span class="tg">Inbound</span><em>Rp 95M</em></div></div>
+        <div class="dl"><b>Batik Nusantara</b><small>Retail POS rollout</small><div class="f"><span class="tg">Referral</span><em>Rp 120M</em></div></div>
+        <div class="dl"><b>Delta Clinic</b><small>Patient CRM</small><div class="f"><span class="tg">Event</span><em>Rp 60M</em></div></div>
+        <div class="dl"><b>Cahaya Motor</b><small>Dealer network CRM</small><div class="f"><span class="tg">WhatsApp</span><em>Rp 140M</em></div></div></div>
+      <div class="col"><h4>Qualified<span>11</span></h4>
+        <div class="dl"><b>Grand Hotel Bali</b><small>Booking + CRM sync</small><div class="f"><span class="tg y">Follow-up</span><em>Rp 240M</em></div></div>
+        <div class="dl drag"><b>Mitra Agro</b><small>Inventory & ERP</small><div class="f"><span class="tg">Demo</span><em>Rp 310M</em></div></div>
+        <div class="dl"><b>Sentosa Retail</b><small>Loyalty program</small><div class="f"><span class="tg y">Follow-up</span><em>Rp 85M</em></div></div>
+        <div class="dl"><b>Harapan Farm</b><small>Supply chain ERP</small><div class="f"><span class="tg">Demo</span><em>Rp 190M</em></div></div>
+        <div class="dl"><b>Pustaka Edu</b><small>Student enrolment</small><div class="f"><span class="tg y">Follow-up</span><em>Rp 110M</em></div></div></div>
+      <div class="col"><h4>Proposal<span>8</span></h4>
+        <div class="dl"><b>Bank Daerah</b><small>Credit scoring</small><div class="f"><span class="tg">Review</span><em>Rp 520M</em></div></div>
+        <div class="dl"><b>Sumber Energi</b><small>Field ops ERP</small><div class="f"><span class="tg">Review</span><em>Rp 410M</em></div></div>
+        <div class="dl"><b>Kopi Kita</b><small>Franchise CRM</small><div class="f"><span class="tg y">Pricing</span><em>Rp 70M</em></div></div>
+        <div class="dl"><b>Nusa Telekom</b><small>Ticketing CRM</small><div class="f"><span class="tg">Review</span><em>Rp 230M</em></div></div>
+        <div class="dl"><b>Arunika Spa</b><small>Booking & loyalty</small><div class="f"><span class="tg">Review</span><em>Rp 90M</em></div></div></div>
+      <div class="col"><h4>Won<span>25</span></h4>
+        <div class="dl"><b>Koperasi Sejahtera</b><small>Loans & savings</small><div class="f"><span class="tg g">Signed</span><em>Rp 380M</em></div></div>
+        <div class="dl"><b>Prima Distribusi</b><small>Sales force app</small><div class="f"><span class="tg g">Signed</span><em>Rp 260M</em></div></div>
+        <div class="dl"><b>Lestari Group</b><small>WhatsApp CRM</small><div class="f"><span class="tg g">Signed</span><em>Rp 150M</em></div></div>
+        <div class="dl"><b>Mega Properti</b><small>Lead tracking</small><div class="f"><span class="tg g">Signed</span><em>Rp 175M</em></div></div>
+        <div class="dl"><b>Bumi Logam</b><small>Procurement ERP</small><div class="f"><span class="tg g">Signed</span><em>Rp 290M</em></div></div></div>
+    </div>
+  </main>
+</div>
+<div class="card rb" style="display:flex;flex-direction:column">
+  <h3><span class="t">Roles & permissions</span><span class="mono">RBAC</span></h3>
+  <div style="margin-top:8px">
+    <div class="role"><div class="av"></div>Admin<span class="n">3 users</span></div>
+    <div class="role"><div class="av b"></div>Sales manager<span class="n">6 users</span></div>
+    <div class="role"><div class="av c"></div>Teller<span class="n">12 users</span></div>
+    <div class="role"><div class="av" style="background:linear-gradient(135deg,#c4b5fd,#f0abfc)"></div>Member<span class="n">1,840</span></div></div>
+  <div class="perm" style="margin-top:14px"><div class="h">Permission</div><div class="h">ADM</div><div class="h">MGR</div><div class="h">TLR</div>
+    <div>View pipeline</div><div class="ck"><i></i></div><div class="ck"><i></i></div><div class="ck"><i></i></div>
+    <div>Edit deals</div><div class="ck"><i></i></div><div class="ck"><i></i></div><div class="ck"><i class="no"></i></div>
+    <div>Approve loans</div><div class="ck"><i></i></div><div class="ck"><i class="no"></i></div><div class="ck"><i class="no"></i></div>
+    <div>Record payments</div><div class="ck"><i></i></div><div class="ck"><i class="no"></i></div><div class="ck"><i></i></div>
+    <div>Export reports</div><div class="ck"><i></i></div><div class="ck"><i></i></div><div class="ck"><i class="no"></i></div>
+    <div>Manage tenants</div><div class="ck"><i></i></div><div class="ck"><i class="no"></i></div><div class="ck"><i class="no"></i></div></div>
+  <div style="margin-top:16px;border-top:1px solid var(--line);padding-top:12px"><div style="font-size:12px;color:var(--mid);margin-bottom:6px">Audit log</div>
+    <div class="mono" style="font-size:11px;line-height:2;color:var(--mid)"><span style="color:var(--ink)">admin</span> granted Export · MGR <span style="color:var(--sub)">10:42</span><br><span style="color:var(--ink)">rina</span> signed in via SSO <span style="color:var(--sub)">09:15</span><br><span style="color:var(--ink)">teller-04</span> recorded payment <span style="color:var(--sub)">09:02</span><br><span style="color:var(--ink)">mgr-02</span> moved Mitra Agro <span style="color:var(--sub)">08:47</span><br><span style="color:var(--ink)">system</span> rotated JWT keys <span style="color:var(--sub)">00:00</span></div></div>
+  <div style="margin-top:auto;border-top:1px solid var(--line);padding-top:12px"><div style="font-size:12px;color:var(--mid)">Security</div>
+    <div class="sec"><span class="pill ok">SSO</span><span class="pill ok">2FA required</span><span class="pill">JWT · 15 min</span></div></div>
+</div>
+<div class="float" style="left:560px;bottom:28px;width:290px;display:flex;gap:10px;align-items:center">
+  <div style="width:34px;height:34px;border-radius:10px;background:var(--soft);display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#002fa7" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></div>
+  <div><div style="font-weight:600;font-size:13px">Loan #L-2291 approved</div><div style="font-size:11.5px;color:var(--mid)">by Admin · push sent to member</div></div></div>
+</body></html>

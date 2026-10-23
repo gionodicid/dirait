@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap");
+:root{--ink:#071530;--mid:#646b80;--sub:#9aa0b4;--line:#e5e7ef;--canvas:#f6f7fb;--muted:#f4f5f9;--brand:#002fa7;--brand2:#3d6bff;--soft:#e8eeff;--ok:#22c55e;--warn:#f59e0b;--bad:#ef4444;--f:"Geist",system-ui,sans-serif;--mono:"Geist Mono",monospace}
+*{box-sizing:border-box;margin:0}
+html,body{width:1280px;height:800px;overflow:hidden;background:#fff;font-family:var(--f);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:13px}
+.mono{font-family:var(--mono)}
+/* App window shell: sidebar + topbar + content area. */
+.app{position:absolute;inset:0;display:grid;grid-template-columns:220px 1fr;background:#fff}
+.side{border-right:1px solid var(--line);padding:22px 14px;display:flex;flex-direction:column;gap:4px;background:#fbfbfd}
+.logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:16px;padding:0 8px 18px}
+.logo i{width:20px;height:20px;border-radius:6px;background:linear-gradient(135deg,var(--brand),var(--brand2))}
+.nav{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:9px;color:var(--mid);font-weight:500}
+.nav i{width:14px;height:14px;border-radius:4px;border:1.6px solid currentColor;opacity:.7}
+.nav.on{background:var(--ink);color:#fff}
+.main{padding:22px 26px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.top{display:flex;align-items:center;justify-content:space-between}
+.top h1{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:99px;padding:5px 11px;font-size:12px;color:var(--mid);background:#fff}
+.pill.brand{background:var(--soft);border-color:transparent;color:var(--brand);font-weight:500}
+.pill.ok{background:#dcfce7;border-color:transparent;color:#15803d;font-weight:500}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 1px 2px rgba(7,21,48,.04)}
+.card h3{font-size:12px;font-weight:500;color:var(--mid);display:flex;justify-content:space-between;align-items:center}
+.big{font-size:28px;font-weight:600;letter-spacing:-.03em;margin-top:8px}
+.delta{font:500 11px var(--mono);color:#15803d;background:#dcfce7;border-radius:6px;padding:2px 6px;margin-left:6px;vertical-align:middle}
+.grid{display:grid;gap:14px}
+.av{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#a5b4fc,#67e8f9);flex:none}
+.av.b{background:linear-gradient(135deg,#fda4af,#fcd34d)}.av.c{background:linear-gradient(135deg,#86efac,#67e8f9)}
+.row{display:flex;align-items:center;gap:10px}
+.float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 24px 50px -18px rgba(7,21,48,.35)}

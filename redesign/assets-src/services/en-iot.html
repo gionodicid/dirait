@@ -1,0 +1,60 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+.main{background:var(--canvas)}
+.t{font-size:13px;font-weight:600;color:var(--ink)}
+.map{position:relative;flex:1;border-radius:10px;overflow:hidden;margin-top:12px;background:#eef3ff}
+.dot{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--ok);border:2.5px solid #fff;box-shadow:0 0 0 5px rgba(34,197,94,.18)}
+.dot.w{background:var(--warn);box-shadow:0 0 0 5px rgba(245,158,11,.2)}.dot.b{background:var(--bad);box-shadow:0 0 0 6px rgba(239,68,68,.22)}
+.lg{display:flex;gap:14px;font-size:11.5px;color:var(--mid)}.lg span{display:flex;align-items:center;gap:6px}.lg i{width:8px;height:8px;border-radius:50%}
+.ch{height:92px;width:100%;margin-top:6px}
+.v{font:600 22px var(--f);letter-spacing:-.02em;margin-top:6px}.v em{font:400 12px var(--mono);color:var(--sub);font-style:normal;margin-left:4px}
+.topic{font:11px var(--mono);color:var(--sub)}
+.log{background:var(--ink);border-color:#0f2350;color:#c7d2fe;font:11.5px/1.8 var(--mono);padding:12px 14px}
+.log .c{color:#67e8f9}.log .g{color:#86efac}.log .d{color:#6b7aa6}.log .y{color:#fcd34d}
+.dev{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:12.5px}.dev:first-of-type{border-top:0}
+.dev span{margin-left:auto;font:500 11px var(--mono)}
+.sw{width:34px;height:20px;border-radius:99px;background:var(--brand2);position:relative;flex:none}.sw::after{content:"";position:absolute;right:2px;top:2px;width:16px;height:16px;border-radius:50%;background:#fff}
+.sw.off{background:#d8dbe6}.sw.off::after{right:auto;left:2px}
+</style></head><body>
+<div class="app">
+  <aside class="side"><div class="logo"><i></i>FieldSense</div>
+    <div class="nav"><i></i>Overview</div><div class="nav on"><i></i>Fleet map</div><div class="nav"><i></i>Devices</div><div class="nav"><i></i>Topics</div><div class="nav"><i></i>Alerts</div><div class="nav"><i></i>Playback</div><div class="nav"><i></i>Tenants</div>
+    <div class="card" style="margin-top:auto;padding:12px"><div style="font-size:11px;color:var(--mid)">Broker</div><div style="font-weight:600;margin-top:2px">mosquitto-01</div><div class="mono" style="font-size:11px;color:#15803d;margin-top:6px">● connected · 1.2k msg/s</div></div></aside>
+  <main class="main">
+    <div class="top"><div><div class="mono" style="font-size:11px;color:var(--sub)">TENANT · AGRI-NORTH</div><h1>Device fleet</h1></div>
+      <div class="row"><span class="pill ok">● Live · WebSocket</span><span class="pill">Last 1 hour</span><div class="av c"></div></div></div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="card"><h3>Online devices</h3><div class="big">248<span style="font-size:15px;color:var(--sub)">/256</span></div></div>
+      <div class="card"><h3>Messages / min</h3><div class="big">72.4k<span class="delta">+4%</span></div></div>
+      <div class="card"><h3>Avg. latency</h3><div class="big">38<span style="font-size:15px;color:var(--sub)"> ms</span></div></div>
+      <div class="card"><h3>Open alerts</h3><div class="big" style="color:#dc2626">3</div></div>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 330px;flex:1">
+      <div class="card" style="display:flex;flex-direction:column"><h3><span class="t">Fleet map</span><span class="lg"><span><i style="background:var(--ok)"></i>Online</span><span><i style="background:var(--warn)"></i>Warning</span><span><i style="background:var(--bad)"></i>Offline</span></span></h3>
+        <div class="map"><svg width="100%" height="100%" viewBox="0 0 640 330" preserveAspectRatio="none">
+          <rect width="640" height="330" fill="#eef3ff"/>
+          <path d="M0 60 C120 40 200 90 320 70 S520 20 640 50 V0 H0Z" fill="#e3ebff"/>
+          <path d="M-10 250 C100 220 180 270 300 240 S500 200 650 230" fill="none" stroke="#c9d6fb" stroke-width="18"/>
+          <path d="M140 0 L180 330 M420 0 L380 330 M0 150 L640 170" stroke="#fff" stroke-width="6"/>
+          <g fill="none" stroke="#d6e0ff"><rect x="40" y="90" width="110" height="60" rx="6"/><rect x="200" y="100" width="160" height="50" rx="6"/><rect x="450" y="80" width="140" height="70" rx="6"/><rect x="60" y="190" width="90" height="40" rx="6"/><rect x="440" y="190" width="160" height="40" rx="6"/></g>
+          </svg>
+          <div class="dot" style="left:16%;top:36%"></div><div class="dot" style="left:22%;top:62%"></div><div class="dot" style="left:35%;top:40%"></div><div class="dot" style="left:46%;top:52%"></div><div class="dot w" style="left:58%;top:30%"></div><div class="dot" style="left:72%;top:34%"></div><div class="dot" style="left:48%;top:24%"></div><div class="dot b" style="left:89%;top:28%"></div><div class="dot" style="left:30%;top:78%"></div><div class="dot" style="left:54%;top:74%"></div><div class="dot" style="left:10%;top:70%"></div>
+          <div class="float" style="left:62%;top:44%;width:220px;padding:12px"><div class="row" style="justify-content:space-between"><b style="font-size:13px">GH-07 · Greenhouse</b><span class="pill ok" style="padding:2px 8px">online</span></div>
+            <div class="topic" style="margin-top:6px">farm/gh-07/sensors</div>
+            <div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:10px;font-size:11px;color:var(--mid)"><div>Temp<div class="mono" style="color:var(--ink);font-size:13px">27.4°</div></div><div>Humid.<div class="mono" style="color:var(--ink);font-size:13px">68%</div></div><div>Soil<div class="mono" style="color:var(--ink);font-size:13px">41%</div></div></div></div>
+        </div></div>
+      <div class="grid" style="grid-template-rows:auto auto 1fr">
+        <div class="card"><h3><span class="t">Temperature</span><span class="topic">sensors/+/temp</span></h3><div class="v">27.4<em>°C</em><span class="delta">live</span></div>
+          <svg class="ch" viewBox="0 0 300 92" preserveAspectRatio="none"><defs><linearGradient id="a" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3d6bff" stop-opacity=".22"/><stop offset="1" stop-color="#3d6bff" stop-opacity="0"/></linearGradient></defs><path d="M0 60 L15 55 L30 58 L45 48 L60 52 L75 44 L90 50 L105 40 L120 46 L135 36 L150 42 L165 34 L180 40 L195 30 L210 38 L225 28 L240 34 L255 24 L270 30 L285 22 L300 26 V92 H0Z" fill="url(#a)"/><path d="M0 60 L15 55 L30 58 L45 48 L60 52 L75 44 L90 50 L105 40 L120 46 L135 36 L150 42 L165 34 L180 40 L195 30 L210 38 L225 28 L240 34 L255 24 L270 30 L285 22 L300 26" fill="none" stroke="#002fa7" stroke-width="2"/></svg></div>
+        <div class="card"><h3><span class="t">Humidity</span><span class="topic">sensors/+/humidity</span></h3><div class="v">68<em>%</em></div>
+          <svg class="ch" viewBox="0 0 300 92" preserveAspectRatio="none"><g fill="#c7d4ff"><rect x="4" y="40" width="14" height="52" rx="3"/><rect x="28" y="34" width="14" height="58" rx="3"/><rect x="52" y="46" width="14" height="46" rx="3"/><rect x="76" y="30" width="14" height="62" rx="3"/><rect x="100" y="38" width="14" height="54" rx="3"/><rect x="124" y="26" width="14" height="66" rx="3"/><rect x="148" y="36" width="14" height="56" rx="3"/><rect x="172" y="22" width="14" height="70" rx="3"/><rect x="196" y="32" width="14" height="60" rx="3"/><rect x="220" y="28" width="14" height="64" rx="3"/><rect x="244" y="20" width="14" height="72" rx="3"/></g><rect x="268" y="18" width="14" height="74" rx="3" fill="#3d6bff"/></svg></div>
+        <div class="card"><h3><span class="t">Device control</span><span class="topic">cmd/gh-07</span></h3>
+          <div style="margin-top:6px"><div class="dev">Irrigation valve<span style="margin-left:auto"></span><div class="sw"></div></div><div class="dev">Ventilation fan<span style="margin-left:auto"></span><div class="sw"></div></div><div class="dev">Grow lights<span style="margin-left:auto"></span><div class="sw off"></div></div></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="float log" style="left:268px;bottom:34px;width:420px"><div class="d">mqtt · subscribed farm/#</div>
+<span class="c">←</span> farm/gh-07/temp <span class="g">{"v":27.4}</span> <span class="d">12:04:31</span><br>
+<span class="c">←</span> farm/gh-03/soil <span class="g">{"v":0.41}</span> <span class="d">12:04:31</span><br>
+<span class="y">→</span> cmd/gh-07/valve <span class="y">{"state":"open"}</span> <span class="d">ack 42ms</span></div>
+</body></html>

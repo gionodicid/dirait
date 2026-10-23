@@ -1,0 +1,59 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+.main{background:var(--canvas)}
+.big{font-size:24px}.card small{display:block;color:var(--sub);font-size:11px;margin-top:4px}
+.lay{display:grid;grid-template-columns:1.25fr 1fr;gap:14px;flex:1;min-height:0}
+.zones{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px;margin-top:12px;flex:1}
+.zone{background:var(--muted);border-radius:11px;padding:10px;display:flex;flex-direction:column}
+.zone h5{font-size:12px;font-weight:600;display:flex;justify-content:space-between;margin-bottom:8px}.zone h5 span{font-weight:400;color:var(--mid);font-size:11px}
+.bins{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);gap:6px;flex:1}
+.bins i{font:500 10.5px var(--mono);font-style:normal;border-radius:7px;display:grid;place-items:center;text-align:center;color:#fff}
+.bins .f{background:var(--brand)}.bins .m{background:#5b80ff}.bins .l{background:#b7c8ff;color:var(--brand)}.bins .e{background:#fff;border:1px dashed #c9cdd9;color:var(--sub)}
+.bins .sel{background:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.3)}
+.lg{display:flex;gap:12px;font-size:11px;color:var(--mid);font-weight:400}.lg span{display:flex;align-items:center;gap:5px}.lg span:before{content:"";width:9px;height:9px;border-radius:3px;background:var(--c);border:1px solid var(--b,transparent)}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:12px}
+td,th{padding:9px 4px;border-bottom:1px solid var(--line);text-align:left}th{font-size:11px;color:var(--sub);font-weight:500}
+tr:last-child td{border:0}td.mono{font-size:11.5px}
+.st{font-size:10.5px;padding:3px 8px;border-radius:99px;font-weight:500;white-space:nowrap}
+.s1{background:#dcfce7;color:#15803d}.s2{background:var(--soft);color:var(--brand)}.s3{background:#fef3c7;color:#b45309}
+.bin{right:28px;bottom:24px;width:280px}
+.bin .r{display:flex;justify-content:space-between;font-size:12px;color:var(--mid);padding:4px 0}.bin .r b{color:var(--ink);font-weight:500}
+.scan{left:500px;top:262px;padding:10px 14px;width:300px;display:flex;gap:12px;align-items:center}
+.scan .ic{width:40px;height:40px;border-radius:11px;background:var(--ink);display:grid;place-items:center;flex:none}
+</style></head><body>
+<div class="app">
+  <aside class="side"><div class="logo"><i></i>Gudang Pintar</div>
+    <div class="nav"><i></i>Ringkasan</div><div class="nav on"><i></i>Stok &amp; Lokasi</div><div class="nav"><i></i>Barang Masuk</div><div class="nav"><i></i>Picking</div><div class="nav"><i></i>Pengiriman</div><div class="nav"><i></i>Stock Opname</div><div class="nav"><i></i>Integrasi</div><div class="nav"><i></i>Laporan</div>
+    <div class="card" style="margin-top:auto"><h3>Gudang aktif</h3><div style="font-size:12.5px;margin-top:8px;display:flex;flex-direction:column;gap:7px"><div class="row" style="justify-content:space-between"><span>Cikarang DC</span><span class="pill ok" style="padding:1px 7px">aktif</span></div><div class="row" style="justify-content:space-between"><span>Surabaya</span><span class="mono" style="color:var(--mid)">82%</span></div><div class="row" style="justify-content:space-between"><span>Medan</span><span class="mono" style="color:var(--mid)">64%</span></div></div></div>
+  </aside>
+  <main class="main">
+    <div class="top"><div><h1>Stok &amp; Lokasi</h1><div style="color:var(--mid);font-size:12px;margin-top:3px">Cikarang DC · Jl. Industri Selatan 5, Bekasi</div></div><div class="row"><span class="pill">3 gudang</span><span class="pill ok">● Sinkron Tokopedia · Shopee · POS</span></div></div>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="card"><h3>Total SKU</h3><div class="big mono">4.812</div><small>126.430 unit</small></div>
+      <div class="card"><h3>Kapasitas terpakai</h3><div class="big mono">78%<span class="delta">+3%</span></div><small>1.148 / 1.472 bin</small></div>
+      <div class="card"><h3>Barang masuk hari ini</h3><div class="big mono">36</div><small>9 PO menunggu QC</small></div>
+      <div class="card"><h3>Di bawah reorder point</h3><div class="big mono" style="color:#b45309">14</div><small>perlu restock</small></div>
+    </div>
+    <div class="lay">
+      <div class="card" style="display:flex;flex-direction:column"><h3>Denah bin location<div class="lg"><span style="--c:var(--brand)">Penuh</span><span style="--c:#5b80ff">Sedang</span><span style="--c:#b7c8ff">Rendah</span><span style="--c:#fff;--b:#c9cdd9">Kosong</span></div></h3>
+        <div class="zones"><div class="zone"><h5>Zona A <span>Fast moving</span></h5><div class="bins"><i class="f">A-01</i><i class="f">A-02</i><i class="f">A-03</i><i class="f">A-04</i><i class="f">A-05</i><i class="f">A-06</i><i class="sel">A-07</i><i class="l">A-08</i><i class="l">A-09</i><i class="f">A-10</i><i class="m">A-11</i><i class="f">A-12</i></div></div><div class="zone"><h5>Zona B <span>Bulk</span></h5><div class="bins"><i class="f">B-01</i><i class="f">B-02</i><i class="f">B-03</i><i class="e">B-04</i><i class="l">B-05</i><i class="l">B-06</i><i class="l">B-07</i><i class="f">B-08</i><i class="f">B-09</i><i class="m">B-10</i><i class="m">B-11</i><i class="l">B-12</i></div></div><div class="zone"><h5>Zona C <span>Dingin</span></h5><div class="bins"><i class="l">C-01</i><i class="f">C-02</i><i class="m">C-03</i><i class="m">C-04</i><i class="m">C-05</i><i class="f">C-06</i><i class="m">C-07</i><i class="f">C-08</i><i class="e">C-09</i><i class="l">C-10</i><i class="m">C-11</i><i class="f">C-12</i></div></div><div class="zone"><h5>Zona D <span>Retur</span></h5><div class="bins"><i class="e">D-01</i><i class="m">D-02</i><i class="l">D-03</i><i class="l">D-04</i><i class="m">D-05</i><i class="f">D-06</i><i class="m">D-07</i><i class="f">D-08</i><i class="f">D-09</i><i class="f">D-10</i><i class="l">D-11</i><i class="f">D-12</i></div></div></div></div>
+      <div class="card"><h3>Barang masuk<span class="pill brand" style="padding:2px 8px">Hari ini</span></h3>
+        <table><tr><th>No. PO</th><th>Pemasok</th><th>Qty</th><th>Status</th></tr>
+        <tr><td class="mono">PO-24817</td><td>PT Indofood</td><td class="mono">1.200</td><td><span class="st s1">Diterima</span></td></tr>
+        <tr><td class="mono">PO-24818</td><td>CV Sumber Rejeki</td><td class="mono">340</td><td><span class="st s2">Putaway</span></td></tr>
+        <tr><td class="mono">PO-24821</td><td>PT Wings Surya</td><td class="mono">860</td><td><span class="st s3">QC</span></td></tr>
+        <tr><td class="mono">PO-24822</td><td>Unilever Indonesia</td><td class="mono">2.150</td><td><span class="st s2">Putaway</span></td></tr>
+        <tr><td class="mono">PO-24825</td><td>PT Mayora</td><td class="mono">520</td><td><span class="st s3">QC</span></td></tr>
+        <tr><td class="mono">PO-24826</td><td>CV Tani Makmur</td><td class="mono">180</td><td><span class="st" style="background:var(--muted);color:var(--mid)">Dijadwalkan</span></td></tr>
+        <tr><td class="mono">PO-24829</td><td>PT Sido Muncul</td><td class="mono">640</td><td><span class="st" style="background:var(--muted);color:var(--mid)">Dijadwalkan</span></td></tr>
+        </table>
+        <div style="font-size:12px;color:var(--mid);margin:14px 0 8px">Perlu restock</div>
+        <div class="row" style="justify-content:space-between;font-size:12px;padding:5px 0"><span>Aqua 600 ml × 24</span><span class="st s3">32 dus</span></div>
+</div>
+    </div>
+  </main>
+</div>
+<div class="float bin"><h3 style="font-size:12px;font-weight:500;color:var(--mid);display:flex;justify-content:space-between">Bin A-07 · Rak 2, Level 3<span class="st s3">Picking</span></h3>
+  <div style="font-weight:600;font-size:14px;margin:8px 0 6px">Indomie Goreng 40 × 85 g</div>
+  <div class="r">SKU<b class="mono">IDM-GR-085</b></div><div class="r">Stok di bin<b class="mono">186 dus</b></div><div class="r">Reorder point<b class="mono">120 dus</b></div>
+  <div style="height:6px;background:#eef0f6;border-radius:9px;margin-top:8px"><div style="width:72%;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--brand),var(--brand2))"></div></div></div>
+</body></html>
