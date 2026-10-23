@@ -2,16 +2,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?= e($page['title']) ?></title>
     <meta name="description" content="<?= e($page['description']) ?>" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="<?= e($page['canonical']) ?>" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="DIRAIT" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="<?= e($page['title']) ?>" />
-    <meta property="og:description" content="<?= e($page['description']) ?>" />
-    <meta property="og:url" content="<?= e($page['canonical']) ?>" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="<?= e($page['title']) ?>" />
-    <meta name="twitter:description" content="<?= e($page['description']) ?>" />
+<?php require APP_ROOT . '/app/partials/meta.php'; ?>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
