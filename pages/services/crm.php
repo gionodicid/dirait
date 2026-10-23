@@ -4,7 +4,7 @@ $page = [
     'layout' => 'brand',
     'title' => 'Sistem CRM Kustom — DIRAIT',
     'description' => 'CRM dengan pipeline Kanban, integrasi WhatsApp API, dashboard real-time, dan multi-role RBAC. Dibangun untuk tim sales dan perusahaan jasa.',
-    'canonical' => 'https://dirait.id/services/crm',
+    'canonical' => 'https://dirait.com/services/crm',
     'styles' => <<<'CSS'
 .text-balance { text-wrap: balance; }
       @keyframes nd1 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(12px,-8px); } 50% { transform: translate(-6px,-14px); } 75% { transform: translate(-10px,4px); } }

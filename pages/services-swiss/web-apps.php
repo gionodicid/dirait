@@ -4,7 +4,7 @@ $page = [
     'layout' => 'swiss',
     'title' => 'Web Applications | DIRAIT',
     'description' => 'We build production-ready web applications using modern stacks — React, Next.js, Laravel, and SvelteKit. From company profiles with CMS to complex SaaS platforms, every project is pixel-perfect from Figma and deployed with Docker and Nginx.',
-    'canonical' => 'https://dirait.id/services-swiss/web-apps',
+    'canonical' => 'https://dirait.com/services-swiss/web-apps',
 ];
 ?>
       <section class="border-b border-black bg-white">

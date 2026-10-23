@@ -4,7 +4,7 @@ $page = [
     'layout' => 'brand',
     'title' => 'Sistem POS Kustom — DIRAIT',
     'description' => 'Sistem POS yang menangani transaksi, inventaris, dan multi-store dari satu dashboard. Integrasi MidTrans, Duitku, Mollie. Dibangun untuk ritel, F&B, dan retail modern.',
-    'canonical' => 'https://dirait.id/services/pos',
+    'canonical' => 'https://dirait.com/services/pos',
     'styles' => <<<'CSS'
 .text-balance { text-wrap: balance; }
       @keyframes nd1 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(12px,-8px); } 50% { transform: translate(-6px,-14px); } 75% { transform: translate(-10px,4px); } }

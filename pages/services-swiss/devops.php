@@ -4,7 +4,7 @@ $page = [
     'layout' => 'swiss',
     'title' => 'DevOps & Infrastructure | DIRAIT',
     'description' => 'Docker, Nginx, Cloudflare — we automate deploys, set up cron jobs, monitor uptime, harden security with Fail2ban, and set up Telegram-based alerting. From migration to maintenance, we keep your systems online and performant.',
-    'canonical' => 'https://dirait.id/services-swiss/devops',
+    'canonical' => 'https://dirait.com/services-swiss/devops',
 ];
 ?>
       <section class="border-b border-black bg-white">

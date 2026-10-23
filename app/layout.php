@@ -12,6 +12,7 @@ $variant = $variants[$layout];
 <!doctype html>
 <html lang="<?= e($variant['lang']) ?>">
   <head>
+<?php readfile(APP_ROOT . '/app/partials/analytics.html'); ?>
 <?php require APP_ROOT . '/app/partials/' . $layout . '/head.php'; ?>
   </head>
 

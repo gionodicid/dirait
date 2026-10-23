@@ -4,7 +4,7 @@ $page = [
     'layout' => 'swiss',
     'title' => 'AI & API Integration | DIRAIT',
     'description' => 'We integrate third-party AI services, payment gateways (MidTrans, Duitku, Mollie), WhatsApp APIs, and GraphQL/RESTful APIs into your platform. From AI-powered room design to subscription management, we connect the dots.',
-    'canonical' => 'https://dirait.id/services-swiss/ai-api',
+    'canonical' => 'https://dirait.com/services-swiss/ai-api',
 ];
 ?>
       <section class="border-b border-black bg-white">

@@ -4,7 +4,7 @@ $page = [
     'layout' => 'brand',
     'title' => 'WMS Kustom — DIRAIT',
     'description' => 'Sistem Manajemen Gudang (WMS) yang melacak stok secara real-time di berbagai lokasi, zona, dan channel. Integrasi API, pelaporan, geolokasi, dan mobile support.',
-    'canonical' => 'https://dirait.id/services/wms',
+    'canonical' => 'https://dirait.com/services/wms',
     'styles' => <<<'CSS'
 @keyframes nd1 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(12px,-8px); } 50% { transform: translate(-6px,-14px); } 75% { transform: translate(-10px,4px); } }
       @keyframes nd2 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(-10px,6px); } 50% { transform: translate(8px,12px); } 75% { transform: translate(14px,-6px); } }

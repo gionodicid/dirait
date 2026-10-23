@@ -4,7 +4,7 @@ $page = [
     'layout' => 'swiss',
     'title' => 'IoT Platforms | DIRAIT',
     'description' => 'We build real-time IoT platforms using MQTT (Mosquitto) and WebSocket for live data streaming. Custom widgets, tenant-based data isolation, and close collaboration with hardware engineers ensure your IoT solution is reliable and scalable.',
-    'canonical' => 'https://dirait.id/services-swiss/iot',
+    'canonical' => 'https://dirait.com/services-swiss/iot',
 ];
 ?>
       <section class="border-b border-black bg-white">

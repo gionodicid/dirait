@@ -4,7 +4,7 @@ $page = [
     'layout' => 'swiss',
     'title' => 'Mobile Apps | DIRAIT',
     'description' => 'React Native for iOS and Android — we build multiplatform mobile applications with consistent gestures, PWA capabilities, and hardware integration including BLE and GPS. From e-commerce to field reporting, our apps are built for real-world use.',
-    'canonical' => 'https://dirait.id/services-swiss/mobile',
+    'canonical' => 'https://dirait.com/services-swiss/mobile',
 ];
 ?>
       <section class="border-b border-black bg-white">

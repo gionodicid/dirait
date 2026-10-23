@@ -4,7 +4,7 @@ $page = [
     'layout' => 'brand',
     'title' => 'Platform IoT Kustom — DIRAIT',
     'description' => 'Dashboard IoT yang mengubah data sensor menjadi keputusan operasional. Integrasi MQTT, WebSocket, multi-tenant, dan widget kustom untuk monitoring real-time.',
-    'canonical' => 'https://dirait.id/services/iot',
+    'canonical' => 'https://dirait.com/services/iot',
 ];
 ?>
       <!-- ========== HERO ========== -->

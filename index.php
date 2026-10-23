@@ -34,8 +34,8 @@ if (str_ends_with($path, '.html')) {
 
 if ($path === '') {
     echo str_replace(
-        ['{{BASE}}', '{{CSS_VERSION}}'],
-        [base_path(), (string) @filemtime(__DIR__ . '/assets/css/homepage.css')],
+        ['{{BASE}}', '{{CSS_VERSION}}', '{{ANALYTICS}}'],
+        [base_path(), (string) @filemtime(__DIR__ . '/assets/css/homepage.css'), (string) file_get_contents(__DIR__ . '/app/partials/analytics.html')],
         (string) file_get_contents(__DIR__ . '/pages/home.html')
     );
     exit;

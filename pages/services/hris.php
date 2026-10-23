@@ -4,7 +4,7 @@ $page = [
     'layout' => 'brand',
     'title' => 'HRIS Kustom — DIRAIT',
     'description' => 'Platform HRIS yang dibangun sesuai kebijakan perusahaan Anda. Payroll, absensi, cuti, kinerja — dalam satu sistem terpadu dengan PWA dan push notifications.',
-    'canonical' => 'https://dirait.id/services/hris',
+    'canonical' => 'https://dirait.com/services/hris',
 ];
 ?>
       <!-- ========== HERO ========== -->

@@ -4,7 +4,7 @@ $page = [
     'layout' => 'brand',
     'title' => 'Company Profile Website — DIRAIT',
     'description' => 'Company Profile Website berbasis Next.js dengan CMS internal. Desain pixel-perfect dari Figma, SEO optimal, multi-perangkat, dan performa tinggi.',
-    'canonical' => 'https://dirait.id/services/company-profile',
+    'canonical' => 'https://dirait.com/services/company-profile',
     'styles' => <<<'CSS'
 @keyframes nd1 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(12px,-8px); } 50% { transform: translate(-6px,-14px); } 75% { transform: translate(-10px,4px); } }
       @keyframes nd2 { 0%,100% { transform: translate(0,0); } 25% { transform: translate(-10px,6px); } 50% { transform: translate(8px,12px); } 75% { transform: translate(14px,-6px); } }

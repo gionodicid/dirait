@@ -4,7 +4,7 @@ $page = [
     'layout' => 'swiss',
     'title' => 'CRM & ERP Solutions | DIRAIT',
     'description' => 'Multi-tenant systems with RBAC, Kanban workflows, SSO, 2FA, and real-time notifications. We build complex sales and operational pipelines for businesses that need robust, scalable back-office solutions.',
-    'canonical' => 'https://dirait.id/services-swiss/crm-erp',
+    'canonical' => 'https://dirait.com/services-swiss/crm-erp',
 ];
 ?>
       <section class="border-b border-black bg-white">
