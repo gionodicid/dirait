@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../../pages/home.html";
 @source "../../app/service.php";
+@source "../../app/partials/header.php";
 
 /* Semantic design tokens. Utilities read these names (bg-canvas, text-muted, border-line, bg-brand ...). */
 @theme {

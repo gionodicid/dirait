@@ -33,11 +33,20 @@ if (str_ends_with($path, '.html')) {
 }
 
 if ($path === '') {
+    ob_start();
+    require __DIR__ . '/app/partials/header.php';
+    $header = ob_get_clean();
+
     echo str_replace(
-        ['{{BASE}}', '{{CSS_VERSION}}', '{{ANALYTICS}}'],
-        [base_path(), (string) @filemtime(__DIR__ . '/assets/css/homepage.css'), (string) file_get_contents(__DIR__ . '/app/partials/analytics.html')],
+        ['{{BASE}}', '{{CSS_VERSION}}', '{{ANALYTICS}}', '{{HEADER}}'],
+        [base_path(), (string) @filemtime(__DIR__ . '/assets/css/homepage.css'), (string) file_get_contents(__DIR__ . '/app/partials/analytics.html'), $header],
         (string) file_get_contents(__DIR__ . '/pages/home.html')
     );
+    exit;
+}
+
+if ($path === 'services' || $path === 'services-swiss') {
+    header('Location: ' . url('/#platform'), true, 301);
     exit;
 }
 
@@ -47,8 +56,10 @@ if ($pageFile === null && preg_match('#^services/([a-z0-9-]+)$#', $path, $matche
     $pageFile = __DIR__ . '/pages/services/' . $matches[1] . '.php';
 }
 
-if ($pageFile === null && preg_match('#^services-swiss/([a-z0-9-]+)$#', $path, $matches)) {
-    $pageFile = __DIR__ . '/pages/services-swiss/' . $matches[1] . '.php';
+// The English /services-swiss/ pages were merged into /services/.
+if (preg_match('#^services-swiss/([a-z0-9-]+)$#', $path, $matches)) {
+    header('Location: ' . url('/services/' . ($matches[1] === 'crm-erp' ? 'crm' : $matches[1])), true, 301);
+    exit;
 }
 
 if ($pageFile === null || !is_file($pageFile)) {

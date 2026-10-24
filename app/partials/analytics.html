@@ -5,4 +5,9 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-HEM4WFJRT6');
+      // A click on a WhatsApp or email link counts as a lead (marked as a key event in GA4).
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href^="https://wa.me/"], a[href^="mailto:"]');
+        if (a) gtag('event', 'generate_lead', { method: a.href.indexOf('mailto:') === 0 ? 'email' : 'whatsapp', page_path: location.pathname });
+      });
     </script>

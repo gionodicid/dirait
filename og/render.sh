@@ -20,18 +20,16 @@ while IFS='|' read -r name eyebrow title sub tags; do
   echo "images/og/$name.png"
 done <<'LIST'
 home|CUSTOM SOFTWARE · JAKARTA|The software team your operations *run on.*|Web, mobile, IoT and AI systems — designed, built, deployed and monitored by one team.|Web,Mobile,IoT,AI,DevOps
-services-company-profile|LAYANAN · COMPANY PROFILE|Website company profile yang *bekerja.*|Cepat, SEO-ready dan mudah dikelola lewat CMS.|CMS,SEO,SSL,CDN
-services-crm|LAYANAN · CRM|Sistem CRM *kustom* untuk tim sales.|Pipeline Kanban, WhatsApp API, dashboard real-time dan RBAC.|Kanban,WhatsApp,RBAC
-services-hris|LAYANAN · HRIS|HRIS *kustom* untuk tim Anda.|Absensi, cuti, payroll dan approval dalam satu sistem.|Absensi,Payroll,Approval
-services-pos|LAYANAN · POS|Sistem POS *kustom* untuk bisnis Anda.|Kasir, stok dan laporan penjualan real-time di semua outlet.|Kasir,Stok,Laporan
-services-wms|LAYANAN · WMS|Gudang yang *terkendali.*|Warehouse management system dengan stok real-time dan scan barcode.|Stok,Barcode,Multi-gudang
-services-iot|LAYANAN · PLATFORM IOT|Platform IoT *real-time.*|Dashboard perangkat via MQTT dan WebSocket, multi-tenant.|MQTT,WebSocket,Dashboard
-services-web-apps|SERVICES · 01|Web applications, *pixel-perfect.*|React, Next.js and Laravel — from Figma to production with Docker and Nginx.|React,Next.js,Laravel
-services-mobile|SERVICES · 02|Mobile apps for *iOS & Android.*|React Native codebases with PWA and BLE hardware integration.|React Native,PWA,BLE
-services-iot-en|SERVICES · 03|IoT platforms, *live.*|Real-time dashboards over MQTT and WebSocket, tenant-based data.|MQTT,WebSocket,Multi-tenant
-services-ai-api|SERVICES · 04|AI & API, *wired in.*|AI services, payment gateways, WhatsApp and GraphQL integrations.|OpenAI,MidTrans,WhatsApp
-services-crm-erp|SERVICES · 05|CRM & ERP that *fit your process.*|Multi-tenant, RBAC, Kanban workflows, SSO and 2FA.|RBAC,SSO,2FA
-services-devops|SERVICES · 06|DevOps that *stays up.*|Docker, Nginx, Cloudflare, uptime monitoring and Fail2ban.|Docker,Nginx,Cloudflare
+services-company-profile|SERVICES · COMPANY PROFILE|Company websites that *build trust.*|Fast, SEO-ready Next.js sites with a CMS your team can run.|Next.js,CMS,SEO,CDN
+services-crm|SERVICES · CRM & ERP|CRM & ERP that *fit your process.*|Kanban pipelines, WhatsApp API, real-time dashboards and RBAC.|Kanban,WhatsApp,RBAC,SSO
+services-hris|SERVICES · HRIS|HR systems built around *your policies.*|Attendance, leave, payroll and approvals in one system.|Attendance,Payroll,Approvals
+services-pos|SERVICES · POS|Cashier, stock and branches in *one system.*|Point of sale with real-time inventory and multi-store reporting.|Cashier,Inventory,QRIS
+services-wms|SERVICES · WMS|Warehouse stock, *in real time.*|Bin locations, inbound, picking and stock opname across warehouses.|Stock,Barcode,Multi-warehouse
+services-web-apps|SERVICES · WEB APPS|Web applications, *pixel-perfect.*|React, Next.js and Laravel — from Figma to production with Docker and Nginx.|React,Next.js,Laravel
+services-mobile|SERVICES · MOBILE|Mobile apps for *iOS & Android.*|React Native codebases with PWA and BLE hardware integration.|React Native,PWA,BLE
+services-iot|SERVICES · IOT|Every sensor, *live on screen.*|Real-time dashboards over MQTT and WebSocket, tenant-based data.|MQTT,WebSocket,Multi-tenant
+services-ai-api|SERVICES · AI & API|AI & APIs, *wired in.*|AI services, payment gateways, WhatsApp and GraphQL integrations.|OpenAI,MidTrans,WhatsApp
+services-devops|SERVICES · DEVOPS|Infrastructure that *stays up.*|Docker, Nginx, Cloudflare, uptime monitoring and Fail2ban.|Docker,Nginx,Cloudflare
 LIST
 
 shot images/og/icon-512.png 512 512 "file://$PWD/og/icon.html"

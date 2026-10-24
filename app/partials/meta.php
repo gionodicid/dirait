@@ -1,8 +1,7 @@
 <?php
 // Social share and icon tags. The share image is images/og/<path with / as ->.png, rendered by og/render.sh.
 $metaPath = trim((string) parse_url($page['canonical'], PHP_URL_PATH), '/');
-$metaImage = 'https://dirait.com/images/og/' . ($metaPath === 'services-swiss/iot' ? 'services-iot-en' : str_replace(['services-swiss/', '/'], ['services-', '-'], $metaPath)) . '.png';
-$metaLocale = $page['lang'] === 'id' ? 'id_ID' : 'en_US';
+$metaImage = 'https://dirait.com/images/og/' . str_replace('/', '-', $metaPath) . '.png';
 ?>
     <meta name="theme-color" content="#071530" />
     <link rel="icon" href="<?= e(url('/favicon.svg')) ?>" type="image/svg+xml" />
@@ -10,7 +9,7 @@ $metaLocale = $page['lang'] === 'id' ? 'id_ID' : 'en_US';
     <link rel="manifest" href="<?= e(url('/site.webmanifest')) ?>" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="DIRAIT" />
-    <meta property="og:locale" content="<?= $metaLocale ?>" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="<?= e($page['title']) ?>" />
     <meta property="og:description" content="<?= e($page['description']) ?>" />
     <meta property="og:url" content="<?= e($page['canonical']) ?>" />

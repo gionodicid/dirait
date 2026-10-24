@@ -1,22 +1,22 @@
 <?php
 
 return [
+    // Every service page, grouped as in the navbar dropdown. Slug = pages/services/<slug>.php.
     'services' => [
-        ['slug' => 'web-apps', 'number' => '01', 'title' => 'Web Applications', 'description' => 'React, Next.js, Laravel — pixel-perfect UI from Figma, monorepo architecture, and production-ready deployments with Docker and Nginx.'],
-        ['slug' => 'mobile', 'number' => '02', 'title' => 'Mobile Apps', 'description' => 'React Native for iOS and Android — multiplatform codebases with consistent gestures, PWA capabilities, and BLE hardware integration.'],
-        ['slug' => 'iot', 'number' => '03', 'title' => 'IoT Platforms', 'description' => 'Real-time dashboards with MQTT (Mosquitto) and WebSocket. Custom widgets, tenant-based data, and hardware engineer collaboration.'],
-        ['slug' => 'ai-api', 'number' => '04', 'title' => 'AI & API Integration', 'description' => 'Third-party AI services, payment gateways (MidTrans, Duitku, Mollie), WhatsApp APIs, and GraphQL/RESTful integration across platforms.'],
-        ['slug' => 'crm-erp', 'number' => '05', 'title' => 'CRM & ERP Solutions', 'description' => 'Multi-tenant systems with RBAC, Kanban workflows, SSO, 2FA, and real-time notifications — built for complex sales and operational pipelines.'],
-        ['slug' => 'devops', 'number' => '06', 'title' => 'DevOps & Infrastructure', 'description' => 'Docker, Nginx, Cloudflare — automated deploys, cron jobs, uptime monitoring, Fail2ban security, and Telegram-based alerting.'],
-    ],
-
-    'brand_services' => [
-        ['slug' => 'company-profile', 'label' => 'Company Profile'],
-        ['slug' => 'crm', 'label' => 'CRM'],
-        ['slug' => 'hris', 'label' => 'HRIS'],
-        ['slug' => 'pos', 'label' => 'POS'],
-        ['slug' => 'wms', 'label' => 'WMS'],
-        ['slug' => 'iot', 'label' => 'Platform IoT'],
+        'Business systems' => [
+            'company-profile' => ['label' => 'Company Profile', 'blurb' => 'Fast, SEO-ready sites with a CMS', 'icon' => 'globe'],
+            'crm' => ['label' => 'CRM & ERP', 'blurb' => 'Pipelines, WhatsApp and RBAC', 'icon' => 'kanban'],
+            'hris' => ['label' => 'HRIS', 'blurb' => 'Attendance, leave and payroll', 'icon' => 'users'],
+            'pos' => ['label' => 'POS', 'blurb' => 'Cashier, stock and branches', 'icon' => 'receipt'],
+            'wms' => ['label' => 'WMS', 'blurb' => 'Real-time warehouse stock', 'icon' => 'warehouse'],
+        ],
+        'Engineering' => [
+            'web-apps' => ['label' => 'Web Applications', 'blurb' => 'React, Next.js and Laravel', 'icon' => 'app-window'],
+            'mobile' => ['label' => 'Mobile Apps', 'blurb' => 'React Native for iOS and Android', 'icon' => 'smartphone'],
+            'iot' => ['label' => 'IoT Platforms', 'blurb' => 'Live devices over MQTT', 'icon' => 'radio'],
+            'ai-api' => ['label' => 'AI & API Integration', 'blurb' => 'AI, payments and WhatsApp APIs', 'icon' => 'sparkles'],
+            'devops' => ['label' => 'DevOps & Infrastructure', 'blurb' => 'Deploys, uptime and security', 'icon' => 'server'],
+        ],
     ],
 
     'testimonials' => [

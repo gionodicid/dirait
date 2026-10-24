@@ -3,14 +3,15 @@
 $page = [
     'layout' => 'service',
     'lang' => 'en',
-    'title' => 'AI & API Integration | DIRAIT',
-    'description' => 'We integrate third-party AI services, payment gateways (MidTrans, Duitku, Mollie), WhatsApp APIs, and GraphQL/RESTful APIs into your platform. From AI-powered room design to subscription management, we connect the dots.',
-    'canonical' => 'https://dirait.com/services-swiss/ai-api',
+    'title' => 'AI & API Integration Services | DIRAIT',
+    'description' => 'AI services, payment gateways (MidTrans, Duitku, Mollie), WhatsApp API and GraphQL/REST integrations wired into your platform, with recurring billing.',
+    'canonical' => 'https://dirait.com/services/ai-api',
     'hero' => [
-        'eyebrow' => 'SERVICES · 04 · AI & API',
+        'eyebrow' => 'SERVICES · AI & API',
         'title' => 'AI and APIs, *connected.*',
         'lead' => 'We integrate AI services, payment gateways (MidTrans, Duitku, Mollie), WhatsApp APIs and GraphQL/REST APIs into your platform — from AI room design to subscription billing.',
-        'image' => 'en-ai-api',
+        'note' => '30+ projects delivered across Indonesia, Singapore, the Netherlands and the UK',
+        'image' => 'ai-api',
         'image_alt' => 'Integrations hub with an AI chat panel, payment gateway status and webhook logs',
     ],
     'features' => [
@@ -49,8 +50,9 @@ $page = [
     'faq' => [
         ['q' => 'Which payment gateways do you support?', 'a' => 'We have integrated MidTrans, Duitku and Mollie, covering Indonesian, Dutch and European markets, with recurring billing and webhooks.'],
         ['q' => 'Can you integrate with our existing systems?', 'a' => 'Yes — payment gateways, WhatsApp APIs, AI services, accounting software and ERPs. Small Business includes one external integration; Business includes unlimited.'],
+        ['q' => 'Can you automate WhatsApp conversations?', 'a' => 'Yes. We have built WhatsApp API integrations into a CRM with automated chatbot replies, message templates and broadcasting.'],
         ['q' => 'How long does an AI integration take?', 'a' => 'AI-integrated projects vary with third-party complexity. We provide a detailed timeline after discovery.'],
-        ['q' => 'Do you support the integration after launch?', 'a' => 'Every project includes post-launch support — 3, 6 or 12 months depending on the plan — with extended maintenance available.'],
+        ['q' => 'Do you provide support after launch?', 'a' => 'Every project includes post-launch support — 3 months for Basic, 6 months for Small Business and 12 months for Business plans. Extended maintenance covers updates, bug fixes, security patches and feature additions.'],
     ],
     'cta' => ['title' => 'Ready to build something great?', 'text' => 'Tell us about your project. We\'ll share how we\'d approach it, what it would take, and what you can expect — no pressure, no obligation.'],
 ];

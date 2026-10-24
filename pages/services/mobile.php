@@ -3,14 +3,15 @@
 $page = [
     'layout' => 'service',
     'lang' => 'en',
-    'title' => 'Mobile Apps | DIRAIT',
-    'description' => 'React Native for iOS and Android — we build multiplatform mobile applications with consistent gestures, PWA capabilities, and hardware integration including BLE and GPS. From e-commerce to field reporting, our apps are built for real-world use.',
-    'canonical' => 'https://dirait.com/services-swiss/mobile',
+    'title' => 'iOS & Android App Development | DIRAIT',
+    'description' => 'React Native apps for iOS and Android, plus PWAs — with mobile payments, offline sync, BLE hardware and GPS tracking, built for real-world use.',
+    'canonical' => 'https://dirait.com/services/mobile',
     'hero' => [
-        'eyebrow' => 'SERVICES · 02 · MOBILE',
+        'eyebrow' => 'SERVICES · MOBILE',
         'title' => 'Mobile apps that *work in the field.*',
         'lead' => 'React Native apps for iOS and Android, plus PWAs — with consistent gestures and hardware integration like BLE and GPS, built for real-world use.',
-        'image' => 'en-mobile',
+        'note' => '30+ projects delivered across Indonesia, Singapore, the Netherlands and the UK',
+        'image' => 'mobile',
         'image_alt' => 'Two phone screens: a pharmacy shopping app and a field spraying report with GPS and BLE status',
     ],
     'features' => [
@@ -32,6 +33,7 @@ $page = [
         'items' => [
             ['tag' => 'E-commerce', 'title' => 'Hospital e-commerce platform', 'text' => 'A mobile store for a hospital pharmacy and medical supplies, with MidTrans payments, real-time order tracking, push notifications and a Laravel backend.', 'stack' => ['React Native', 'Laravel', 'REST API', 'MidTrans']],
             ['tag' => 'Field reporting', 'title' => 'Spraying module reporting', 'text' => 'A field app for agricultural spraying that connects to BLE sprayer hardware, tracks GPS location, works offline and syncs via WebSocket.', 'stack' => ['React Native', 'Laravel', 'WebSocket', 'BLE']],
+            ['tag' => 'Multiplatform', 'title' => 'Multiplatform comic application', 'text' => 'A monorepo-based comic reader with a rich reading experience, digital library management, offline reading and cross-device sync through a Laravel API.', 'stack' => ['React Native', 'TypeScript', 'Laravel', 'REST API']],
             ['tag' => 'PWA', 'title' => 'ATM ticketing support system', 'text' => 'A PWA for field technicians to view ticket queues, update job status and receive push notifications, with offline support.', 'stack' => ['Next.js', 'TypeScript', 'PostgreSQL', 'PWA']],
         ],
     ],
@@ -49,8 +51,9 @@ $page = [
     'faq' => [
         ['q' => 'Do you build for both iOS and Android?', 'a' => 'Yes. We use React Native to ship iOS and Android apps from one codebase, and can add PWA capabilities for near-native experiences in the browser.'],
         ['q' => 'Can the app connect to hardware?', 'a' => 'Yes. We have integrated BLE-enabled hardware and GPS tracking, with real-time sync over WebSocket and offline data collection.'],
+        ['q' => 'Should we build a native app or a PWA?', 'a' => 'It depends on your users. A PWA adds push notifications, offline support and hardware access on Android (BLE, GPS) from the browser; React Native gives you store apps on iOS and Android.'],
         ['q' => 'How long does a mobile app take?', 'a' => 'Custom mobile applications typically take 8–16 weeks depending on scope. We provide a detailed timeline after discovery.'],
-        ['q' => 'Do you maintain the app after launch?', 'a' => 'Every project includes post-launch support — 3, 6 or 12 months depending on the plan — and extended maintenance is available.'],
+        ['q' => 'Do you provide support after launch?', 'a' => 'Every project includes post-launch support — 3 months for Basic, 6 months for Small Business and 12 months for Business plans. Extended maintenance covers updates, bug fixes, security patches and feature additions.'],
     ],
     'cta' => ['title' => 'Ready to build something great?', 'text' => 'Tell us about your project. We\'ll share how we\'d approach it, what it would take, and what you can expect — no pressure, no obligation.'],
 ];

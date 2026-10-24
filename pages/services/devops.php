@@ -3,14 +3,15 @@
 $page = [
     'layout' => 'service',
     'lang' => 'en',
-    'title' => 'DevOps & Infrastructure | DIRAIT',
-    'description' => 'Docker, Nginx, Cloudflare — we automate deploys, set up cron jobs, monitor uptime, harden security with Fail2ban, and set up Telegram-based alerting. From migration to maintenance, we keep your systems online and performant.',
-    'canonical' => 'https://dirait.com/services-swiss/devops',
+    'title' => 'DevOps & Server Infrastructure Services | DIRAIT',
+    'description' => 'Docker, Nginx and Cloudflare setups, CI/CD, Fail2ban hardening, uptime monitoring with Telegram alerts, and migrations that keep your apps online.',
+    'canonical' => 'https://dirait.com/services/devops',
     'hero' => [
-        'eyebrow' => 'SERVICES · 06 · DEVOPS',
+        'eyebrow' => 'SERVICES · DEVOPS',
         'title' => 'Infrastructure that *stays up.*',
         'lead' => 'Docker, Nginx and Cloudflare — automated deploys, cron jobs, uptime monitoring, Fail2ban hardening and Telegram alerts. From migration to maintenance, we keep you online.',
-        'image' => 'en-devops',
+        'note' => '30+ projects delivered across Indonesia, Singapore, the Netherlands and the UK',
+        'image' => 'devops',
         'image_alt' => 'DevOps console with container health, a deploy log terminal, an uptime graph and Fail2ban stats',
     ],
     'features' => [
@@ -50,7 +51,8 @@ $page = [
         ['q' => 'Can you migrate our existing application?', 'a' => 'Yes. We handle legacy-to-modern migrations, database migrations, PHP-to-Node transitions and server upgrades.'],
         ['q' => 'How will we know if something goes down?', 'a' => 'We set up uptime monitoring with instant Telegram alerts, plus status pages and performance trend tracking.'],
         ['q' => 'How do you secure servers?', 'a' => 'Server hardening, Fail2ban, SSL behind Nginx, Cloudflare DDoS protection and regular security patches.'],
-        ['q' => 'Do you offer ongoing maintenance?', 'a' => 'Yes. Every project includes post-launch support — 3, 6 or 12 months depending on the plan — and extended maintenance covers updates, fixes and security patches.'],
+        ['q' => 'Is hosting included?', 'a' => 'Basic and Small Business plans include a free server and domain for a year, with SSL and a worldwide CDN; Business includes three years.'],
+        ['q' => 'Do you provide support after launch?', 'a' => 'Every project includes post-launch support — 3 months for Basic, 6 months for Small Business and 12 months for Business plans. Extended maintenance covers updates, bug fixes, security patches and feature additions.'],
     ],
     'cta' => ['title' => 'Ready to keep your systems online?', 'text' => 'Tell us about your project. We\'ll share how we\'d approach it, what it would take, and what you can expect — no pressure, no obligation.'],
 ];

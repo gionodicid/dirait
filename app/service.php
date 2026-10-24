@@ -1,49 +1,32 @@
 <?php
-// Service page in the homepage design. $page comes from pages/services*/<slug>.php as plain data.
+// Service page in the homepage design. $page comes from pages/services/<slug>.php as plain data.
 
-$lang = $page['lang'];
+$lang = 'en';
 $t = [
-    'id' => [
-        'nav' => ['Platform' => '/#platform', 'Klien' => '/#customers', 'Harga' => '/#pricing', 'FAQ' => '/#faq'],
-        'start' => 'Mulai proyek',
-        'call' => 'Diskusikan proyek Anda',
-        'see' => 'Lihat fitur',
-        'stack' => 'Dibangun dengan',
-        'faq_title' => 'Sebelum panggilan pertama.',
-        'faq_lead' => 'Jawaban singkat untuk pertanyaan yang paling sering kami terima.',
-        'help_title' => 'Masih ada pertanyaan?',
-        'help_text' => 'Bicara langsung dengan engineer yang akan membangunnya — biasanya dibalas dalam sehari.',
-        'chat' => 'Chat di WhatsApp →',
-        'more' => 'Layanan lainnya',
-        'more_title' => 'Sistem lain yang kami bangun.',
-        'email' => 'Kirim email',
-        'reply' => 'Konsultasi gratis — kami balas dalam satu hari kerja.',
-    ],
-    'en' => [
-        'nav' => ['Platform' => '/#platform', 'Customers' => '/#customers', 'Pricing' => '/#pricing', 'FAQ' => '/#faq'],
-        'start' => 'Start a project',
-        'call' => 'Book a free call',
-        'see' => 'See what we build',
-        'stack' => 'Built with',
-        'faq_title' => 'Before the first call.',
-        'faq_lead' => 'Straight answers to what clients ask us most.',
-        'help_title' => 'Still have questions?',
-        'help_text' => 'Talk to the engineers who will build it — usually within a day.',
-        'chat' => 'Chat on WhatsApp →',
-        'more' => 'More services',
-        'more_title' => 'Other systems we build.',
-        'email' => 'Send an email',
-        'reply' => 'Free consultation — we reply within one business day.',
-    ],
-][$lang];
+    'call' => 'Book a free call',
+    'see' => 'See what we build',
+    'stack' => 'Built with',
+    'faq_title' => 'Before the first call.',
+    'faq_lead' => 'Straight answers to what clients ask us most.',
+    'help_title' => 'Still have questions?',
+    'help_text' => 'Talk to the engineers who will build it — usually within a day.',
+    'chat' => 'Chat on WhatsApp →',
+    'more' => 'More services',
+    'more_title' => 'Other systems we build.',
+    'email' => 'Send an email',
+    'reply' => 'Free consultation — we reply within one business day.',
+];
 
 $whatsapp = 'https://wa.me/6281384934615';
 $email = 'mailto:hello@dirait.id';
 
-// Sibling services in the same language, for the "more services" grid and the footer.
-$siblings = $lang === 'id'
-    ? array_map(fn ($s) => ['href' => '/services/' . $s['slug'], 'label' => $s['label']], site()['brand_services'])
-    : array_map(fn ($s) => ['href' => '/services-swiss/' . $s['slug'], 'label' => $s['title']], site()['services']);
+// Every service, for the "more services" grid and the footer.
+$siblings = [];
+foreach (site()['services'] as $items) {
+    foreach ($items as $slug => $s) {
+        $siblings[] = ['href' => '/services/' . $slug, 'label' => $s['label']];
+    }
+}
 $current = '/' . trim((string) parse_url($page['canonical'], PHP_URL_PATH), '/');
 
 function accent(string $text): string
@@ -70,15 +53,7 @@ $img = fn (string $name) => url('/images/services/' . $name . '.webp') . '?v=' .
     <link rel="stylesheet" href="<?= e(url('/assets/css/homepage.css')) ?>?v=<?= @filemtime(APP_ROOT . '/assets/css/homepage.css') ?>" />
 </head>
 <body>
-<header class="sticky top-3 z-10 mx-auto mt-3 flex max-w-[1100px] items-center justify-between rounded-[14px] border border-line bg-surface/80 py-2 pr-2 pl-[18px] backdrop-blur-md max-desk:mx-3">
-  <a class="flex items-center gap-2 text-[17px] font-bold" href="<?= e(url('/')) ?>"><img class="size-[22px]" src="<?= e(url('/favicon.svg')) ?>" width="22" height="22" alt="">dirait</a>
-  <nav class="hidden gap-1 text-sm desk:flex">
-<?php foreach ($t['nav'] as $label => $href): ?>
-    <a class="rounded-lg px-3 py-1.5 text-muted hover:bg-canvas hover:text-ink" href="<?= e(url($href)) ?>"><?= e($label) ?></a>
-<?php endforeach; ?>
-  </nav>
-  <a class="btn-primary" href="#contact"><?= e($t['start']) ?></a>
-</header>
+<?php $navCurrent = $current; require APP_ROOT . '/app/partials/header.php'; ?>
 
 <main class="mx-auto max-w-[1180px] px-gutter">
   <div class="relative pt-[clamp(60px,8vw,100px)] text-center before:absolute before:inset-x-0 before:top-0 before:-z-10 before:h-[600px] before:bg-[linear-gradient(var(--color-line)_1px,transparent_1px),linear-gradient(90deg,var(--color-line)_1px,transparent_1px)] before:bg-size-[48px_48px] before:mask-[radial-gradient(60%_60%_at_50%_30%,#000,transparent)]">
@@ -120,8 +95,8 @@ $img = fn (string $name) => url('/images/services/' . $name . '.webp') . '?v=' .
   <section id="work" class="pt-section">
     <div class="mb-10 max-w-[640px]"><span class="eyebrow"><?= e($page['work']['eyebrow']) ?></span><h2 class="heading-section"><?= e($page['work']['title']) ?></h2></div>
     <div class="grid gap-3.5 <?= count($page['work']['items']) > 1 ? 'desk:grid-cols-2' : '' ?>">
-<?php foreach ($page['work']['items'] as $i => $item): $dark = $i === 0; ?>
-      <article class="relative flex flex-col overflow-hidden rounded-3xl p-[clamp(24px,3vw,36px)] <?= $dark ? 'bg-ink text-white *:relative *:z-1 after:absolute after:-top-[80px] after:-right-[80px] after:size-[260px] after:bg-[radial-gradient(closest-side,rgb(61_107_255/.55),transparent)]' : 'border border-line bg-surface' ?>">
+<?php foreach ($page['work']['items'] as $i => $item): $dark = $i === 0; $wide = $dark && count($page['work']['items']) % 2 === 1; ?>
+      <article class="relative flex flex-col overflow-hidden rounded-3xl p-[clamp(24px,3vw,36px)] <?= $wide ? 'desk:col-span-2' : '' ?> <?= $dark ? 'bg-ink text-white *:relative *:z-1 after:absolute after:-top-[80px] after:-right-[80px] after:size-[260px] after:bg-[radial-gradient(closest-side,rgb(61_107_255/.55),transparent)]' : 'border border-line bg-surface' ?>">
         <span class="font-mono text-xs <?= $dark ? 'text-code-accent' : 'text-brand' ?>"><?= e($item['tag']) ?></span>
         <h3 class="mt-3 text-[clamp(20px,2vw,26px)] leading-[1.2] font-semibold tracking-[-.02em]"><?= e($item['title']) ?></h3>
         <p class="mt-3 <?= $dark ? 'text-[#aab3cc]' : 'text-muted' ?>"><?= e($item['text']) ?></p>
