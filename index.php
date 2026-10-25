@@ -45,6 +45,17 @@ if ($path === '') {
     exit;
 }
 
+// Ad landing page: renders its own full document.
+if ($path === 'consultation') {
+    require __DIR__ . '/pages/consultation.php';
+    exit;
+}
+
+if ($path === 'konsultasi') {
+    header('Location: ' . url('/consultation'), true, 301);
+    exit;
+}
+
 if ($path === 'services' || $path === 'services-swiss') {
     header('Location: ' . url('/#platform'), true, 301);
     exit;
