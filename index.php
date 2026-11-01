@@ -51,6 +51,17 @@ if ($path === 'consultation') {
     exit;
 }
 
+if ($path === 'showcases') {
+    require __DIR__ . '/pages/showcases.php';
+    exit;
+}
+
+if (preg_match('#^showcases/([a-z0-9-]+)$#', $path, $matches) && isset(site()['showcases'][$matches[1]])) {
+    require __DIR__ . '/pages/showcases/' . $matches[1] . '.php';
+    require __DIR__ . '/app/showcase.php';
+    exit;
+}
+
 if ($path === 'konsultasi') {
     header('Location: ' . url('/consultation'), true, 301);
     exit;

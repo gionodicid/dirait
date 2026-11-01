@@ -1,7 +1,7 @@
 <?php
 // Site header shared by the homepage and the service pages: Services dropdown on desktop, full-screen menu on mobile.
 $navCurrent = $navCurrent ?? '';
-$navLinks = ['Platform' => '/#platform', 'Customers' => '/#customers', 'Pricing' => '/#pricing', 'FAQ' => '/#faq'];
+$navLinks = ['Showcases' => '/showcases', 'Platform' => '/#platform', 'Customers' => '/#customers', 'Pricing' => '/#pricing', 'FAQ' => '/#faq'];
 ?>
 <header class="sticky top-3 z-20 mx-3 mt-3 desk:mx-auto desk:max-w-[1100px]" data-nav>
   <div class="relative flex items-center justify-between rounded-[14px] border border-line bg-surface/85 py-2 pr-2 pl-[18px] backdrop-blur-md">
@@ -27,7 +27,7 @@ $navLinks = ['Platform' => '/#platform', 'Customers' => '/#customers', 'Pricing'
         </div>
       </div>
 <?php foreach ($navLinks as $label => $href): ?>
-      <a class="rounded-lg px-3 py-1.5 text-muted hover:bg-canvas hover:text-ink" href="<?= e(url($href)) ?>"><?= e($label) ?></a>
+      <a class="rounded-lg px-3 py-1.5 hover:bg-canvas hover:text-ink <?= $href === $navCurrent ? 'text-ink' : 'text-muted' ?>" href="<?= e(url($href)) ?>"<?= $href === $navCurrent ? ' aria-current="page"' : '' ?>><?= e($label) ?></a>
 <?php endforeach; ?>
     </nav>
 

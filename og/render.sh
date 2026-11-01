@@ -30,6 +30,11 @@ services-mobile|SERVICES · MOBILE|Mobile apps for *iOS & Android.*|React Native
 services-iot|SERVICES · IOT|Every sensor, *live on screen.*|Real-time dashboards over MQTT and WebSocket, tenant-based data.|MQTT,WebSocket,Multi-tenant
 services-ai-api|SERVICES · AI & API|AI & APIs, *wired in.*|AI services, payment gateways, WhatsApp and GraphQL integrations.|OpenAI,MidTrans,WhatsApp
 services-devops|SERVICES · DEVOPS|Infrastructure that *stays up.*|Docker, Nginx, Cloudflare, uptime monitoring and Fail2ban.|Docker,Nginx,Cloudflare
+showcases|SHOWCASES · LIVE PROJECTS|Real systems, *running today.*|Learning platforms, marketplaces, congress sites and member apps.|E-learning,E-commerce,Event,Fintech
+showcases-mooc-pogi|SHOWCASE · E-LEARNING|Ultrasound training for *5,000+ doctors.*|48 accredited modules, case quizzes and verifiable certificates for POGI.|React,Laravel,PostgreSQL
+showcases-pogi-store|SHOWCASE · E-COMMERCE|From cart to paid in *three screens.*|The official PP POGI store with guest checkout, VA and QRIS.|React,Laravel,Duitku,iPaymu
+showcases-apmoss|SHOWCASE · EVENT|One site for an *international congress.*|APMOSS 2027 — programme, 46 speakers and registration in Jakarta.|Next.js,React,Tailwind
+showcases-ksp|SHOWCASE · FINTECH|A cooperative that *lives on the phone.*|Loans, savings and repayments for members, reviewed in real time.|React,PWA,Laravel
 LIST
 
 shot images/og/icon-512.png 512 512 "file://$PWD/og/icon.html"

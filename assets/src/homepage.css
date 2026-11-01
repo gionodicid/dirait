@@ -3,6 +3,9 @@
 @source "../../app/service.php";
 @source "../../app/partials/header.php";
 @source "../../pages/consultation.php";
+@source "../../pages/showcases.php";
+@source "../../app/showcase.php";
+@source "../../app/partials/showcase-footer.php";
 
 /* Semantic design tokens. Utilities read these names (bg-canvas, text-muted, border-line, bg-brand ...). */
 @theme {

@@ -19,6 +19,14 @@ return [
         ],
     ],
 
+    // Every showcase, in display order. Slug = pages/showcases/<slug>.php.
+    'showcases' => [
+        'mooc-pogi' => ['name' => 'MOOC POGI', 'client' => 'Indonesian Society of Obstetrics & Gynecology (POGI)', 'tag' => 'E-learning · Healthcare', 'title' => 'Ultrasound training for 5,000+ OB-GYNs.', 'blurb' => '48 accredited modules, case quizzes and publicly verifiable certificates.', 'year' => '2026'],
+        'pogi-store' => ['name' => 'POGI Store', 'client' => 'PP POGI', 'tag' => 'E-commerce · Marketplace', 'title' => 'From cart to paid in three screens.', 'blurb' => 'Merchandise and e-books with guest checkout, VA and QRIS, and seller storefronts.', 'year' => '2026'],
+        'apmoss' => ['name' => 'APMOSS 2027', 'client' => 'Asian PCOS Society', 'tag' => 'Event · Congress', 'title' => 'One site for an international congress.', 'blurb' => 'Programme, 46 speakers, registration and travel for a three-day congress in Jakarta.', 'year' => '2026'],
+        'ksp' => ['name' => 'KSP Software', 'client' => 'Savings & loan cooperative', 'tag' => 'Fintech · Cooperative', 'title' => 'A cooperative that lives on the phone.', 'blurb' => 'Loans, savings and repayments for members, reviewed by the board in real time.', 'year' => '2026'],
+    ],
+
     'testimonials' => [
         ['quote' => 'Fast work, quick response, friendly, met expectations, expert in their field, highly recommended, top freelancer.', 'name' => 'nazz_com', 'role' => 'Client, Freelance Platform', 'initials' => 'N'],
         ['quote' => 'Mastered their field, results met expectations, very fast delivery. Revisions were also done quickly. Highly recommended.', 'name' => 'Anonymous Client', 'role' => 'Client, Freelance Platform', 'initials' => 'AC'],
